@@ -1,0 +1,19 @@
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-logo">Moments in the Miles</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="site-nav" id="site-nav">
+      <ul>
+        {{ range .Site.Menus.main }}
+        <li>
+          <a href="{{ .URL }}"{{ if eq $.RelPermalink .URL }} aria-current="page"{{ end }}>{{ .Name }}</a>
+        </li>
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+</header>

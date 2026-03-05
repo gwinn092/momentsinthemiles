@@ -1,0 +1,27 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <a href="/" class="footer-logo">Moments in the Miles</a>
+      <p class="footer-tagline">Stories shaped by distance. Perspective earned by miles.</p>
+      <ul class="footer-links">
+        <li><a href="/start-here/">Start Here</a></li>
+        <li><a href="/essays/">Essays</a></li>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/van-life/">Van Life</a></li>
+        <li><a href="/reduce-friction/">Reduce Friction</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+      <p class="footer-copy">&copy; {{ now.Year }} Moments in the Miles. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.site-nav');
+  toggle.addEventListener('click', function () {
+    const isOpen = nav.classList.toggle('is-open');
+    toggle.classList.toggle('is-active', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen);
+  });
+</script>

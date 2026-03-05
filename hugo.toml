@@ -1,0 +1,45 @@
+baseURL = "https://momentsinthemiles.com/"
+languageCode = "en-us"
+title = "Moments in the Miles"
+theme = "moments"
+paginate = 10
+
+[params]
+  tagline = "Stories shaped by distance. Perspective earned by miles."
+  description = "A reflective travel and lifestyle blog — part lived journal, part practical guide. Seven years of van life, all 48 continental states, eight months across Southeast Asia."
+  author = "Jesse & Karlee"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[menus]
+  [[menus.main]]
+    name = "Start Here"
+    url = "/start-here/"
+    weight = 1
+  [[menus.main]]
+    name = "Essays"
+    url = "/essays/"
+    weight = 2
+  [[menus.main]]
+    name = "Guides"
+    url = "/guides/"
+    weight = 3
+  [[menus.main]]
+    name = "Van Life"
+    url = "/van-life/"
+    weight = 4
+  [[menus.main]]
+    name = "Reduce Friction"
+    url = "/reduce-friction/"
+    weight = 5
+  [[menus.main]]
+    name = "About"
+    url = "/about/"
+    weight = 6

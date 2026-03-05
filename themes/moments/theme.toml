@@ -1,0 +1,6 @@
+name = "Moments"
+license = "MIT"
+licenselink = ""
+description = "Custom theme for Moments in the Miles"
+homepage = ""
+min_version = "0.100.0"

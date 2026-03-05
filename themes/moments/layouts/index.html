@@ -1,0 +1,184 @@
+{{ define "main" }}
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__inner">
+      <div class="hero__content">
+        <span class="eyebrow">Moments in the Miles</span>
+        <h1 class="hero__headline">Stories shaped by distance.<br>Perspective earned by miles.</h1>
+        <p class="hero__sub">Seven years of van life. All 48 continental states. Eight months across Southeast Asia.<br>The beauty. The discomfort. The lessons that linger.<br>This is travel with depth — and the lived experience behind it.</p>
+        <div class="hero__buttons">
+          <a href="/start-here/" class="btn btn-primary">Start Here</a>
+          <a href="/essays/" class="btn btn-secondary">Explore the Road</a>
+        </div>
+      </div>
+      <div class="hero__image">
+        <div class="image-placeholder">
+          <span>[IMAGE: Van parked on red rock desert at sunset]</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION STATEMENT -->
+<section class="section" style="border-top: 1px solid var(--rule);">
+  <div class="content-container">
+    <div class="mission__text">
+      <span class="eyebrow">Our Mission</span>
+      <p style="font-family: var(--font-serif); font-size: 1.2rem; line-height: 1.8; color: var(--ink);">We believe travel is one of the most honest teachers there is.<br><br>Our mission is to inspire intentional travel that expands perspective, deepens human connection, and creates meaningful personal growth — while giving you the practical tools to actually make it happen.<br><br>We don't explore the world just to see it. We explore it to understand it. And in doing so, to understand ourselves — and what truly matters — a little more clearly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GET INSPIRED -->
+<section class="get-inspired">
+  <div class="content-container">
+    <div class="get-inspired__inner">
+      <span class="eyebrow">Get Inspired</span>
+      <h2>How do you even decide where to go?</h2>
+      <div class="get-inspired__intro">
+        <p>There are endless options. Countries. States. Islands. Cities. Mountains or oceans. Familiar or foreign. It can feel overwhelming — like if you don't choose perfectly, you'll choose wrong.</p>
+        <p>But there isn't one right place. There's just the place that feels interesting enough to explore.</p>
+        <p>Maybe you're dreaming about the big international trip. Maybe you're finally checking something off your list. Maybe you just want to cross a few state lines and see what's out there.</p>
+        <p>You don't have to cross oceans. You don't have to move into a van. You don't have to leave everything behind.</p>
+        <p>You just have to start somewhere.</p>
+      </div>
+
+      <blockquote class="pull-quote">
+        "Travel isn't always pretty. It isn't always comfortable. Sometimes it hurts... but that's okay. The journey changes you; it should change you."
+        <cite>— Anthony Bourdain</cite>
+      </blockquote>
+
+      <div class="get-inspired__outro">
+        <p>We've found that to be true.</p>
+        <p>The road doesn't promise ease. But it does offer perspective — if you let it.</p>
+        <p>Here you'll find stories, yes. But also guides, honest mistakes, practical insight, and the kind of hard-won knowledge that only comes from actually being out there.</p>
+        <p>Take what's useful. Leave what isn't. And go see for yourself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THIS IS US -->
+<section class="this-is-us">
+  <div class="container">
+    <div class="this-is-us__inner">
+      <div class="this-is-us__image">
+        <div class="image-placeholder">
+          <span>[IMAGE: Jesse and Karlee — candid travel moment]</span>
+        </div>
+      </div>
+      <div class="this-is-us__content">
+        <span class="eyebrow">This Is Us</span>
+        <h2>Hey there — we're Jesse and Karlee.</h2>
+        <p>Long before this lifestyle had a name, we were chasing dirt roads. Weekends meant car camping through aspen groves, hiking red rock canyons, and driving into stretches of desert that felt endless.</p>
+        <p>We traded square footage for open roads. Certainty for flexibility. A fixed address for something that could move as freely as we did.</p>
+        <p>This wasn't escapism. It was alignment.</p>
+        <a href="/about/" class="link-arrow">Read our full story →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED CONTENT -->
+<section class="featured">
+  <div class="container">
+    <span class="eyebrow">Featured</span>
+    <h2>From the Road</h2>
+    <div class="featured__grid">
+      {{ $pinned := where .Site.RegularPages "Params.pinned" true }}
+      {{ $essays := where .Site.RegularPages "Section" "essays" | first 2 }}
+      {{ $guides := where .Site.RegularPages "Section" "guides" | first 1 }}
+      {{ $featured := $pinned | append $essays | append $guides | first 3 }}
+      {{ if $featured }}
+        {{ range $featured }}
+        <article class="card">
+          <div class="card__image">
+            <div class="image-placeholder">
+              <span>[IMAGE: {{ .Title }}]</span>
+            </div>
+          </div>
+          <div class="card__body">
+            <div class="card__category">{{ .Section | title }}</div>
+            <a href="{{ .RelPermalink }}" class="card__title">{{ .Title }}</a>
+            {{ with .Description }}<p class="card__excerpt">{{ . }}</p>{{ end }}
+          </div>
+        </article>
+        {{ end }}
+      {{ else }}
+        <article class="card">
+          <div class="card__image">
+            <div class="image-placeholder"><span>[IMAGE: Lead essay]</span></div>
+          </div>
+          <div class="card__body">
+            <div class="card__category">Essays</div>
+            <span class="card__title">The Miles Will Shape You (If You Let Them)</span>
+            <p class="card__excerpt">The pre-departure essay. For readers who are still deciding.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card__image">
+            <div class="image-placeholder"><span>[IMAGE: Guide]</span></div>
+          </div>
+          <div class="card__body">
+            <div class="card__category">Guides</div>
+            <span class="card__title">How We Save for Travel Without Putting Our Life on Hold</span>
+            <p class="card__excerpt">The slow, unglamorous system that made our travel life sustainable.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card__image">
+            <div class="image-placeholder"><span>[IMAGE: Story]</span></div>
+          </div>
+          <div class="card__body">
+            <div class="card__category">Stories</div>
+            <span class="card__title">What Travel Taught Us About Human Kindness</span>
+            <p class="card__excerpt">Day one. A food cart. A bowl of soup. And a lesson that stayed.</p>
+          </div>
+        </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- FURTHER READING -->
+<section class="further-reading">
+  <div class="container">
+    <span class="eyebrow">Further Reading</span>
+    <h2>Worth Your Time</h2>
+    <p class="further-reading__intro">We read a lot about the science of why travel matters. Here are a few pieces worth your time — not from us, but from researchers and writers who've explored the psychology behind why movement changes people.</p>
+    <ul class="further-reading__list">
+      <li class="reading-item">
+        <a href="https://londonpsychologist-centre.co.uk" target="_blank" rel="noopener">The Psychology of Escape: How Travel Transforms Mental Health</a>
+        <span class="reading-source">London Psychologist Centre &nbsp;·&nbsp; londonpsychologist-centre.co.uk</span>
+      </li>
+      <li class="reading-item">
+        <a href="https://verybigbrain.com" target="_blank" rel="noopener">The Brain Benefits of Traveling: Why Exploring New Cultures Expands Your Mind</a>
+        <span class="reading-source">Very Big Brain &nbsp;·&nbsp; verybigbrain.com</span>
+      </li>
+      <li class="reading-item">
+        <a href="https://travul.org" target="_blank" rel="noopener">The Psychology of Travel: Why Exploring New Places Boosts Happiness</a>
+        <span class="reading-source">Travul &nbsp;·&nbsp; travul.org</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="container">
+    <div class="newsletter__inner">
+      <span class="eyebrow">Stay Connected</span>
+      <h2>Join the Journey</h2>
+      <p>New essays, stories, and guides — delivered when they're ready, not on a schedule. No noise. Just the road.</p>
+      <form class="newsletter-form" action="#" method="post">
+        <input type="email" name="email" placeholder="Your email address" required>
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+{{ end }}

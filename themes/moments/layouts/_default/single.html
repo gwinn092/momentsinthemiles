@@ -1,0 +1,40 @@
+{{ define "main" }}
+<article>
+  <header class="article-header">
+    <div class="content-container">
+      {{ with .Params.category }}<span class="eyebrow">{{ . }}</span>{{ end }}
+      <h1 class="article-title">{{ .Title }}</h1>
+      {{ with .Description }}<p class="article-description">{{ . }}</p>{{ end }}
+      <p class="article-meta">
+        {{ with .Params.author }}By {{ . }}{{ end }}
+        {{ if and .Params.author .Date }} &nbsp;·&nbsp; {{ end }}
+        {{ if not .Date.IsZero }}{{ .Date.Format "January 2, 2006" }}{{ end }}
+      </p>
+    </div>
+  </header>
+
+  {{ with .Params.image }}
+  <div class="content-container">
+    <div class="article-hero-image">
+      <div class="image-placeholder">
+        <span>[IMAGE: {{ . }}]</span>
+      </div>
+    </div>
+  </div>
+  {{ else }}
+  <div class="content-container">
+    <div class="article-hero-image">
+      <div class="image-placeholder">
+        <span>[IMAGE: {{ .Title }}]</span>
+      </div>
+    </div>
+  </div>
+  {{ end }}
+
+  <div class="article-body">
+    <div class="content-container">
+      {{ .Content }}
+    </div>
+  </div>
+</article>
+{{ end }}

@@ -1,0 +1,37 @@
+{{ define "main" }}
+<div class="list-header">
+  <div class="content-container">
+    <span class="eyebrow">{{ .Section | title }}</span>
+    <h1>{{ .Title }}</h1>
+    {{ with .Content }}<p>{{ . }}</p>{{ end }}
+  </div>
+</div>
+
+<div class="post-list">
+  <div class="content-container">
+    {{ $pinned := where .Pages "Params.pinned" true }}
+    {{ $rest := where .Pages "Params.pinned" "!=" true }}
+    {{ $pages := $pinned | append $rest }}
+
+    {{ range $pages }}
+    <div class="post-item{{ if .Params.pinned }} post-item--pinned{{ end }}">
+      <div class="post-item__image">
+        <div class="image-placeholder">
+          <span>[IMAGE: {{ .Title }}]</span>
+        </div>
+      </div>
+      <div class="post-item__body">
+        {{ with .Params.category }}<div class="post-item__category">{{ . }}</div>{{ end }}
+        <h2 class="post-item__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        {{ with .Description }}<p class="post-item__excerpt">{{ . }}</p>{{ end }}
+        <p class="post-item__meta">
+          {{ with .Params.author }}{{ . }}{{ end }}
+          {{ if and .Params.author (not .Date.IsZero) }} &nbsp;·&nbsp; {{ end }}
+          {{ if not .Date.IsZero }}{{ .Date.Format "January 2006" }}{{ end }}
+        </p>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
