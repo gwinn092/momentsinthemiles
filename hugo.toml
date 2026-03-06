@@ -8,6 +8,7 @@ paginate = 10
   tagline = "Stories shaped by distance. Perspective earned by miles."
   description = "A reflective travel and lifestyle blog — part lived journal, part practical guide. Seven years of van life, all 48 continental states, eight months across Southeast Asia."
   author = "Jesse & Karlee"
+  googleAnalyticsID = "" # Add your G-XXXXXXXXXX ID here when ready
 
 [taxonomies]
   category = "categories"
@@ -35,10 +36,6 @@ paginate = 10
     name = "Van Life"
     url = "/van-life/"
     weight = 4
-  [[menus.main]]
-    name = "Reduce Friction"
-    url = "/reduce-friction/"
-    weight = 5
   [[menus.main]]
     name = "About"
     url = "/about/"
