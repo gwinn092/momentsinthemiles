@@ -359,6 +359,30 @@ p:last-child {
   color: var(--warm-white);
 }
 
+.footer-legal {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0;
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-legal a {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(253, 250, 245, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-legal a:hover {
+  color: rgba(253, 250, 245, 0.6);
+}
+
 .footer-copy {
   font-size: 0.75rem;
   color: rgba(253, 250, 245, 0.4);
