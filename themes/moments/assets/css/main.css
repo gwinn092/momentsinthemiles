@@ -1091,3 +1091,13 @@ p:last-child {
     width: 100%;
   }
 }
+
+.handoff-block {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border, #e5e0d8);
+}
+
+.handoff-block p {
+  margin-bottom: 1.25rem;
+}
