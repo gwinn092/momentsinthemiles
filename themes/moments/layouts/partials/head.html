@@ -27,6 +27,9 @@
 {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 
+<!-- Kit (newsletter) -->
+<script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+
 <!-- Google Analytics -->
 {{ with .Site.Params.googleAnalyticsID }}
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
