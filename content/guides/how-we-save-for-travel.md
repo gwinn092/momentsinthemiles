@@ -4,7 +4,7 @@ date: 2025-03-17
 description: "The slow, unglamorous system that made our travel life sustainable. No windfalls, no tech salary, no rich parents — just a decision and the structure to back it up."
 category: "Guides"
 author: "Karlee & Jesse"
-draft: true
+draft: false
 image: "Van parked at BLM land with desert landscape — golden hour"
 ---
 

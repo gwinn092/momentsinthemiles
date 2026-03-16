@@ -4,7 +4,7 @@ date: 2025-04-14
 description: "Seventy dollars a day sounds like a constraint. In Southeast Asia, it's closer to abundance. Eight months across eight countries — here's how it actually works."
 category: "Guides"
 author: "Karlee & Jesse"
-draft: true
+draft: false
 image: "Street food stall at dusk — plastic stools, steam rising, locals eating"
 ---
 

@@ -4,7 +4,7 @@ date: 2025-03-31
 description: "Real numbers. Current figures. A genuine 10-day breakdown for two people traveling Southeast Asia — the way we actually travel. Not luxury, not suffer-mode. Comfortable, immersive, real."
 category: "Guides"
 author: "Karlee & Jesse"
-draft: true
+draft: false
 image: "Street food cart in Hanoi — steam rising, plastic stools, early evening light"
 ---
 
