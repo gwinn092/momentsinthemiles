@@ -4,9 +4,11 @@ date: 2025-04-14
 description: "Seventy dollars a day sounds like a constraint. In Southeast Asia, it's closer to abundance. Eight months across eight countries — here's how it actually works."
 category: "Guides"
 author: "Karlee & Jesse"
-draft: false
+draft: true
 image: "Street food stall at dusk — plastic stools, steam rising, locals eating"
 ---
+
+<!-- DRAFT: REVIEW NUMBERS WITH KARLEE BEFORE PUBLISHING -->
 
 Seventy dollars a day sounds like a constraint. In Southeast Asia, it's closer to abundance.
 
@@ -14,7 +16,7 @@ We spent eight months across Thailand, Vietnam, Cambodia, Laos, Malaysia, Singap
 
 This guide isn't about suffering through travel to save money. It's about understanding that $70 in Southeast Asia buys a genuinely different life than $70 at home — and knowing the decisions that keep you there without thinking about it constantly.
 
-## First, the mindset shift
+## FIRST, THE MINDSET SHIFT
 
 Here's the thing nobody tells you before you go: the hardest part of budget travel in Southeast Asia isn't the money. It's the mental recalibration.
 
@@ -26,74 +28,56 @@ Once you internalize that, the trip changes. You stop second-guessing every purc
 
 $70 a day in Southeast Asia isn't a ceiling. For most of the region, it's a comfortable floor.
 
-## Where to stay — and how to book it
+## WHERE TO STAY — AND HOW TO BOOK IT
 
 Private guesthouses are the sweet spot. Not hostels, not hotels — the family-run guesthouses that make up the backbone of accommodation across Thailand, Vietnam, Laos, Malaysia, and beyond. Clean rooms, real character, owners who know the area better than any guidebook, and prices that make Western accommodation costs feel like a bad joke.
 
 Expect to pay $15–30 a night for a solid private room for two. In Chiang Mai we regularly found lovely rooms — sometimes with breakfast — for under $20. Hanoi and Hoi An run slightly higher but rarely break $35 for something genuinely nice.
 
-**The booking approach that works:**
+The booking approach that works:
 
-- Use Booking.com or Agoda to research, then message the guesthouse directly — they'll often match the price and pocket the commission themselves. That difference goes straight to the family running the place rather than a platform taking 15–20% off the top. It costs you nothing and means something to them.
-- Book your first night in advance when arriving in a new city; after that, walk the street and look.
-- Always ask about weekly rates if you're staying more than four nights — the discount is often significant and rarely advertised.
-- Avoid booking during major local festivals without checking ahead — prices spike and availability drops fast.
+Book your first night in advance when arriving somewhere new — enough to land without stress. After that, walk the street and look. Use Booking.com or Agoda to research, then message the guesthouse directly — they'll often match the price and pocket the commission themselves rather than losing 15–20% to the platform. It costs you nothing and means something to them.
 
-One thing worth knowing: the Thai islands run notably more expensive than the mainland — Koh Phi Phi and Koh Samui can push accommodation costs 30–50% higher than Chiang Mai or Bangkok. The mainland stretches your budget further and often delivers a richer experience anyway.
+Always ask about weekly rates if you're staying more than four nights. The discount is often significant and rarely advertised. And if you're heading to the Thai islands — Koh Phi Phi, Koh Samui — know that accommodation there runs 30–50% higher than the mainland. The mainland stretches your budget further and often delivers a richer experience anyway.
 
-## How to eat well without overspending
+## HOW TO EAT WELL WITHOUT OVERSPENDING
 
-Southeast Asia may be the best place in the world to eat on a budget. Not just cheap — genuinely extraordinary. The food cart outside a Chiang Mai 7-Eleven. The bánh mì shop in Hanoi where they wave you behind the counter. The slow boat in Laos where someone produces a bag of sticky rice and a shared meal appears from nowhere.
+Southeast Asia may be the best place in the world to eat on a budget. Not just cheap — genuinely extraordinary. The food cart outside a Chiang Mai market. The bánh mì shop in Hanoi where they wave you behind the counter and hand you a cold beer while you wait. The slow boat in Laos where someone produces a bag of sticky rice and a shared meal appears from nowhere.
 
-Eating where locals eat is the single most effective food strategy — and it consistently delivers the best meals. The hole-in-the-wall with plastic stools and a handwritten menu in a language you can't read is almost always better than the restaurant with the English signboard and the laminated photos.
+The single most effective food strategy is also the most obvious one: eat where locals eat. The hole-in-the-wall with plastic stools and a handwritten menu in a language you can't read is almost always better than the restaurant with the English signboard and the laminated photos. Every single time.
 
-Street meals — pad thai, pho, bánh mì, noodle soups — run $1–3 each. Sit-down local restaurants land at $4–8 for a main. A proper dinner for two with drinks at a genuinely good local restaurant rarely exceeds $15–20.
+Street meals run $1–3 each. Sit-down local restaurants land at $4–8 for a main. A proper dinner for two with drinks at a genuinely good local restaurant rarely exceeds $15–20.
 
-- Eat breakfast and lunch at street stalls and markets — save the sit-down meal for dinner.
-- Follow locals, not guidebook lists. The best spots often aren't indexed anywhere.
-- Ask your guesthouse host where they eat. It's the fastest shortcut to the real food.
-- Drink local beer — Singha, Chang, Bia Hà Nội, BeerLao — at $1–2 a bottle rather than imported spirits.
+Eat breakfast and lunch at street stalls and markets. Save the sit-down meal for dinner. Ask your guesthouse host where they actually eat — it's the fastest shortcut to the real food and they're always happy to tell you.
 
-The one thing that blows food budgets quietly: alcohol. It's cheap, which makes it easy to underestimate. A few happy-hour cocktails a night adds up faster than three meals.
+One thing that quietly blows food budgets: alcohol. It's cheap enough that it's easy to underestimate. A few happy-hour cocktails a night adds up faster than three meals. Drink local beer — Singha, Chang, Bia Hà Nội, BeerLao — at $1–2 a bottle and you're fine.
 
-## Getting around between countries
+## GETTING AROUND BETWEEN COUNTRIES
 
-Transport is where Southeast Asia budgets either hold or leak, and the decision is almost always about speed versus cost.
+Transport is where Southeast Asia budgets either hold or leak. The decision almost always comes down to speed versus cost — and the faster you move, the more you spend.
 
-The faster you move, the more you spend. Overnight buses and trains cost less and save a night of accommodation simultaneously — and in many cases, the journey itself becomes part of the experience.
+Overnight buses and trains cost less and save a night of accommodation simultaneously. In many cases, the journey itself becomes part of the experience. The 27-hour bus from Laos into Vietnam is not comfortable — we won't pretend otherwise. But it cost a fraction of a flight, crossed a mountain range we'll never forget, and delivered us to the border at dawn in a way that no airport ever could. We'd do it again.
 
-The 27-hour bus from Laos into Vietnam is not comfortable. We won't pretend otherwise. But it cost a fraction of a flight, crossed a mountain range we'll never forget, and delivered us to the border at dawn in a way that no airport ever could.
+Within cities, Grab is inexpensive, metered, and scam-proof — you see the price before you confirm. Scooter rentals run $5–8 per day and unlock a level of freedom that changes how you experience a place entirely. Wear a helmet, ride carefully, and make sure your travel insurance covers it.
 
-**Within cities:** Grab (the regional equivalent of Uber) is inexpensive, metered, and scam-proof. Local buses in Bangkok run around $0.25–1.50 per trip.
+Between cities, night buses run $10–25 for most major routes. Vietnam's sleeper trains are genuinely comfortable and scenic — one of the better travel experiences in the region. For budget flights between countries, AirAsia and VietJet run surprisingly cheap fares when booked in advance. For overland crossings, 12Go Asia makes multi-country routing straightforward to research.
 
-**Scooter rental:** $5–8 per day across most of the region. Ride carefully, wear a helmet, and make sure your travel insurance covers it.
+## WHAT TO SKIP
 
-**Between cities:** Night buses run $10–25 for most major routes. Sleeper trains — particularly in Vietnam — are comfortable, scenic, and a genuine pleasure.
+Eight months gave us a clear picture of what's worth spending on and what isn't.
 
-**Between countries:** Budget airlines like AirAsia and VietJet run surprisingly cheap fares when booked in advance. For overland crossings, 12Go Asia makes multi-country routing straightforward to research.
+Organised tours of things you can do yourself — temples, markets, walking streets — almost never add value. Most of what makes Southeast Asia extraordinary is free or nearly free, and a tour guide between you and it usually takes something away rather than adding to it.
 
-## What to skip
+Overpriced rooftop bars near landmark areas are a reliable way to spend $15 on a cocktail for a view you could enjoy for $2 in local beer from a riverside guesthouse. We fell for this exactly once.
 
-**Organised tourist tours of things you can do yourself.** Temples, markets, walking streets — most of the things that make Southeast Asia extraordinary are free or nearly free.
+Moving too fast is probably the biggest budget leak of all — and the least obvious one. Every city change costs in transport, in orientation time, in the price premium of first-night booking. Staying longer in fewer places cuts costs and deepens the experience simultaneously. We learned this in the van and it held true across every country we traveled in Asia.
 
-**Overpriced rooftop bars near landmark areas.** The view costs $15 in a cocktail. The same sunset from a riverside guesthouse costs $2 in local beer.
+Elephant riding — beyond the ethical issues, which are real and well-documented — is expensive and hollow compared to legitimate sanctuary experiences. Skip it without hesitation.
 
-**Moving too fast.** Every city change costs in transport, in orientation time, in the price premium of first-night booking. Staying longer in fewer places cuts costs and deepens the experience simultaneously.
-
-**Elephant riding.** Beyond the ethical issues — which are real and well-documented — it's expensive and hollow compared to legitimate sanctuary experiences.
-
-## The longer you stay, the better the math gets
+## THE LONGER YOU STAY, THE BETTER THE MATH GETS
 
 The longer you travel in Southeast Asia, the more you benefit from the initial investment to get there. Flights are the fixed cost. Once you're on the ground, the daily cost is low enough that extending the trip by two weeks costs less than the flight home and back again.
 
 Eight months felt like a long time before we went. On the ground, it felt like barely enough. The region is that good — and that affordable.
 
 $70 a day won't feel like a budget once you get there. It'll feel like more than enough.
-
-<div class="image-placeholder">
-  <span>[IMAGE: Street food stall at dusk — plastic stools, steam rising, locals eating]</span>
-</div>
-
-<div class="image-placeholder">
-  <span>[IMAGE: Overnight sleeper train in Vietnam — window seat, countryside rolling past]</span>
-</div>
