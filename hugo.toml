@@ -40,3 +40,7 @@ paginate = 10
     name = "About"
     url = "/about/"
     weight = 6
+  [[menus.main]]
+    name = "Reduce Friction"
+    url = "/reduce-friction/"
+    weight = 7
