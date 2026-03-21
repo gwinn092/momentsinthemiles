@@ -1125,3 +1125,273 @@ p:last-child {
 .handoff-block p {
   margin-bottom: 1.25rem;
 }
+
+/* ============================================
+   LEAVE ANYWAY KIT — SALES PAGE
+   ============================================ */
+
+/* Hero */
+.kit-hero {
+  padding: 5rem 0 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.kit-hero .content-container {
+  text-align: center;
+  padding-bottom: 3rem;
+}
+
+.kit-hero__title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: 1rem;
+}
+
+.kit-hero__sub {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.kit-cta {
+  font-size: 0.9rem;
+  padding: 1rem 2.5rem;
+}
+
+.kit-hero__note {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+.kit-hero__image-wrap {
+  max-width: var(--max-site);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.kit-hero__image {
+  min-height: 400px;
+  border-radius: 3px 3px 0 0;
+}
+
+/* Tagline emphasis */
+.kit-tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--ink);
+  margin-bottom: 2rem;
+}
+
+/* What's Inside grid */
+.kit-inside__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.kit-inside__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem 4rem;
+}
+
+.kit-item {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.kit-item__num {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--terracotta);
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 2.5rem;
+}
+
+.kit-item__title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+}
+
+.kit-item__body p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+/* Who it's for */
+.kit-who__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.kit-who__list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+}
+
+.kit-who__list li {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.kit-who__list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--terracotta);
+}
+
+.kit-who__col--not {
+  padding-top: 2rem;
+}
+
+.kit-who__col--not p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Pricing */
+.kit-price {
+  border: 1px solid var(--rule);
+  background-color: var(--sand);
+  border-radius: 4px;
+  padding: 3rem;
+  text-align: center;
+}
+
+.kit-price__amount {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 600;
+  color: var(--terracotta);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.kit-price__label {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.kit-price p {
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.kit-price__note {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 2rem !important;
+}
+
+.kit-price .btn {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.kit-price__fine {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 0 !important;
+}
+
+/* About us */
+.kit-about__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.kit-about__content h2 {
+  margin-bottom: 1.25rem;
+}
+
+.link-arrow {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--terracotta);
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.link-arrow:hover {
+  text-decoration: underline;
+}
+
+/* FAQ */
+.kit-faq {
+  margin-top: 2.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+.kit-faq__item {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.kit-faq__q {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+}
+
+.kit-final-cta {
+  text-align: center;
+  padding: 3rem 0 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .kit-inside__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .kit-who__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .kit-who__col--not {
+    padding-top: 0;
+    border-top: 1px solid var(--rule);
+    padding-top: 2rem;
+  }
+
+  .kit-about__inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .kit-price {
+    padding: 2rem 1.5rem;
+  }
+}
