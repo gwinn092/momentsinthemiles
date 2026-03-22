@@ -193,6 +193,30 @@ p:last-child {
   padding: 5rem 0;
 }
 
+/* --- Page Images --- */
+.page-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 3px;
+}
+
+.section-hero-image {
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+  border-radius: 3px;
+  margin-bottom: 2rem;
+}
+
+.section-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 /* --- Image Placeholders --- */
 .image-placeholder {
   background-color: var(--sand);

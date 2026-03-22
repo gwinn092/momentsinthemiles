@@ -1,6 +1,11 @@
 {{ define "main" }}
 <div class="list-header">
   <div class="content-container">
+    {{ with .Params.hero_image }}
+    <div class="section-hero-image">
+      <img src="{{ $.Site.Home.RelPermalink }}{{ strings.TrimPrefix "/" . }}" alt="{{ $.Title }}" loading="eager">
+    </div>
+    {{ end }}
     <span class="eyebrow">{{ .Section | title }}</span>
     <h1>{{ .Title }}</h1>
     {{ with .Content }}<p>{{ . }}</p>{{ end }}

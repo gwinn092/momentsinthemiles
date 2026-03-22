@@ -1,6 +1,7 @@
 ---
 title: "Van Life"
 description: "Seven years. Seventy square feet. All 48 continental states. The reality of life on wheels."
+hero_image: "/images/pages/vanlife-promaster-tetons.jpg"
 ---
 
 We didn't set out to live in a van. We set out to stop waiting.

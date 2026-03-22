@@ -2,6 +2,11 @@
 
 <div class="start-here-header">
   <div class="content-container">
+    {{ with .Params.hero_image }}
+    <div class="section-hero-image">
+      <img src="{{ $.Site.Home.RelPermalink }}{{ strings.TrimPrefix "/" . }}" alt="Start Here" loading="eager">
+    </div>
+    {{ end }}
     <span class="eyebrow">New here?</span>
     <h1>Start Here</h1>
     <p>I had wanted to go to Montana for years.</p>
