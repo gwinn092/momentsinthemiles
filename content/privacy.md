@@ -3,7 +3,7 @@ title: "Privacy Policy"
 description: "How Moments in the Miles handles your data."
 ---
 
-[LLC Name] operates Moments in the Miles.
+Wander US LLC operates Moments in the Miles.
 
 **Analytics.** This site uses Google Analytics 4 to collect anonymous usage data — pages visited, time on page, general location (country/region), and device type. This data helps us understand what content is useful to readers. Google Analytics may use cookies to track return visits. No personally identifiable information is collected through analytics.
 
@@ -13,6 +13,6 @@ description: "How Moments in the Miles handles your data."
 
 **No data selling.** We do not sell personal data. Full stop.
 
-**Contact.** Questions about this policy? Email us at [contact@llcname.com].
+**Contact.** Questions about this policy? Email us at hey@momentsinthemiles.com.
 
 *Last updated: March 2026.*
