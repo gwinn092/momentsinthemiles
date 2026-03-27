@@ -22,6 +22,13 @@ It wasn't always pretty. It wasn't always comfortable. But it was ours — built
 
 This section is where we write about what that life is really like. Not the gear list. Not the aesthetic. The texture of it — the freedom, the friction, and everything in between.
 
+<div class="kit-callout">
+  <p class="kit-callout__eyebrow">Thinking about making the jump?</p>
+  <p class="kit-callout__heading">The Leave Anyway Kit</p>
+  <p class="kit-callout__body">We built this for the person who keeps saying "someday." A 10-section guided workspace covering everything between where you are and actually going — fear, money, the job, the stuff, the people who don't get it, and the first 30 days on the road.</p>
+  <a href="https://wanderus.gumroad.com/l/pinqn" class="kit-callout__link">Get the kit →</a>
+</div>
+
 <div class="handoff-block">
   <p>Ready to get into the actual build? We break down the power systems, gear, and budget decisions over at Create A Van Life — seven years of real-world experience, no fake urgency.</p>
   <a href="https://createavanlife.com" target="_blank" rel="noopener" class="btn btn-secondary">Visit Create A Van Life →</a>
