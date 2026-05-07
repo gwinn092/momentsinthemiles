@@ -1419,3 +1419,52 @@ p:last-child {
     padding: 2rem 1.5rem;
   }
 }
+
+/* --- Kit Callout Block --- */
+
+.kit-callout {
+  background: var(--color-sand, #F5EFE4);
+  border-left: 3px solid var(--color-terracotta, #B5643A);
+  padding: 2rem 2.5rem;
+  margin: 3rem 0;
+  max-width: 640px;
+}
+
+.kit-callout__eyebrow {
+  font-family: var(--font-body, 'Jost', sans-serif);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-terracotta, #B5643A);
+  margin: 0 0 0.5rem;
+}
+
+.kit-callout__heading {
+  font-family: var(--font-heading, 'Cormorant Garamond', serif);
+  font-size: 1.75rem;
+  color: var(--color-ink, #1C1A17);
+  margin: 0 0 1rem;
+  font-weight: 600;
+}
+
+.kit-callout__body {
+  font-family: var(--font-body, 'Jost', sans-serif);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-ink, #1C1A17);
+  margin: 0 0 1.5rem;
+}
+
+.kit-callout__link {
+  font-family: var(--font-body, 'Jost', sans-serif);
+  font-size: 0.9rem;
+  color: var(--color-terracotta, #B5643A);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-terracotta, #B5643A);
+  padding-bottom: 1px;
+  transition: opacity 0.2s;
+}
+
+.kit-callout__link:hover {
+  opacity: 0.7;
+}
