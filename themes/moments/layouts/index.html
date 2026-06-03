@@ -9,8 +9,8 @@
         <h1 class="hero__headline">Stories shaped by distance.<br>Perspective earned by miles.</h1>
         <p class="hero__sub">Seven years of van life. All 48 continental states. Eight months across Southeast Asia.<br>The beauty. The discomfort. The lessons that linger.<br>This is travel with depth — and the lived experience behind it.</p>
         <div class="hero__buttons">
-          <a href="/start-here/" class="btn btn-primary">Start Here</a>
-          <a href="/essays/" class="btn btn-secondary">Explore the Road</a>
+          <a href="{{ .Site.Home.RelPermalink }}start-here/" class="btn btn-primary">Start Here</a>
+          <a href="{{ .Site.Home.RelPermalink }}essays/" class="btn btn-secondary">Explore the Road</a>
         </div>
       </div>
       <div class="hero__image">
@@ -71,7 +71,7 @@
         <p>One night turned into four days — beads flying, music everywhere, the kind of electricity in the air that gets into your chest before you've even figured out where you are. We had a local guide, a front row seat, and nowhere else we needed to be.</p>
         <p>That's the life we've built. Not perfect. Not always planned. But flexible enough to say yes when something worth saying yes to shows up.</p>
         <p>We're Jesse and Karlee. Seven years in a van. Forty-eight states. Eight months across Southeast Asia. And more wrong turns than we'll ever be able to count — most of which led somewhere better than where we were headed.</p>
-        <a href="/about/" class="link-arrow">Read our full story →</a>
+        <a href="{{ .Site.Home.RelPermalink }}about/" class="link-arrow">Read our full story →</a>
       </div>
     </div>
   </div>
@@ -104,9 +104,9 @@
       {{ end }}
     </div>
     <div class="featured__more">
-      <a href="/essays/" class="btn btn-secondary">Essays &amp; Stories</a>
-      <a href="/guides/" class="btn btn-secondary">Guides</a>
-      <a href="/van-life/" class="btn btn-secondary">Van Life</a>
+      <a href="{{ .Site.Home.RelPermalink }}essays/" class="btn btn-secondary">Essays &amp; Stories</a>
+      <a href="{{ .Site.Home.RelPermalink }}guides/" class="btn btn-secondary">Guides</a>
+      <a href="{{ .Site.Home.RelPermalink }}van-life/" class="btn btn-secondary">Van Life</a>
     </div>
   </div>
 </section>
