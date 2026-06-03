@@ -90,7 +90,7 @@
       <article class="card">
         <a href="{{ .RelPermalink }}" class="card__image-link">
           {{ if .Params.image }}
-          <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" class="card__img" loading="lazy">
+          <img src="{{ $.Site.Home.RelPermalink }}{{ strings.TrimPrefix "/" .Params.image }}" alt="{{ .Title }}" class="card__img" loading="lazy">
           {{ else }}
           <div class="card__img-placeholder"></div>
           {{ end }}

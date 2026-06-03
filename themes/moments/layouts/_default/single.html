@@ -15,7 +15,7 @@
 
   {{ with .Params.image }}
   <div class="article-hero-wrap">
-    <img src="{{ . | absURL }}" alt="{{ $.Title }}" class="article-hero-img" loading="eager">
+    <img src="{{ $.Site.Home.RelPermalink }}{{ strings.TrimPrefix "/" . }}" alt="{{ $.Title }}" class="article-hero-img" loading="eager">
   </div>
   {{ end }}
 

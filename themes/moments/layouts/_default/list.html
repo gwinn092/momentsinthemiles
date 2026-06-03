@@ -22,7 +22,7 @@
     <div class="post-item{{ if .Params.pinned }} post-item--pinned{{ end }}">
       <a href="{{ .RelPermalink }}" class="post-item__image-link">
         {{ if .Params.image }}
-        <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" class="post-item__img" loading="lazy">
+        <img src="{{ $.Site.Home.RelPermalink }}{{ strings.TrimPrefix "/" .Params.image }}" alt="{{ .Title }}" class="post-item__img" loading="lazy">
         {{ else }}
         <div class="post-item__img-placeholder"></div>
         {{ end }}
