@@ -5,7 +5,7 @@ description: "Seven years of van life didn't give us one version of freedom. It 
 category: "Essays"
 author: "Karlee & Jesse"
 draft: false
-image: "Van on a BLM road in the American Southwest — wide open, unhurried"
+image: "/images/pages/vanlife-promaster-tetons.jpg"
 ---
 
 There's a version of freedom we carry nostalgia for.

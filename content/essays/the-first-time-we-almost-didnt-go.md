@@ -5,7 +5,7 @@ description: "Laos to Vietnam. The bus, the mountain road, the border at dawn. A
 category: "Stories"
 author: "Karlee"
 draft: false
-image: "Mountain road at night, narrow dirt switchbacks carved into darkness"
+image: "/images/essays/laos-vietnam-bus.jpg"
 ---
 
 ## We talked about it for a year

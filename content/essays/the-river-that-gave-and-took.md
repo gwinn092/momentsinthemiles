@@ -5,7 +5,7 @@ description: "Northern Laos. The slow boat, Vieng, his village, and the moment t
 category: "Stories"
 author: "Karlee"
 draft: false
-image: "Slow boat on the Mekong River — jungle banks, wide water, unhurried"
+image: "/images/essays/laos-village.jpg"
 ---
 
 There are moments from our eight months in Asia that still sit quietly in my chest.

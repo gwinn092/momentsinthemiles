@@ -5,7 +5,7 @@ description: "Seventy dollars a day sounds like a constraint. In Southeast Asia,
 category: "Guides"
 author: "Karlee & Jesse"
 draft: false
-image: "Street food stall at dusk — plastic stools, steam rising, locals eating"
+image: "/images/guides/sea-sleeper-bus.jpg"
 ---
 
 <!-- DRAFT: REVIEW NUMBERS WITH KARLEE BEFORE PUBLISHING -->

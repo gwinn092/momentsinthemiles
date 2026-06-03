@@ -5,7 +5,7 @@ description: "Real numbers. Current figures. A genuine 10-day breakdown for two 
 category: "Guides"
 author: "Karlee & Jesse"
 draft: false
-image: "Street food cart in Hanoi — steam rising, plastic stools, early evening light"
+image: "/images/guides/vietnam-banh-mi.jpg"
 ---
 
 <!-- DRAFT: REVIEW NUMBERS WITH KARLEE BEFORE PUBLISHING -->

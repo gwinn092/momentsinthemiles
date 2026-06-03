@@ -5,7 +5,7 @@ description: "Over time, the places blur. What stays are the people. From St. Jo
 category: "Essays"
 author: "Karlee & Jesse"
 draft: false
-image: "Dinner table with strangers — warm light, shared food, a birthday celebration"
+image: "/images/essays/laos-gathering.jpg"
 ---
 
 It's easy to think travel is about geography.

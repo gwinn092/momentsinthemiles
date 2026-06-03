@@ -20,11 +20,13 @@
 
     {{ range $pages }}
     <div class="post-item{{ if .Params.pinned }} post-item--pinned{{ end }}">
-      <div class="post-item__image">
-        <div class="image-placeholder">
-          <span>[IMAGE: {{ .Title }}]</span>
-        </div>
-      </div>
+      <a href="{{ .RelPermalink }}" class="post-item__image-link">
+        {{ if .Params.image }}
+        <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" class="post-item__img" loading="lazy">
+        {{ else }}
+        <div class="post-item__img-placeholder"></div>
+        {{ end }}
+      </a>
       <div class="post-item__body">
         {{ with .Params.category }}<div class="post-item__category">{{ . }}</div>{{ end }}
         <h2 class="post-item__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
@@ -34,6 +36,7 @@
           {{ if and .Params.author (not .Date.IsZero) }} &nbsp;·&nbsp; {{ end }}
           {{ if not .Date.IsZero }}{{ .Date.Format "January 2006" }}{{ end }}
         </p>
+        <a href="{{ .RelPermalink }}" class="post-item__readmore">Read more →</a>
       </div>
     </div>
     {{ end }}

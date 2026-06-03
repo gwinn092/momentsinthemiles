@@ -5,7 +5,7 @@ description: "Behind the counter. In the kitchen. Present. What a bánh mì shop
 category: "Stories"
 author: "Karlee"
 draft: false
-image: "Bánh mì shop in Hanoi — behind the counter, plastic stools, evening light"
+image: "/images/essays/hanoi-banh-mi-shop.jpg"
 ---
 
 We smelled it before we saw it.

@@ -5,7 +5,7 @@ description: "Peak season Europe costs more and delivers less. Shoulder season i
 category: "Guides"
 author: "Karlee & Jesse"
 draft: false
-image: "Empty European piazza — early morning light, café chairs just set out"
+image: "/images/pages/guides-oregon-coast.jpg"
 ---
 
 My first time in Paris, I was lost.

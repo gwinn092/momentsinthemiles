@@ -14,20 +14,8 @@
   </header>
 
   {{ with .Params.image }}
-  <div class="content-container">
-    <div class="article-hero-image">
-      <div class="image-placeholder">
-        <span>[IMAGE: {{ . }}]</span>
-      </div>
-    </div>
-  </div>
-  {{ else }}
-  <div class="content-container">
-    <div class="article-hero-image">
-      <div class="image-placeholder">
-        <span>[IMAGE: {{ .Title }}]</span>
-      </div>
-    </div>
+  <div class="article-hero-wrap">
+    <img src="{{ . | absURL }}" alt="{{ $.Title }}" class="article-hero-img" loading="eager">
   </div>
   {{ end }}
 

@@ -5,7 +5,7 @@ description: "Movement that lasts isn't accidental. It's designed. Here's the fi
 category: "Essays"
 author: "Karlee & Jesse"
 draft: false
-image: "Van interior — organized, minimal, everything in its place"
+image: "/images/van-life/van-colorado-fall.jpg"
 ---
 
 There's a version of this life that looks spontaneous from the outside.

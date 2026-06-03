@@ -5,7 +5,7 @@ description: "The slow, unglamorous system that made our travel life sustainable
 category: "Guides"
 author: "Karlee & Jesse"
 draft: false
-image: "Van parked at BLM land with desert landscape — golden hour"
+image: "/images/van-life/van-golden-hour.jpg"
 ---
 
 <!-- DRAFT: REVIEW NUMBERS WITH KARLEE BEFORE PUBLISHING -->

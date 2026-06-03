@@ -5,7 +5,7 @@ description: "The question nobody's asking: is it irresponsible not to? On the c
 category: "Essays"
 author: "Karlee"
 draft: false
-image: "Open highway at dusk — van in the distance, wide sky"
+image: "/images/essays/grandparents.jpg"
 ---
 
 I've been asked some version of this question more times than I can count.

@@ -1468,3 +1468,176 @@ p:last-child {
 .kit-callout__link:hover {
   opacity: 0.7;
 }
+
+/* ===================================================
+   REAL PHOTOS — Image styles
+   =================================================== */
+
+/* Article hero image */
+.article-hero-wrap {
+  width: 100%;
+  max-height: 520px;
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+.article-hero-img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Homepage & list card images */
+.card__image-link {
+  display: block;
+  overflow: hidden;
+  border-radius: 2px;
+  aspect-ratio: 3 / 2;
+  background: var(--sand);
+}
+.card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.card:hover .card__img {
+  transform: scale(1.03);
+}
+.card__img-placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--sand);
+  min-height: 200px;
+}
+
+/* Section list page post item images */
+.post-item__image-link {
+  display: block;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 2px;
+}
+.post-item__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.post-item:hover .post-item__img {
+  transform: scale(1.03);
+}
+.post-item__img-placeholder {
+  background: var(--sand);
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+}
+.post-item__readmore {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--terracotta);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  margin-top: 0.75rem;
+  display: inline-block;
+}
+.post-item__readmore:hover {
+  opacity: 0.7;
+}
+
+/* ===================================================
+   BY THE NUMBERS — About page stats block
+   =================================================== */
+.by-the-numbers {
+  padding: 5rem 0;
+  background: var(--ink);
+  color: var(--paper);
+  text-align: center;
+}
+.by-the-numbers .eyebrow {
+  color: var(--terracotta);
+}
+.numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem 2rem;
+  margin-top: 3rem;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.number-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.number-value {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 6vw, 4rem);
+  font-weight: 600;
+  color: var(--terracotta);
+  line-height: 1;
+}
+.number-label {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+}
+@media (max-width: 640px) {
+  .numbers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1.5rem;
+  }
+}
+
+/* ===================================================
+   FEATURED SECTION — "More" links row
+   =================================================== */
+.featured__more {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+}
+
+/* ===================================================
+   HOMEPAGE FEATURED — 6-up grid
+   =================================================== */
+.featured__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem 2rem;
+  margin-top: 2rem;
+}
+@media (max-width: 900px) {
+  .featured__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .featured__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===================================================
+   ABOUT PAGE — image improvements
+   =================================================== */
+.about-section__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+}

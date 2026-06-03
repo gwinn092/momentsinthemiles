@@ -6,7 +6,7 @@ category: "Essays"
 author: "Karlee"
 draft: false
 pinned: true
-image: "Van parked at the edge of the road, wide open horizon ahead"
+image: "/images/pages/hero-mountaintop.jpg"
 ---
 
 The night before we left, we had a bonfire.

@@ -5,7 +5,7 @@ description: "Travel in your thirties and forties isn't a consolation prize. It'
 category: "Essays"
 author: "Karlee & Jesse"
 draft: false
-image: "Open road ahead — van in the distance, wide sky, no timeline"
+image: "/images/essays/karlee-white-sands.jpg"
 ---
 
 Somewhere along the way, a story gets told about who travel is for.

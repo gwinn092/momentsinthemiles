@@ -5,7 +5,7 @@ description: "Chiang Mai, day one. A food cart. A bowl of soup. And a lesson tha
 category: "Stories"
 author: "Karlee"
 draft: false
-image: "Food cart in Chiang Mai — steam rising, plastic stools, locals eating"
+image: "/images/essays/hanoi-banh-mi-shop.jpg"
 ---
 
 ## Chiang Mai, day one

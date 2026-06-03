@@ -5,7 +5,7 @@ description: "Travel doesn't announce that it's changing you. It simply begins. 
 category: "Essays"
 author: "Karlee & Jesse"
 draft: false
-image: "Desert highway at four in the morning — headlights, open road, wide sky"
+image: "/images/pages/about-beach-sunset.jpg"
 ---
 
 The first thing you notice isn't the view.

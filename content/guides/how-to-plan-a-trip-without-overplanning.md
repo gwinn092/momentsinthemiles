@@ -5,7 +5,7 @@ description: "The best things that have ever happened to us on the road were not
 category: "Guides"
 author: "Karlee & Jesse"
 draft: false
-image: "Slow boat on the Mekong — wide river, jungle banks, unhurried"
+image: "/images/guides/laos-sunset.jpg"
 ---
 
 There's a version of trip planning that feels productive but quietly ruins the trip before it starts.
