@@ -125,6 +125,25 @@
     headings.forEach(h => tocSpy.observe(h));
   }
 
+  // --- Gallery lightbox ---
+  const lightbox = document.getElementById('lightbox');
+  if (lightbox) {
+    const lbImg = lightbox.querySelector('.lightbox__img');
+    const lbCap = lightbox.querySelector('.lightbox__caption');
+    const closeLb = () => { lightbox.classList.remove('is-open'); lightbox.setAttribute('aria-hidden', 'true'); lbImg.src = ''; };
+    document.querySelectorAll('.gallery-item').forEach(btn => {
+      btn.addEventListener('click', () => {
+        lbImg.src = btn.getAttribute('data-full');
+        lbImg.alt = btn.getAttribute('data-caption') || '';
+        lbCap.textContent = btn.getAttribute('data-caption') || '';
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+      });
+    });
+    lightbox.addEventListener('click', (e) => { if (e.target !== lbImg) closeLb(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLb(); });
+  }
+
   // --- Back to top ---
   const toTop = document.querySelector('.back-to-top');
   if (toTop) {

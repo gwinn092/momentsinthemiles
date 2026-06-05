@@ -1,0 +1,41 @@
+{{ define "main" }}
+{{ with .Params.hero_image }}
+<section class="section-hero">
+  <img src="{{ $.Site.Home.RelPermalink }}{{ strings.TrimPrefix "/" . }}" alt="{{ $.Title }}" class="section-hero__img" loading="eager">
+  <div class="section-hero__overlay">
+    <div class="container-wide section-hero__content">
+      <span class="eyebrow">Gallery</span>
+      <h1>{{ $.Title }}</h1>
+      {{ with $.Description }}<p class="section-hero__desc">{{ . }}</p>{{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Content }}
+<div class="list-intro">
+  <div class="list-intro__inner">{{ . }}</div>
+</div>
+{{ end }}
+
+<div class="post-list">
+  <div class="container-wide">
+    <div class="gallery-grid">
+      {{ range .Params.gallery }}
+      {{ $src := printf "%s%s" $.Site.Home.RelPermalink (strings.TrimPrefix "/" .src) }}
+      <button type="button" class="gallery-item" data-full="{{ $src }}" data-caption="{{ .alt }}" aria-label="View larger: {{ .alt }}">
+        <img src="{{ $src }}" alt="{{ .alt }}" loading="lazy">
+      </button>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button type="button" class="lightbox__close" aria-label="Close">&times;</button>
+  <figure class="lightbox__figure">
+    <img class="lightbox__img" src="" alt="">
+    <figcaption class="lightbox__caption"></figcaption>
+  </figure>
+</div>
+{{ end }}
