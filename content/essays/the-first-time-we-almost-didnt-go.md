@@ -21,6 +21,8 @@ We were holding back — probably for more reasons than we admitted out loud. Mo
 
 Dreaming felt safe. Committing felt different.
 
+{{< photo src="/images/essays/sedona-overlook.jpg" alt="Looking out over the Sedona red rocks" caption="Sedona, Arizona" >}}
+
 I reopened the same flight search more times than I can count. Checked prices. Closed the tab. Opened it again days later. We weren't saying no — but we weren't saying yes either.
 
 Then one evening, after staring at the screen longer than necessary, we finally did it. We hit book.

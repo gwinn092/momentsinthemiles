@@ -14,6 +14,8 @@ But so is everything else. And after eight years of living this life full-time, 
 
 This isn't a scare piece. It's the honest conversation we wish someone had pulled us aside to have before we left. The stuff that lives between the highlight reels.
 
+{{< photo src="/images/van-life/rainier-overlook.jpg" alt="Sitting together looking out over the mountains" caption="Mount Rainier National Park" >}}
+
 ## Finding a place to sleep is a skill — and it never fully stops being stressful
 
 This one catches almost everyone off guard. You imagine pulling off somewhere beautiful and drifting off under the stars. Sometimes that happens. But more often, especially when you're in or near a city, finding a safe, quiet, legal place to sleep is a nightly puzzle that requires real mental energy.

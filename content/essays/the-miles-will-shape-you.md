@@ -47,6 +47,8 @@ It turned out to be enough.
 
 Seven years. All 48 continental states. Tens of thousands of miles of road that looked like nothing on a map and everything in person. Desert light in Utah at golden hour, the kind that makes you pull over whether you planned to or not. The particular silence of a forest in the Pacific Northwest, so deep it has its own sound. Storm systems moving across the plains so big you can watch them from miles away, tracking them like something alive.
 
+{{< photo src="/images/essays/antelope-canyon.jpg" alt="Silhouetted together in a slot canyon" caption="Antelope Canyon, Arizona" >}}
+
 The miles gave us all of that.
 
 But more than the places — and this is the part that's harder to explain — they gave us ourselves. A clearer version. A more honest one. Road life strips away the performance of ordinary life. There's no keeping up with anyone in seventy square feet. There's no autopilot. You find out quickly what you actually need, what you can genuinely let go of, and what kind of person you are when comfort stops being guaranteed.

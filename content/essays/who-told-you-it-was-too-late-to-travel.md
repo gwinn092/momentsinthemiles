@@ -18,6 +18,8 @@ I used to feel the need to defend the choice. To explain the finances, justify t
 
 I don't do that anymore. Because I've come to believe the question is aimed at the wrong person.
 
+{{< photo src="/images/essays/grinnell-glacier.jpg" alt="Standing at the edge of Grinnell Glacier" caption="Grinnell Glacier, Montana" >}}
+
 ## THE QUESTION NOBODY'S ASKING
 
 Here's what I want to ask back:

@@ -12,6 +12,8 @@ We didn't set out to live sustainably. We set out to live freely. It turns out t
 
 Eight years in a van will do that to you. Not because you made a list of virtuous choices, but because the van makes a lot of choices for you. Space is finite. Water is finite. Power is finite. And somewhere along the way, living within those limits stops feeling like sacrifice and starts feeling like the most sane way to exist.
 
+{{< photo src="/images/van-life/colorado-summit.jpg" alt="Resting at a Colorado summit" caption="Above treeline, Colorado" >}}
+
 Let us show you what we mean.
 
 ## What 80 square feet actually looks like

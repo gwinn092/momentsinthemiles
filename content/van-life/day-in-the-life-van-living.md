@@ -14,6 +14,8 @@ The real version lives somewhere in between, and it shifts depending on the day.
 
 Here's what a real day actually looks like — not the highlight, not the horror story. The composite.
 
+{{< photo src="/images/van-life/teton-lake.jpg" alt="Standing in a lake below the Tetons" caption="Grand Teton National Park" >}}
+
 ---
 
 ## Morning: the first thing that happens is not romantic
