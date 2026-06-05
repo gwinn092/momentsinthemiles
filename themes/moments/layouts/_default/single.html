@@ -4,7 +4,7 @@
 <article class="article">
   {{ with .Params.image }}
   <div class="article-hero-wrap">
-    <img src="{{ $.Site.Home.RelPermalink }}{{ strings.TrimPrefix "/" . }}" alt="{{ $.Title }}" class="article-hero-img" loading="eager">
+    <img src="{{ $.Site.Home.RelPermalink }}{{ strings.TrimPrefix "/" . }}" alt="{{ $.Title }}" class="article-hero-img" loading="eager"{{ with $.Params.hero_position }} style="object-position: {{ . }}"{{ end }}>
   </div>
   {{ end }}
 

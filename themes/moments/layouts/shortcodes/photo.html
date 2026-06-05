@@ -1,0 +1,6 @@
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" | default "" -}}
+<figure>
+  <img src="{{ .Site.Home.RelPermalink }}{{ strings.TrimPrefix "/" $src }}" alt="{{ $alt }}" loading="lazy">
+  {{- with .Get "caption" }}<figcaption>{{ . }}</figcaption>{{ end -}}
+</figure>

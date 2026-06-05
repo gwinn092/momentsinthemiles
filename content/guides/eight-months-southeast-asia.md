@@ -6,6 +6,7 @@ category: "Guides"
 author: "Karlee & Jesse"
 draft: false
 image: "/images/guides/sea-sleeper-bus.jpg"
+hero_position: "center 60%"
 ---
 
 We didn't plan to spend eight months in Southeast Asia. We planned to spend three, maybe four. But that's the thing about this part of the world — it keeps offering you one more reason to stay, one more bus to catch, one more village you've never heard of that turns out to be the one you'll talk about for years.
@@ -27,6 +28,8 @@ Eight days felt like both too long and not nearly enough. We wandered temples in
 ### Chiang Mai — 26 days
 
 We didn't intend to stay in Chiang Mai for nearly a month. We booked a week and then kept extending. It's that kind of place.
+
+{{< photo src="/images/guides/thailand-chiang-mai.jpg" alt="A golden temple and motorbike traffic in Chiang Mai" caption="Chiang Mai" >}}
 
 We moved through four different neighborhoods during our stay — Phra Singh, Hai Ya, Chang Khlan, and in and around the old city — and each one had its own texture. The old town with its moat and crumbling temple walls felt almost like a village. Chang Khlan buzzed with the Night Bazaar. Hai Ya was quieter, residential, the kind of place where you find a coffee shop that becomes yours.
 
@@ -53,6 +56,8 @@ Chiang Khong was the edge of Thailand — a small border town on the Mekong wher
 ### The slow boat — Pakbeng & beyond
 
 The slow boat from the Thai border into Laos is a two-day journey down the Mekong on a long wooden vessel with rows of seats and views that scroll past like a painting you can't quite believe is real. It is one of the most recommended experiences in Southeast Asia, and the recommendations are earned.
+
+{{< photo src="/images/guides/laos-sunset.jpg" alt="Sunset over the Mekong with longboats" caption="Sunset on the Mekong" >}}
 
 We were supposed to stop one night in Pakbeng, the small river town at the halfway point, and continue to Luang Prabang the next morning.
 
