@@ -1,45 +1,80 @@
 {{ define "main" }}
-<div class="list-header">
-  <div class="content-container">
-    {{ with .Params.hero_image }}
-    <div class="section-hero-image">
-      <img src="{{ $.Site.Home.RelPermalink }}{{ strings.TrimPrefix "/" . }}" alt="{{ $.Title }}" loading="eager">
+{{ with .Params.hero_image }}
+<section class="section-hero">
+  <img src="{{ $.Site.Home.RelPermalink }}{{ strings.TrimPrefix "/" . }}" alt="{{ $.Title }}" class="section-hero__img" loading="eager">
+  <div class="section-hero__overlay">
+    <div class="container-wide section-hero__content">
+      <span class="eyebrow">{{ $.Section | title }}</span>
+      <h1>{{ $.Title }}</h1>
+      {{ with $.Description }}<p class="section-hero__desc">{{ . }}</p>{{ end }}
     </div>
-    {{ end }}
+  </div>
+</section>
+{{ else }}
+<div class="list-header">
+  <div class="container-wide">
     <span class="eyebrow">{{ .Section | title }}</span>
     <h1>{{ .Title }}</h1>
-    {{ with .Content }}<p>{{ . }}</p>{{ end }}
+    {{ with .Description }}<p class="list-header__desc">{{ . }}</p>{{ end }}
   </div>
 </div>
+{{ end }}
+
+{{ with .Content }}
+<div class="list-intro">
+  <div class="list-intro__inner">{{ . }}</div>
+</div>
+{{ end }}
 
 <div class="post-list">
-  <div class="content-container">
+  <div class="container-wide">
     {{ $pinned := where .Pages "Params.pinned" true }}
     {{ $rest := where .Pages "Params.pinned" "!=" true }}
-    {{ $pages := $pinned | append $rest }}
 
-    {{ range $pages }}
-    <div class="post-item{{ if .Params.pinned }} post-item--pinned{{ end }}">
-      <a href="{{ .RelPermalink }}" class="post-item__image-link">
+    {{ range $pinned }}
+    <article class="feature-card">
+      <a href="{{ .RelPermalink }}" class="feature-card__image">
         {{ if .Params.image }}
-        <img src="{{ $.Site.Home.RelPermalink }}{{ strings.TrimPrefix "/" .Params.image }}" alt="{{ .Title }}" class="post-item__img" loading="lazy">
-        {{ else }}
-        <div class="post-item__img-placeholder"></div>
+        <img src="{{ $.Site.Home.RelPermalink }}{{ strings.TrimPrefix "/" .Params.image }}" alt="{{ .Title }}" loading="lazy">
         {{ end }}
       </a>
-      <div class="post-item__body">
-        {{ with .Params.category }}<div class="post-item__category">{{ . }}</div>{{ end }}
-        <h2 class="post-item__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-        {{ with .Description }}<p class="post-item__excerpt">{{ . }}</p>{{ end }}
+      <div class="feature-card__body">
+        <span class="post-item__category">Lead Essay{{ with .Params.category }} · {{ . }}{{ end }}</span>
+        <h2 class="feature-card__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        {{ with .Description }}<p>{{ . }}</p>{{ end }}
         <p class="post-item__meta">
           {{ with .Params.author }}{{ . }}{{ end }}
           {{ if and .Params.author (not .Date.IsZero) }} &nbsp;·&nbsp; {{ end }}
           {{ if not .Date.IsZero }}{{ .Date.Format "January 2006" }}{{ end }}
+          {{ if .ReadingTime }} &nbsp;·&nbsp; {{ .ReadingTime }} min read{{ end }}
         </p>
         <a href="{{ .RelPermalink }}" class="post-item__readmore">Read more →</a>
       </div>
-    </div>
+    </article>
     {{ end }}
+
+    <div class="post-grid">
+      {{ range $rest }}
+      <article class="card">
+        <a href="{{ .RelPermalink }}" class="card__image-link">
+          {{ if .Params.image }}
+          <img src="{{ $.Site.Home.RelPermalink }}{{ strings.TrimPrefix "/" .Params.image }}" alt="{{ .Title }}" class="card__img" loading="lazy">
+          {{ else }}
+          <div class="card__img-placeholder"></div>
+          {{ end }}
+        </a>
+        <div class="card__body">
+          {{ with .Params.category }}<div class="card__category">{{ . }}</div>{{ end }}
+          <a href="{{ .RelPermalink }}" class="card__title">{{ .Title }}</a>
+          {{ with .Description }}<p class="card__excerpt">{{ . }}</p>{{ end }}
+          <p class="card__meta">
+            {{ if not .Date.IsZero }}{{ .Date.Format "January 2006" }}{{ end }}
+            {{ if .ReadingTime }} &nbsp;·&nbsp; {{ .ReadingTime }} min read{{ end }}
+          </p>
+        </div>
+      </article>
+      {{ end }}
+    </div>
   </div>
 </div>
 {{ end }}

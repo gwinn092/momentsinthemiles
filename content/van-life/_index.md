@@ -12,11 +12,15 @@ What nobody tells you about van life — what the photos don't show and the high
 
 But in between the sunsets and the open roads, there are messy mornings and cramped kitchens and the particular challenge of cooking a real meal in a space that doesn't care about your ambitions.
 
+{{< fullbleed src="/images/van-life/van-golden-hour.jpg" alt="The van parked at golden hour" >}}
+
 We figured out a rhythm fast. You have to. Jesse cooks, I prep, and somehow we move around each other in a galley the size of a closet without losing our minds — most of the time. For years it was just an induction stove and whatever we could make work. Getting a Ninja Crispi changed everything. Small victories matter when you live small.
 
 And then there are the late nights. Parked somewhere new, the day finally done, laughing about something that was frustrating four hours ago and is hilarious now. The wrong turn that added an hour. The campsite that looked better online. The thing that broke and got fixed with whatever we had. In a small space, you run out of places to hide from each other — and it turns out that's not a bad thing. It just makes you closer.
 
 Seven years. All 48 continental states. Waking up in national forests, riding out desert storms, watching the light change over landscapes that looked different every single morning.
+
+{{< fullbleed src="/images/van-life/van-colorado-fall.jpg" alt="The van surrounded by Colorado fall color" >}}
 
 It wasn't always pretty. It wasn't always comfortable. But it was ours — built on purpose, adjusted constantly, and worth every cramped, laughing, messy moment of it.
 
