@@ -6,6 +6,7 @@ category: "Essays"
 author: "Karlee & Jesse"
 draft: false
 image: "/images/pages/about-beach-sunset.jpg"
+hero_position: "center 35%"
 ---
 
 The first thing you notice isn't the view.

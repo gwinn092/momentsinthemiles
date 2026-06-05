@@ -6,6 +6,7 @@ category: "Essays"
 author: "Karlee & Jesse"
 draft: false
 image: "/images/essays/laos-gathering.jpg"
+hero_position: "center 40%"
 ---
 
 It's easy to think travel is about geography.

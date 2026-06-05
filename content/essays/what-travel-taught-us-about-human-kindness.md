@@ -6,6 +6,7 @@ category: "Stories"
 author: "Karlee"
 draft: false
 image: "/images/essays/hanoi-banh-mi-shop.jpg"
+hero_position: "center 55%"
 ---
 
 ## Chiang Mai, day one

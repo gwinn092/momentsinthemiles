@@ -6,6 +6,7 @@ category: "Van Life"
 author: "Karlee & Jesse"
 draft: false
 image: "/images/van-life/van-build-start.jpg"
+hero_position: "center 65%"
 ---
 
 After eight years of living full-time in our van, we've made a lot of decisions we'd make the same way again — and at least one major one we'd do completely differently. Our van build layout is the latter.

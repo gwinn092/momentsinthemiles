@@ -6,6 +6,7 @@ category: "Essays"
 author: "Karlee & Jesse"
 draft: false
 image: "/images/essays/karlee-roses.jpg"
+hero_position: "center 40%"
 ---
 
 There is a version of content creation that feels very productive. You watch what's working for someone else. You reverse-engineer it. You make your own version. You post it and wait.

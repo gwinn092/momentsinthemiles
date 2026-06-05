@@ -6,6 +6,7 @@ category: "Stories"
 author: "Karlee"
 draft: false
 image: "/images/essays/laos-vietnam-bus.jpg"
+hero_position: "center 70%"
 ---
 
 ## We talked about it for a year

@@ -6,6 +6,7 @@ category: "Guides"
 author: "Karlee & Jesse"
 draft: false
 image: "/images/guides/sea-sleeper-bus.jpg"
+hero_position: "center 60%"
 ---
 
 <!-- DRAFT: REVIEW NUMBERS WITH KARLEE BEFORE PUBLISHING -->
