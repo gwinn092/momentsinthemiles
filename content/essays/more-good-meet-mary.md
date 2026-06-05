@@ -1,5 +1,6 @@
 ---
 title: "More Good. (Meet Mary.)"
+tags: ["Connection", "Mindset"]
 date: 2025-06-09
 description: "One of the quiet gifts of a life spent moving is the people you meet along the way. Not the ones you plan for. The ones who just appear."
 category: "Essays"

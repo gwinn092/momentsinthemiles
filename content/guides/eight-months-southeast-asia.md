@@ -1,5 +1,6 @@
 ---
 title: "Eight Months in Southeast Asia: The Whole Honest Story"
+tags: ["Southeast Asia", "Planning", "Slow Travel"]
 date: 2025-06-23
 description: "From a slow boat on the Mekong to a motorbike on a mountain loop in northern Vietnam — this is what eight months in Southeast Asia actually looked like."
 category: "Guides"

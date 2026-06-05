@@ -1,5 +1,6 @@
 ---
 title: "Designing a Life That Moves"
+tags: ["Mindset", "Van Life"]
 date: 2025-02-03
 description: "Movement that lasts isn't accidental. It's designed. Here's the financial and structural reality of building a life that can keep moving."
 category: "Essays"

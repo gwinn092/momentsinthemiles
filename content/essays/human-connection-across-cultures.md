@@ -1,5 +1,6 @@
 ---
 title: "Human Connection Across Cultures"
+tags: ["Southeast Asia", "Connection"]
 date: 2025-02-17
 description: "Over time, the places blur. What stays are the people. From St. John to the American road to a birthday in Nusa Lembongan."
 category: "Essays"

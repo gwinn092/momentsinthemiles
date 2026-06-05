@@ -1,5 +1,6 @@
 ---
 title: "Why Copying Trends Slows Long-Term Growth"
+tags: ["Mindset"]
 date: 2025-06-16
 description: "Chasing trends is not a strategy. It's a treadmill. And the longer you stay on it, the harder it becomes to get off."
 category: "Essays"

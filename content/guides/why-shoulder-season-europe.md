@@ -1,5 +1,6 @@
 ---
 title: "Why Shoulder Season Is the Smartest Way to See Europe"
+tags: ["Europe", "Planning", "Budget"]
 date: 2025-04-07
 description: "Peak season Europe costs more and delivers less. Shoulder season isn't a compromise — for most of Europe, it's the better trip."
 category: "Guides"

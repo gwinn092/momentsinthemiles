@@ -1,5 +1,6 @@
 ---
 title: "The Miles Will Shape You (If You Let Them)"
+tags: ["Mindset", "Van Life", "Fear"]
 date: 2025-01-15
 description: "The pre-departure essay. For readers who are still deciding."
 category: "Essays"

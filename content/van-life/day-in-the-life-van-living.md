@@ -1,5 +1,6 @@
 ---
 title: "Day in the Life: What Full-Time Van Living Actually Looks Like"
+tags: ["Van Life"]
 date: 2025-05-12
 description: "Some days we're parked somewhere so beautiful it still doesn't feel real. Some days we're in a Planet Fitness parking lot because the wifi is reliable and we needed a shower. Here's the composite."
 category: "Van Life"

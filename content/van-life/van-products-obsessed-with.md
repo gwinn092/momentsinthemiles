@@ -1,5 +1,6 @@
 ---
 title: "Cool New Van Products We're Obsessed With (And a Few We Wish We'd Had the First Time)"
+tags: ["Van Life", "Gear"]
 date: 2025-07-28
 description: "Eight years in, we know what works, what we'd redo, and what we wish had existed when we first started building. These are the finds that are actually changing what a van interior can be."
 category: "Van Life"

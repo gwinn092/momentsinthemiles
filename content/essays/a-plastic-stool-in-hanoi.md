@@ -1,5 +1,6 @@
 ---
 title: "A Plastic Stool in Hanoi"
+tags: ["Southeast Asia", "Food", "Slow Travel"]
 date: 2025-03-24
 description: "Behind the counter. In the kitchen. Present. What a bánh mì shop in Hanoi taught me about being closer to life."
 category: "Stories"

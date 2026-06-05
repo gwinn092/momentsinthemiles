@@ -1,5 +1,6 @@
 ---
 title: "Who Told You It Was Too Late to Travel?"
+tags: ["Mindset", "Fear"]
 date: 2025-04-14
 description: "The question nobody's asking: is it irresponsible not to? On the camper that never happened, the cost of staying, and the irresponsibility of the unlived life."
 category: "Essays"

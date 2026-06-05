@@ -1,5 +1,6 @@
 ---
 title: "Travel in Your 30s, 40s & Beyond"
+tags: ["Mindset", "Planning"]
 date: 2025-03-03
 description: "Travel in your thirties and forties isn't a consolation prize. It's its own thing entirely — different in texture, depth, and what it offers. In many ways, better."
 category: "Essays"

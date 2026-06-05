@@ -1,5 +1,6 @@
 ---
 title: "The Honest Reality of Full-Time Van Life (No Filter)"
+tags: ["Van Life", "Mindset"]
 date: 2025-05-19
 description: "We've been living full-time in a van for eight years. We know what this life looks like from the inside — not the reel, not the highlight. The actual inside."
 category: "Van Life"

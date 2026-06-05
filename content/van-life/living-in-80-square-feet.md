@@ -1,5 +1,6 @@
 ---
 title: "How Living in 80 Square Feet Quietly Changed Everything"
+tags: ["Van Life", "Sustainability"]
 date: 2025-05-05
 description: "We didn't set out to live sustainably. We set out to live freely. It turns out those two things have a lot more overlap than we expected."
 category: "Van Life"

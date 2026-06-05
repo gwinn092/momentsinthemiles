@@ -1,5 +1,6 @@
 ---
 title: "Our Exact 10-Day Travel Budget Breakdown (With Real Numbers)"
+tags: ["Budget", "Planning", "Southeast Asia"]
 date: 2025-03-31
 description: "Real numbers. Current figures. A genuine 10-day breakdown for two people traveling Southeast Asia — the way we actually travel. Not luxury, not suffer-mode. Comfortable, immersive, real."
 category: "Guides"

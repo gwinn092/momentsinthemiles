@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="list-header">
+  <div class="container-wide">
+    <span class="eyebrow">Browse</span>
+    <h1>Topics</h1>
+    <p class="list-header__desc">Explore the writing by what moves you — the road, the money, the fear, the people.</p>
+  </div>
+</div>
+
+<div class="post-list">
+  <div class="container-wide">
+    <div class="tag-cloud">
+      {{ range .Data.Terms.ByCount }}
+      <a href="{{ .Page.RelPermalink }}" class="tag-chip tag-chip--lg">{{ .Page.LinkTitle | title }} <span class="tag-chip__count">{{ .Count }}</span></a>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

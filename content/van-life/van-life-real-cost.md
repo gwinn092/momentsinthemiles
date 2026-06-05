@@ -1,5 +1,6 @@
 ---
 title: "How Much Does Van Life Actually Cost? Here's Our Real Number After 8 Years"
+tags: ["Van Life", "Budget"]
 date: 2025-07-14
 description: "Eight years in, we can finally give you an honest answer — not a polished highlight reel, but the real breakdown of what van life costs us right now."
 category: "Van Life"

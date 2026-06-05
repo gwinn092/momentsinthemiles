@@ -1,5 +1,6 @@
 ---
 title: "How We Save for Travel Without Putting Our Life on Hold"
+tags: ["Budget", "Planning"]
 date: 2025-03-17
 description: "The slow, unglamorous system that made our travel life sustainable. No windfalls, no tech salary, no rich parents — just a decision and the structure to back it up."
 category: "Guides"

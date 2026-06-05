@@ -1,5 +1,6 @@
 ---
 title: "The Best Van Build Layouts for Full-Time Van Life (And What We Wish We'd Known)"
+tags: ["Van Life", "Gear"]
 date: 2025-07-07
 description: "After eight years of living full-time in our van, we've made a lot of decisions we'd make the same way again — and at least one major one we'd do completely differently. Our van build layout is the latter."
 category: "Van Life"

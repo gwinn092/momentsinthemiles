@@ -1,5 +1,6 @@
 ---
 title: "What We'd Do Differently in Our Van Build"
+tags: ["Van Life", "Gear"]
 date: 2025-07-21
 description: "Eight years ago, Jesse built out our van with his own hands. We've been living with those decisions every single day since. Here's what we'd change."
 category: "Van Life"

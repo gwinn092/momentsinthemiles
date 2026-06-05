@@ -1,5 +1,6 @@
 ---
 title: "The River That Gave and Took"
+tags: ["Southeast Asia", "Connection"]
 date: 2025-03-10
 description: "Northern Laos. The slow boat, Vieng, his village, and the moment that humbled everything."
 category: "Stories"

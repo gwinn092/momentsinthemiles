@@ -1,5 +1,6 @@
 ---
 title: "How Travel Shapes Who You Are"
+tags: ["Mindset", "Slow Travel"]
 date: 2025-01-20
 description: "Travel doesn't announce that it's changing you. It simply begins. After all these miles, what feels clearest is this: travel hasn't made us different people. It has made us more fully ourselves."
 category: "Essays"

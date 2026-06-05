@@ -1,5 +1,6 @@
 ---
 title: "How to Plan a Trip Without Overplanning It"
+tags: ["Planning", "Mindset"]
 date: 2025-04-21
 description: "The best things that have ever happened to us on the road were not on the list. Here's the difference between a framework and an itinerary — and why it matters."
 category: "Guides"

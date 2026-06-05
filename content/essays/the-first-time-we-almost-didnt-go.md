@@ -1,5 +1,6 @@
 ---
 title: "The First Time We Almost Didn't Go"
+tags: ["Fear", "Southeast Asia", "Mindset"]
 date: 2025-02-10
 description: "Laos to Vietnam. The bus, the mountain road, the border at dawn. A year of hesitation — and what happened when we finally said yes."
 category: "Stories"

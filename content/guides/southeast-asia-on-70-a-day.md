@@ -1,5 +1,6 @@
 ---
 title: "A Realistic Guide to Traveling Southeast Asia on $70 a Day"
+tags: ["Southeast Asia", "Budget"]
 date: 2025-04-14
 description: "Seventy dollars a day sounds like a constraint. In Southeast Asia, it's closer to abundance. Eight months across eight countries — here's how it actually works."
 category: "Guides"

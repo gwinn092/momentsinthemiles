@@ -1,5 +1,6 @@
 ---
 title: "Freedom Has Seasons"
+tags: ["Mindset", "Van Life"]
 date: 2025-01-27
 description: "Seven years of van life didn't give us one version of freedom. It gave us several — and taught us that each one was right for its season."
 category: "Essays"

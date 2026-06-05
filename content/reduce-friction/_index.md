@@ -1,10 +1,11 @@
 ---
 title: "Reduce Friction"
 description: "Practical systems for a life in motion. The tools, habits, and decisions that make sustainable travel possible."
+hero_image: "/images/pages/reduce-friction-van.jpg"
 ---
 
 The part nobody talks about.
 
-Mail that still reaches you. Banks that don't freeze your card in Vietnam. Health insurance that doesn't require a permanent address. The apps we actually use, the systems we actually built, the things we wish someone had just written down before we left.
+Staying out here isn't about wanderlust. It's about logistics — the quiet systems that decide whether a life in motion is actually sustainable. Mail that still reaches you. Banks that don't freeze your card in Vietnam. Health insurance that doesn't require a permanent address. The apps we actually use and the habits we built so the road stops fighting us.
 
-We're writing it all down now. Check back soon — this section is coming.
+We're building this section out piece by piece. But the single most useful thing we've made — the one we wish someone had handed us before we left — is already here:

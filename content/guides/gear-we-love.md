@@ -1,5 +1,6 @@
 ---
 title: "Gear That's Earned Its Spot in the Van"
+tags: ["Gear", "Van Life"]
 date: 2025-07-01
 description: "We don't do gear reviews. We don't test products for a week and tell you what we think. Everything on this list has lived in our van for months or years. This is what we actually grab every day."
 category: "Guides"

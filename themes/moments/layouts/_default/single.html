@@ -50,6 +50,13 @@
 
       <!-- POST FOOTER -->
       <footer class="post-footer">
+        {{ with .GetTerms "tags" }}
+        <div class="article-tags">
+          <span class="article-tags__label">Topics</span>
+          {{ range . }}<a href="{{ .RelPermalink }}" class="tag-chip">{{ .LinkTitle | title }}</a>{{ end }}
+        </div>
+        {{ end }}
+
         <!-- Author bio -->
         <div class="author-bio">
           <img src="{{ .Site.Home.RelPermalink }}images/essays/jesse-karlee-mountains.jpg" alt="Jesse and Karlee" class="author-bio__img" loading="lazy">

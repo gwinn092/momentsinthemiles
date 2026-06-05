@@ -1,5 +1,6 @@
 ---
 title: "What Travel Taught Us About Human Kindness"
+tags: ["Southeast Asia", "Connection", "Food"]
 date: 2025-02-24
 description: "Chiang Mai, day one. A food cart. A bowl of soup. And a lesson that stayed with us for eight months."
 category: "Stories"
