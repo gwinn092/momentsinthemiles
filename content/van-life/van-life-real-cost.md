@@ -5,7 +5,7 @@ description: "Eight years in, we can finally give you an honest answer — not a
 category: "Van Life"
 author: "Karlee & Jesse"
 draft: true
-image: "Van at a gas station — the real costs of life on the road"
+image: "/images/van-life/van-lake-powell.jpg"
 ---
 
 <!-- DRAFT — needs Jesse's maintenance average before publishing. See [JESSE] note below. -->

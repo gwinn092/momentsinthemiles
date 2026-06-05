@@ -5,7 +5,7 @@ description: "Eight years in, we know what works, what we'd redo, and what we wi
 category: "Van Life"
 author: "Karlee & Jesse"
 draft: true
-image: "Van interior detail — products that make the space work"
+image: "/images/van-life/van-interior-lake.jpg"
 ---
 
 <!-- DRAFT — affiliate links need to be added/confirmed before publishing. [Jesse] notes throughout. Also needs a link to the fan breakdown post once that's live. -->

@@ -29,6 +29,8 @@ This is something we thought we'd nailed in our own build. We knew we'd be worki
 
 Our current van has a U-shaped convertible layout. When it's set up as a couch, it seats us plus two or three other people comfortably — which is genuinely great for hosting friends on the road. When it's converted to a bed, it's spacious. And as a workspace, it gives us room to spread out.
 
+{{< photo src="/images/van-life/van-galley-window.jpg" alt="The van galley kitchen with a window view over a lake" caption="Our galley — the window does a lot of the work" >}}
+
 On paper, it's one of the most space-efficient layouts you can do in a van. We still believe that.
 
 The problem is what it requires of you every single day.

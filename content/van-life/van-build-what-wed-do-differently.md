@@ -5,7 +5,7 @@ description: "Eight years ago, Jesse built out our van with his own hands. We've
 category: "Van Life"
 author: "Karlee & Jesse"
 draft: true
-image: "Van interior — eight years of living with the decisions we made"
+image: "/images/van-life/van-galley-window.jpg"
 ---
 
 <!-- DRAFT — needs Jesse to fill in solar/electrical specs, confirm hydronic system, and add affiliate product picks before publishing. [JESSE] notes throughout. -->
