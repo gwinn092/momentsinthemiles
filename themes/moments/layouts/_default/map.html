@@ -1,0 +1,148 @@
+{{ define "main" }}
+<header class="map-header">
+  <div class="content-container">
+    <span class="eyebrow">The Map</span>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="map-header__desc">{{ . }}</p>{{ end }}
+    {{ with .Content }}<div class="map-header__intro">{{ . }}</div>{{ end }}
+  </div>
+</header>
+
+<section class="map-section map-section--us">
+  <div class="container-wide">
+    <div class="map-head">
+      <div>
+        <span class="eyebrow">{{ .Params.us_eyebrow | default "United States" }}</span>
+        <h2>{{ .Params.us_heading | default "The Lower Forty-Eight" }}</h2>
+      </div>
+      <ul class="map-legend" aria-hidden="true">
+        <li><span class="map-legend__swatch map-legend__swatch--visited"></span>Together</li>
+        <li><span class="map-legend__swatch map-legend__swatch--notyet"></span>Still on the list</li>
+      </ul>
+    </div>
+    <div class="map-frame">
+      {{ partial "map-us.html" . }}
+    </div>
+    {{ with .Params.us_footnote }}<p class="map-footnote">{{ . }}</p>{{ end }}
+    <div class="map-stats">
+      {{ range .Params.us_stats }}
+      <div class="number-item">
+        <span class="number-value">{{ .value }}</span>
+        <span class="number-label">{{ .label }}</span>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="map-section map-section--world">
+  <div class="container-wide">
+    <div class="map-head">
+      <div>
+        <span class="eyebrow">{{ .Params.world_eyebrow | default "Farther Afield" }}</span>
+        <h2>{{ .Params.world_heading | default "Then We Bought One-Way Tickets" }}</h2>
+      </div>
+      <ul class="map-legend" aria-hidden="true">
+        <li><span class="map-legend__swatch map-legend__swatch--visited"></span>Together</li>
+        <li><span class="map-legend__swatch map-legend__swatch--solo"></span>One of us, before us</li>
+        <li><span class="map-legend__swatch map-legend__swatch--dot"></span>Too small to ink</li>
+      </ul>
+    </div>
+    {{ with .Params.world_lead }}<p class="map-lead">{{ . }}</p>{{ end }}
+    <div class="map-frame">
+      {{ partial "map-world.html" . }}
+    </div>
+    <div class="map-stats">
+      {{ range .Params.world_stats }}
+      <div class="number-item">
+        <span class="number-value">{{ .value }}</span>
+        <span class="number-label">{{ .label }}</span>
+      </div>
+      {{ end }}
+    </div>
+    {{ with .Params.apart_line }}<p class="map-apart">{{ . }}</p>{{ end }}
+  </div>
+</section>
+
+<section class="map-cta">
+  <div class="content-container">
+    <p class="map-cta__line">{{ .Params.cta_line | default "The map is the outline. The stories are the point." }}</p>
+    <div class="hero__buttons">
+      <a href="{{ .Site.Home.RelPermalink }}essays/" class="btn btn-primary">Read the Essays</a>
+      <a href="{{ .Site.Home.RelPermalink }}guides/eight-months-southeast-asia/" class="btn btn-secondary">Eight Months in Southeast Asia</a>
+    </div>
+  </div>
+</section>
+
+<p class="visually-hidden">Together we have visited all 48 continental United States, plus Thailand, Laos, Vietnam, Cambodia, Malaysia, Singapore, and Indonesia. Before we met, Jesse traveled South Africa and Karlee lived five years on St. John in the U.S. Virgin Islands; we each backpacked Europe separately.</p>
+
+<div class="map-tooltip" id="mapTooltip" hidden>
+  <span class="map-tooltip__name"></span>
+  <span class="map-tooltip__note"></span>
+</div>
+
+<script>
+(function () {
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // --- Ink-in animation: states/countries fill west to east on first view ---
+  var svgs = document.querySelectorAll('.map-svg');
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    svgs.forEach(function (svg) {
+      var vbWidth = svg.viewBox.baseVal.width || 1000;
+      svg.classList.add('map-anim');
+      svg.querySelectorAll('.mp--visited, .mp--solo').forEach(function (p) {
+        var b = p.getBBox();
+        p.style.transitionDelay = Math.round((b.x + b.width / 2) / vbWidth * 1100) + 'ms';
+      });
+      var io = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('is-inked'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.35 });
+      io.observe(svg);
+    });
+  }
+
+  // --- Tooltip ---
+  var tip = document.getElementById('mapTooltip');
+  var tipName = tip.querySelector('.map-tooltip__name');
+  var tipNote = tip.querySelector('.map-tooltip__note');
+  var current = null;
+
+  function show(target, x, y) {
+    if (current !== target) {
+      current = target;
+      tipName.textContent = target.getAttribute('data-name');
+      var note = target.getAttribute('data-note') || '';
+      tipNote.textContent = note;
+      tipNote.style.display = note ? '' : 'none';
+      tip.hidden = false;
+    }
+    var w = tip.offsetWidth, h = tip.offsetHeight;
+    var left = x + 16, top = y + 18;
+    if (left + w > window.innerWidth - 10) left = x - w - 12;
+    if (top + h > window.innerHeight - 10) top = y - h - 12;
+    tip.style.left = left + 'px';
+    tip.style.top = top + 'px';
+  }
+
+  function hide() { current = null; tip.hidden = true; }
+
+  svgs.forEach(function (svg) {
+    svg.addEventListener('pointermove', function (e) {
+      var t = e.target.closest('[data-name]');
+      if (t) { show(t, e.clientX, e.clientY); } else { hide(); }
+    });
+    svg.addEventListener('pointerdown', function (e) {
+      var t = e.target.closest('[data-name]');
+      if (t) { show(t, e.clientX, e.clientY); }
+    });
+    svg.addEventListener('pointerleave', hide);
+  });
+  document.addEventListener('pointerdown', function (e) {
+    if (!e.target.closest('.map-svg')) hide();
+  });
+})();
+</script>
+{{ end }}

@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="hero__image">
-        <img src="{{ .Site.Home.RelPermalink }}images/pages/hero-mountaintop.jpg" alt="Mountaintop view from the road" class="page-image" loading="eager">
+        <img src="{{ .Site.Home.RelPermalink }}images/pages/hero-mountaintop.jpg" alt="Mountaintop view from the road" class="page-image" loading="eager" fetchpriority="high">
       </div>
     </div>
   </div>
@@ -74,6 +74,7 @@
       <div class="number-item"><span class="number-value">1</span><span class="number-label">van (still going)</span></div>
       <div class="number-item"><span class="number-value">0</span><span class="number-label">regrets about leaving</span></div>
     </div>
+    <p style="margin-top: 3rem;"><a href="{{ .Site.Home.RelPermalink }}map/" class="link-arrow">See every mile on the map &rarr;</a></p>
   </div>
 </section>
 

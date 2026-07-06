@@ -5,6 +5,7 @@
 <title>{{ if .IsHome }}{{ .Site.Title }} — {{ .Site.Params.tagline }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
 
 <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<link rel="canonical" href="{{ .Permalink }}">
 
 <!-- Favicon -->
 <link rel="icon" href="{{ .Site.Home.RelPermalink }}favicon.svg" type="image/svg+xml">
@@ -40,7 +41,7 @@
 <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 
 <!-- Kit (newsletter) -->
-<script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+<script async src="https://f.convertkit.com/ckjs/ck.5.js"></script>
 
 <!-- Google Analytics -->
 {{ with .Site.Params.googleAnalyticsID }}

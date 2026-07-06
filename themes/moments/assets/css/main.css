@@ -290,7 +290,7 @@ p:last-child {
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 2rem;
+  gap: clamp(1rem, 2.2vw, 2rem);
   align-items: center;
 }
 
@@ -303,6 +303,7 @@ p:last-child {
   color: var(--ink);
   text-decoration: none;
   transition: color 0.2s ease;
+  white-space: nowrap;
 }
 
 .site-nav a:hover {
@@ -1256,17 +1257,8 @@ p:last-child {
    RESPONSIVE
    ============================================ */
 
-@media (max-width: 768px) {
-  html {
-    font-size: 17px;
-  }
-
-  .section,
-  .section-alt {
-    padding: 3.5rem 0;
-  }
-
-  /* Header / Nav */
+/* Header / Nav — collapse to hamburger while 8 items still fit awkwardly */
+@media (max-width: 940px) {
   .nav-toggle {
     display: flex;
   }
@@ -1293,6 +1285,17 @@ p:last-child {
 
   .site-nav a {
     font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 17px;
+  }
+
+  .section,
+  .section-alt {
+    padding: 3.5rem 0;
   }
 
   /* Hero */
@@ -1753,7 +1756,7 @@ p:last-child {
   min-height: 200px;
 }
 .post-item__readmore {
-  font-family: var(--font-body);
+  font-family: var(--font-sans);
   font-size: 0.85rem;
   color: var(--terracotta);
   text-decoration: none;
@@ -1771,7 +1774,7 @@ p:last-child {
 .by-the-numbers {
   padding: 5rem 0;
   background: var(--ink);
-  color: var(--paper);
+  color: var(--warm-white);
   text-align: center;
 }
 .by-the-numbers .eyebrow {
@@ -1800,7 +1803,7 @@ p:last-child {
   line-height: 1;
 }
 .number-label {
-  font-family: var(--font-body);
+  font-family: var(--font-sans);
   font-size: 0.85rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -2403,5 +2406,307 @@ p:last-child {
   .related-posts__grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+}
+
+/* ===================================================
+   UTILITIES
+   =================================================== */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 300;
+  background: var(--ink);
+  color: var(--warm-white);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  padding: 0.7rem 1.2rem;
+  border-radius: 0 0 3px 3px;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 0;
+  text-decoration: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===================================================
+   THE MAP — Where We've Been
+   =================================================== */
+.map-header {
+  padding: 5rem 0 1rem;
+  text-align: center;
+}
+.map-header .eyebrow {
+  color: var(--terracotta);
+}
+.map-header__desc {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  color: var(--muted);
+  max-width: 620px;
+  margin: 1rem auto 0;
+  line-height: 1.5;
+}
+.map-header__intro {
+  max-width: 620px;
+  margin: 1.75rem auto 0;
+}
+.map-header__intro p {
+  color: var(--muted);
+  line-height: 1.85;
+  font-size: 1.02rem;
+}
+
+.map-section {
+  padding: 3.5rem 0 4.5rem;
+}
+.map-section--world {
+  background-color: var(--sand);
+  border-top: 1px solid var(--rule);
+}
+
+.map-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.map-head h2 {
+  margin: 0;
+}
+
+.map-legend {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+}
+.map-legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.map-legend__swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+  display: inline-block;
+}
+.map-legend__swatch--visited {
+  background: var(--terracotta);
+}
+.map-legend__swatch--notyet {
+  background: #ECE3D1;
+  border: 1px solid var(--rule);
+}
+.map-legend__swatch--solo {
+  background: var(--sage);
+}
+.map-legend__swatch--dot {
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  background: var(--terracotta);
+  box-shadow: 0 0 0 3px rgba(181, 100, 58, 0.25);
+}
+
+.map-frame {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.map-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* State / country shapes */
+.mp {
+  stroke: var(--warm-white);
+  stroke-width: 1;
+  stroke-linejoin: round;
+  transition: fill 0.7s ease;
+}
+.mp--sh1 { fill: #B5643A; }
+.mp--sh2 { fill: #BD6E44; }
+.mp--sh3 { fill: #AC5B33; }
+.mp--sh4 { fill: #C1774E; }
+.mp--notyet { fill: #ECE3D1; }
+.mp--visited:hover { fill: #8F4C2A; }
+.mp--notyet:hover { fill: #E0D4BC; }
+
+.map-svg--world .mp {
+  stroke: var(--sand);
+  stroke-width: 0.6;
+}
+.map-svg--world .mp--visited { fill: var(--terracotta); }
+.map-svg--world .mp--visited:hover { fill: #8F4C2A; }
+.map-svg--world .mp--solo { fill: var(--sage); }
+.map-svg--world .mp--solo:hover { fill: #75886F; }
+.map-svg--world .mp--other { fill: #FBF7EF; }
+.map-svg--world .mp--other:hover { fill: #F1E9DA; }
+
+.map-sep {
+  fill: none;
+  stroke: var(--rule);
+  stroke-width: 1.5;
+}
+
+/* Ink-in animation: JS adds .map-anim, then .is-inked when scrolled into view */
+.map-anim .mp--visited { fill: #ECE3D1; }
+.map-anim.map-svg--world .mp--visited,
+.map-anim.map-svg--world .mp--solo { fill: #FBF7EF; }
+.map-anim.is-inked .mp--sh1 { fill: #B5643A; }
+.map-anim.is-inked .mp--sh2 { fill: #BD6E44; }
+.map-anim.is-inked .mp--sh3 { fill: #AC5B33; }
+.map-anim.is-inked .mp--sh4 { fill: #C1774E; }
+.map-anim.is-inked.map-svg--world .mp--visited { fill: var(--terracotta); }
+.map-anim.is-inked.map-svg--world .mp--solo { fill: var(--sage); }
+.map-anim.is-inked .mp--visited:hover { fill: #8F4C2A; }
+.map-anim.is-inked.map-svg--world .mp--solo:hover { fill: #75886F; }
+
+/* Markers for places too small to ink */
+.map-marker__dot {
+  fill: var(--terracotta);
+  stroke: var(--warm-white);
+  stroke-width: 1;
+}
+.map-marker__halo {
+  fill: rgba(181, 100, 58, 0.22);
+}
+.map-marker--solo .map-marker__dot {
+  fill: var(--sage);
+}
+.map-marker--solo .map-marker__halo {
+  fill: rgba(138, 158, 133, 0.28);
+}
+.map-anim .map-marker { opacity: 0; transition: opacity 0.6s ease 1.4s; }
+.map-anim.is-inked .map-marker { opacity: 1; }
+
+.map-footnote {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.map-lead {
+  color: var(--muted);
+  max-width: 620px;
+  line-height: 1.8;
+  margin: -0.75rem 0 2rem;
+}
+
+.map-stats {
+  display: flex;
+  justify-content: center;
+  gap: clamp(2.5rem, 7vw, 6rem);
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--rule);
+  text-align: center;
+}
+.map-stats .number-label {
+  color: var(--muted);
+}
+
+.map-apart {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--muted);
+  max-width: 560px;
+  margin: 3rem auto 0;
+  text-align: center;
+  line-height: 1.7;
+}
+
+.map-cta {
+  padding: 4.5rem 0 5.5rem;
+  text-align: center;
+}
+.map-cta__line {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+  color: var(--ink);
+  margin-bottom: 2rem;
+}
+.map-cta .hero__buttons {
+  justify-content: center;
+}
+
+/* Tooltip */
+.map-tooltip {
+  position: fixed;
+  z-index: 250;
+  background: rgba(28, 26, 23, 0.96);
+  color: var(--warm-white);
+  border-radius: 3px;
+  padding: 0.55rem 0.9rem 0.6rem;
+  pointer-events: none;
+  max-width: 260px;
+  box-shadow: 0 6px 24px rgba(28, 26, 23, 0.25);
+}
+.map-tooltip__name {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.map-tooltip__note {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: rgba(253, 250, 245, 0.75);
+  margin-top: 0.15rem;
+}
+
+@media (max-width: 768px) {
+  .map-header {
+    padding-top: 3.5rem;
+  }
+  .map-section {
+    padding: 2.5rem 0 3.5rem;
+  }
+  .map-stats {
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .map-head {
+    margin-bottom: 1.25rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mp, .map-marker {
+    transition: none !important;
   }
 }

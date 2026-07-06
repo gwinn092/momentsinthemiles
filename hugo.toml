@@ -40,10 +40,14 @@ paginate = 10
     url = "/gallery/"
     weight = 5
   [[menus.main]]
+    name = "The Map"
+    url = "/map/"
+    weight = 6
+  [[menus.main]]
     name = "About"
     url = "/about/"
-    weight = 6
+    weight = 7
   [[menus.main]]
     name = "Reduce Friction"
     url = "/reduce-friction/"
-    weight = 7
+    weight = 8
