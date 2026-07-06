@@ -21,4 +21,4 @@ apart_line: "Europe we've each crossed separately — a dozen countries between 
 cta_line: "The map is the outline. The stories are the point."
 ---
 
-We never set out to collect states. But mile by mile — a season in the desert, a summer chasing alpenglow, wrong turns that became the whole point — the map filled in. This is where the road has taken us so far. Hover anywhere; some places come with a story.
+We never set out to collect states. But mile by mile — a season in the desert, a summer chasing alpenglow, wrong turns that became the whole point — the map filled in. This is where the road has taken us so far. The pulsing pins mark the places that changed us: click one and the story opens, photo and all. Or press **Take the drive** and let the map carry you stop to stop.

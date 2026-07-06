@@ -15,13 +15,32 @@
         <span class="eyebrow">{{ .Params.us_eyebrow | default "United States" }}</span>
         <h2>{{ .Params.us_heading | default "The Lower Forty-Eight" }}</h2>
       </div>
-      <ul class="map-legend" aria-hidden="true">
-        <li><span class="map-legend__swatch map-legend__swatch--visited"></span>Together</li>
-        <li><span class="map-legend__swatch map-legend__swatch--notyet"></span>Still on the list</li>
-      </ul>
+      <div class="map-head__side">
+        <ul class="map-legend" aria-hidden="true">
+          <li><span class="map-legend__swatch map-legend__swatch--visited"></span>Together</li>
+          <li><span class="map-legend__swatch map-legend__swatch--notyet"></span>Still on the list</li>
+          <li><span class="map-legend__swatch map-legend__swatch--pin"></span>A story lives here</li>
+        </ul>
+        <button type="button" class="map-tour-btn" id="mapTourBtn" hidden>
+          <span class="map-tour-btn__dash" aria-hidden="true"></span>{{ .Params.tour_label | default "Take the drive" }}
+        </button>
+      </div>
     </div>
-    <div class="map-frame">
+    <div class="map-frame map-frame--us">
       {{ partial "map-us.html" . }}
+      <article class="map-tour" id="mapTour" hidden aria-live="polite">
+        <figure class="map-tour__media"><img id="mapTourImg" src="" alt="" loading="lazy" decoding="async"></figure>
+        <div class="map-tour__body">
+          <span class="map-tour__count" id="mapTourCount"></span>
+          <h3 class="map-tour__title" id="mapTourTitle"></h3>
+          <p class="map-tour__caption" id="mapTourCaption"></p>
+          <div class="map-tour__nav">
+            <button type="button" class="map-tour__btn" id="mapTourPrev">&larr; Back</button>
+            <button type="button" class="map-tour__btn map-tour__btn--next" id="mapTourNext">Next stop &rarr;</button>
+            <button type="button" class="map-tour__exit" id="mapTourExit">End the drive</button>
+          </div>
+        </div>
+      </article>
     </div>
     {{ with .Params.us_footnote }}<p class="map-footnote">{{ . }}</p>{{ end }}
     <div class="map-stats">
@@ -74,16 +93,45 @@
   </div>
 </section>
 
-<p class="visually-hidden">Together we have visited all 48 continental United States, plus Thailand, Laos, Vietnam, Cambodia, Malaysia, Singapore, and Indonesia. Before we met, Jesse traveled South Africa and Karlee lived five years on St. John in the U.S. Virgin Islands; we each backpacked Europe separately.</p>
+<p class="visually-hidden">Together we have visited all 48 continental United States, plus Thailand, Laos, Vietnam, Cambodia, Malaysia, Singapore, and Indonesia. Before we met, Jesse traveled South Africa and Karlee lived five years on St. John in the U.S. Virgin Islands; we each backpacked Europe separately. Sixteen places on these maps open a short story with a photograph and a link to the full essay.</p>
 
 <div class="map-tooltip" id="mapTooltip" hidden>
   <span class="map-tooltip__name"></span>
   <span class="map-tooltip__note"></span>
+  <span class="map-tooltip__hint">Click for the story</span>
 </div>
+
+<div class="map-scrim" id="mapScrim" hidden></div>
+<aside class="map-panel" id="mapPanel" role="dialog" aria-labelledby="mapPanelTitle" hidden>
+  <button type="button" class="map-panel__close" id="mapPanelClose" aria-label="Close story">&times;</button>
+  <figure class="map-panel__media" id="mapPanelMedia"><img id="mapPanelImg" src="" alt="" loading="lazy" decoding="async"></figure>
+  <div class="map-panel__body">
+    <span class="eyebrow map-panel__place" id="mapPanelPlace"></span>
+    <h3 class="map-panel__title" id="mapPanelTitle"></h3>
+    <p class="map-panel__story" id="mapPanelStory"></p>
+    <a class="map-panel__link" id="mapPanelLink" href="">Read the full story &rarr;</a>
+  </div>
+</aside>
+
+{{ $home := .Site.Home.RelPermalink }}
+<script type="application/json" id="mapStoriesData">{{ dict "home" $home "stories" site.Data.map_stories.stories "tour" site.Data.map_stories.tour | jsonify | safeJS }}</script>
 
 <script>
 (function () {
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var SVGNS = 'http://www.w3.org/2000/svg';
+  var DATA = JSON.parse(document.getElementById('mapStoriesData').textContent);
+  var home = DATA.home;
+  var stories = DATA.stories || [];
+  var byId = {};
+  stories.forEach(function (s) { byId[s.id] = s; });
+
+  var usSvg = document.querySelector('.map-svg--us');
+  var worldSvg = document.querySelector('.map-svg--world');
+  var usSection = document.querySelector('.map-section--us');
+  var touring = false;
+
+  function url(p) { return p ? home + p : ''; }
 
   // --- Ink-in animation: states/countries fill west to east on first view ---
   var svgs = document.querySelectorAll('.map-svg');
@@ -104,19 +152,114 @@
     });
   }
 
+  // --- Wire stories to shapes + drop moment pins ---
+  stories.forEach(function (s) {
+    var svg = s.map === 'us' ? usSvg : worldSvg;
+    if (!svg) return;
+    var targets = svg.querySelectorAll('[data-name="' + s.match + '"]');
+    if (!targets.length) return;
+    targets.forEach(function (el) {
+      el.dataset.storyId = s.id;
+      el.classList.add('map-clickable');
+      if (el.classList.contains('mp')) el.classList.add('mp--story');
+      el.setAttribute('tabindex', '0');
+      el.setAttribute('role', 'button');
+      el.setAttribute('aria-label', s.place + ' — ' + s.title + '. Open the story.');
+    });
+    if (s.pin) {
+      var bb = targets[0].getBBox();
+      var px = bb.x + bb.width * s.pin.fx;
+      var py = bb.y + bb.height * s.pin.fy;
+      s._px = px; s._py = py;
+      var scale = svg === usSvg ? 1 : 0.75;
+      var g = document.createElementNS(SVGNS, 'g');
+      g.setAttribute('class', 'map-pin' + (s.kind === 'solo' ? ' map-pin--solo' : ''));
+      g.setAttribute('data-name', s.title);
+      g.setAttribute('data-note', s.caption || '');
+      g.dataset.storyId = s.id;
+      g.setAttribute('tabindex', '0');
+      g.setAttribute('role', 'button');
+      g.setAttribute('aria-label', s.place + ' — ' + s.title + '. Open the story.');
+      [['map-pin__pulse', 8], ['map-pin__halo', 6.5], ['map-pin__dot', 2.8]].forEach(function (c) {
+        var circle = document.createElementNS(SVGNS, 'circle');
+        circle.setAttribute('class', c[0]);
+        circle.setAttribute('cx', px);
+        circle.setAttribute('cy', py);
+        circle.setAttribute('r', c[1] * scale);
+        g.appendChild(circle);
+      });
+      svg.appendChild(g);
+    }
+  });
+
+  // --- Story panel ---
+  var panel = document.getElementById('mapPanel');
+  var scrim = document.getElementById('mapScrim');
+  var panelImg = document.getElementById('mapPanelImg');
+  var panelMedia = document.getElementById('mapPanelMedia');
+  var lastFocus = null;
+
+  function openStory(id, opener) {
+    var s = byId[id];
+    if (!s) return;
+    lastFocus = opener || document.activeElement;
+    hideTip();
+    if (s.photo) {
+      panelImg.src = url(s.photo);
+      panelImg.alt = s.alt || '';
+      panelMedia.hidden = false;
+    } else {
+      panelImg.removeAttribute('src');
+      panelMedia.hidden = true;
+    }
+    document.getElementById('mapPanelPlace').textContent = s.place;
+    document.getElementById('mapPanelTitle').textContent = s.title;
+    document.getElementById('mapPanelStory').textContent = s.story;
+    var link = document.getElementById('mapPanelLink');
+    if (s.link) {
+      link.href = url(s.link);
+      link.innerHTML = (s.link_text || 'Read the full story') + ' &rarr;';
+      link.hidden = false;
+    } else {
+      link.hidden = true;
+    }
+    panel.classList.toggle('map-panel--solo', s.kind === 'solo');
+    panel.hidden = false;
+    scrim.hidden = false;
+    requestAnimationFrame(function () {
+      panel.classList.add('is-open');
+      scrim.classList.add('is-open');
+    });
+    document.getElementById('mapPanelClose').focus({ preventScroll: true });
+  }
+
+  function closeStory() {
+    if (panel.hidden) return;
+    panel.classList.remove('is-open');
+    scrim.classList.remove('is-open');
+    window.setTimeout(function () { panel.hidden = true; scrim.hidden = true; }, reduceMotion ? 0 : 320);
+    if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+    lastFocus = null;
+  }
+
+  document.getElementById('mapPanelClose').addEventListener('click', closeStory);
+  scrim.addEventListener('click', closeStory);
+
   // --- Tooltip ---
   var tip = document.getElementById('mapTooltip');
   var tipName = tip.querySelector('.map-tooltip__name');
   var tipNote = tip.querySelector('.map-tooltip__note');
+  var tipHint = tip.querySelector('.map-tooltip__hint');
   var current = null;
 
-  function show(target, x, y) {
+  function showTip(target, x, y) {
     if (current !== target) {
       current = target;
       tipName.textContent = target.getAttribute('data-name');
       var note = target.getAttribute('data-note') || '';
       tipNote.textContent = note;
       tipNote.style.display = note ? '' : 'none';
+      tipHint.style.display = (target.dataset.storyId && !touring) ? '' : 'none';
       tip.hidden = false;
     }
     var w = tip.offsetWidth, h = tip.offsetHeight;
@@ -127,22 +270,182 @@
     tip.style.top = top + 'px';
   }
 
-  function hide() { current = null; tip.hidden = true; }
+  function hideTip() { current = null; tip.hidden = true; }
 
   svgs.forEach(function (svg) {
     svg.addEventListener('pointermove', function (e) {
       var t = e.target.closest('[data-name]');
-      if (t) { show(t, e.clientX, e.clientY); } else { hide(); }
+      if (t) { showTip(t, e.clientX, e.clientY); } else { hideTip(); }
     });
     svg.addEventListener('pointerdown', function (e) {
       var t = e.target.closest('[data-name]');
-      if (t) { show(t, e.clientX, e.clientY); }
+      if (t && !t.dataset.storyId) { showTip(t, e.clientX, e.clientY); }
     });
-    svg.addEventListener('pointerleave', hide);
+    svg.addEventListener('pointerleave', hideTip);
+    svg.addEventListener('click', function (e) {
+      var t = e.target.closest('[data-story-id]');
+      if (t && !touring) openStory(t.dataset.storyId, t);
+    });
+    svg.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      var t = e.target.closest('[data-story-id]');
+      if (t && !touring) { e.preventDefault(); openStory(t.dataset.storyId, t); }
+    });
   });
   document.addEventListener('pointerdown', function (e) {
-    if (!e.target.closest('.map-svg')) hide();
+    if (!e.target.closest('.map-svg')) hideTip();
   });
+
+  // --- "Take the drive" guided tour ---
+  var tour = DATA.tour;
+  var stops = (tour && tour.stops || []).map(function (id) { return byId[id]; })
+    .filter(function (s) { return s && s._px !== undefined; });
+  var tourBtn = document.getElementById('mapTourBtn');
+  var startTourFn = null;
+
+  if (usSvg && tourBtn && stops.length > 1) {
+    var tourCard = document.getElementById('mapTour');
+    var btnPrev = document.getElementById('mapTourPrev');
+    var btnNext = document.getElementById('mapTourNext');
+    var btnExit = document.getElementById('mapTourExit');
+    var homeVB = usSvg.getAttribute('viewBox').split(/[\s,]+/).map(Number);
+    var stopIdx = 0;
+    var routeEl = null;
+    var routeTotal = 0;
+    var routeLens = [];
+    var flight = null;
+
+    // Route: gently curved dashed line through the stops, drawn leg by leg.
+    function routeD(n) {
+      var d = 'M ' + stops[0]._px + ' ' + stops[0]._py;
+      for (var i = 1; i < n; i++) {
+        var a = stops[i - 1], b = stops[i];
+        var mx = (a._px + b._px) / 2, my = (a._py + b._py) / 2;
+        var dx = b._px - a._px, dy = b._py - a._py;
+        var len = Math.sqrt(dx * dx + dy * dy) || 1;
+        var bend = (i % 2 ? 1 : -1) * Math.min(len * 0.18, 26);
+        d += ' Q ' + (mx - dy / len * bend) + ' ' + (my + dx / len * bend) + ' ' + b._px + ' ' + b._py;
+      }
+      return d;
+    }
+
+    function buildRoute() {
+      var probe = document.createElementNS(SVGNS, 'path');
+      for (var i = 1; i <= stops.length; i++) {
+        probe.setAttribute('d', routeD(i));
+        routeLens[i - 1] = probe.getTotalLength();
+      }
+      routeTotal = routeLens[stops.length - 1];
+      routeEl = document.createElementNS(SVGNS, 'path');
+      routeEl.setAttribute('class', 'map-route');
+      routeEl.setAttribute('d', routeD(stops.length));
+      routeEl.style.strokeDasharray = routeTotal + ' ' + routeTotal;
+      routeEl.style.strokeDashoffset = routeTotal;
+      usSvg.insertBefore(routeEl, usSvg.querySelector('.map-pin'));
+    }
+
+    function setViewBox(vb) {
+      usSvg.setAttribute('viewBox', vb.map(function (n) { return Math.round(n * 100) / 100; }).join(' '));
+      if (routeEl) routeEl.style.strokeWidth = (2.2 * vb[2] / homeVB[2]).toFixed(2);
+    }
+
+    function flyTo(vb) {
+      if (flight) cancelAnimationFrame(flight);
+      if (reduceMotion) { setViewBox(vb); return; }
+      var from = usSvg.getAttribute('viewBox').split(/[\s,]+/).map(Number);
+      var t0 = null, dur = 1100;
+      function frame(ts) {
+        if (!t0) t0 = ts;
+        var t = Math.min((ts - t0) / dur, 1);
+        var e = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        setViewBox(from.map(function (f, i) { return f + (vb[i] - f) * e; }));
+        if (t < 1) flight = requestAnimationFrame(frame);
+      }
+      flight = requestAnimationFrame(frame);
+    }
+
+    function stopVB(s) {
+      var w = 300, h = w * homeVB[3] / homeVB[2];
+      return [s._px - w / 2, s._py - h * 0.42, w, h];
+    }
+
+    function showStop(i) {
+      stopIdx = i;
+      var s = stops[i];
+      usSvg.querySelectorAll('.is-tour-active').forEach(function (el) { el.classList.remove('is-tour-active'); });
+      usSvg.querySelectorAll('[data-story-id="' + s.id + '"]').forEach(function (el) { el.classList.add('is-tour-active'); });
+      flyTo(stopVB(s));
+      routeEl.style.strokeDashoffset = routeTotal - routeLens[i];
+      document.getElementById('mapTourImg').src = url(s.photo);
+      document.getElementById('mapTourImg').alt = s.alt || '';
+      document.getElementById('mapTourCount').textContent = 'Stop ' + (i + 1) + ' of ' + stops.length + ' — ' + s.place;
+      document.getElementById('mapTourTitle').textContent = s.title;
+      document.getElementById('mapTourCaption').textContent = s.caption || '';
+      btnPrev.disabled = i === 0;
+      btnNext.innerHTML = i === stops.length - 1 ? 'Finish the drive' : 'Next stop &rarr;';
+    }
+
+    function startTour(atStop) {
+      if (!routeEl) buildRoute();
+      routeEl.classList.remove('map-route--done');
+      routeEl.style.strokeDashoffset = routeTotal;
+      touring = true;
+      closeStory();
+      hideTip();
+      usSection.classList.add('is-touring');
+      tourBtn.hidden = true;
+      tourCard.hidden = false;
+      showStop(Math.min(atStop || 0, stops.length - 1));
+      btnNext.focus({ preventScroll: true });
+    }
+
+    function endTour() {
+      touring = false;
+      usSection.classList.remove('is-touring');
+      usSvg.querySelectorAll('.is-tour-active').forEach(function (el) { el.classList.remove('is-tour-active'); });
+      routeEl.style.strokeDashoffset = 0;
+      routeEl.classList.add('map-route--done');
+      tourCard.hidden = true;
+      tourBtn.hidden = false;
+      tourBtn.textContent = '';
+      tourBtn.appendChild(dash.cloneNode(true));
+      tourBtn.appendChild(document.createTextNode('Drive it again'));
+      flyTo(homeVB.slice());
+      tourBtn.focus({ preventScroll: true });
+    }
+
+    var dash = tourBtn.querySelector('.map-tour-btn__dash');
+    startTourFn = startTour;
+    tourBtn.hidden = false;
+    tourBtn.addEventListener('click', startTour);
+    btnNext.addEventListener('click', function () {
+      stopIdx < stops.length - 1 ? showStop(stopIdx + 1) : endTour();
+    });
+    btnPrev.addEventListener('click', function () { if (stopIdx > 0) showStop(stopIdx - 1); });
+    btnExit.addEventListener('click', endTour);
+    document.addEventListener('keydown', function (e) {
+      if (touring) {
+        if (e.key === 'Escape') endTour();
+        if (e.key === 'ArrowRight' && stopIdx < stops.length - 1) showStop(stopIdx + 1);
+        if (e.key === 'ArrowLeft' && stopIdx > 0) showStop(stopIdx - 1);
+      } else if (e.key === 'Escape') {
+        closeStory();
+      }
+    });
+  } else {
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeStory();
+    });
+  }
+
+  // Deep links: /map/#wa opens a story, /map/#drive starts the tour (#drive-3 = jump to a stop)
+  var hash = decodeURIComponent(location.hash.replace('#', ''));
+  var driveMatch = hash.match(/^drive(?:-(\d+))?$/);
+  if (driveMatch && startTourFn) {
+    startTourFn(driveMatch[1] ? parseInt(driveMatch[1], 10) : 0);
+  } else if (byId[hash]) {
+    openStory(hash);
+  }
 })();
 </script>
 {{ end }}

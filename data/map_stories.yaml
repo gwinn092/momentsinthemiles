@@ -1,0 +1,219 @@
+# Stories for the interactive map (/map/).
+# Each entry: match = the data-name on the SVG path/marker it attaches to.
+# photo/link are site-relative (no leading slash) — the template prefixes them.
+# pin = position of the "moment" pin as fractions of the matched shape's bounding box
+#       (fx from left, fy from top). Omit pin to make only the shape clickable.
+# kind: together (default) or solo (sage chapters).
+# To add a story: copy a block, point it at a data-name, done. No template edits needed.
+
+stories:
+  - id: wa
+    map: us
+    match: "Washington"
+    title: "The Overlook Above Rainier"
+    place: "Washington"
+    photo: "images/van-life/rainier-overlook.jpg"
+    alt: "Sitting at an overlook above the clouds facing Mount Rainier"
+    caption: "Coffee going cold above the clouds."
+    story: "Some mornings you slide the van door open and Rainier is just there — enormous, patient, close enough to feel. We sat above the clouds while the coffee went cold and didn't say much. Washington kept doing that to us."
+    link: "van-life/what-nobody-tells-you-van-life/"
+    link_text: "What Nobody Tells You Before You Start Van Life"
+    pin: { fx: 0.38, fy: 0.60 }
+
+  - id: or
+    map: us
+    match: "Oregon"
+    title: "Highway 101, No Hurry"
+    place: "Oregon"
+    photo: "images/pages/guides-oregon-coast.jpg"
+    alt: "Sea stacks along the Oregon coast at dusk"
+    caption: "Every pull-out another empty beach."
+    story: "We drove the Oregon coast slower than any road before it — every pull-out another sea stack, another beach with nobody on it. The fog rolls in, the coffee gets refilled, and you stop pretending you have somewhere else to be."
+    link: "gallery/"
+    link_text: "See more from the road"
+    pin: { fx: 0.07, fy: 0.42 }
+
+  - id: ca
+    map: us
+    match: "California"
+    title: "Last Light in Yosemite"
+    place: "California"
+    photo: "images/pages/essays-yosemite-sunset.jpg"
+    alt: "Sunset light on the granite walls of Yosemite Valley"
+    caption: "Granite going pink, then gold, then gone."
+    story: "We'd seen the photos our whole lives; none of them prepare you for the scale. We stayed until the last light left the granite and drove out of the valley in the dark, not talking, the way you leave a place that just rearranged something in you."
+    link: "gallery/"
+    link_text: "See more from the road"
+    pin: { fx: 0.55, fy: 0.38 }
+
+  - id: az
+    map: us
+    match: "Arizona"
+    title: "Slot Canyons & Red Rocks"
+    place: "Arizona"
+    photo: "images/essays/antelope-canyon.jpg"
+    alt: "Light beams inside the sandstone curves of Antelope Canyon"
+    caption: "What water can do with a few million years."
+    story: "Antelope Canyon is what happens when water is given a few million years and no deadline — light falls in beams and the walls curve like something poured. An hour south, Sedona glows like it's lit from the inside. Arizona kept humbling us."
+    link: "essays/the-miles-will-shape-you/"
+    link_text: "The Miles Will Shape You"
+    pin: { fx: 0.52, fy: 0.40 }
+
+  - id: nm
+    map: us
+    match: "New Mexico"
+    title: "The Dunes at White Sands"
+    place: "New Mexico"
+    photo: "images/essays/karlee-white-sands.jpg"
+    alt: "Karlee walking the white gypsum dunes at White Sands"
+    caption: "Barefoot on gypsum, like kids."
+    story: "White gypsum to every horizon, cool underfoot even in the heat. We ran the dunes barefoot like kids — two people well past the age the world says this is for, having the best afternoon of the year."
+    link: "essays/travel-in-your-30s-40s-and-beyond/"
+    link_text: "Travel in Your 30s, 40s & Beyond"
+    pin: { fx: 0.45, fy: 0.72 }
+
+  - id: ut
+    map: us
+    match: "Utah"
+    title: "Camped at Lake Powell"
+    place: "Utah"
+    photo: "images/van-life/van-lake-powell.jpg"
+    alt: "The van parked at the edge of Lake Powell, red rock behind"
+    caption: "Close enough to hear the water."
+    story: "We parked close enough to hear the water — red rock, glass-flat blue, and a silence that took a day to get used to. Some campsites you leave and forget. That one we still talk about."
+    link: "van-life/honest-reality-van-life/"
+    link_text: "The Honest Reality of Full-Time Van Life"
+    pin: { fx: 0.52, fy: 0.88 }
+
+  - id: co
+    map: us
+    match: "Colorado"
+    title: "Two Weeks Chasing Aspens"
+    place: "Colorado"
+    photo: "images/van-life/van-colorado-fall.jpg"
+    alt: "The van on a mountain road surrounded by golden aspens"
+    caption: "Whole mountainsides going gold."
+    story: "We chased the aspens for two weeks — whole mountainsides going gold a ridge at a time, and us rerouting every morning to stay inside it. Colorado in October is the best argument for a house on wheels we know."
+    link: "essays/designing-a-life-that-moves/"
+    link_text: "Designing a Life That Moves"
+    pin: { fx: 0.42, fy: 0.48 }
+
+  - id: wy
+    map: us
+    match: "Wyoming"
+    title: "The Van Below the Tetons"
+    place: "Wyoming"
+    photo: "images/van-life/teton-lake.jpg"
+    alt: "A still alpine lake below the Teton range"
+    caption: "No foothills. No warning. Just up."
+    story: "No mountains announce themselves like the Tetons — no foothills, no warning, just the valley floor and then straight up. We woke below them beside a lake so still it doubled the whole range."
+    link: "van-life/day-in-the-life-van-living/"
+    link_text: "A Day in the Life of Van Living"
+    pin: { fx: 0.13, fy: 0.28 }
+
+  - id: mt
+    map: us
+    match: "Montana"
+    title: "The Edge of Grinnell Glacier"
+    place: "Montana"
+    photo: "images/essays/grinnell-glacier.jpg"
+    alt: "Standing at the edge of Grinnell Glacier above a turquoise lake"
+    caption: "The glacier didn't think we were too old."
+    story: "The trail to Grinnell climbs past lakes so turquoise they look printed, and ends at the edge of ice that has been quietly leaving for a century. People kept telling us we were getting too old for this. The glacier disagreed."
+    link: "essays/who-told-you-it-was-too-late-to-travel/"
+    link_text: "Who Told You It Was Too Late to Travel?"
+    pin: { fx: 0.16, fy: 0.14 }
+
+  - id: usa
+    map: world
+    match: "United States"
+    title: "Home Base"
+    place: "United States"
+    photo: "images/pages/hero-mountaintop.jpg"
+    alt: "Jesse and Karlee on a mountaintop at golden hour"
+    caption: "Forty-eight states, seven years, one van."
+    story: "Forty-eight states, seven years, one van. This is the map above — the slow version of home."
+    link: "van-life/"
+    link_text: "The Van Life Chapters"
+
+  - id: vnm
+    map: world
+    match: "Vietnam"
+    title: "A Plastic Stool in Hanoi"
+    place: "Vietnam"
+    photo: "images/essays/hanoi-banh-mi-shop.jpg"
+    alt: "The bánh mì shop in Hanoi under a yellow tree and red lanterns"
+    caption: "We smelled it before we saw it."
+    story: "We smelled it before we saw it — pork fat and charred bread drifting through Hanoi at dusk. Under a wide yellow tree and a string of red lanterns: tiny plastic stools, a patient crowd, and the best sandwich of our lives. We got in line without discussing it."
+    link: "essays/a-plastic-stool-in-hanoi/"
+    link_text: "A Plastic Stool in Hanoi"
+    pin: { fx: 0.30, fy: 0.14 }
+
+  - id: lao
+    map: world
+    match: "Laos"
+    title: "The River That Gave and Took"
+    place: "Laos"
+    photo: "images/essays/laos-village.jpg"
+    alt: "A riverside village in Laos"
+    caption: "Two days on a slow boat down the Mekong."
+    story: "Two days on a slow boat down the Mekong — car bench seats, a roaring engine, and time moving the way the river decided it would. Some of what happened on that water still sits quietly in our chests."
+    link: "essays/the-river-that-gave-and-took/"
+    link_text: "The River That Gave and Took"
+    pin: { fx: 0.35, fy: 0.32 }
+
+  - id: tha
+    map: world
+    match: "Thailand"
+    title: "Where the Trip Became a Life"
+    place: "Thailand"
+    photo: "images/guides/thailand-chiang-mai.jpg"
+    alt: "Golden temple rooftops in Chiang Mai"
+    caption: "Morning markets and gold rooftops."
+    story: "Chiang Mai was the first place in Asia that felt like ours — morning markets, gold rooftops, seventy-cent noodles eaten standing up. It's where eight months stopped being a plan and started being a life."
+    link: "guides/eight-months-southeast-asia/"
+    link_text: "Eight Months in Southeast Asia"
+    pin: { fx: 0.38, fy: 0.16 }
+
+  - id: idn
+    map: world
+    match: "Indonesia"
+    title: "An Island Off an Island"
+    place: "Indonesia"
+    photo: "images/map/indonesia-nusa-lembongan.jpg"
+    alt: "Orange beach umbrellas over turquoise water on Nusa Lembongan"
+    caption: "Nusa Lembongan, where we stopped counting days."
+    story: "A short boat ride off Bali there's a smaller island, and off that one, a smaller one still. Orange umbrellas, water you could read a book through, and no good reason to check the calendar. Nusa Lembongan is where we stopped counting days."
+    link: "guides/southeast-asia-on-70-a-day/"
+    link_text: "Southeast Asia on $70 a Day"
+    pin: { fx: 0.44, fy: 0.84 }
+
+  - id: zaf
+    map: world
+    match: "South Africa"
+    kind: solo
+    title: "Jesse's Chapter, 2008"
+    place: "South Africa"
+    caption: "Johannesburg to Cape Town, before there was a we."
+    story: "Before there was a we, Jesse spent a month crossing South Africa, Johannesburg to Cape Town. It was the trip that planted the question this whole site keeps trying to answer: what if we just kept going?"
+    link: "about/"
+    link_text: "Meet Us"
+
+  - id: stj
+    map: world
+    match: "St. John, U.S. Virgin Islands"
+    kind: solo
+    title: "Karlee's Five Island Years"
+    place: "St. John, U.S. Virgin Islands"
+    photo: "images/essays/karlee-stjohn.jpg"
+    alt: "Karlee on St. John in the U.S. Virgin Islands"
+    caption: "Five years, one small island."
+    story: "Before the van and before Asia, Karlee spent five years living on St. John — barefoot commutes, hurricane seasons, and a blue you eventually stop trying to describe. Some chapters you don't get to share. You just bring what they taught you."
+    link: "about/"
+    link_text: "Meet Us"
+
+# "Take the drive" — the guided tour across the US map, in stop order.
+tour:
+  label: "Take the drive"
+  intro: "Nine stops, seven years, no interstate."
+  stops: [ca, or, wa, mt, wy, co, ut, az, nm]
