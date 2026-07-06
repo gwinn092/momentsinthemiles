@@ -2,6 +2,7 @@
 title: "Where We've Been"
 description: "Seven years, one van, and every one of the lower forty-eight — drawn the slow way."
 layout: "map"
+og_image: "images/pages/og-map.jpg"
 us_eyebrow: "United States"
 us_heading: "The Lower Forty-Eight"
 us_footnote: "Alaska & Hawaii — still on the list."
