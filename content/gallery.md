@@ -26,4 +26,4 @@ gallery:
   - { src: "/images/essays/more-good-red-rocks.jpg", alt: "Red rock country" }
 ---
 
-Eight years, all 48 continental states, and eight months across Southeast Asia — a handful of the frames that stuck. Tap any photo to view it larger.
+Seven years, all 48 continental states, and eight months across Southeast Asia — a handful of the frames that stuck. Tap any photo to view it larger.

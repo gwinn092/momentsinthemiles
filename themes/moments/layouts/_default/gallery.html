@@ -25,6 +25,7 @@
       {{ $src := printf "%s%s" $.Site.Home.RelPermalink (strings.TrimPrefix "/" .src) }}
       <button type="button" class="gallery-item" data-full="{{ $src }}" data-caption="{{ .alt }}" aria-label="View larger: {{ .alt }}">
         <img src="{{ $src }}" alt="{{ .alt }}" loading="lazy">
+        <span class="gallery-item__cap">{{ .alt }}</span>
       </button>
       {{ end }}
     </div>
@@ -33,9 +34,12 @@
 
 <div class="lightbox" id="lightbox" aria-hidden="true">
   <button type="button" class="lightbox__close" aria-label="Close">&times;</button>
+  <button type="button" class="lightbox__nav lightbox__nav--prev" aria-label="Previous photo">&larr;</button>
+  <button type="button" class="lightbox__nav lightbox__nav--next" aria-label="Next photo">&rarr;</button>
   <figure class="lightbox__figure">
     <img class="lightbox__img" src="" alt="">
     <figcaption class="lightbox__caption"></figcaption>
+    <span class="lightbox__count"></span>
   </figure>
 </div>
 {{ end }}
