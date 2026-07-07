@@ -4,7 +4,7 @@
   <img src="{{ $.Site.Home.RelPermalink }}{{ strings.TrimPrefix "/" . }}" alt="{{ $.Title }}" class="section-hero__img" loading="eager">
   <div class="section-hero__overlay">
     <div class="container-wide section-hero__content">
-      <span class="eyebrow">{{ $.Section | title }}</span>
+      <span class="eyebrow">{{ replace $.Section "-" " " | title }}</span>
       <h1>{{ $.Title }}</h1>
       {{ with $.Description }}<p class="section-hero__desc">{{ . }}</p>{{ end }}
     </div>
@@ -13,7 +13,7 @@
 {{ else }}
 <div class="list-header">
   <div class="container-wide">
-    <span class="eyebrow">{{ .Section | title }}</span>
+    <span class="eyebrow">{{ replace .Section "-" " " | title }}</span>
     <h1>{{ .Title }}</h1>
     {{ with .Description }}<p class="list-header__desc">{{ . }}</p>{{ end }}
   </div>
@@ -22,11 +22,31 @@
 
 {{ with .Content }}
 <div class="list-intro">
-  <div class="list-intro__inner">{{ . }}</div>
+  <div class="container-wide">
+    <div class="list-intro__grid">
+      <div class="list-intro__inner">{{ . }}</div>
+      <aside class="list-intro__rail">
+        <div class="list-intro__rail-inner">
+          <span class="eyebrow">In this section</span>
+          <ul class="rail-posts">
+            {{ $pinned := where $.Pages "Params.pinned" true }}
+            {{ $rest := where $.Pages "Params.pinned" "!=" true }}
+            {{ range ($pinned | append $rest) | first 5 }}
+            <li>
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+              {{ if .ReadingTime }}<span class="rail-posts__meta">{{ .ReadingTime }} min read</span>{{ end }}
+            </li>
+            {{ end }}
+          </ul>
+          <a class="rail-all" href="#section-posts">Browse all {{ len $.Pages }} posts &darr;</a>
+        </div>
+      </aside>
+    </div>
+  </div>
 </div>
 {{ end }}
 
-<div class="post-list">
+<div class="post-list" id="section-posts">
   <div class="container-wide">
     {{ $pinned := where .Pages "Params.pinned" true }}
     {{ $rest := where .Pages "Params.pinned" "!=" true }}

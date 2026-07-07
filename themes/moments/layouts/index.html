@@ -152,7 +152,7 @@
         {{ end }}
       </a>
       <div class="feature-card__body">
-        <span class="post-item__category">{{ if .Params.pinned }}Lead Essay{{ else }}{{ .Section | title }}{{ end }}</span>
+        <span class="post-item__category">{{ if .Params.pinned }}Lead Essay{{ else }}{{ replace .Section "-" " " | title }}{{ end }}</span>
         <h3 class="feature-card__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
         {{ with .Description }}<p>{{ . }}</p>{{ end }}
         <p class="post-item__meta">
@@ -176,7 +176,7 @@
           {{ end }}
         </a>
         <div class="card__body">
-          <div class="card__category">{{ .Section | title }}</div>
+          <div class="card__category">{{ replace .Section "-" " " | title }}</div>
           <a href="{{ .RelPermalink }}" class="card__title">{{ .Title }}</a>
           {{ with .Description }}<p class="card__excerpt">{{ . }}</p>{{ end }}
         </div>

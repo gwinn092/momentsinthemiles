@@ -108,7 +108,7 @@
   <section class="related-posts">
     <div class="container">
       <span class="eyebrow">Keep Reading</span>
-      <h2>More from {{ $.Section | title }}</h2>
+      <h2>More from {{ replace $.Section "-" " " | title }}</h2>
       <div class="related-posts__grid">
         {{ range . }}
         <article class="card">
@@ -120,7 +120,7 @@
             {{ end }}
           </a>
           <div class="card__body">
-            <div class="card__category">{{ .Section | title }}</div>
+            <div class="card__category">{{ replace .Section "-" " " | title }}</div>
             <a href="{{ .RelPermalink }}" class="card__title">{{ .Title }}</a>
           </div>
         </article>

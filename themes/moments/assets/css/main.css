@@ -180,6 +180,8 @@ p:last-child {
 /* Wide container — used on landing/nav pages to fill the viewport */
 .container-wide {
   max-width: var(--max-wide);
+  margin-left: auto;
+  margin-right: auto;
   padding-left: clamp(1.5rem, 4vw, 4rem);
   padding-right: clamp(1.5rem, 4vw, 4rem);
 }
@@ -3623,5 +3625,124 @@ body.nav-open {
   .footer-bottom {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+/* ============================================================
+   Section intro — editorial two-column with "In this section"
+   ============================================================ */
+
+.list-intro__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: clamp(3rem, 5vw, 5rem);
+  max-width: 1140px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.list-intro__grid .list-intro__inner {
+  max-width: 700px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Big serif lede on the first paragraph of any section intro */
+.list-intro__inner > p:first-child {
+  font-family: var(--font-serif);
+  font-size: clamp(1.45rem, 2.8vw, 2rem);
+  line-height: 1.4;
+  color: var(--ink);
+  margin-bottom: 1.9rem;
+}
+
+/* Inside the intro column, full-bleed images stay in-column */
+.list-intro .full-bleed {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 2.75rem;
+  margin-bottom: 2.75rem;
+}
+
+.list-intro .full-bleed img {
+  border-radius: 3px;
+  max-height: 56vh;
+}
+
+/* Sticky rail */
+.list-intro__rail-inner {
+  position: sticky;
+  top: 100px;
+  padding-top: 0.5rem;
+}
+
+.rail-posts {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.rail-posts li {
+  border-top: 1px solid var(--rule);
+  padding: 0.9rem 0;
+}
+
+.rail-posts li:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.rail-posts a {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.rail-posts a:hover {
+  color: var(--terracotta);
+  text-decoration: none;
+}
+
+.rail-posts__meta {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin-top: 0.3rem;
+}
+
+.rail-all {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  text-decoration: none;
+}
+
+.rail-all:hover {
+  text-decoration: underline;
+}
+
+#section-posts {
+  scroll-margin-top: 90px;
+}
+
+@media (max-width: 1024px) {
+  .list-intro__grid {
+    grid-template-columns: 1fr;
+  }
+  .list-intro__grid .list-intro__inner {
+    margin: 0 auto;
+  }
+  .list-intro__rail {
+    display: none;
   }
 }
