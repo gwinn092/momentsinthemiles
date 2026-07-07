@@ -268,7 +268,11 @@ p:last-child {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 2rem;
   height: 70px;
+  max-width: var(--max-wide);
+  padding-left: clamp(1.5rem, 3vw, 3.5rem);
+  padding-right: clamp(1.5rem, 3vw, 3.5rem);
 }
 
 .site-logo {
@@ -1261,7 +1265,7 @@ p:last-child {
 
 /* Header / Nav — collapse to hamburger while 8 items still fit awkwardly.
    Mobile nav is a full-screen overlay with big serif links. */
-@media (max-width: 940px) {
+@media (max-width: 1080px) {
   .nav-toggle {
     display: flex;
     position: relative;
@@ -1957,7 +1961,7 @@ body.nav-open {
   font-style: italic;
   font-size: clamp(1.1rem, 2vw, 1.5rem);
   line-height: 1.45;
-  max-width: 640px;
+  max-width: 440px;
   margin-top: 1rem;
 }
 
@@ -3159,7 +3163,7 @@ body.nav-open {
 }
 
 /* Desktop nav — animated underline */
-@media (min-width: 941px) {
+@media (min-width: 1081px) {
   .site-nav a {
     position: relative;
   }
