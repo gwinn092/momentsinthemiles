@@ -331,9 +331,11 @@
     const lbImg = lightbox.querySelector('.lightbox__img');
     const lbCap = lightbox.querySelector('.lightbox__caption');
     const lbCount = lightbox.querySelector('.lightbox__count');
-    const items = Array.from(document.querySelectorAll('.gallery-item'));
+    const allItems = Array.from(document.querySelectorAll('.gallery-item'));
+    const visibleItems = () => allItems.filter(btn => !btn.classList.contains('is-hidden'));
     let lbIndex = 0;
     const showAt = (i) => {
+      const items = visibleItems();
       lbIndex = (i + items.length) % items.length;
       const btn = items[lbIndex];
       lbImg.src = btn.getAttribute('data-full');
@@ -347,7 +349,21 @@
       lightbox.setAttribute('aria-hidden', 'false');
     };
     const closeLb = () => { lightbox.classList.remove('is-open'); lightbox.setAttribute('aria-hidden', 'true'); lbImg.src = ''; };
-    items.forEach((btn, i) => btn.addEventListener('click', () => openLb(i)));
+    allItems.forEach((btn) => btn.addEventListener('click', () => openLb(visibleItems().indexOf(btn))));
+
+    // --- Gallery category filter ---
+    const filterBtns = Array.from(document.querySelectorAll('.gallery-filter__btn'));
+    filterBtns.forEach((fb) => fb.addEventListener('click', () => {
+      const cat = fb.getAttribute('data-filter');
+      filterBtns.forEach((b) => {
+        const active = b === fb;
+        b.classList.toggle('is-active', active);
+        b.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      allItems.forEach((item) => {
+        item.classList.toggle('is-hidden', cat !== 'all' && item.getAttribute('data-cat') !== cat);
+      });
+    }));
     const prevBtn = lightbox.querySelector('.lightbox__nav--prev');
     const nextBtn = lightbox.querySelector('.lightbox__nav--next');
     if (prevBtn) prevBtn.addEventListener('click', () => showAt(lbIndex - 1));

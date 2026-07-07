@@ -69,6 +69,8 @@ We've watched people quit in that window, convinced the life wasn't for them, wh
 
 The van is your home, your transportation, and your responsibility — all at once. Things break. Things wear out. And when they do, you don't have the luxury of calling a landlord.
 
+{{< photo src="/images/van-life/water-electric-bay.jpg" alt="The van's water tanks and electrical bay behind an open cabinet" caption="The utility room, such as it is." >}}
+
 We've had to learn things we never expected to learn. We've done repairs on the side of roads, in parking lots, in the rain. We've had to make judgment calls about what can wait and what can't. That knowledge is hard-won and genuinely valuable — but the earning of it isn't always comfortable.
 
 Budget for maintenance from day one, build a small emergency fund before you leave, and get comfortable with the idea that your van will occasionally be inconvenient. It will also, consistently, be worth it.

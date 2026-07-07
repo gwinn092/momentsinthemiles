@@ -31,6 +31,8 @@ We don't have any of that. What we have instead is a home that we know completel
 
 Let's start with the one that gets me the most — and I say this as someone who genuinely loves clothes.
 
+{{< photo src="/images/van-life/underbed-storage.jpg" alt="Clear storage bins tucked under the bed platform" caption="The closet. All of it." >}}
+
 You cannot just go shopping in a van. Well, you can. But if something comes in, something has to go out. That's not a philosophy, it's physics. There is a fixed amount of space where clothes live, and when it's full, it's full.
 
 What this has done, slowly and without us noticing at first, is completely change how we think about what we actually want. We don't impulse buy anymore — not because we're disciplined, but because we have to mean it. Every piece has to earn its place. Does it work hard? Does it work with everything else we have? Do we actually love it, or do we just like it in the store?
@@ -70,6 +72,8 @@ We don't have a storage unit. We don't have a garage. We don't have boxes in som
 There's something quietly radical about that. Most people accumulate things faster than they can process them, and eventually they stop even seeing what they own. It becomes background noise. We can't do that. If something comes in without purpose, it takes up space we don't have. So things come in slowly, intentionally, and they earn their place or they don't stay.
 
 It's not minimalism as an aesthetic. It's minimalism as a practical reality. And it turns out the practical version is a lot more effective than the aspirational one.
+
+{{< photo src="/images/van-life/garage-packed.jpg" alt="The van's rear garage packed floor to ceiling with gear" caption="Everything we own, one vehicle. The back doors are load-bearing." >}}
 
 ## The math nobody talks about
 

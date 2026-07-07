@@ -26,6 +26,8 @@ Bangkok was supposed to be an orientation. A place to land softly, shake off the
 
 Eight days felt like both too long and not nearly enough. We wandered temples in the early morning before the heat settled in, ate our way through street food markets, and started to understand the rhythm that would carry us through the next eight months: wake up early, move slowly, say yes to things you don't entirely understand yet.
 
+{{< photo src="/images/guides/pad-krapow.jpg" alt="A styrofoam container of pad krapow over rice from a street cart" caption="Street-cart pad krapow. Say yes." >}}
+
 ### Chiang Mai — 26 days
 
 We didn't intend to stay in Chiang Mai for nearly a month. We booked a week and then kept extending. It's that kind of place.
@@ -76,6 +78,8 @@ Luang Prabang is the kind of beautiful that feels almost unfair. It sits on a pe
 
 We spent 12 days there, which felt about right. We rented bicycles and rode to waterfalls. We climbed Phu Si hill at sunset. We ate laap and sticky rice and drank Beer Lao on slow evenings by the water. We got good at doing very little very well.
 
+{{< photo src="/images/guides/laap-sticky-rice.jpg" alt="Laap and sticky rice served in simple dishes" caption="The Laos order: laap, sticky rice, repeat." >}}
+
 Then we got on a 27-hour bus to Vietnam.
 
 ---
@@ -87,6 +91,8 @@ Then we got on a 27-hour bus to Vietnam.
 Hanoi arrives loudly. After the gentleness of Laos, the capital of Vietnam is a city that insists on itself — motorbikes moving in every direction at once, sidewalks that function as parking lots and restaurants simultaneously, a street food culture so good and so cheap it becomes difficult to eat anywhere indoors.
 
 We spent five days getting our bearings, eating bun cha and pho and egg coffee, wandering Hoan Kiem Lake in the early morning, and preparing for what came next.
+
+{{< photo src="/images/guides/hanoi-old-quarter.jpg" alt="A Hanoi Old Quarter street at night, red lanterns under a yellow tree" caption="The Old Quarter at night — lanterns, stools, and the best sandwich in the city." >}}
 
 ### The Ha Giang Loop — the highlight of the trip
 
@@ -208,6 +214,10 @@ We flew from Manila to Denpasar, Bali — arriving in the late afternoon and cat
 
 We stayed six days. We rented scooters and circled the island in an afternoon. We watched surfers from a cliff. We ate Indonesian food at warungs where the bill came to almost nothing and the food was extraordinary.
 
+{{< photo src="/images/guides/nusa-blue-lagoon.jpg" alt="Turquoise water and limestone coastline on Nusa Lembongan" caption="The coastline that made us cancel the ferry twice." >}}
+
+{{< photo src="/images/guides/warung-plate.jpg" alt="A warung plate piled with rice, tempeh, greens, and fried chicken" caption="Warung lunch, Nusa Lembongan. The bill came to almost nothing." >}}
+
 ### Lombok & Senggigi
 
 A boat to Senggigi on the island of Lombok — 11 days, our longest stop in Indonesia. Lombok sits in Bali's shadow in the tourist imagination but has its own complete identity: the rice paddies of the central highlands, the volcanic peak of Rinjani, the Sasak culture distinct from Bali's Hindu traditions. Senggigi is relaxed in a way that suited us after months of moving.
@@ -223,6 +233,8 @@ Then Gili Air — four days on the smallest of the three Gili Islands, no motori
 ### Back to Bali — and the end
 
 Two nights in Bali. We'd been moving for eight months. We sat on the beach and tried to account for all of it, which is impossible to do and also a good way to spend an afternoon.
+
+{{< photo src="/images/guides/lembongan-sunset.jpg" alt="Sunset through frangipani trees on Nusa Lembongan" caption="The last evenings." >}}
 
 Then we flew to Switzerland.
 

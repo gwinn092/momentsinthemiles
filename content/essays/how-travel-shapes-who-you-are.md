@@ -20,6 +20,8 @@ Travel doesn't announce that it's changing you. It simply begins.
 
 And if you keep moving long enough, you start to notice what it's doing beneath the surface.
 
+{{< photo src="/images/essays/road-to-dunes.jpg" alt="The van alone on a straight two-lane highway, dunes and mountains ahead" caption="The long quiet miles do most of the work." >}}
+
 ## The early years
 
 Before we built a life together, we both traveled independently — and independently, we learned the same thing: movement clarifies.
@@ -41,6 +43,8 @@ What started as a practical decision — lower overhead, more freedom, a way to 
 Living in seventy square feet across all forty-eight continental states over seven years doesn't just teach you about America. It teaches you about yourself in a way that's difficult to access any other way. There's no spare room for avoidance. When the van won't start in the middle of the Mojave, you problem-solve. When a week of straight clouds and rain rolls in off the Gulf at Santa Rosa Beach — hot and muggy with no relief and the generator acting up — you regulate. When the road stretches long and uncertain through eastern Montana with nothing but sky and doubt, you choose — again — to stay aligned with each other and with the decision you made.
 
 We watched the seasons change across every type of American landscape. We met people on BLM land at the edge of nowhere, in parking lots of small-town diners, at roadside pull-offs where someone stopped because they recognized the look of people figuring something out — and they handed us something without realizing it. A perspective, a recommendation, a reminder of how differently people build a life and how equally valid those lives can be.
+
+{{< photo src="/images/essays/yosemite-meadow.jpg" alt="A lone figure on a trail through a golden meadow below granite walls" caption="Yosemite Valley, early fall." >}}
 
 The road didn't just show us the country. It showed us our edges.
 

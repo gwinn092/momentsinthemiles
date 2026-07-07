@@ -6,8 +6,7 @@ description: "Seventy dollars a day sounds like a constraint. In Southeast Asia,
 category: "Guides"
 author: "Karlee & Jesse"
 draft: false
-image: "/images/guides/sea-sleeper-bus.jpg"
-hero_position: "center 60%"
+image: "/images/guides/warung-menu.jpg"
 ---
 
 <!-- DRAFT: REVIEW NUMBERS WITH KARLEE BEFORE PUBLISHING -->
@@ -59,6 +58,8 @@ One thing that quietly blows food budgets: alcohol. It's cheap enough that it's 
 Transport is where Southeast Asia budgets either hold or leak. The decision almost always comes down to speed versus cost — and the faster you move, the more you spend.
 
 Overnight buses and trains cost less and save a night of accommodation simultaneously. In many cases, the journey itself becomes part of the experience. The 27-hour bus from Laos into Vietnam is not comfortable — we won't pretend otherwise. But it cost a fraction of a flight, crossed a mountain range we'll never forget, and delivered us to the border at dawn in a way that no airport ever could. We'd do it again.
+
+{{< photo src="/images/guides/sea-sleeper-bus.jpg" alt="The sleeper bus from Laos to Vietnam" caption="The 27-hour bus from Laos into Vietnam — a fraction of the cost of flying." >}}
 
 Within cities, Grab is inexpensive, metered, and scam-proof — you see the price before you confirm. Scooter rentals run $5–8 per day and unlock a level of freedom that changes how you experience a place entirely. Wear a helmet, ride carefully, and make sure your travel insurance covers it.
 

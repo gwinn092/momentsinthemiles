@@ -6,7 +6,7 @@ description: "Movement that lasts isn't accidental. It's designed. Here's the fi
 category: "Essays"
 author: "Karlee & Jesse"
 draft: false
-image: "/images/van-life/van-colorado-fall.jpg"
+image: "/images/essays/galley-sea-view.jpg"
 ---
 
 There's a version of this life that looks spontaneous from the outside.
@@ -34,6 +34,8 @@ Lower overhead created margin. Margin created options. Options created mobility.
 That's the part rarely highlighted in the romantic version of van life. It wasn't about minimalism as identity. It was about restructuring our financial baseline so that movement became sustainable instead of stressful.
 
 When your life costs less, your choices expand.
+
+{{< photo src="/images/essays/bed-window-islands.jpg" alt="The view from the van's bed through open rear doors, islands scattered across the water below" caption="The bedroom view, some mornings." >}}
 
 ## Seven years of iteration
 

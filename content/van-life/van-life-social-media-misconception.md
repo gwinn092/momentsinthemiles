@@ -19,6 +19,8 @@ We've been doing this for eight years. And we're here to tell you — that versi
 
 Here's the thing about the highlight reel: it's not dishonest, exactly. Those golden hour moments happen. The stunning campsites are real. There are mornings that feel so good you genuinely can't believe this is your life.
 
+{{< photo src="/images/van-life/sink-mountain-view.jpg" alt="The van's sink and counter with the Tetons framed in the window" caption="This part is real." >}}
+
 But social media, by design, shows you the peak. The algorithm rewards beauty, aspiration, and ease. It doesn't reward the Tuesday you spent four hours in a Walmart parking lot waiting for a part to arrive. It doesn't reward the week it rained every single day and you couldn't open the windows and everything felt slightly damp and slightly tense. It doesn't reward the conversation you had to have about money, or space, or what you're actually doing with your life.
 
 Those moments happen too. They happen a lot, actually. And somewhere along the way, a gap opened up between what van life looks like online and what van life actually is — and that gap has quietly convinced a lot of people that they're doing it wrong.
@@ -30,6 +32,8 @@ Of all the things social media gets wrong about van life, the most damaging isn'
 When every van you see online is immaculate, every campsite is picturesque, and every couple looks like they're genuinely thriving — it creates an unconscious standard. And when your reality doesn't match that standard, it's easy to assume the problem is you.
 
 We've talked to people who quit van life after a few months because they thought they were failing at it. They weren't. They were just living it.
+
+{{< photo src="/images/van-life/van-stuck-mud.jpg" alt="The van's front wheels sunk into muddy ruts" caption="So is this part." >}}
 
 Real van life includes:
 

@@ -30,6 +30,8 @@ We came back the next day. And the day after that.
 
 On our third visit they were slammed. The line had spilled down the block and the kitchen was moving at a pace that had no room for anything extra. We could see it from the street — the focused quiet of two people deep in the work.
 
+{{< photo src="/images/essays/hanoi-stall-cooks.jpg" alt="Two women working behind the counter of a small Hanoi kitchen" caption="No wasted motion, no instructions — a kind of silent fluency." >}}
+
 So we waited. Not impatiently. Not checking our phones or craning to see how far the line had moved. We just stood there, in the heat, and gave them the space to do what they were doing.
 
 I think they noticed.
@@ -49,6 +51,8 @@ The crack of bread splitting open. The quick, confident spread of pâté. Herbs 
 We smiled at each other — me and Jesse, us and them — in the way you smile when language isn't necessary. When you're just glad to be exactly where you are.
 
 The sandwich, when it came, tasted the way it always had. But everything around it was different.
+
+{{< photo src="/images/essays/banh-mi-hands.jpg" alt="Two bánh mì held side by side on a Hanoi street" caption="Hanoi doesn't miss with bánh mì." >}}
 
 I've thought about that kitchen a lot since we left Hanoi.
 

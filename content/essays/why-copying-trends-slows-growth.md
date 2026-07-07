@@ -58,6 +58,8 @@ If it starts with "I saw someone do this and I want to do my version" — that's
 
 The best content usually starts with the thing you actually want to say. The thing that's been sitting with you. The perspective that feels almost too specific, too honest, too yours. That's usually the signal that it's worth making.
 
+{{< photo src="/images/essays/yosemite-walk.jpg" alt="Walking alone through tall golden grass in Yosemite Valley" caption="The slower path is still a path." >}}
+
 ## The long game is the only game worth playing
 
 Eight years in, we're still here. Still writing. Still creating. And the content that has served us best — the posts that keep getting found, the pieces readers come back to, the work we're actually proud of — is almost never the content we made because someone else was doing something similar.

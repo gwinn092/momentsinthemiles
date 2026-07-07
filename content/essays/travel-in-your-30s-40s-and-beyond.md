@@ -37,6 +37,8 @@ We're not going to pretend nothing changes. Things do.
 
 Recovery takes longer. You care more about sleep than you used to. The idea of a twenty-seven-hour bus ride on mountain roads in northern Laos lands differently at thirty-five than it did at twenty-two — though we did it anyway, and it remains one of the more formative experiences of our traveling lives.
 
+{{< photo src="/images/guides/sleeper-bus-bunk.jpg" alt="Karlee and Jesse tucked into a sleeper bus bunk in northern Laos" caption="Somewhere around hour nine of twenty-seven, northern Laos." >}}
+
 You have more responsibilities to account for. More people who depend on you, or who at least have opinions about your choices. The financial stakes feel higher because they often are.
 
 Planning matters more. Spontaneity is still possible, but it requires a more intentional container. You can't just vanish for three months without building the systems that allow it.
@@ -79,6 +81,8 @@ You are not too old. You have not missed the window. The window is not a window 
 - Accept that some things cost more now — and that some of those costs are worth it
 - Stop measuring this version of adventure against a previous one
 - The skills you've built — patience, resourcefulness, discernment — make you a better traveler than you were before
+
+{{< photo src="/images/essays/beach-together.jpg" alt="Karlee and Jesse smiling on the beach at golden hour" caption="Seven years in. Still going." >}}
 
 We're not writing this from the other side of some finish line. We're writing it from inside the doing of it — from a life that is still in motion, still being designed, still asking us to choose it again and again.
 

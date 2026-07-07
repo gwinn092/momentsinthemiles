@@ -6,8 +6,8 @@ description: "Chiang Mai, day one. A food cart. A bowl of soup. And a lesson tha
 category: "Stories"
 author: "Karlee"
 draft: false
-image: "/images/essays/hanoi-banh-mi-shop.jpg"
-hero_position: "center 55%"
+image: "/images/guides/thai-street-cart.jpg"
+hero_position: "center 60%"
 ---
 
 ## Chiang Mai, day one
@@ -46,6 +46,8 @@ That first day in Chiang Mai shifted something in us. And it was only the beginn
 
 Throughout the next eight months traveling across Asia, we encountered countless acts of kindness — moments that reminded us, again and again, what humanity looks like at its best.
 
+{{< photo src="/images/essays/laos-walking-together.jpg" alt="Jesse walking hand in hand with a young boy through a Lao village" caption="Some invitations don't need words." >}}
+
 Human kindness doesn't require language. It doesn't require wealth. It doesn't require a reason.
 
 It exists in eye contact. In shared space. In steam rising from a pot on a noisy street.
@@ -65,6 +67,8 @@ Speed makes kindness invisible. Stillness reveals it.
 ## Give. Receive. Repeat.
 
 Kindness flows both ways. Sometimes you receive the extra soup. Sometimes you're the one offering help — carrying a bag, sharing directions, translating a map.
+
+{{< photo src="/images/essays/laos-cooking-together.jpg" alt="Jesse helping cook over a pot in a village kitchen in Laos" caption="Sometimes you're the one stirring the pot." >}}
 
 Travel taught us that generosity isn't about grand gestures. It's about participation. When you show up open, the world often mirrors it back.
 

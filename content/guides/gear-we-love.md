@@ -6,7 +6,7 @@ description: "We don't do gear reviews. We don't test products for a week and te
 category: "Guides"
 author: "Karlee & Jesse"
 draft: false
-image: "/images/van-life/van-interior-lake.jpg"
+image: "/images/guides/van-interior-galley.jpg"
 ---
 
 We don't do gear reviews. We don't test products for a week and tell you what we think. Everything on this list has lived in our van — a 2017 Ram ProMaster — for months or years. Some of it has survived eight years on the road. Some of it replaced something that didn't.
@@ -47,6 +47,8 @@ Eight years. Multiple dents. Still keeps ice frozen for a full day in Arizona he
 
 This isn't casual gear — it's the foundation of how we eat on the road. Dual zone means we run a fridge side and a freezer side. We've kept groceries fresh for over a week in the desert with no shore power. It draws more power than anything else in the van, which is exactly why the solar and battery setup matters so much.
 
+{{< photo src="/images/guides/dometic-fridge.jpg" alt="The Dometic dual-zone fridge" caption="The foundation of how we eat on the road." >}}
+
 ---
 
 ## Outside the van
@@ -58,6 +60,8 @@ The shoes you put on when you don't want to put on shoes. They live next to the 
 **Inflatable Kayak**
 
 This was a "do we really need this?" purchase that became one of our favorite things we own. It packs down small enough to store under the bed platform, inflates in about ten minutes, and has taken us to places we never would have seen from shore. Worth every inch of storage space.
+
+{{< photo src="/images/guides/inflatable-kayaks.jpg" alt="Two inflatable kayaks pulled up on a canyon lake shore" caption="Places you can't get to from shore." >}}
 
 ---
 
@@ -88,6 +92,8 @@ We've used a lot of apps over the years. These are the ones still on our phones:
 ---
 
 ## The power setup
+
+{{< photo src="/images/guides/solar-roof.jpg" alt="Solar panels mounted on the van's roof" caption="300+ watts up top, quietly doing its job." >}}
 
 Our van runs on a BLUETTI Elite 200 V2 with 300+ watts of solar on the roof. It powers the fridge, the fans, our laptops, phones, and everything else. We lived on a Goal Zero Yeti 1400 for six years before switching, so we've seen both sides.
 

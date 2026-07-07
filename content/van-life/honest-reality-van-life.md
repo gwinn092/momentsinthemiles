@@ -6,7 +6,7 @@ description: "We've been living full-time in a van for eight years. We know what
 category: "Van Life"
 author: "Karlee & Jesse"
 draft: false
-image: "/images/van-life/van-lake-powell.jpg"
+image: "/images/van-life/van-stuck-gravel.jpg"
 ---
 
 Let's get one thing out of the way: the photos are real. The sunsets, the open roads, the coffee made in places that don't have a parking lot or a loyalty card — all of it actually happens. We're not going to pretend otherwise.
@@ -24,6 +24,8 @@ Everyone worries about the logistics before they start. Where will I shower? Wha
 The harder stuff is quieter. It's the low-grade mental load of always knowing where your next water fill is. It's the way a bad night of sleep in a hot parking lot doesn't just make you tired — it makes everything harder. It's the fact that when something goes wrong with your home, something is also wrong with your vehicle, and sometimes both at the same time at 9pm on a Sunday.
 
 The logistics you solve once. The mental load you manage forever. That's the part nobody puts in the caption.
+
+{{< photo src="/images/guides/traction-boards.jpg" alt="Digging out a van tire with traction boards on loose gravel" caption="The caption on this one: we got out eventually." >}}
 
 ---
 

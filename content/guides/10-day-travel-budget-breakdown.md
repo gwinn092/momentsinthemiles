@@ -43,6 +43,8 @@ Street meals — pad thai, pho, bánh mì — run $1–$2 each. Sit-down restaur
 
 A real day of eating for two people — coffee, two street breakfasts, a proper lunch, dinner at a local restaurant, two beers each — comes in around $20–$30 without trying hard.
 
+{{< photo src="/images/guides/bia-hanoi.jpg" alt="A cold can of Bia Hà Nội" caption="A $1.50 institution." >}}
+
 Budget: $30/day for two → $300 for 10 days
 
 **Local transport — $5–$15/day for two**

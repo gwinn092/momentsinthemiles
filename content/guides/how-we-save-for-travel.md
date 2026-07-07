@@ -6,7 +6,8 @@ description: "The slow, unglamorous system that made our travel life sustainable
 category: "Guides"
 author: "Karlee & Jesse"
 draft: false
-image: "/images/van-life/van-golden-hour.jpg"
+image: "/images/guides/campfire-dusk-van.jpg"
+hero_position: "center 65%"
 ---
 
 <!-- DRAFT: REVIEW NUMBERS WITH KARLEE BEFORE PUBLISHING -->
@@ -48,6 +49,8 @@ No rent. No utility bills. No lease anchoring us in place. The van wasn't free â
 That gap between old overhead and new overhead became our savings rate. We didn't have to be disciplined about it. It happened structurally.
 
 We're not saying everyone needs to live in a van. But if you want to travel seriously, look at your fixed costs before your discretionary ones. That's where the real money is.
+
+{{< photo src="/images/guides/campfire-cooking.jpg" alt="Vegetables and a pot cooking over a campfire grate" caption="Dinner: a few dollars, a fire ring, nowhere else to be." >}}
 
 ## WE TREATED THE SE ASIA TRIP LIKE A FINANCIAL DECISION, NOT A FANTASY
 

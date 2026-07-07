@@ -6,7 +6,7 @@ description: "Seven years of van life didn't give us one version of freedom. It 
 category: "Essays"
 author: "Karlee & Jesse"
 draft: false
-image: "/images/pages/vanlife-promaster-tetons.jpg"
+image: "/images/essays/van-fall-aspens.jpg"
 ---
 
 There's a version of freedom we carry nostalgia for.
@@ -29,6 +29,8 @@ What we didn't expect was how much the van would teach us about the nature of fr
 
 In the first year, freedom looked like intention — but slow, unsteady intention. We moved into the van in October in Colorado and spent that first winter there before gradually working our way south. We caught Mardi Gras in New Orleans, landed at Santa Rosa Beach on the Florida panhandle for a season, and eventually made our way north. The forty-eight states weren't a goal — they were a consequence of following curiosity long enough, year after year.
 
+{{< photo src="/images/essays/van-snow-chains.jpg" alt="The van in deep snow with tire chains on" caption="That first Colorado winter. Chains on, learning as we went." >}}
+
 But somewhere around year three, something shifted.
 
 The constant movement started to feel less like freedom and more like avoidance of stillness. We started craving depth over novelty. Longer stays. Returning to the same stretch of BLM land because we weren't done with it yet. Knowing a town well enough to have a favorite spot for coffee, a back street worth walking twice.
@@ -38,6 +40,8 @@ Freedom hadn't disappeared. It had evolved.
 Year five looked different again. We were more intentional about where we went and why. We planned further ahead. We built more structure into our days. And paradoxically, that structure created more freedom — because we weren't spending energy on decisions that didn't matter.
 
 Seven years of van life didn't give us one version of freedom. It gave us several — and taught us that each one was right for its season.
+
+{{< photo src="/images/essays/van-summer-lake.jpg" alt="The van parked beside an alpine lake with snow-capped mountains behind" caption="A different season, a different freedom." >}}
 
 ## The timeline most of us absorb without realizing it
 

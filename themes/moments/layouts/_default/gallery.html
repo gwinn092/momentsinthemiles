@@ -20,10 +20,16 @@
 
 <div class="post-list">
   <div class="container-wide">
+    <div class="gallery-filter" role="group" aria-label="Filter photos by chapter">
+      <button type="button" class="gallery-filter__btn is-active" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" class="gallery-filter__btn" data-filter="van" aria-pressed="false">Van Life</button>
+      <button type="button" class="gallery-filter__btn" data-filter="west" aria-pressed="false">American West</button>
+      <button type="button" class="gallery-filter__btn" data-filter="asia" aria-pressed="false">Southeast Asia</button>
+    </div>
     <div class="gallery-grid">
       {{ range .Params.gallery }}
       {{ $src := printf "%s%s" $.Site.Home.RelPermalink (strings.TrimPrefix "/" .src) }}
-      <button type="button" class="gallery-item" data-full="{{ $src }}" data-caption="{{ .alt }}" aria-label="View larger: {{ .alt }}">
+      <button type="button" class="gallery-item" data-cat="{{ .cat | default "all" }}" data-full="{{ $src }}" data-caption="{{ .alt }}" aria-label="View larger: {{ .alt }}">
         <img src="{{ $src }}" alt="{{ .alt }}" loading="lazy">
         <span class="gallery-item__cap">{{ .alt }}</span>
       </button>

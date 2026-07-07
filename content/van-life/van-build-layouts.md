@@ -18,6 +18,8 @@ If you're in the planning stages of your van build, consider this your shortcut.
 
 A quick note: this post is written specifically for people building a van they plan to live in full-time. Full-time living means your van is your home — not a weekend escape, not a seasonal adventure vehicle. Because of that, comfort features matter more here than they might for part-time builds. These recommendations are based on our experience after nearly a decade on the road.
 
+{{< photo src="/images/van-life/empty-van-high-five.jpg" alt="Karlee and Jesse high-fiving inside the empty van shell" caption="Day one. No idea what we were in for." >}}
+
 ## Start here: the question that shapes everything
 
 Before you decide on a single layout detail, ask yourself one thing: will I be working remotely from this van?
@@ -31,6 +33,8 @@ This is something we thought we'd nailed in our own build. We knew we'd be worki
 Our current van has a U-shaped convertible layout. When it's set up as a couch, it seats us plus two or three other people comfortably — which is genuinely great for hosting friends on the road. When it's converted to a bed, it's spacious. And as a workspace, it gives us room to spread out.
 
 {{< photo src="/images/van-life/van-galley-window.jpg" alt="The van galley kitchen with a window view over a lake" caption="Our galley — the window does a lot of the work" >}}
+
+{{< photo src="/images/van-life/building-panels.jpg" alt="Jesse drilling panels on the lawn beside the van mid-build" caption="Mid-build. Every panel by hand." >}}
 
 On paper, it's one of the most space-efficient layouts you can do in a van. We still believe that.
 

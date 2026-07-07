@@ -27,6 +27,8 @@ The first day was calm.
 
 By late afternoon, we pulled into Pakbeng. The dock exploded into noise the moment we arrived. Drivers shouting hotel names. Backpacks tossed into truck beds. Strangers ushered into random vehicles and driven up dusty hills toward wherever they were staying.
 
+{{< photo src="/images/essays/mekong-slow-boats.jpg" alt="Slow boats on the Mekong at dusk, hills behind" caption="The Mekong at dusk, northern Laos." >}}
+
 That's how we met Vieng.
 
 ## The invitation
@@ -41,6 +43,8 @@ We said yes.
 
 The next morning, we drank coffee on the patio and watched our original boat load up and disappear down the river without us. We were staying.
 
+{{< photo src="/images/essays/mekong-coffee.jpg" alt="A cup of coffee on a ledge above the Mekong river" caption="The morning we let the boat leave without us." >}}
+
 ## His village
 
 The drive wound through dirt roads and small rural communities. When we arrived, you could see how proud he was. People had put on their good clothes. Children paused to stare, smiling wide.
@@ -52,6 +56,8 @@ Before we'd even settled in, we handed out the candy we'd brought — Vieng had 
 We watched children fish, bathe, and play in the river like it was the center of the world — because it was.
 
 His mother made lunch for the four of us — Vieng, the driver, Jesse, and me. One of the most authentic meals of our entire trip. Simple, careful, made with intention.
+
+{{< photo src="/images/essays/laos-host-meal.jpg" alt="Jesse and Karlee seated on the floor around baskets of home-cooked food" caption="Lunch in Vieng's village. Simple, careful, made with intention." >}}
 
 After lunch, the townspeople began to gather. Someone produced rice wine. Then more people. Then more rice wine. We sat together for hours — laughing, drinking, listening — the conversation a loose mix of Vieng translating and the universal language of people who are simply glad to be together.
 
@@ -82,6 +88,8 @@ Earlier that day, we had been talking about how beautiful this life was. The sim
 Vieng had looked at Jesse and said quietly, "Yes… but people get sick and die."
 
 At the time, it felt philosophical. By evening, it felt real.
+
+{{< photo src="/images/essays/mekong-sunset-mirror.jpg" alt="Sunset reflected in the still water of the Mekong" caption="The river, at the end of that day." >}}
 
 ## What travel really gave us
 

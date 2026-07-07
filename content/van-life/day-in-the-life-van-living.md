@@ -57,6 +57,8 @@ We pick a home base — usually a library or a coffee shop with good wifi — an
 
 There's a rhythm to it that took maybe a year to find and now just feels like Tuesday. The logistics that seemed overwhelming before we started are mostly just Tuesday now.
 
+{{< photo src="/images/van-life/van-on-ferry.jpg" alt="The van parked on a ferry deck, water and coastline beyond" caption="Some commutes are better than others." >}}
+
 ---
 
 ## Afternoon: this is when it gets good

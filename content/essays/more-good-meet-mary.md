@@ -37,6 +37,8 @@ The stories she collected are being compiled into a book she plans to donate to 
 
 Here's the thing we've noticed after years on the road: you don't just see new places. You meet people who reframe things. Who remind you what's possible. Who are out there doing something so specific and so true to who they are that it makes you want to go be more specific and more true yourself.
 
+{{< photo src="/images/essays/more-good-shirts.jpg" alt="Karlee and Mary at Red Rocks wearing More Good shirts" caption="More good — worn literally." >}}
+
 Mary is that kind of person. Her work is a living reminder that goodness is not a passive thing — it has to be sought out, documented, shared. That the stories worth telling are often the ones nobody thought to look for.
 
 Whether you're traveling full-time, taking a long trip, or just trying to move through your regular life with more intention — More Good Today is worth paying attention to. Not because it will make you feel better in a soft, surface-level way. Because it will make you look differently. At the people around you. At the ordinary moments. At what's already there.

@@ -46,6 +46,8 @@ Instead, we walked into a birthday celebration. It was Pan's birthday. Chairs we
 
 We sat around that table for hours. Laughing. Drinking. Listening.
 
+{{< photo src="/images/essays/lembongan-birthday.jpg" alt="A long table of friends celebrating at night on Nusa Lembongan" caption="Pan's birthday, Nusa Lembongan." >}}
+
 We didn't share a long history. We didn't share the same language fluently. But warmth doesn't require fluency.
 
 There was no performance. No curated experience. No transaction. Just hospitality. Just inclusion. Just a group of friends widening their circle for the night.
@@ -59,6 +61,8 @@ Travel doesn't automatically make someone open-minded. But proximity can.
 When you sit long enough at someone else's table, something shifts. You notice that parents worry about their children everywhere. Friends tease each other the same way everywhere. People work hard, celebrate hard, and care deeply everywhere.
 
 Different customs. Same humanity.
+
+{{< photo src="/images/essays/lembongan-friends.jpg" alt="Karlee and a friend from the island laughing over a camera" caption="Comparing photos after dinner." >}}
 
 There's also humility in being the outsider. You mispronounce names. You misunderstand jokes. You navigate small awkwardness. And that discomfort can be instructive — it softens certainty. It reminds you that your way is not the default.
 
