@@ -1,0 +1,12 @@
+{{- $idx := slice -}}
+{{- range where site.RegularPages "Params.draft" "!=" true -}}
+{{- $idx = $idx | append (dict
+      "title" .Title
+      "url" .RelPermalink
+      "section" (title (replace .Section "-" " "))
+      "desc" (.Description | default "")
+      "tags" (.Params.tags | default slice)
+      "body" (substr .Plain 0 1500)
+    ) -}}
+{{- end -}}
+{{- $idx | jsonify -}}

@@ -96,6 +96,7 @@
 <p class="visually-hidden">Together we have visited all 48 continental United States, plus Thailand, Laos, Vietnam, Cambodia, Malaysia, Singapore, and Indonesia. Before we met, Jesse traveled South Africa and Karlee lived five years on St. John in the U.S. Virgin Islands; we each backpacked Europe separately. Sixteen places on these maps open a short story with a photograph and a link to the full essay.</p>
 
 <div class="map-tooltip" id="mapTooltip" hidden>
+  <img class="map-tooltip__img" src="" alt="" hidden>
   <span class="map-tooltip__name"></span>
   <span class="map-tooltip__note"></span>
   <span class="map-tooltip__hint">Click for the story</span>
@@ -192,6 +193,32 @@
     }
   });
 
+  // --- One-way tickets: flight arc from the US across the Pacific to SE Asia.
+  // The world map is centered on 0°, so the Pacific route exits the west edge
+  // and re-enters from the east — drawn as two dashed segments.
+  if (worldSvg) {
+    var usShape = worldSvg.querySelector('[data-name="United States"]');
+    var thShape = worldSvg.querySelector('[data-name="Thailand"]');
+    if (usShape && thShape) {
+      var vb = worldSvg.viewBox.baseVal;
+      var ub = usShape.getBBox();
+      var tb = thShape.getBBox();
+      var ax = ub.x + ub.width * 0.14, ay = ub.y + ub.height * 0.62;   // US west coast
+      var bx = tb.x + tb.width * 0.45, by = tb.y + tb.height * 0.40;   // Thailand
+      var edgeY = Math.min(ay, by) - vb.height * 0.06;                 // cruising altitude
+      var left = vb.x + 1, right = vb.x + vb.width - 1;
+      var arc = document.createElementNS(SVGNS, 'path');
+      arc.setAttribute('class', 'map-arc');
+      arc.setAttribute('d',
+        'M ' + ax + ' ' + ay +
+        ' Q ' + (ax - (ax - left) * 0.55) + ' ' + (edgeY - vb.height * 0.02) + ' ' + left + ' ' + edgeY +
+        ' M ' + right + ' ' + edgeY +
+        ' Q ' + (bx + (right - bx) * 0.55) + ' ' + (edgeY - vb.height * 0.02) + ' ' + bx + ' ' + by);
+      var firstPin = worldSvg.querySelector('.map-pin');
+      firstPin ? worldSvg.insertBefore(arc, firstPin) : worldSvg.appendChild(arc);
+    }
+  }
+
   // --- Story panel ---
   var panel = document.getElementById('mapPanel');
   var scrim = document.getElementById('mapScrim');
@@ -250,6 +277,8 @@
   var tipName = tip.querySelector('.map-tooltip__name');
   var tipNote = tip.querySelector('.map-tooltip__note');
   var tipHint = tip.querySelector('.map-tooltip__hint');
+  var tipImg = tip.querySelector('.map-tooltip__img');
+  tipImg.addEventListener('error', function () { tipImg.hidden = true; });
   var current = null;
 
   function showTip(target, x, y) {
@@ -260,6 +289,14 @@
       tipNote.textContent = note;
       tipNote.style.display = note ? '' : 'none';
       tipHint.style.display = (target.dataset.storyId && !touring) ? '' : 'none';
+      var ts = target.dataset.storyId && byId[target.dataset.storyId];
+      if (ts && ts.photo) {
+        tipImg.src = url('images/map/thumbs/' + ts.id + '.jpg');
+        tipImg.hidden = false;
+      } else {
+        tipImg.hidden = true;
+        tipImg.removeAttribute('src');
+      }
       tip.hidden = false;
     }
     var w = tip.offsetWidth, h = tip.offsetHeight;

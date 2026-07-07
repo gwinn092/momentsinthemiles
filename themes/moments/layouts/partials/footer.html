@@ -5,6 +5,12 @@
       <div class="footer-brand">
         <a href="{{ .Site.Home.RelPermalink }}" class="footer-logo">Moments in the Miles</a>
         <p class="footer-tagline">Stories shaped by distance.<br>Perspective earned by miles.</p>
+        {{ with site.Data.van_now }}{{ if .location }}
+        <p class="footer-now">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          The van is currently: {{ .location }}{{ with .updated }} <span class="footer-now__date">· updated {{ . }}</span>{{ end }}
+        </p>
+        {{ end }}{{ end }}
       </div>
       <nav class="footer-col" aria-label="Explore">
         <span class="footer-col__title">Explore</span>
@@ -36,6 +42,18 @@
   </div>
 </footer>
 
+<div class="search-overlay" id="searchOverlay" hidden>
+  <div class="search-box" role="search">
+    <div class="search-input-row">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="search" id="searchInput" placeholder="Search stories, guides, places&hellip;" aria-label="Search the site" autocomplete="off">
+      <button type="button" class="search-close" id="searchClose" aria-label="Close search">esc</button>
+    </div>
+    <ul class="search-results" id="searchResults"></ul>
+    <p class="search-empty" id="searchEmpty" hidden>Nothing yet &mdash; try a place, a topic, or a feeling.</p>
+  </div>
+</div>
+
 <button class="back-to-top" aria-label="Back to top" title="Back to top">
   <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
 </button>
@@ -57,6 +75,116 @@
       document.body.classList.remove('nav-open');
     }
   });
+
+  // --- Site search ---
+  (function () {
+    const overlay = document.getElementById('searchOverlay');
+    const openBtn = document.querySelector('.search-toggle');
+    if (!overlay || !openBtn) return;
+    const input = document.getElementById('searchInput');
+    const list = document.getElementById('searchResults');
+    const empty = document.getElementById('searchEmpty');
+    let index = null;
+
+    const openSearch = () => {
+      if (nav.classList.contains('is-open')) {
+        nav.classList.remove('is-open');
+        toggle.classList.remove('is-active');
+        document.body.classList.remove('nav-open');
+      }
+      overlay.hidden = false;
+      document.body.classList.add('search-open');
+      input.focus();
+      if (!index) {
+        fetch(openBtn.getAttribute('data-index'))
+          .then(r => r.json())
+          .then(data => { index = data; if (input.value) render(input.value); })
+          .catch(() => { index = []; });
+      }
+    };
+    const closeSearch = () => {
+      overlay.hidden = true;
+      document.body.classList.remove('search-open');
+      openBtn.focus();
+    };
+
+    const score = (page, tokens) => {
+      let total = 0;
+      const title = page.title.toLowerCase();
+      const desc = (page.desc || '').toLowerCase();
+      const body = (page.body || '').toLowerCase();
+      const tags = (page.tags || []).join(' ').toLowerCase();
+      for (const t of tokens) {
+        let s = 0;
+        if (title.includes(t)) s += title.startsWith(t) ? 12 : 8;
+        if (tags.includes(t)) s += 5;
+        if (desc.includes(t)) s += 3;
+        if (body.includes(t)) s += 1;
+        if (!s) return 0; // every word must match somewhere
+        total += s;
+      }
+      return total;
+    };
+
+    const render = (q) => {
+      const tokens = q.toLowerCase().trim().split(/\s+/).filter(Boolean);
+      list.innerHTML = '';
+      if (!tokens.length || !index) { empty.hidden = true; return; }
+      const hits = index
+        .map(p => ({ p, s: score(p, tokens) }))
+        .filter(h => h.s > 0)
+        .sort((a, b) => b.s - a.s)
+        .slice(0, 8);
+      empty.hidden = hits.length > 0;
+      hits.forEach(({ p }) => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = p.url;
+        a.className = 'search-result';
+        const cat = document.createElement('span');
+        cat.className = 'search-result__section';
+        cat.textContent = p.section;
+        const title = document.createElement('span');
+        title.className = 'search-result__title';
+        title.textContent = p.title;
+        a.appendChild(cat);
+        a.appendChild(title);
+        if (p.desc) {
+          const d = document.createElement('span');
+          d.className = 'search-result__desc';
+          d.textContent = p.desc;
+          a.appendChild(d);
+        }
+        li.appendChild(a);
+        list.appendChild(li);
+      });
+    };
+
+    openBtn.addEventListener('click', openSearch);
+    document.getElementById('searchClose').addEventListener('click', closeSearch);
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) closeSearch(); });
+    input.addEventListener('input', () => render(input.value));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && overlay.hidden && !/^(input|textarea)$/i.test(document.activeElement.tagName)) {
+        e.preventDefault();
+        openSearch();
+      }
+      if (overlay.hidden) return;
+      if (e.key === 'Escape') closeSearch();
+      if (e.key === 'Enter' && document.activeElement === input) {
+        const first = list.querySelector('a');
+        if (first) first.click();
+      }
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        const links = Array.from(list.querySelectorAll('a'));
+        if (!links.length) return;
+        e.preventDefault();
+        const i = links.indexOf(document.activeElement);
+        if (e.key === 'ArrowDown') (links[i + 1] || input).focus();
+        else (i <= 0 ? input : links[i - 1]).focus();
+      }
+    });
+  })();
 
   // --- Header shadow on scroll ---
   const header = document.querySelector('.site-header');

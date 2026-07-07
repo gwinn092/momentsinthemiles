@@ -1,0 +1,115 @@
+{{ define "main" }}
+<div class="quiz-page content-container">
+  <header class="quiz-header">
+    <span class="eyebrow">Reduce Friction</span>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="quiz-header__desc">{{ . }}</p>{{ end }}
+  </header>
+
+  <div class="quiz">
+    <div class="quiz__start" id="quizStart">
+      {{ .Content }}
+      <button type="button" class="btn btn-primary" id="quizBegin">Find out</button>
+    </div>
+
+    <div class="quiz__card" id="quizCard" hidden>
+      <div class="quiz__progress">
+        <span class="quiz__step" id="quizStep"></span>
+        <div class="quiz__bar" aria-hidden="true"><span id="quizBarFill"></span></div>
+      </div>
+      <h2 class="quiz__question" id="quizQuestion"></h2>
+      <div class="quiz__opts" id="quizOpts"></div>
+      <button type="button" class="quiz__back" id="quizBack" hidden>&larr; Back</button>
+    </div>
+
+    <div class="quiz__result" id="quizResult" hidden aria-live="polite">
+      <span class="eyebrow">What's actually keeping you</span>
+      <h2 class="quiz__result-title" id="quizResultTitle"></h2>
+      <p class="quiz__result-text" id="quizResultText"></p>
+      <a class="link-arrow" id="quizResultLink" href="">Read <span aria-hidden="true">&rarr;</span></a>
+      <div class="kit-callout quiz__kit">
+        <p class="kit-callout__eyebrow">Built for exactly this</p>
+        <p class="kit-callout__heading">The Leave Anyway Kit</p>
+        <p class="kit-callout__body">A 10-section guided workspace for working through the real stuff before you leave — the fear, the money, the people who don't get it, the logistics you've been avoiding. Whatever your wall is, there's a section that takes it apart.</p>
+        <a href="https://wanderus.gumroad.com/l/pinqn" class="kit-callout__link">Get the kit &rarr;</a>
+      </div>
+      <button type="button" class="quiz__back" id="quizRestart">Start over</button>
+    </div>
+  </div>
+</div>
+
+<script type="application/json" id="quizData">{{ dict "home" .Site.Home.RelPermalink "questions" .Params.questions "results" .Params.results | jsonify | safeJS }}</script>
+<script>
+(function () {
+  var DATA = JSON.parse(document.getElementById('quizData').textContent);
+  var questions = DATA.questions;
+  var results = DATA.results;
+  var answers = [];
+  var step = 0;
+
+  var start = document.getElementById('quizStart');
+  var card = document.getElementById('quizCard');
+  var result = document.getElementById('quizResult');
+  var stepEl = document.getElementById('quizStep');
+  var barEl = document.getElementById('quizBarFill');
+  var qEl = document.getElementById('quizQuestion');
+  var optsEl = document.getElementById('quizOpts');
+  var backBtn = document.getElementById('quizBack');
+
+  function show(i) {
+    step = i;
+    var q = questions[i];
+    stepEl.textContent = (i + 1) + ' of ' + questions.length;
+    barEl.style.width = ((i) / questions.length * 100) + '%';
+    qEl.textContent = q.q;
+    optsEl.innerHTML = '';
+    q.options.forEach(function (o) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'quiz__opt';
+      b.textContent = o.text;
+      b.addEventListener('click', function () {
+        answers[i] = o.key;
+        i + 1 < questions.length ? show(i + 1) : finish();
+      });
+      optsEl.appendChild(b);
+    });
+    backBtn.hidden = i === 0;
+    card.scrollIntoView({ block: 'nearest', behavior: 'auto' });
+  }
+
+  function finish() {
+    var tally = {};
+    answers.forEach(function (k) { tally[k] = (tally[k] || 0) + 1; });
+    // ties break toward the harder truth
+    var order = ['fear', 'money', 'people', 'logistics'];
+    var winner = order[0];
+    var best = -1;
+    order.forEach(function (k) {
+      if ((tally[k] || 0) > best) { best = tally[k] || 0; winner = k; }
+    });
+    var r = results[winner];
+    document.getElementById('quizResultTitle').textContent = r.title;
+    document.getElementById('quizResultText').textContent = r.text;
+    var link = document.getElementById('quizResultLink');
+    link.href = DATA.home + r.link;
+    link.innerHTML = r.link_text + ' <span aria-hidden="true">&rarr;</span>';
+    card.hidden = true;
+    result.hidden = false;
+  }
+
+  document.getElementById('quizBegin').addEventListener('click', function () {
+    start.hidden = true;
+    card.hidden = false;
+    show(0);
+  });
+  backBtn.addEventListener('click', function () { if (step > 0) show(step - 1); });
+  document.getElementById('quizRestart').addEventListener('click', function () {
+    answers = [];
+    result.hidden = true;
+    card.hidden = false;
+    show(0);
+  });
+})();
+</script>
+{{ end }}

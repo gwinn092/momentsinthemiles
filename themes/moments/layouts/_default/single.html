@@ -101,6 +101,28 @@
     </aside>
   </div>
 
+  <!-- Up next: linear reading path through the section -->
+  {{ $next := .PrevInSection | default .NextInSection }}
+  {{ with $next }}
+  <section class="next-post">
+    <div class="container container-wide">
+      <a href="{{ .RelPermalink }}" class="next-post__card">
+        <div class="next-post__body">
+          <span class="eyebrow">Up next · {{ replace .Section "-" " " | title }}</span>
+          <h2 class="next-post__title">{{ .Title }}</h2>
+          {{ with .Description }}<p class="next-post__desc">{{ . }}</p>{{ end }}
+          <span class="post-item__readmore">Keep reading &rarr;</span>
+        </div>
+        {{ if .Params.image }}
+        <div class="next-post__media">
+          <img src="{{ $.Site.Home.RelPermalink }}{{ strings.TrimPrefix "/" .Params.image }}" alt="{{ .Title }}" loading="lazy">
+        </div>
+        {{ end }}
+      </a>
+    </div>
+  </section>
+  {{ end }}
+
   <!-- Related posts (full width) -->
   {{ $related := where (where .Site.RegularPages "Section" .Section) "Params.draft" "!=" true }}
   {{ $related = where $related "Permalink" "!=" .Permalink | first 3 }}

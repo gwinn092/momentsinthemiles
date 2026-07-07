@@ -46,22 +46,22 @@
   </div>
   <div class="strip__scroller" tabindex="0" aria-label="Photos from the road — scroll sideways">
     {{ $strip := slice
-      (dict "src" "images/gallery/white-sands-dunes.jpg" "cap" "White Sands, New Mexico")
-      (dict "src" "images/van-life/teton-lake.jpg" "cap" "Below the Tetons, Wyoming")
-      (dict "src" "images/essays/antelope-canyon.jpg" "cap" "Antelope Canyon, Arizona")
-      (dict "src" "images/guides/laos-sunset.jpg" "cap" "The Mekong at sunset, Laos")
-      (dict "src" "images/van-life/van-golden-hour.jpg" "cap" "The van at golden hour")
-      (dict "src" "images/gallery/st-mary-lake.jpg" "cap" "St. Mary Lake, Montana")
-      (dict "src" "images/guides/thailand-chiang-mai.jpg" "cap" "Chiang Mai, Thailand")
-      (dict "src" "images/van-life/rainier-overlook.jpg" "cap" "Above Mount Rainier, Washington")
-      (dict "src" "images/essays/hanoi-banh-mi-shop.jpg" "cap" "Hanoi at night, Vietnam")
-      (dict "src" "images/van-life/van-colorado-fall.jpg" "cap" "Colorado in the fall")
+      (dict "src" "images/gallery/white-sands-dunes.jpg" "cap" "White Sands, New Mexico" "link" "map/#nm")
+      (dict "src" "images/van-life/teton-lake.jpg" "cap" "Below the Tetons, Wyoming" "link" "map/#wy")
+      (dict "src" "images/essays/antelope-canyon.jpg" "cap" "Antelope Canyon, Arizona" "link" "map/#az")
+      (dict "src" "images/guides/laos-sunset.jpg" "cap" "The Mekong at sunset, Laos" "link" "map/#lao")
+      (dict "src" "images/van-life/van-golden-hour.jpg" "cap" "The van at golden hour" "link" "gallery/")
+      (dict "src" "images/gallery/st-mary-lake.jpg" "cap" "St. Mary Lake, Montana" "link" "map/#mt")
+      (dict "src" "images/guides/thailand-chiang-mai.jpg" "cap" "Chiang Mai, Thailand" "link" "map/#tha")
+      (dict "src" "images/van-life/rainier-overlook.jpg" "cap" "Above Mount Rainier, Washington" "link" "map/#wa")
+      (dict "src" "images/essays/hanoi-banh-mi-shop.jpg" "cap" "Hanoi at night, Vietnam" "link" "map/#vnm")
+      (dict "src" "images/van-life/van-colorado-fall.jpg" "cap" "Colorado in the fall" "link" "map/#co")
     }}
     {{ range $strip }}
-    <figure class="strip__item">
+    <a class="strip__item" href="{{ $.Site.Home.RelPermalink }}{{ .link }}">
       <img src="{{ $.Site.Home.RelPermalink }}{{ .src }}" alt="{{ .cap }}" loading="lazy" draggable="false">
-      <figcaption>{{ .cap }}</figcaption>
-    </figure>
+      <span class="strip__cap">{{ .cap }}{{ if hasPrefix .link "map/" }}<span class="strip__hint"> &middot; the story &rarr;</span>{{ end }}</span>
+    </a>
     {{ end }}
     <a href="{{ .Site.Home.RelPermalink }}gallery/" class="strip__more">
       <span>See the<br>full gallery</span>

@@ -1,0 +1,65 @@
+{{ define "main" }}
+<div class="tour-page container container-wide">
+  <header class="tour-header">
+    <span class="eyebrow">{{ replace .Section "-" " " | title }}</span>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="tour-header__desc">{{ . }}</p>{{ end }}
+  </header>
+
+  <div class="tour-intro">{{ .Content }}</div>
+
+  <div class="tour">
+    <div class="tour__stage">
+      <img src="{{ .Site.Home.RelPermalink }}{{ .Params.tour_image }}" alt="{{ .Params.tour_alt }}" loading="eager">
+      {{ range $i, $h := .Params.hotspots }}
+      <button type="button" class="tour-dot" style="left: {{ .x }}%; top: {{ .y }}%;" data-i="{{ $i }}" aria-label="{{ .title }}">
+        <span class="tour-dot__pulse" aria-hidden="true"></span>
+        <span class="tour-dot__num">{{ add $i 1 }}</span>
+      </button>
+      {{ end }}
+    </div>
+    <aside class="tour__panel">
+      <div class="tour__reading" aria-live="polite">
+        <span class="eyebrow tour__count" id="tourCount">Seventy square feet</span>
+        <h2 class="tour__title" id="tourTitle">Look around</h2>
+        <p class="tour__text" id="tourText">Tap a numbered dot on the photo — or pick from the list — and we'll tell you what you're looking at, and why it matters out here.</p>
+      </div>
+      <ol class="tour__index">
+        {{ range $i, $h := .Params.hotspots }}
+        <li><button type="button" data-i="{{ $i }}">{{ .title }}</button></li>
+        {{ end }}
+      </ol>
+    </aside>
+  </div>
+
+  <div class="tour-outro">
+    <p>That's one corner of it. The rest — the freedom, the friction, and everything in between — is what this whole section is about.</p>
+    <a href="{{ .Site.Home.RelPermalink }}van-life/" class="link-arrow">More from Van Life <span aria-hidden="true">&rarr;</span></a>
+  </div>
+</div>
+
+<script type="application/json" id="tourData">{{ .Params.hotspots | jsonify | safeJS }}</script>
+<script>
+(function () {
+  var spots = JSON.parse(document.getElementById('tourData').textContent);
+  var dots = document.querySelectorAll('.tour-dot');
+  var items = document.querySelectorAll('.tour__index button');
+  var titleEl = document.getElementById('tourTitle');
+  var textEl = document.getElementById('tourText');
+  var countEl = document.getElementById('tourCount');
+
+  function select(i) {
+    var s = spots[i];
+    if (!s) return;
+    titleEl.textContent = s.title;
+    textEl.textContent = s.text;
+    countEl.textContent = (i + 1) + ' of ' + spots.length;
+    dots.forEach(function (d) { d.classList.toggle('is-active', +d.dataset.i === i); });
+    items.forEach(function (b) { b.classList.toggle('is-active', +b.dataset.i === i); });
+  }
+
+  dots.forEach(function (d) { d.addEventListener('click', function () { select(+d.dataset.i); }); });
+  items.forEach(function (b) { b.addEventListener('click', function () { select(+b.dataset.i); }); });
+})();
+</script>
+{{ end }}

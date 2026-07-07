@@ -10,6 +10,9 @@ paginate = 10
   author = "Jesse & Karlee"
   googleAnalyticsID = "G-191K9XLXV2"
 
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
 [taxonomies]
   tag = "tags"
 
