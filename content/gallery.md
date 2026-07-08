@@ -3,6 +3,7 @@ title: "Gallery"
 description: "A few frames from the road — van life, the American West, and eight months across Southeast Asia."
 layout: "gallery"
 hero_image: "/images/gallery/white-sands-dunes.jpg"
+hero_position: "center 30%"
 gallery:
   - { src: "/images/gallery/white-sands-dunes.jpg", alt: "Standing in the dunes at White Sands", cat: "west" }
   - { src: "/images/gallery/kayak-tetons.jpg", alt: "Paddling beneath the Tetons", cat: "west" }

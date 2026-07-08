@@ -6,8 +6,8 @@ description: "From a slow boat on the Mekong to a motorbike on a mountain loop i
 category: "Guides"
 author: "Karlee & Jesse"
 draft: false
-image: "/images/guides/sea-sleeper-bus.jpg"
-hero_position: "center 60%"
+image: "/images/guides/mekong-slow-boats-dusk.jpg"
+hero_position: "center 62%"
 ---
 
 We didn't plan to spend eight months in Southeast Asia. We planned to spend three, maybe four. But that's the thing about this part of the world — it keeps offering you one more reason to stay, one more bus to catch, one more village you've never heard of that turns out to be the one you'll talk about for years.

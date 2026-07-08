@@ -4,6 +4,7 @@ description: "Six questions, two minutes, no email required. Find out which wall
 date: 2026-07-07
 category: "Reduce Friction"
 layout: "quiz"
+image: "/images/guides/desert-night-camp.jpg"
 questions:
   - q: "It's 11pm and you're scrolling photos of somewhere far away. The thought that shows up right behind the wanting is—"
     options:

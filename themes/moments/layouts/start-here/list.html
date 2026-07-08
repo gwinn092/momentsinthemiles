@@ -2,7 +2,8 @@
 
 <section class="section-hero">
   {{ with .Params.hero_image }}
-  {{ partial "respimg.html" (dict "path" . "alt" "Start Here" "class" "section-hero__img" "sizes" "100vw" "widths" (slice 640 960 1400) "loading" "eager" "fetchpriority" "high") }}
+  {{ $heroStyle := "" }}{{ with $.Params.hero_position }}{{ $heroStyle = printf "object-position: %s" . }}{{ end }}
+  {{ partial "respimg.html" (dict "path" . "alt" "Start Here" "class" "section-hero__img" "sizes" "100vw" "widths" (slice 640 960 1400) "loading" "eager" "fetchpriority" "high" "style" $heroStyle) }}
   {{ end }}
   <div class="section-hero__overlay">
     <div class="container-wide section-hero__content">
