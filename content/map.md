@@ -12,11 +12,11 @@ us_stats:
   - { value: "1", label: "van" }
 world_eyebrow: "Farther Afield"
 world_heading: "Then We Bought One-Way Tickets"
-world_lead: "Eight months across Southeast Asia with one-way tickets and no itinerary worth defending. And in sage, the chapters we lived before we found each other — Jesse's month in South Africa, Karlee's five years on St. John."
+world_lead: "Eight months across Southeast Asia with one-way tickets and no itinerary worth defending. And in sage, the chapters we lived before we found each other — Jesse's month in South Africa, Karlee's five seasons on St. John."
 world_stats:
   - { value: "8", label: "countries together" }
   - { value: "8", label: "months across Southeast Asia" }
-  - { value: "5", label: "years Karlee called St. John home" }
+  - { value: "5", label: "seasons Karlee called St. John home" }
 apart_line: "Europe we've each crossed separately — a dozen countries between us, none of them shared yet. Those maps belong to lives before we met. This one only keeps count of the miles we've made together."
 cta_line: "The map is the outline. The stories are the point."
 ---

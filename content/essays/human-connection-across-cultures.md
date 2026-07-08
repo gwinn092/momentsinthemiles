@@ -18,13 +18,13 @@ But over time, the places blur. What stays are the people.
 
 ## What St. John taught us first
 
-Karlee learned this slowly, over five years on a small island in the Caribbean.
+Karlee learned this slowly, over five seasons on a small island in the Caribbean — some of them full years.
 
 Island life compresses distance in a way that's hard to explain until you've lived it. You see the same faces enough times that strangers become familiar. Community isn't something you seek out — it becomes part of your daily rhythm whether you choose it or not.
 
 There's a particular quality to connection that forms in small places. It's less curated than what you find in cities. People don't have the same ability to self-sort into comfortable bubbles. You end up alongside people you wouldn't have sought out, and you're often better for it.
 
-Those five years left a mark. Not just in the friendships, but in the understanding that the texture of daily life in a place — the rhythms, the relationships, the unspoken rules — is always more interesting than any landmark.
+Those seasons left a mark. Not just in the friendships, but in the understanding that the texture of daily life in a place — the rhythms, the relationships, the unspoken rules — is always more interesting than any landmark.
 
 ## Eight years of American road
 

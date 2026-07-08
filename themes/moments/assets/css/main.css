@@ -3426,8 +3426,17 @@ body.nav-open {
 
 /* --- Film strip — draggable row of moments --- */
 .strip {
-  padding: 4.5rem 0 5rem;
+  padding: 2.5rem 0 5rem;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .strip {
+    padding-top: 1rem;
+  }
+  .mission {
+    padding-bottom: 2.5rem;
+  }
 }
 
 .strip__head {
