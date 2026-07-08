@@ -1,0 +1,22 @@
+{{- /* Responsive <img>. Args (dict):
+     path (required) — site-relative image path, leading slash ok
+     alt, class, style, sizes, widths (slice), loading, fetchpriority, draggable
+     Falls back to a plain static <img> when the file can't be processed. */ -}}
+{{- $path := strings.TrimPrefix "/" .path -}}
+{{- $static := printf "%s%s" site.Home.RelPermalink $path -}}
+{{- $res := resources.Get $path -}}
+{{- $isRaster := and $res (in (slice "jpeg" "png" "webp") $res.MediaType.SubType) -}}
+{{- if $isRaster -}}
+{{- $widths := .widths | default (slice 480 800 1200) -}}
+{{- $set := slice -}}
+{{- range $w := $widths -}}
+{{- if lt $w $res.Width -}}
+{{- $v := $res.Resize (printf "%dx q82" $w) -}}
+{{- $set = $set | append (printf "%s %dw" $v.RelPermalink $w) -}}
+{{- end -}}
+{{- end -}}
+{{- $set = $set | append (printf "%s %dw" $static $res.Width) -}}
+<img src="{{ $static }}" srcset="{{ delimit $set ", " }}" sizes="{{ .sizes | default "100vw" }}" width="{{ $res.Width }}" height="{{ $res.Height }}" alt="{{ .alt }}"{{ with .class }} class="{{ . }}"{{ end }} loading="{{ .loading | default "lazy" }}" decoding="async"{{ with .fetchpriority }} fetchpriority="{{ . }}"{{ end }}{{ with .style }} style="{{ . | safeCSS }}"{{ end }}{{ with .draggable }} draggable="{{ . }}"{{ end }}>
+{{- else -}}
+<img src="{{ $static }}" alt="{{ .alt }}"{{ with .class }} class="{{ . }}"{{ end }} loading="{{ .loading | default "lazy" }}"{{ with .fetchpriority }} fetchpriority="{{ . }}"{{ end }}{{ with .style }} style="{{ . | safeCSS }}"{{ end }}{{ with .draggable }} draggable="{{ . }}"{{ end }}>
+{{- end -}}

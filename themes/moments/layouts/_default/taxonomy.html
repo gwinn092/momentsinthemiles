@@ -15,7 +15,7 @@
       <article class="card">
         <a href="{{ .RelPermalink }}" class="card__image-link">
           {{ if .Params.image }}
-          <img src="{{ $.Site.Home.RelPermalink }}{{ strings.TrimPrefix "/" .Params.image }}" alt="{{ .Title }}" class="card__img" loading="lazy">
+          {{ partial "respimg.html" (dict "path" .Params.image "alt" .Title "class" "card__img" "sizes" "(min-width: 900px) 360px, (min-width: 600px) 50vw, 100vw" "widths" (slice 480 800)) }}
           {{ else }}
           <div class="card__img-placeholder"></div>
           {{ end }}

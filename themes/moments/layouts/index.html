@@ -3,7 +3,7 @@
 <!-- HERO -->
 <section class="home-hero">
   <div class="home-hero__media">
-    <img src="{{ .Site.Home.RelPermalink }}images/pages/hero-mountaintop.jpg" alt="Mountaintop view from the road" loading="eager" fetchpriority="high">
+    {{ partial "respimg.html" (dict "path" "images/pages/hero-mountaintop.jpg" "alt" "Mountaintop view from the road" "sizes" "100vw" "widths" (slice 640 960 1400) "loading" "eager" "fetchpriority" "high") }}
   </div>
   <div class="home-hero__scrim" aria-hidden="true"></div>
   <div class="container-wide home-hero__content">
@@ -59,7 +59,7 @@
     }}
     {{ range $strip }}
     <a class="strip__item" href="{{ $.Site.Home.RelPermalink }}{{ .link }}">
-      <img src="{{ $.Site.Home.RelPermalink }}{{ .src }}" alt="{{ .cap }}" loading="lazy" draggable="false">
+      {{ partial "respimg.html" (dict "path" .src "alt" .cap "sizes" "(min-width: 800px) 600px, 78vw" "widths" (slice 480 800) "draggable" "false") }}
       <span class="strip__cap">{{ .cap }}{{ if hasPrefix .link "map/" }}<span class="strip__hint"> &middot; the story &rarr;</span>{{ end }}</span>
     </a>
     {{ end }}
@@ -118,7 +118,7 @@
   <div class="container container-wide">
     <div class="this-is-us__inner">
       <div class="this-is-us__image">
-        <img src="{{ .Site.Home.RelPermalink }}images/pages/about-beach-sunset.jpg" alt="Jesse and Karlee" class="page-image" loading="lazy">
+        {{ partial "respimg.html" (dict "path" "images/pages/about-beach-sunset.jpg" "alt" "Jesse and Karlee" "class" "page-image" "sizes" "(min-width: 760px) 540px, 100vw" "widths" (slice 480 800)) }}
       </div>
       <div class="this-is-us__content">
         <span class="eyebrow">This Is Us</span>
@@ -148,7 +148,7 @@
     <article class="feature-card feature-card--home">
       <a href="{{ .RelPermalink }}" class="feature-card__image">
         {{ if .Params.image }}
-        <img src="{{ $.Site.Home.RelPermalink }}{{ strings.TrimPrefix "/" .Params.image }}" alt="{{ .Title }}" loading="lazy">
+        {{ partial "respimg.html" (dict "path" .Params.image "alt" .Title "sizes" "(min-width: 900px) 60vw, 100vw" "widths" (slice 480 800 1200)) }}
         {{ end }}
       </a>
       <div class="feature-card__body">
@@ -170,7 +170,7 @@
       <article class="card">
         <a href="{{ .RelPermalink }}" class="card__image-link">
           {{ if .Params.image }}
-          <img src="{{ $.Site.Home.RelPermalink }}{{ strings.TrimPrefix "/" .Params.image }}" alt="{{ .Title }}" class="card__img" loading="lazy">
+          {{ partial "respimg.html" (dict "path" .Params.image "alt" .Title "class" "card__img" "sizes" "(min-width: 900px) 360px, (min-width: 600px) 50vw, 100vw" "widths" (slice 480 800)) }}
           {{ else }}
           <div class="card__img-placeholder"></div>
           {{ end }}
@@ -200,7 +200,7 @@
       <p>Honest stories, travel notes, and the occasional nudge to go do the thing you've been putting off. A few times a month. No spam. Unsubscribe whenever.</p>
       <form class="newsletter-form seva-form" action="https://app.kit.com/forms/9172727/subscriptions" method="post" data-sv-form="9172727" data-uid="26bf91ae52" data-version="5">
         <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
-        <input type="email" name="email_address" placeholder="Your email address" required>
+        <input type="email" name="email_address" placeholder="Your email address" aria-label="Email address" required>
         <button data-element="submit" type="submit" class="btn btn-primary">I'm in</button>
       </form>
     </div>

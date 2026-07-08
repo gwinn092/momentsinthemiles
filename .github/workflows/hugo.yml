@@ -36,6 +36,14 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Cache processed images
+        uses: actions/cache@v4
+        with:
+          path: resources
+          key: hugo-resources-${{ hashFiles('static/images/**') }}
+          restore-keys: |
+            hugo-resources-
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5

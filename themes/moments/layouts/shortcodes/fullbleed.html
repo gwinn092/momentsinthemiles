@@ -1,6 +1,6 @@
 {{- $src := .Get "src" -}}
 {{- $alt := .Get "alt" | default "" -}}
 <figure class="full-bleed">
-  <img src="{{ .Site.Home.RelPermalink }}{{ strings.TrimPrefix "/" $src }}" alt="{{ $alt }}" loading="lazy">
+  {{ partial "respimg.html" (dict "path" $src "alt" $alt "sizes" "100vw" "widths" (slice 640 960 1400)) }}
   {{- with .Get "caption" }}<figcaption>{{ . }}</figcaption>{{ end -}}
 </figure>

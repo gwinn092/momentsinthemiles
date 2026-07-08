@@ -1,7 +1,8 @@
 {{ define "main" }}
 {{ with .Params.hero_image }}
 <section class="section-hero">
-  <img src="{{ $.Site.Home.RelPermalink }}{{ strings.TrimPrefix "/" . }}" alt="{{ $.Title }}" class="section-hero__img" loading="eager"{{ with $.Params.hero_position }} style="object-position: {{ . }}"{{ end }}>
+  {{ $heroStyle := "" }}{{ with $.Params.hero_position }}{{ $heroStyle = printf "object-position: %s" . }}{{ end }}
+  {{ partial "respimg.html" (dict "path" . "alt" $.Title "class" "section-hero__img" "sizes" "100vw" "widths" (slice 640 960 1400) "loading" "eager" "fetchpriority" "high" "style" $heroStyle) }}
   <div class="section-hero__overlay">
     <div class="container-wide section-hero__content">
       <span class="eyebrow">{{ replace $.Section "-" " " | title }}</span>
@@ -55,7 +56,7 @@
     <article class="feature-card">
       <a href="{{ .RelPermalink }}" class="feature-card__image">
         {{ if .Params.image }}
-        <img src="{{ $.Site.Home.RelPermalink }}{{ strings.TrimPrefix "/" .Params.image }}" alt="{{ .Title }}" loading="lazy">
+        {{ partial "respimg.html" (dict "path" .Params.image "alt" .Title "sizes" "(min-width: 900px) 60vw, 100vw" "widths" (slice 480 800 1200)) }}
         {{ end }}
       </a>
       <div class="feature-card__body">
@@ -78,7 +79,7 @@
       <article class="card">
         <a href="{{ .RelPermalink }}" class="card__image-link">
           {{ if .Params.image }}
-          <img src="{{ $.Site.Home.RelPermalink }}{{ strings.TrimPrefix "/" .Params.image }}" alt="{{ .Title }}" class="card__img" loading="lazy">
+          {{ partial "respimg.html" (dict "path" .Params.image "alt" .Title "class" "card__img" "sizes" "(min-width: 900px) 360px, (min-width: 600px) 50vw, 100vw" "widths" (slice 480 800)) }}
           {{ else }}
           <div class="card__img-placeholder"></div>
           {{ end }}

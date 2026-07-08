@@ -4,7 +4,8 @@
 <article class="article">
   {{ with .Params.image }}
   <div class="article-hero-wrap">
-    <img src="{{ $.Site.Home.RelPermalink }}{{ strings.TrimPrefix "/" . }}" alt="{{ $.Title }}" class="article-hero-img" loading="eager"{{ with $.Params.hero_position }} style="object-position: {{ . }}"{{ end }}>
+    {{ $heroStyle := "" }}{{ with $.Params.hero_position }}{{ $heroStyle = printf "object-position: %s" . }}{{ end }}
+    {{ partial "respimg.html" (dict "path" . "alt" $.Title "class" "article-hero-img" "sizes" "100vw" "widths" (slice 640 960 1400) "loading" "eager" "fetchpriority" "high" "style" $heroStyle) }}
   </div>
   {{ end }}
 
@@ -59,7 +60,7 @@
 
         <!-- Author bio -->
         <div class="author-bio">
-          <img src="{{ .Site.Home.RelPermalink }}images/essays/jesse-karlee-mountains.jpg" alt="Jesse and Karlee" class="author-bio__img" loading="lazy">
+          {{ partial "respimg.html" (dict "path" "images/essays/jesse-karlee-mountains.jpg" "alt" "Jesse and Karlee" "class" "author-bio__img" "sizes" "120px" "widths" (slice 240)) }}
           <div class="author-bio__content">
             <span class="eyebrow">Written by {{ .Params.author | default "Jesse &amp; Karlee" }}</span>
             <p>Seven years in a van, all 48 continental states, and eight months across Southeast Asia. We write about travel with depth — the beauty, the discomfort, and the lessons that linger.</p>
@@ -74,7 +75,7 @@
           <p>Honest stories, travel notes, and the occasional nudge to go do the thing you've been putting off. A few times a month. No spam.</p>
           <form class="newsletter-form seva-form" action="https://app.kit.com/forms/9172727/subscriptions" method="post" data-sv-form="9172727" data-uid="26bf91ae52" data-version="5">
             <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
-            <input type="email" name="email_address" placeholder="Your email address" required>
+            <input type="email" name="email_address" placeholder="Your email address" aria-label="Email address" required>
             <button data-element="submit" type="submit" class="btn btn-primary">I'm in</button>
           </form>
         </div>
@@ -92,7 +93,7 @@
           <span class="eyebrow">The Newsletter</span>
           <p class="aside-newsletter__text">Honest stories and travel notes. A few times a month. No spam.</p>
           <form class="seva-form aside-form" action="https://app.kit.com/forms/9172727/subscriptions" method="post" data-sv-form="9172727" data-uid="26bf91ae52" data-version="5">
-            <input type="email" name="email_address" placeholder="Your email" required>
+            <input type="email" name="email_address" placeholder="Your email" aria-label="Email address" required>
             <button type="submit" class="btn btn-primary">I'm in</button>
           </form>
         </div>
@@ -115,7 +116,7 @@
         </div>
         {{ if .Params.image }}
         <div class="next-post__media">
-          <img src="{{ $.Site.Home.RelPermalink }}{{ strings.TrimPrefix "/" .Params.image }}" alt="{{ .Title }}" loading="lazy">
+          {{ partial "respimg.html" (dict "path" .Params.image "alt" .Title "sizes" "(min-width: 900px) 50vw, 100vw" "widths" (slice 480 800)) }}
         </div>
         {{ end }}
       </a>
@@ -136,7 +137,7 @@
         <article class="card">
           <a href="{{ .RelPermalink }}" class="card__image-link">
             {{ if .Params.image }}
-            <img src="{{ $.Site.Home.RelPermalink }}{{ strings.TrimPrefix "/" .Params.image }}" alt="{{ .Title }}" class="card__img" loading="lazy">
+            {{ partial "respimg.html" (dict "path" .Params.image "alt" .Title "class" "card__img" "sizes" "(min-width: 900px) 360px, (min-width: 600px) 50vw, 100vw" "widths" (slice 480 800)) }}
             {{ else }}
             <div class="card__img-placeholder"></div>
             {{ end }}

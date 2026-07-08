@@ -115,7 +115,7 @@
 </aside>
 
 {{ $home := .Site.Home.RelPermalink }}
-<script type="application/json" id="mapStoriesData">{{ dict "home" $home "stories" site.Data.map_stories.stories "tour" site.Data.map_stories.tour | jsonify | safeJS }}</script>
+<script type="application/json" id="mapStoriesData">{{ dict "home" $home "stories" hugo.Data.map_stories.stories "tour" hugo.Data.map_stories.tour | jsonify | safeJS }}</script>
 
 <script>
 (function () {

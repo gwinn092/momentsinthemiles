@@ -43,7 +43,7 @@
         <p>XO,<br>Jesse &amp; Karlee</p>
       </div>
       <div class="about-section__image">
-        <img src="{{ .Site.Home.RelPermalink }}images/pages/about-beach-sunset.jpg" alt="Jesse and Karlee" class="page-image" style="min-height: 500px;" loading="lazy">
+        {{ partial "respimg.html" (dict "path" "images/pages/about-beach-sunset.jpg" "alt" "Jesse and Karlee" "class" "page-image" "style" "min-height: 500px;" "sizes" "(min-width: 760px) 540px, 100vw" "widths" (slice 480 800)) }}
       </div>
     </div>
   </div>
@@ -88,7 +88,7 @@
   <div class="container container-wide">
     <div class="about-section__inner">
       <div class="about-section__image">
-        <img src="{{ .Site.Home.RelPermalink }}images/essays/karlee-stjohn.jpg" alt="Karlee at St. John sunset" class="page-image" style="min-height: 500px; object-fit: cover;" loading="lazy">
+        {{ partial "respimg.html" (dict "path" "images/essays/karlee-stjohn.jpg" "alt" "Karlee at St. John sunset" "class" "page-image" "style" "min-height: 500px; object-fit: cover;" "sizes" "(min-width: 760px) 540px, 100vw" "widths" (slice 480 800)) }}
       </div>
       <div class="about-section__content">
         <span class="eyebrow">This Is Karlee</span>
@@ -161,7 +161,7 @@
         <p>— Jesse</p>
       </div>
       <div class="about-section__image">
-        <img src="{{ .Site.Home.RelPermalink }}images/essays/jesse-karlee-mountains.jpg" alt="Jesse overlooking the mountains" class="page-image" style="min-height: 400px; object-fit: cover;" loading="lazy">
+        {{ partial "respimg.html" (dict "path" "images/essays/jesse-karlee-mountains.jpg" "alt" "Jesse overlooking the mountains" "class" "page-image" "style" "min-height: 400px; object-fit: cover;" "sizes" "(min-width: 760px) 540px, 100vw" "widths" (slice 480 800)) }}
       </div>
     </div>
   </div>
@@ -172,7 +172,7 @@
   <div class="container container-wide">
     <div class="about-section__inner">
       <div class="about-section__image">
-        <img src="{{ .Site.Home.RelPermalink }}images/pages/about-beach-sunset.jpg" alt="Jesse and Karlee" class="page-image" style="min-height: 400px; object-fit: cover;" loading="lazy">
+        {{ partial "respimg.html" (dict "path" "images/pages/about-beach-sunset.jpg" "alt" "Jesse and Karlee" "class" "page-image" "style" "min-height: 400px; object-fit: cover;" "sizes" "(min-width: 760px) 540px, 100vw" "widths" (slice 480 800)) }}
       </div>
       <div class="about-section__content">
         <span class="eyebrow">Where Our Stories Met</span>

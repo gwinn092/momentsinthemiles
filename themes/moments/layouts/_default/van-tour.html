@@ -10,7 +10,7 @@
 
   <div class="tour">
     <div class="tour__stage">
-      <img src="{{ .Site.Home.RelPermalink }}{{ .Params.tour_image }}" alt="{{ .Params.tour_alt }}" loading="eager">
+      {{ partial "respimg.html" (dict "path" .Params.tour_image "alt" .Params.tour_alt "sizes" "(min-width: 1000px) 960px, 100vw" "widths" (slice 640 960) "loading" "eager") }}
       {{ range $i, $h := .Params.hotspots }}
       <button type="button" class="tour-dot" style="left: {{ .x }}%; top: {{ .y }}%;" data-i="{{ $i }}" aria-label="{{ .title }}">
         <span class="tour-dot__pulse" aria-hidden="true"></span>
