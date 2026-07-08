@@ -1,6 +1,6 @@
 ---
 title: "Where We've Been"
-description: "Seven years, one van, and every one of the lower forty-eight — drawn the slow way."
+description: "Eight years, one van, and every one of the lower forty-eight — drawn the slow way."
 layout: "map"
 og_image: "images/pages/og-map.jpg"
 us_eyebrow: "United States"
@@ -8,7 +8,7 @@ us_heading: "The Lower Forty-Eight"
 us_footnote: "Alaska & Hawaii — still on the list."
 us_stats:
   - { value: "48", label: "states together" }
-  - { value: "7", label: "years of van life" }
+  - { value: "8", label: "years of van life" }
   - { value: "1", label: "van" }
 world_eyebrow: "Farther Afield"
 world_heading: "Then We Bought One-Way Tickets"

@@ -44,7 +44,7 @@ questions:
 results:
   fear:
     title: "It's the fear."
-    text: "Not the money, not the timing — the quiet suspicion that you couldn't handle it. Here's what seven years on the road taught us: readiness isn't a feeling that arrives before you go. It's one that gets built by going. Every person we've met out here felt exactly what you're feeling now, left anyway, and found out they were more capable than the version of themselves that stayed up worrying. The fear doesn't get a vote on whether you're allowed to want this."
+    text: "Not the money, not the timing — the quiet suspicion that you couldn't handle it. Here's what eight years on the road taught us: readiness isn't a feeling that arrives before you go. It's one that gets built by going. Every person we've met out here felt exactly what you're feeling now, left anyway, and found out they were more capable than the version of themselves that stayed up worrying. The fear doesn't get a vote on whether you're allowed to want this."
     link: "essays/the-miles-will-shape-you/"
     link_text: "Read: The Miles Will Shape You (If You Let Them)"
   money:

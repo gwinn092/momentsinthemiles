@@ -131,8 +131,8 @@ stories:
     place: "United States"
     photo: "images/pages/hero-mountaintop.jpg"
     alt: "Jesse and Karlee on a mountaintop at golden hour"
-    caption: "Forty-eight states, seven years, one van."
-    story: "Forty-eight states, seven years, one van. This is the map above — the slow version of home."
+    caption: "Forty-eight states, eight years, one van."
+    story: "Forty-eight states, eight years, one van. This is the map above — the slow version of home."
     link: "van-life/"
     link_text: "The Van Life Chapters"
 
@@ -215,5 +215,5 @@ stories:
 # "Take the drive" — the guided tour across the US map, in stop order.
 tour:
   label: "Take the drive"
-  intro: "Nine stops, seven years, no interstate."
+  intro: "Nine stops, eight years, no interstate."
   stops: [ca, or, wa, mt, wy, co, ut, az, nm]

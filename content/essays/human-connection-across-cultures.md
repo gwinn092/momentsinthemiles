@@ -26,7 +26,7 @@ There's a particular quality to connection that forms in small places. It's less
 
 Those five years left a mark. Not just in the friendships, but in the understanding that the texture of daily life in a place — the rhythms, the relationships, the unspoken rules — is always more interesting than any landmark.
 
-## Seven years of American road
+## Eight years of American road
 
 Van life across forty-eight states is its own education in human variety.
 

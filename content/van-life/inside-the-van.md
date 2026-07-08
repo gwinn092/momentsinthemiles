@@ -1,6 +1,6 @@
 ---
 title: "Inside the Van: One Corner of Home"
-description: "Seventy square feet, seven years. Tap around one photo of our galley and we'll tell you what you're actually looking at."
+description: "Seventy square feet, eight years. Tap around one photo of our galley and we'll tell you what you're actually looking at."
 date: 2026-07-07
 author: "Karlee"
 category: "Van Life"
@@ -29,7 +29,7 @@ hotspots:
   - x: 55
     y: 6
     title: "The ceiling"
-    text: "Jesse laid every piece of this wood himself, back when the van was an empty metal shell in a driveway and this life was still just a theory. Seven years later it's the first thing we see every morning. We don't take it for granted."
+    text: "Jesse laid every piece of this wood himself, back when the van was an empty metal shell in a driveway and this life was still just a theory. Eight years later it's the first thing we see every morning. We don't take it for granted."
   - x: 87
     y: 40
     title: "The front seats"

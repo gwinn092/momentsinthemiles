@@ -1,6 +1,6 @@
 ---
 title: "Start Here"
-description: "New to Moments in the Miles? Start here. Seven years of van life, all 48 continental states, eight months across Southeast Asia — this is how we got here."
+description: "New to Moments in the Miles? Start here. Eight years of van life, all 48 continental states, eight months across Southeast Asia — this is how we got here."
 hero_image: "/images/pages/start-here-van-window.jpg"
 ---
 
@@ -8,7 +8,7 @@ Maybe you didn't land here by accident.
 
 Maybe you've been thinking about taking a trip. Maybe you've been craving movement. Maybe something in you is tired of standing still.
 
-We chose to build a life on the road — seven years of van life, all 48 continental states, eight months across Southeast Asia, and years of independent travel before that. Backpacking Europe. Living on an island in the Caribbean. Learning that movement changes you long before you understand how.
+We chose to build a life on the road — eight years of van life, all 48 continental states, eight months across Southeast Asia, and years of independent travel before that. Backpacking Europe. Living on an island in the Caribbean. Learning that movement changes you long before you understand how.
 
 Not because we had certainty. But because we kept answering the pull.
 

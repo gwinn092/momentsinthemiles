@@ -34,13 +34,13 @@ You didn't need a framework. You needed exposure. You needed to sit in a train c
 
 Those years didn't hand us an identity. They handed us evidence — that we could handle more than we thought, that the world was larger and kinder than the news suggested, and that the person you become in motion is often more honest than the one you maintain at home.
 
-## Seven years on wheels
+## Eight years on wheels
 
 Then came the van.
 
 What started as a practical decision — lower overhead, more freedom, a way to stop paying rent on a life that didn't quite fit — became something we didn't expect. Not a lifestyle. A laboratory.
 
-Living in seventy square feet across all forty-eight continental states over seven years doesn't just teach you about America. It teaches you about yourself in a way that's difficult to access any other way. There's no spare room for avoidance. When the van won't start in the middle of the Mojave, you problem-solve. When a week of straight clouds and rain rolls in off the Gulf at Santa Rosa Beach — hot and muggy with no relief and the generator acting up — you regulate. When the road stretches long and uncertain through eastern Montana with nothing but sky and doubt, you choose — again — to stay aligned with each other and with the decision you made.
+Living in seventy square feet across all forty-eight continental states over eight years doesn't just teach you about America. It teaches you about yourself in a way that's difficult to access any other way. There's no spare room for avoidance. When the van won't start in the middle of the Mojave, you problem-solve. When a week of straight clouds and rain rolls in off the Gulf at Santa Rosa Beach — hot and muggy with no relief and the generator acting up — you regulate. When the road stretches long and uncertain through eastern Montana with nothing but sky and doubt, you choose — again — to stay aligned with each other and with the decision you made.
 
 We watched the seasons change across every type of American landscape. We met people on BLM land at the edge of nowhere, in parking lots of small-town diners, at roadside pull-offs where someone stopped because they recognized the look of people figuring something out — and they handed us something without realizing it. A perspective, a recommendation, a reminder of how differently people build a life and how equally valid those lives can be.
 

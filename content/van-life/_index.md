@@ -1,6 +1,6 @@
 ---
 title: "Van Life"
-description: "Seven years. Seventy square feet. All 48 continental states. The reality of life on wheels."
+description: "Eight years. Seventy square feet. All 48 continental states. The reality of life on wheels."
 hero_image: "/images/pages/vanlife-promaster-tetons.jpg"
 hero_position: "center bottom"
 ---
@@ -19,7 +19,7 @@ We figured out a rhythm fast. You have to. Jesse cooks, I prep, and somehow we m
 
 And then there are the late nights. Parked somewhere new, the day finally done, laughing about something that was frustrating four hours ago and is hilarious now. The wrong turn that added an hour. The campsite that looked better online. The thing that broke and got fixed with whatever we had. In a small space, you run out of places to hide from each other — and it turns out that's not a bad thing. It just makes you closer.
 
-Seven years. All 48 continental states. Waking up in national forests, riding out desert storms, watching the light change over landscapes that looked different every single morning.
+Eight years. All 48 continental states. Waking up in national forests, riding out desert storms, watching the light change over landscapes that looked different every single morning.
 
 {{< fullbleed src="/images/van-life/van-colorado-fall.jpg" alt="The van surrounded by Colorado fall color" >}}
 
@@ -35,6 +35,6 @@ This section is where we write about what that life is really like. Not the gear
 </div>
 
 <div class="handoff-block">
-  <p>Ready to get into the actual build? We break down the power systems, gear, and budget decisions over at Create A Van Life — seven years of real-world experience, no fake urgency.</p>
+  <p>Ready to get into the actual build? We break down the power systems, gear, and budget decisions over at Create A Van Life — eight years of real-world experience, no fake urgency.</p>
   <a href="https://createavanlife.com" target="_blank" rel="noopener" class="btn btn-secondary">Visit Create A Van Life →</a>
 </div>

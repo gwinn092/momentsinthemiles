@@ -2,7 +2,7 @@
 title: "Freedom Has Seasons"
 tags: ["Mindset", "Van Life"]
 date: 2025-01-27
-description: "Seven years of van life didn't give us one version of freedom. It gave us several — and taught us that each one was right for its season."
+description: "Eight years of van life didn't give us one version of freedom. It gave us several — and taught us that each one was right for its season."
 category: "Essays"
 author: "Karlee & Jesse"
 draft: false
@@ -21,7 +21,7 @@ But it came with its own constraints. Less money. Less clarity about what actual
 
 It only looks perfect in hindsight.
 
-## What seven years on the road taught us about seasons
+## What eight years on the road taught us about seasons
 
 We didn't buy the van expecting a philosophy. We bought it because rent was climbing and the math wasn't working and something about a life in motion felt more honest than the one we were slowly accumulating.
 
@@ -39,7 +39,7 @@ Freedom hadn't disappeared. It had evolved.
 
 Year five looked different again. We were more intentional about where we went and why. We planned further ahead. We built more structure into our days. And paradoxically, that structure created more freedom — because we weren't spending energy on decisions that didn't matter.
 
-Seven years of van life didn't give us one version of freedom. It gave us several — and taught us that each one was right for its season.
+Eight years of van life didn't give us one version of freedom. It gave us several — and taught us that each one was right for its season.
 
 {{< photo src="/images/essays/van-summer-lake.jpg" alt="The van parked beside an alpine lake with snow-capped mountains behind" caption="A different season, a different freedom." >}}
 

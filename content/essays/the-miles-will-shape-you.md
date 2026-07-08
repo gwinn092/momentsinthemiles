@@ -46,7 +46,7 @@ We were excited and scared and sad to say goodbye, all at the same time, standin
 
 It turned out to be enough.
 
-Seven years. All 48 continental states. Tens of thousands of miles of road that looked like nothing on a map and everything in person. Desert light in Utah at golden hour, the kind that makes you pull over whether you planned to or not. The particular silence of a forest in the Pacific Northwest, so deep it has its own sound. Storm systems moving across the plains so big you can watch them from miles away, tracking them like something alive.
+Eight years. All 48 continental states. Tens of thousands of miles of road that looked like nothing on a map and everything in person. Desert light in Utah at golden hour, the kind that makes you pull over whether you planned to or not. The particular silence of a forest in the Pacific Northwest, so deep it has its own sound. Storm systems moving across the plains so big you can watch them from miles away, tracking them like something alive.
 
 {{< photo src="/images/essays/antelope-canyon.jpg" alt="Silhouetted together in a slot canyon" caption="Antelope Canyon, Arizona" >}}
 

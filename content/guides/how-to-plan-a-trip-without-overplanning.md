@@ -43,7 +43,7 @@ The framework gives you direction without giving you a script. You know you're h
 
 Available to stay an extra two days because the place surprised you. Available to say yes when a stranger at a guesthouse invites you somewhere unexpected.
 
-Seven years of van life taught us this before Southeast Asia confirmed it. We drove 48 states without a fixed route. The days that stand out from those years are almost never the ones we planned.
+Eight years of van life taught us this before Southeast Asia confirmed it. We drove 48 states without a fixed route. The days that stand out from those years are almost never the ones we planned.
 
 ## WHAT OVERPLANNING ACTUALLY COSTS YOU
 

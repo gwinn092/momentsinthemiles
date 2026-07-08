@@ -37,9 +37,9 @@ When your life costs less, your choices expand.
 
 {{< photo src="/images/essays/bed-window-islands.jpg" alt="The view from the van's bed through open rear doors, islands scattered across the water below" caption="The bedroom view, some mornings." >}}
 
-## Seven years of iteration
+## Eight years of iteration
 
-What we learned over seven years on the road wasn't just how to live small. It was how to design a life that could keep moving without falling apart.
+What we learned over eight years on the road wasn't just how to live small. It was how to design a life that could keep moving without falling apart.
 
 The first year was exciting and inefficient. We overcomplicated things, overpacked, overspent on convenience. We learned what we actually needed versus what we thought we needed — and the gap between those two things was larger than expected.
 
@@ -47,7 +47,7 @@ By year three, we had systems. A rhythm. A budget we trusted. We knew which deci
 
 By year seven, the design had become second nature. Not because it got easier — the road always finds new ways to test you — but because we'd built enough experience to respond instead of react.
 
-The van didn't just give us freedom. It gave us a seven-year education in what sustainable mobility actually requires.
+The van didn't just give us freedom. It gave us a eight-year education in what sustainable mobility actually requires.
 
 ## When the design expanded
 

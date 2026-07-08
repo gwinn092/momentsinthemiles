@@ -63,7 +63,7 @@ It doesn't mean spend everything and plan nothing. It means the version of respo
 
 This is worth saying plainly, because it cuts against the story people tell about who gets to do this.
 
-We didn't move into the van at 22, fresh out of college with no obligations and nothing to lose. We made that decision as adults — with full awareness of what it cost and what it gave back. Seven years of van life. All 48 continental states. A life built deliberately, not impulsively.
+We didn't move into the van at 22, fresh out of college with no obligations and nothing to lose. We made that decision as adults — with full awareness of what it cost and what it gave back. Eight years of van life. All 48 continental states. A life built deliberately, not impulsively.
 
 Then Southeast Asia. Eight months of slow travel through Thailand, Vietnam, Laos, Cambodia, Malaysia, Singapore, Indonesia, and the Philippines — not a gap year, not a crisis, but a conscious extension of a life we'd been building for years.
 

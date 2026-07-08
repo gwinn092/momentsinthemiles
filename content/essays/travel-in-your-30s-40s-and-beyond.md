@@ -27,7 +27,7 @@ What we got instead was the quiet version of the question everyone was thinking:
 
 We chose to keep asking a different question: settle into what, exactly?
 
-Seven years later, forty-eight states covered, eight months in Southeast Asia behind us — we can say with some authority that travel in your thirties and forties is not a consolation prize for people who didn't do it when they were young. It is its own thing entirely. Different in texture, different in depth, different in what it offers and what it asks of you.
+Eight years later, forty-eight states covered, eight months in Southeast Asia behind us — we can say with some authority that travel in your thirties and forties is not a consolation prize for people who didn't do it when they were young. It is its own thing entirely. Different in texture, different in depth, different in what it offers and what it asks of you.
 
 And in many ways, better.
 
@@ -82,7 +82,7 @@ You are not too old. You have not missed the window. The window is not a window 
 - Stop measuring this version of adventure against a previous one
 - The skills you've built — patience, resourcefulness, discernment — make you a better traveler than you were before
 
-{{< photo src="/images/essays/beach-together.jpg" alt="Karlee and Jesse smiling on the beach at golden hour" caption="Seven years in. Still going." >}}
+{{< photo src="/images/essays/beach-together.jpg" alt="Karlee and Jesse smiling on the beach at golden hour" caption="Eight years in. Still going." >}}
 
 We're not writing this from the other side of some finish line. We're writing it from inside the doing of it — from a life that is still in motion, still being designed, still asking us to choose it again and again.
 
