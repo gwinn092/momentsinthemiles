@@ -2,28 +2,28 @@
 title: "The Honest Reality of Full-Time Van Life (No Filter)"
 tags: ["Van Life", "Mindset"]
 date: 2025-05-19
-description: "We've been living full-time in a van for eight years. We know what this life looks like from the inside — not the reel, not the highlight. The actual inside."
+description: "We've been living full-time in a van for eight years. We know what this life looks like from the inside. Not the reel, not the highlight. The actual inside."
 category: "Van Life"
 author: "Karlee & Jesse"
 draft: false
 image: "/images/van-life/van-stuck-gravel.jpg"
 ---
 
-Let's get one thing out of the way: the photos are real. The sunsets, the open roads, the coffee made in places that don't have a parking lot or a loyalty card — all of it actually happens. We're not going to pretend otherwise.
+Let's get one thing out of the way: the photos are real. The sunsets, the open roads, the coffee made in places that don't have a parking lot or a loyalty card. All of it actually happens. We're not going to pretend otherwise.
 
-But here's what also happens: the arguments about whose turn it is to empty the compost. The three-day stretches where the weather is bad and you're both working from an 80-square-foot box and someone's chewing too loudly. The moment you realize the nearest dump station is 47 miles away and you waited one day too long.
+But other things happen too: the arguments about whose turn it is to empty the compost. The three-day stretches where the weather is bad and you're both working from an 80-square-foot box and someone's chewing too loudly. The moment you realize the nearest dump station is 47 miles away and you waited one day too long.
 
-We've been living full-time in a van for eight years. We know what this life looks like from the inside — not the reel, not the highlight, not the carefully framed shot where the bed is made and the light is golden. The actual inside. And we think you deserve to hear that version before you sell your couch.
+We've been living full-time in a van for eight years. We know what this life looks like from the inside. Not the reel, not the carefully framed shot where the bed is made and the light is golden. The actual inside. And we think you deserve to hear that version before you sell your couch.
 
 ---
 
 ## It's harder than it looks. Obviously. But not in the ways you'd think.
 
-Everyone worries about the logistics before they start. Where will I shower? What about mail? How do you work? Those are real questions, and they have real answers — you figure them out, you build systems, it becomes routine.
+Everyone worries about the logistics before they start. Where will I shower? What about mail? How do you work? Those are real questions, and they have real answers: you figure them out, build systems, and it becomes routine.
 
-The harder stuff is quieter. It's the low-grade mental load of always knowing where your next water fill is. It's the way a bad night of sleep in a hot parking lot doesn't just make you tired — it makes everything harder. It's the fact that when something goes wrong with your home, something is also wrong with your vehicle, and sometimes both at the same time at 9pm on a Sunday.
+The harder stuff is less photogenic. The low-grade mental load of always knowing where your next water fill is. The way a bad night of sleep in a hot parking lot makes everything the next day harder. The fact that when something goes wrong with your home, something is also wrong with your vehicle, and sometimes both at the same time at 9pm on a Sunday.
 
-The logistics you solve once. The mental load you manage forever. That's the part nobody puts in the caption.
+The logistics you solve once; the mental load you manage forever. Nobody puts that in the caption.
 
 {{< photo src="/images/guides/traction-boards.jpg" alt="Digging out a van tire with traction boards on loose gravel" caption="The caption on this one: we got out eventually." >}}
 
@@ -35,7 +35,7 @@ Jesse and I were together for years before we moved into the van. We thought we 
 
 Van life will locate every unresolved relationship dynamic you have and present it to you in a very small space with nowhere to go. You learn things. You grow. You also, occasionally, take a very pointed solo walk around a Walmart parking lot at 10pm just to remember what it feels like to be alone.
 
-We're not saying this to scare you. We're saying this because the couples who thrive in a van aren't the ones who never fight — they're the ones who figured out how to fight well in a small space and still want to be there when it's over.
+We're not saying this to scare you. We're saying it because thriving in a van has nothing to do with never fighting. The couples who last are the ones who figured out how to fight well in a small space and still want to be there when it's over.
 
 ---
 
@@ -51,7 +51,7 @@ The tradeoffs are real. We'd make them again.
 
 ## It changes you. Quietly, then all at once.
 
-You stop needing certain things. Not in a performative minimalism way — in the way where you genuinely stop thinking about them. The stuff you used to own that owned you back. The routines that felt like stability but were actually just inertia.
+You stop needing certain things. Not performative minimalism; you just stop thinking about them. The stuff you used to own that owned you back. The routines that felt like stability but were actually just inertia.
 
 You also start needing different things. Longer stretches of stillness. Places that feel right, not just convenient. People who understand why you left without needing you to justify it every time.
 
@@ -63,8 +63,8 @@ Eight years in, we're different people than we were when we started. We're not s
 
 We're not going to answer that for you. Not because we're being coy, but because the honest answer is: it depends on what you're running toward, not what you're running from.
 
-If you're chasing the aesthetic, it'll wear off around month three. If you're chasing something real — freedom, simplicity, a life that actually fits you — it has a way of delivering on that. Slowly, imperfectly, and with significantly more trips to the dump station than the algorithm suggests.
+If you're chasing the aesthetic, it'll wear off around month three. If you're chasing something real (freedom, simplicity, a life that actually fits you), it has a way of delivering on that. Slowly, imperfectly, and with significantly more trips to the dump station than the algorithm suggests.
 
-We're glad we did it. We're still doing it. And we'll keep telling you the truth about what it's actually like — because you'll make a better decision with the real version than with the highlight reel.
+We're glad we did it. We're still doing it. And we'll keep telling you the truth about what it's actually like, because you'll make a better decision with the real version than with the highlight reel.
 
 — Karlee & Jesse

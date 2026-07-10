@@ -15,7 +15,7 @@ stories:
     photo: "images/van-life/rainier-overlook.jpg"
     alt: "Sitting at an overlook above the clouds facing Mount Rainier"
     caption: "Coffee going cold above the clouds."
-    story: "Some mornings you slide the van door open and Rainier is just there — enormous, patient, close enough to feel. We sat above the clouds while the coffee went cold and didn't say much. Washington kept doing that to us."
+    story: "Some mornings you slide the van door open and Rainier is just there, enormous and patient, close enough to feel. We sat above the clouds while the coffee went cold and didn't say much. Washington kept doing that to us."
     link: "van-life/what-nobody-tells-you-van-life/"
     link_text: "What Nobody Tells You Before You Start Van Life"
     pin: { fx: 0.38, fy: 0.60 }
@@ -28,7 +28,7 @@ stories:
     photo: "images/pages/guides-oregon-coast.jpg"
     alt: "Sea stacks along the Oregon coast at dusk"
     caption: "Every pull-out another empty beach."
-    story: "We drove the Oregon coast slower than any road before it — every pull-out another sea stack, another beach with nobody on it. The fog rolls in, the coffee gets refilled, and you stop pretending you have somewhere else to be."
+    story: "We drove the Oregon coast slower than any road before it. Every pull-out was another sea stack, another beach with nobody on it. The fog rolls in, the coffee gets refilled, and you stop pretending you have somewhere else to be."
     link: "gallery/"
     link_text: "See more from the road"
     pin: { fx: 0.07, fy: 0.42 }
@@ -54,7 +54,7 @@ stories:
     photo: "images/essays/antelope-canyon.jpg"
     alt: "Light beams inside the sandstone curves of Antelope Canyon"
     caption: "What water can do with a few million years."
-    story: "Antelope Canyon is what happens when water is given a few million years and no deadline — light falls in beams and the walls curve like something poured. An hour south, Sedona glows like it's lit from the inside. Arizona kept humbling us."
+    story: "Antelope Canyon is what happens when water is given a few million years and no deadline. Light falls in beams and the walls curve like something poured. An hour south, Sedona glows like it's lit from the inside. Arizona kept humbling us."
     link: "essays/the-miles-will-shape-you/"
     link_text: "The Miles Will Shape You"
     pin: { fx: 0.52, fy: 0.40 }
@@ -67,7 +67,7 @@ stories:
     photo: "images/essays/karlee-white-sands.jpg"
     alt: "Karlee walking the white gypsum dunes at White Sands"
     caption: "Barefoot on gypsum, like kids."
-    story: "White gypsum to every horizon, cool underfoot even in the heat. We ran the dunes barefoot like kids — two people well past the age the world says this is for, having the best afternoon of the year."
+    story: "White gypsum to every horizon, cool underfoot even in the heat. We ran the dunes barefoot like kids, two people well past the age the world says this is for, having the best afternoon of the year."
     link: "essays/travel-in-your-30s-40s-and-beyond/"
     link_text: "Travel in Your 30s, 40s & Beyond"
     pin: { fx: 0.45, fy: 0.72 }
@@ -80,7 +80,7 @@ stories:
     photo: "images/van-life/van-lake-powell.jpg"
     alt: "The van parked at the edge of Lake Powell, red rock behind"
     caption: "Close enough to hear the water."
-    story: "We parked close enough to hear the water — red rock, glass-flat blue, and a silence that took a day to get used to. Some campsites you leave and forget. That one we still talk about."
+    story: "We parked close enough to hear the water: red rock, glass-flat blue, and a silence that took a day to get used to. Some campsites you leave and forget. That one we still talk about."
     link: "van-life/honest-reality-van-life/"
     link_text: "The Honest Reality of Full-Time Van Life"
     pin: { fx: 0.52, fy: 0.88 }
@@ -93,7 +93,7 @@ stories:
     photo: "images/van-life/van-colorado-fall.jpg"
     alt: "The van on a mountain road surrounded by golden aspens"
     caption: "Whole mountainsides going gold."
-    story: "We chased the aspens for two weeks — whole mountainsides going gold a ridge at a time, and us rerouting every morning to stay inside it. Colorado in October is the best argument for a house on wheels we know."
+    story: "We chased the aspens for two weeks, whole mountainsides going gold a ridge at a time, and us rerouting every morning to stay inside it. Colorado in October is the best argument for a house on wheels we know."
     link: "essays/designing-a-life-that-moves/"
     link_text: "Designing a Life That Moves"
     pin: { fx: 0.42, fy: 0.48 }
@@ -106,7 +106,7 @@ stories:
     photo: "images/van-life/teton-lake.jpg"
     alt: "A still alpine lake below the Teton range"
     caption: "No foothills. No warning. Just up."
-    story: "No mountains announce themselves like the Tetons — no foothills, no warning, just the valley floor and then straight up. We woke below them beside a lake so still it doubled the whole range."
+    story: "No mountains announce themselves like the Tetons: no foothills, no warning, just the valley floor and then straight up. We woke below them beside a lake so still it doubled the whole range."
     link: "van-life/day-in-the-life-van-living/"
     link_text: "A Day in the Life of Van Living"
     pin: { fx: 0.13, fy: 0.28 }
@@ -132,7 +132,7 @@ stories:
     photo: "images/pages/hero-mountaintop.jpg"
     alt: "Jesse and Karlee on a mountaintop at golden hour"
     caption: "Forty-eight states, eight years, one van."
-    story: "Forty-eight states, eight years, one van. This is the map above — the slow version of home."
+    story: "Forty-eight states, eight years, one van. This is the map above, the slow version of home."
     link: "van-life/"
     link_text: "The Van Life Chapters"
 
@@ -144,7 +144,7 @@ stories:
     photo: "images/essays/hanoi-banh-mi-shop.jpg"
     alt: "The bánh mì shop in Hanoi under a yellow tree and red lanterns"
     caption: "We smelled it before we saw it."
-    story: "We smelled it before we saw it — pork fat and charred bread drifting through Hanoi at dusk. Under a wide yellow tree and a string of red lanterns: tiny plastic stools, a patient crowd, and the best sandwich of our lives. We got in line without discussing it."
+    story: "We smelled it before we saw it. Pork fat and charred bread, drifting through Hanoi at dusk. Under a wide yellow tree and a string of red lanterns: tiny plastic stools, a patient crowd, and the best sandwich of our lives. We got in line without discussing it."
     link: "essays/a-plastic-stool-in-hanoi/"
     link_text: "A Plastic Stool in Hanoi"
     pin: { fx: 0.30, fy: 0.14 }
@@ -157,7 +157,7 @@ stories:
     photo: "images/essays/laos-village.jpg"
     alt: "A riverside village in Laos"
     caption: "Two days on a slow boat down the Mekong."
-    story: "Two days on a slow boat down the Mekong — car bench seats, a roaring engine, and time moving the way the river decided it would. Some of what happened on that water still sits quietly in our chests."
+    story: "Two days on a slow boat down the Mekong: car bench seats, a roaring engine, and time moving the way the river decided it would. Some of what happened on that water still sits with us."
     link: "essays/the-river-that-gave-and-took/"
     link_text: "The River That Gave and Took"
     pin: { fx: 0.35, fy: 0.32 }
@@ -170,7 +170,7 @@ stories:
     photo: "images/guides/thailand-chiang-mai.jpg"
     alt: "Golden temple rooftops in Chiang Mai"
     caption: "Morning markets and gold rooftops."
-    story: "Chiang Mai was the first place in Asia that felt like ours — morning markets, gold rooftops, seventy-cent noodles eaten standing up. It's where eight months stopped being a plan and started being a life."
+    story: "Chiang Mai was the first place in Asia that felt like ours: morning markets, gold rooftops, seventy-cent noodles eaten standing up. It's where eight months stopped being a plan and started being a life."
     link: "guides/eight-months-southeast-asia/"
     link_text: "Eight Months in Southeast Asia"
     pin: { fx: 0.38, fy: 0.16 }
@@ -208,7 +208,7 @@ stories:
     photo: "images/essays/karlee-stjohn.jpg"
     alt: "Karlee on St. John in the U.S. Virgin Islands"
     caption: "Five years, one small island."
-    story: "Before the van and before Asia, Karlee spent five seasons living on St. John — barefoot commutes, hurricane seasons, and a blue you eventually stop trying to describe. Some chapters you don't get to share. You just bring what they taught you."
+    story: "Before the van and before Asia, Karlee spent five seasons living on St. John: barefoot commutes, hurricane seasons, and a blue you eventually stop trying to describe. Some chapters you don't get to share. You just bring what they taught you."
     link: "about/"
     link_text: "Meet Us"
 

@@ -9,17 +9,17 @@ draft: false
 image: "/images/essays/laos-village.jpg"
 ---
 
-There are moments from our eight months in Asia that still sit quietly in my chest.
+There are moments from our eight months in Asia that still sit in my chest.
 
 The two-day slow boat from Chiang Khong into Laos is one of them.
 
-At the time, it felt like adventure. Like romance. Like the kind of slow travel story you dream about when you first start talking about leaving everything behind.
+At the time, it felt like adventure, like romance, like the slow travel story you dream about when you first start talking about leaving everything behind.
 
 But travel has a way of revealing what you didn't know you were taking for granted. Sometimes it does it gently. And sometimes it does it all in a single day.
 
 ## The boat
 
-The boat was old and rickety. Car bench seats lined the interior — worn, loosely placed, not meant for comfort. The engine roared so loudly you couldn't hold a steady conversation. A squat toilet sat in the back, a humbling reminder that this wasn't a curated experience.
+The boat was old and rickety. Car bench seats lined the interior, worn and loosely placed, not meant for comfort. The engine roared so loudly you couldn't hold a steady conversation. A squat toilet sat in the back, a humbling reminder that this wasn't a curated experience.
 
 Locals and tourists sat shoulder to shoulder as we drifted down the river. Jungle banks slid past. Small wooden homes perched on stilts. Life unfolding at its own pace.
 
@@ -33,11 +33,11 @@ That's how we met Vieng.
 
 ## The invitation
 
-Vieng ran our small riverside hotel. He had just opened a bar down the road — simple, homey, overlooking the water.
+Vieng ran our small riverside hotel. He had just opened a bar down the road, simple and homey, overlooking the water.
 
-We ate good food. Drank beer. Played pool. Talked easily — his English was great, warm and direct in a way that made conversation feel effortless.
+We ate good food. Drank beer. Played pool. Talked easily; his English was great, warm and direct in a way that made conversation feel effortless.
 
-By the end of the night, he offered something unexpected: he would help us reschedule our boat, extend our stay, and take us to his home village the next day — an hour away. He wanted us to see where he grew up.
+By the end of the night, he offered something unexpected: he would help us reschedule our boat, extend our stay, and take us to his home village the next day, an hour away. He wanted us to see where he grew up.
 
 We said yes.
 
@@ -51,17 +51,17 @@ The drive wound through dirt roads and small rural communities. When we arrived,
 
 He introduced us to his mother. His family. Showed us the newly built school.
 
-Before we'd even settled in, we handed out the candy we'd brought — Vieng had suggested it. The kids went absolutely wild. That kind of excitement doesn't need translation.
+Before we'd even settled in, we handed out the candy we'd brought. Vieng had suggested it. The kids went absolutely wild. That kind of excitement doesn't need translation.
 
-We watched children fish, bathe, and play in the river like it was the center of the world — because it was.
+We watched children fish, bathe, and play in the river like it was the center of the world, because it was.
 
-His mother made lunch for the four of us — Vieng, the driver, Jesse, and me. One of the most authentic meals of our entire trip. Simple, careful, made with intention.
+His mother made lunch for the four of us: Vieng, the driver, Jesse, and me. It was one of the most authentic meals of our entire trip. Simple, careful, made with intention.
 
 {{< photo src="/images/essays/laos-host-meal.jpg" alt="Jesse and Karlee seated on the floor around baskets of home-cooked food" caption="Lunch in Vieng's village. Simple, careful, made with intention." >}}
 
-After lunch, the townspeople began to gather. Someone produced rice wine. Then more people. Then more rice wine. We sat together for hours — laughing, drinking, listening — the conversation a loose mix of Vieng translating and the universal language of people who are simply glad to be together.
+After lunch, the townspeople began to gather. Someone produced rice wine. Then more people. Then more rice wine. We sat together for hours, laughing, drinking, listening, the conversation a loose mix of Vieng translating and the universal language of people who are glad to be together.
 
-It was exactly the kind of experience we had imagined a year earlier — back when we were still hesitating to book this trip at all.
+It was exactly what we had imagined a year earlier, back when we were still hesitating to book this trip at all.
 
 This was what we had hoped travel could be.
 
@@ -93,12 +93,12 @@ At the time, it felt philosophical. By evening, it felt real.
 
 ## What travel really gave us
 
-It's one of the moments I think about often. Not because of how it ended — but because of what it revealed.
+It's one of the moments I think about often. Not because of how it ended, but because of what it revealed.
 
-When you travel slowly — when you sit in someone's home, meet their mother, share rice wine with their neighbors, ride in their truck — the world stops being abstract. It becomes faces. Names. Breath.
+When you travel slowly, when you sit in someone's home, meet their mother, share rice wine with their neighbors, ride in their truck, the world stops being abstract. It becomes faces, names, breath.
 
-You start to realize how much you take for granted. Access. Healthcare. Certainty. Things you never had to question.
+You start to realize how much you take for granted. Access, healthcare, certainty. Things you never had to question.
 
-That day didn't just expand our world. It humbled it.
+That day expanded our world and humbled it at the same time.
 
 And that realization has never really left me.

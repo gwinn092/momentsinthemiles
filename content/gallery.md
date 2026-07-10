@@ -1,6 +1,6 @@
 ---
 title: "Gallery"
-description: "A few frames from the road — van life, the American West, and eight months across Southeast Asia."
+description: "A few frames from the road: van life, the American West, and eight months across Southeast Asia."
 layout: "gallery"
 hero_image: "/images/gallery/white-sands-dunes.jpg"
 hero_position: "center 30%"
@@ -39,4 +39,4 @@ gallery:
   - { src: "/images/essays/more-good-red-rocks.jpg", alt: "Red rock country", cat: "west" }
 ---
 
-Eight years, all 48 continental states, and eight months across Southeast Asia — a handful of the frames that stuck. Filter by chapter, and tap any photo to view it larger.
+Eight years, all 48 continental states, and eight months across Southeast Asia. Here's a handful of the frames that stuck. Filter by chapter, and tap any photo to view it larger.

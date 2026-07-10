@@ -2,7 +2,7 @@
 title: "What Travel Taught Us About Human Kindness"
 tags: ["Southeast Asia", "Connection", "Food"]
 date: 2025-02-24
-description: "Chiang Mai, day one. A food cart. A bowl of soup. And a lesson that stayed with us for eight months."
+description: "Chiang Mai, day one. A food cart, a bowl of soup, and a lesson that stayed with us for eight months."
 category: "Stories"
 author: "Karlee"
 draft: false
@@ -14,11 +14,11 @@ hero_position: "center 60%"
 
 We turned a corner into Old Town and the city hit us all at once.
 
-Motorbikes flying past in every direction. The street humming with engines and voices. And there, just ahead — a 7-Eleven, its door chiming open and shut in a steady rhythm.
+Motorbikes flying past in every direction. The street humming with engines and voices. And there, just ahead, a 7-Eleven, its door chiming open and shut in a steady rhythm.
 
 Don't judge. If you've done your research, you know they're the holy grail of corner stores in Asia.
 
-But what stopped us wasn't the 7-Eleven. It was what was ten feet from its door — a small food cart with at least six locals sitting on tiny, colorful plastic stools. That's always a good sign in a foreign country. If the locals eat there, you should too.
+But what stopped us wasn't the 7-Eleven. It was what was ten feet from its door: a small food cart with at least six locals sitting on tiny, colorful plastic stools. That's always a good sign in a foreign country. If the locals eat there, you should too.
 
 As we walked by and made eye contact with one of the men eating, he broke into a wide smile. He pointed to his bowl. Looked at us. Smiled from ear to ear.
 
@@ -32,27 +32,27 @@ He stood up from his tiny stool, almost ceremoniously, offering us his place. So
 
 The couple running the cart greeted us like we weren't strangers at all. No English. No shared vocabulary. Just warmth.
 
-As they cooked, steam rose into the humid air, carrying the smell of fresh Thai chili peppers. It was sharp. Bright. Almost sweet at first. And then it hit. Our eyes started watering before we even took a bite.
+As they cooked, steam rose into the humid air, carrying the smell of fresh Thai chili peppers. It was sharp and bright, almost sweet at first. And then it hit. Our eyes started watering before we even took a bite.
 
 We laughed through the tears.
 
-The food came quickly — steaming, fragrant, comforting. And at the end, they brought us extra soup. We tried to pay for it. They gently waved us off. It was a kind gesture. Not a promotion. Not a strategy. Just generosity.
+The food came quickly, steaming and fragrant. At the end, they brought us extra soup. We tried to pay for it, and they gently waved us off. Not a promotion, not a strategy. Just generosity.
 
 We returned to that food cart several times during our stay. Not just for the food. For the feeling.
 
 ## The realization
 
-That first day in Chiang Mai shifted something in us. And it was only the beginning.
+That first day in Chiang Mai set the tone for everything after it. And it was only the beginning.
 
-Throughout the next eight months traveling across Asia, we encountered countless acts of kindness — moments that reminded us, again and again, what humanity looks like at its best.
+Throughout the next eight months traveling across Asia, we encountered countless acts of kindness, moments that reminded us, again and again, what humanity looks like at its best.
 
 {{< photo src="/images/essays/laos-walking-together.jpg" alt="Jesse walking hand in hand with a young boy through a Lao village" caption="Some invitations don't need words." >}}
 
-Human kindness doesn't require language. It doesn't require wealth. It doesn't require a reason.
+Human kindness doesn't require language, wealth, or a reason.
 
-It exists in eye contact. In shared space. In steam rising from a pot on a noisy street.
+It exists in eye contact, in shared space, in steam rising from a pot on a noisy street.
 
-Travel isn't just about what you see. It's about who you meet — and how they make you feel.
+Travel is about more than what you see. It's about who you meet and how they make you feel.
 
 ## Slow down enough to notice
 
@@ -62,7 +62,7 @@ We started building "nothing hours" into our travels — time with no plan excep
 
 When you slow down, you notice more. The vendor who adds an extra scoop. The stranger who gives you directions without being asked. The smile that feels bigger than a transaction.
 
-Speed makes kindness invisible. Stillness reveals it.
+Speed just makes it easy to miss.
 
 ## Give. Receive. Repeat.
 
@@ -70,18 +70,18 @@ Kindness flows both ways. Sometimes you receive the extra soup. Sometimes you're
 
 {{< photo src="/images/essays/laos-cooking-together.jpg" alt="Jesse helping cook over a pot in a village kitchen in Laos" caption="Sometimes you're the one stirring the pot." >}}
 
-Travel taught us that generosity isn't about grand gestures. It's about participation. When you show up open, the world often mirrors it back.
+Travel taught us that generosity is less about grand gestures than about participation. When you show up open, the world often mirrors it back.
 
 ## The invitation
 
-Now when we think about Chiang Mai, we don't remember the noise first. We remember the plastic stools. The steam rising into thick air. The way our eyes watered before we even took a bite. The couple waving away our money with soft smiles.
+Now when we think about Chiang Mai, we don't remember the noise first. We remember the plastic stools, the steam rising into thick air, the way our eyes watered before we even took a bite, the couple waving away our money with soft smiles.
 
-And when we think about those eight months across Asia, it's not the landmarks that rise to the surface. It's the people. The quiet generosity. The unexpected warmth. The reminder that goodness exists everywhere.
+And when we think about those eight months across Asia, it's not the landmarks that rise to the surface. It's the people: the generosity, the unexpected warmth, the reminder that goodness exists everywhere.
 
 That's what stays.
 
 The next time you travel, look for it. Look for where the locals gather. Sit down, even if you don't fully understand the menu. Let yourself be invited in.
 
-You don't need perfect language. You don't need perfect timing. Just openness.
+You don't need perfect language or perfect timing. Just openness.
 
-Kindness is rarely loud. But it's everywhere. Travel simply teaches you how to notice it.
+Kindness is rarely loud, but it's everywhere. Travel just teaches you how to notice it.

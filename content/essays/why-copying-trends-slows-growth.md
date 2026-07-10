@@ -16,35 +16,35 @@ Sometimes it works. You get a bump. A few new followers, a decent amount of enga
 
 And then it stops working. And you're back at the beginning, watching someone else, looking for the next thing to borrow.
 
-We've been creating content for eight years. We've watched this cycle play out — in our own work and in the work of people around us. And the conclusion we keep coming back to is this: chasing trends is not a strategy. It's a treadmill. And the longer you stay on it, the harder it becomes to get off.
+We've been creating content for eight years. We've watched this cycle play out, in our own work and in the work of people around us. And the conclusion we keep coming back to is this: chasing trends is not a strategy. It's a treadmill. And the longer you stay on it, the harder it becomes to get off.
 
 ## What trend-chasing actually costs you
 
 On the surface, following trends looks efficient. Someone else already tested the concept. The format is proven. The audience clearly wants it. Why start from scratch when you can adapt something that already works?
 
-Here's what that logic misses: the person whose trend you're borrowing already owns it. They were first. They built the association. When you produce a version of their idea, even a good one, you are by definition playing catch-up — and your audience can feel that, even if they can't name it.
+What that logic misses is that the person whose trend you're borrowing already owns it. They were first. They built the association. When you produce a version of their idea, even a good one, you are by definition playing catch-up, and your audience can feel that, even if they can't name it.
 
 But the deeper cost isn't about being second. It's about what trend-chasing does to your own creative instincts over time.
 
-When you spend most of your energy watching what other people are doing, you slowly stop listening to yourself. The original ideas you had — the ones that were specific to your experience, your voice, your perspective — start to feel less trustworthy. Too niche. Too slow. Not proven enough. And so you reach for the template again instead.
+When you spend most of your energy watching what other people are doing, you slowly stop listening to yourself. The original ideas you had, the ones specific to your experience, your voice, your perspective, start to feel less trustworthy. Too niche, too slow, not proven enough. And so you reach for the template again instead.
 
 ## The audience problem nobody talks about
 
 There's another issue with building your content around trends: the audience you attract is a trend audience.
 
-They came for a format, not for you. They followed because something was familiar or timely, not because they connected with something that only you could have made. And when the trend shifts — when that format stops performing, when the algorithm changes, when someone else does it bigger — they move on. Because there was never a reason to stay that was specific to you.
+They came for a format, not for you. They followed because something was familiar or timely, not because they connected with something that only you could have made. And when the trend shifts, when that format stops performing, when the algorithm changes, when someone else does it bigger, they move on. Because there was never a reason to stay that was specific to you.
 
-The accounts and blogs with real staying power — the ones that have been around for years and still have an engaged, loyal readership — almost never built that by being fast followers. They built it by being consistently, specifically themselves. By creating content that their audience couldn't get anywhere else, because it came from a perspective and a life that no one else has.
+The accounts and blogs with real staying power, the ones that have been around for years and still have an engaged, loyal readership, almost never built that by being fast followers. They built it by being consistently, specifically themselves. By creating content that their audience couldn't get anywhere else, because it came from a perspective and a life that no one else has.
 
 That kind of audience doesn't leave when a trend dies. They stay because they're not there for the trend. They're there for you.
 
 ## What slow growth actually means
 
-Original content — the kind that comes from your real experience, your actual voice, your specific point of view — often grows more slowly at first. It doesn't have the built-in proof of concept that a trending format has. It requires more from the audience. It asks them to care about something they haven't been primed to care about yet.
+Original content, the kind that comes from your real experience, your actual voice, your specific point of view, often grows more slowly at first. It doesn't have the built-in proof of concept that a trending format has. It requires more from the audience. It asks them to care about something they haven't been primed to care about yet.
 
 That can feel discouraging when you're in it. Especially when you can see someone else's trend-adjacent post pulling numbers yours isn't.
 
-But the growth that comes from original work compounds differently. Each piece you create reinforces the one before it. Your body of work starts to feel like something cohesive — like a place with a clear point of view that people return to because they know what they're going to get. Trust accumulates. And trust, over time, is what actually converts — into email subscribers, into loyal readers, into people who buy what you recommend because they believe you.
+But the growth that comes from original work compounds differently. Each piece you create reinforces the one before it. Your body of work starts to feel like something cohesive, like a place with a clear point of view that people return to because they know what they're going to get. Trust accumulates. And trust, over time, is what actually converts: into email subscribers, into loyal readers, into people who buy what you recommend because they believe you.
 
 Trend-chasing doesn't build that. It keeps you visible in a shallow way while making the deeper thing harder to build.
 
@@ -54,7 +54,7 @@ This isn't an argument against ever paying attention to what's working in your s
 
 The question worth asking is: where does the idea actually start?
 
-If it starts with "I saw someone do this and I want to do my version" — that's trend-chasing. If it starts with "I have something to say about this and a trending format happens to be a useful container for it" — that's different. One borrows the idea. The other borrows the vehicle.
+If it starts with "I saw someone do this and I want to do my version," that's trend-chasing. If it starts with "I have something to say about this and a trending format happens to be a useful container for it," that's different. One borrows the idea. The other borrows the vehicle.
 
 The best content usually starts with the thing you actually want to say. The thing that's been sitting with you. The perspective that feels almost too specific, too honest, too yours. That's usually the signal that it's worth making.
 
@@ -62,10 +62,10 @@ The best content usually starts with the thing you actually want to say. The thi
 
 ## The long game is the only game worth playing
 
-Eight years in, we're still here. Still writing. Still creating. And the content that has served us best — the posts that keep getting found, the pieces readers come back to, the work we're actually proud of — is almost never the content we made because someone else was doing something similar.
+Eight years in, we're still here. Still writing. Still creating. And the content that has served us best (the posts that keep getting found, the pieces readers come back to, the work we're actually proud of) is almost never the content we made because someone else was doing something similar.
 
-It's the content that came from us. From the specific life we're living, the specific things we've figured out, the specific way we see this world we've chosen.
+It's the content that came from us: from the life we're actually living, the things we've figured out, the way we see this world we've chosen.
 
 Nobody else can make that content. Which means nobody else can compete with it.
 
-Trends come and go. Your perspective — if you protect it, develop it, and trust it — is the only thing in this space that is genuinely, permanently yours.
+Trends come and go. Your perspective, if you protect it, develop it, and trust it, is the only thing in this space that is permanently yours.

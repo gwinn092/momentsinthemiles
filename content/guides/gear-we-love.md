@@ -2,16 +2,16 @@
 title: "Gear That's Earned Its Spot in the Van"
 tags: ["Gear", "Van Life"]
 date: 2025-07-01
-description: "We don't do gear reviews. We don't test products for a week and tell you what we think. Everything on this list has lived in our van for months or years. This is what we actually grab every day."
+description: "No week-long product tests here. Everything on this list has lived in our van for months or years. This is what we actually grab every day."
 category: "Guides"
 author: "Karlee & Jesse"
 draft: false
 image: "/images/guides/van-interior-galley.jpg"
 ---
 
-We don't do gear reviews. We don't test products for a week and tell you what we think. Everything on this list has lived in our van — a 2017 Ram ProMaster — for months or years. Some of it has survived eight years on the road. Some of it replaced something that didn't.
+We don't do gear reviews. We're not going to test products for a week and tell you what we think. Everything on this list has lived in our van (a 2017 Ram ProMaster) for months or years. Some of it has survived eight years on the road. Some of it replaced something that didn't.
 
-This isn't a "best of" list. It's a "this is what we actually grab every day" list.
+Less a "best of" list, more a "what we actually grab every day" list.
 
 If something breaks or we stop using it, it comes off the page. No dead links, no ghost recommendations.
 
@@ -33,7 +33,7 @@ Smoothies in the van sound ridiculous until you've been parked somewhere hot for
 
 **ENO Hammock**
 
-This gets set up more than almost anything else we own. Rest stops, campsites, between two trees at a trailhead — it takes thirty seconds and suddenly you're not in a parking lot anymore. We have the DoubleNest because sharing a single hammock sounds romantic but is actually a fight.
+This gets set up more than almost anything else we own. Rest stops, campsites, between two trees at a trailhead. It takes thirty seconds and suddenly you're not in a parking lot anymore. We have the DoubleNest because sharing a single hammock sounds romantic but is actually a fight.
 
 ---
 
@@ -41,11 +41,11 @@ This gets set up more than almost anything else we own. Rest stops, campsites, b
 
 **Hydro Flask**
 
-Eight years. Multiple dents. Still keeps ice frozen for a full day in Arizona heat. We each have one and they never leave the van. If you're debating between this and a cheaper option — don't. The cheap ones work for six months. This one works forever.
+Eight years. Multiple dents. Still keeps ice frozen for a full day in Arizona heat. We each have one and they never leave the van. If you're debating between this and a cheaper option, don't. The cheap ones work for six months. This one works forever.
 
 **Dometic CFX65DZ Fridge**
 
-This isn't casual gear — it's the foundation of how we eat on the road. Dual zone means we run a fridge side and a freezer side. We've kept groceries fresh for over a week in the desert with no shore power. It draws more power than anything else in the van, which is exactly why the solar and battery setup matters so much.
+This is the foundation of how we eat on the road. Dual zone means we run a fridge side and a freezer side. We've kept groceries fresh for over a week in the desert with no shore power. It draws more power than anything else in the van, which is exactly why the solar and battery setup matters so much.
 
 {{< photo src="/images/guides/dometic-fridge.jpg" alt="The Dometic dual-zone fridge" caption="The foundation of how we eat on the road." >}}
 
@@ -69,7 +69,7 @@ This was a "do we really need this?" purchase that became one of our favorite th
 
 **Solawave** *(Karlee's pick)*
 
-Red light therapy wand that she uses almost every night. Van life is hard on your skin — sun, wind, dry air, inconsistent water quality. This is one of those small routines that makes the van feel less like camping and more like home.
+Red light therapy wand that she uses almost every night. Van life is hard on your skin: sun, wind, dry air, inconsistent water quality. This is one of the routines that makes the van feel less like camping and more like home.
 
 **Michael Todd Sonic Cleansing Brush** *(Karlee's pick)*
 
@@ -97,7 +97,7 @@ We've used a lot of apps over the years. These are the ones still on our phones:
 
 Our van runs on a BLUETTI Elite 200 V2 with 300+ watts of solar on the roof. It powers the fridge, the fans, our laptops, phones, and everything else. We lived on a Goal Zero Yeti 1400 for six years before switching, so we've seen both sides.
 
-If you want the honest, detailed breakdown of how van power actually works — what's worth it, what's not, and how to size a system for your life — that's exactly what Jesse built [Create a Van Life](https://createavanlife.com) for.
+If you want the honest, detailed breakdown of how van power actually works, what's worth it, and how to size a system for your life, that's what Jesse built [Create a Van Life](https://createavanlife.com) for.
 
 ---
 

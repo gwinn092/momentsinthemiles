@@ -1,6 +1,6 @@
 ---
 title: "Start Here"
-description: "New to Moments in the Miles? Start here. Eight years of van life, all 48 continental states, eight months across Southeast Asia — this is how we got here."
+description: "New to Moments in the Miles? Start here. Eight years of van life, all 48 continental states, eight months across Southeast Asia. This is how we got here."
 hero_image: "/images/pages/start-here-van-window.jpg"
 hero_position: "center 38%"
 ---
