@@ -1511,7 +1511,10 @@ body.nav-open {
 }
 
 .kit-hero__image {
-  min-height: 400px;
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
   border-radius: 3px 3px 0 0;
 }
 
@@ -1656,6 +1659,13 @@ body.nav-open {
 }
 
 /* About us */
+.kit-about__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 3px;
+}
+
 .kit-about__inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1708,6 +1718,10 @@ body.nav-open {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .kit-hero__image {
+    height: 320px;
+  }
+
   .kit-inside__grid {
     grid-template-columns: 1fr;
     gap: 2rem;

@@ -8,13 +8,11 @@
     <span class="eyebrow">Reduce Friction</span>
     <h1 class="kit-hero__title">The Leave Anyway Kit</h1>
     <p class="kit-hero__sub">A guided workspace for people who are ready, and still finding reasons not to go.</p>
-    <a href="#" class="btn btn-primary kit-cta">Get the Kit — $27</a>
+    <a href="https://wanderus.gumroad.com/l/pinqn" class="btn btn-primary kit-cta">Get the Kit — $27</a>
     <p class="kit-hero__note">Delivered as a Notion template. Free Notion account required.</p>
   </div>
   <div class="kit-hero__image-wrap">
-    <div class="image-placeholder kit-hero__image">
-      <span>[IMAGE: Road or departure — open highway, pre-dawn, something that feels like the moment before leaving]</span>
-    </div>
+    {{ partial "respimg.html" (dict "path" "images/pages/kit-open-road.jpg" "alt" "Empty two-lane road curving toward the Teton range" "class" "kit-hero__image" "sizes" "(min-width: 1140px) 1092px, 100vw" "widths" (slice 480 800 1200) "loading" "eager" "fetchpriority" "high") }}
   </div>
 </section>
 
@@ -43,7 +41,7 @@
     <p>Each section pairs a real story from the road with reflection prompts, decision tools, and the specific, unglamorous guidance you don't find in travel content, the sort that only comes from having actually done it.</p>
     <p>It doesn't tell you to leave. It helps you figure out whether you're ready, and if you are, what's actually in the way.</p>
     <p class="kit-tagline">Your workspace. Your pace. No deadline.</p>
-    <a href="#" class="btn btn-primary kit-cta">Get the Kit — $27</a>
+    <a href="https://wanderus.gumroad.com/l/pinqn" class="btn btn-primary kit-cta">Get the Kit — $27</a>
   </div>
 </section>
 
@@ -177,7 +175,7 @@
       <p class="kit-price__label">Introductory price</p>
       <p>One-time purchase. Instant access. Yours to work through at whatever pace you need.</p>
       <p class="kit-price__note">The Kit will go up in price when we add the companion PDF guide. Buy now and you'll get that update at no additional cost.</p>
-      <a href="#" class="btn btn-primary kit-cta">Get the Kit — $27</a>
+      <a href="https://wanderus.gumroad.com/l/pinqn" class="btn btn-primary kit-cta">Get the Kit — $27</a>
       <p class="kit-price__fine">Delivered as a Notion template. You'll need a free Notion account to use it.</p>
     </div>
   </div>
@@ -190,9 +188,7 @@
   <div class="container">
     <div class="kit-about__inner">
       <div class="kit-about__image">
-        <div class="image-placeholder" style="min-height: 400px;">
-          <span>[IMAGE: Jesse and Karlee — candid travel moment]</span>
-        </div>
+        {{ partial "respimg.html" (dict "path" "images/gallery/beach-sunset-couple.jpg" "alt" "Jesse and Karlee on a beach in the late-afternoon sun" "sizes" "(min-width: 940px) 500px, 100vw" "widths" (slice 480 800)) }}
       </div>
       <div class="kit-about__content">
         <span class="eyebrow">About Us</span>
@@ -238,7 +234,7 @@
     </div>
 
     <div class="kit-final-cta">
-      <a href="#" class="btn btn-primary kit-cta">Get the Kit — $27</a>
+      <a href="https://wanderus.gumroad.com/l/pinqn" class="btn btn-primary kit-cta">Get the Kit — $27</a>
       <p class="kit-quiz-nudge">Not sure what's actually stopping you? <a href="{{ .Site.Home.RelPermalink }}reduce-friction/quiz/">Take the two-minute quiz</a>. No email required.</p>
     </div>
   </div>
