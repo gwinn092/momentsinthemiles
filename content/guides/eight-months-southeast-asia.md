@@ -16,6 +16,8 @@ We arrived in Bangkok in the fall with a rough route and no fixed end date. We l
 
 This is the full story: every country, every highlight, and the moments in between that don't make the Instagram grid but make the trip. If you're planning your own time in Southeast Asia, we hope this gives you something real to hold onto.
 
+We also drew the whole route on our map, leg by leg. [Fly the loop]({{< relref "map.md" >}}#loop), then come back for the long version.
+
 ---
 
 ## Thailand

@@ -4,6 +4,6 @@
 # pin: state = the state's name as it appears on the map; fx/fy = where inside
 # that state, as fractions from the left / from the top (0 to 1).
 # Remove or comment out the pin line to take the pin off the map.
-location: "Somewhere in the lower 48"
+location: "New York City"
 updated: "July 2026"
-# pin: { state: "Colorado", fx: 0.55, fy: 0.45 }
+pin: { state: "New York", fx: 0.72, fy: 0.90 }

@@ -188,6 +188,39 @@ stories:
     link_text: "Southeast Asia on $70 a Day"
     pin: { fx: 0.44, fy: 0.84 }
 
+  - id: khm
+    map: world
+    match: "Cambodia"
+    title: "The Wrong Beach, Twice as Nice"
+    place: "Cambodia"
+    caption: "Sometimes the plan is what you leave."
+    story: "We ferried out to Koh Rong and landed on the wrong beach for us: younger, louder, somebody else's good time. So we went back to Sihanoukville, to a hotel that got every small detail right, and stayed two extra nights for no better reason than that. Eight months on the road teaches you when to quit a plan."
+    link: "guides/eight-months-southeast-asia/"
+    link_text: "Eight Months in Southeast Asia"
+    pin: { fx: 0.25, fy: 0.85 }
+
+  - id: mys
+    map: world
+    match: "Malaysia"
+    title: "Eating Our Way Through George Town"
+    place: "Malaysia"
+    caption: "One more plate of char kway teow."
+    story: "George Town might be our favorite city in Malaysia: UNESCO shophouses, street art that doesn't try too hard, and food worth planning a whole day around. We ate char kway teow and asam laksa and cendol and wished we had more time. We still talk about going back just to eat."
+    link: "guides/southeast-asia-on-70-a-day/"
+    link_text: "Southeast Asia on $70 a Day"
+    pin: { fx: 0.05, fy: 0.30 }
+
+  - id: sgp
+    map: world
+    match: "Singapore"
+    title: "Two Days of Hawker Centres"
+    place: "Singapore"
+    caption: "Not enough time, worth every hour."
+    story: "Two days is not enough for Singapore, frankly. It was enough to eat our way through the hawker centres, walk the colonial district, and feel the ambition of a city-state that decided to take everything seriously. Next time gets a full week."
+    link: "guides/eight-months-southeast-asia/"
+    link_text: "Eight Months in Southeast Asia"
+    pin: { fx: 0.5, fy: 0.5 }
+
   - id: zaf
     map: world
     match: "South Africa"
@@ -217,3 +250,9 @@ tour:
   label: "Take the drive"
   intro: "Nine stops, eight years, no interstate."
   stops: [ca, or, wa, mt, wy, co, ut, az, nm]
+
+# "Fly the loop" — the SE Asia tour across the world map, in leg order.
+loop:
+  label: "Fly the loop"
+  intro: "Seven countries, eight months, one-way tickets."
+  stops: [tha, lao, vnm, khm, mys, sgp, idn]

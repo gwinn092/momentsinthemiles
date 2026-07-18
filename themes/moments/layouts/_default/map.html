@@ -3,6 +3,8 @@
 {{ $stories := hugo.Data.map_stories.stories }}
 {{ $tour := hugo.Data.map_stories.tour }}
 {{ $n := len $tour.stops }}
+{{ $loop := hugo.Data.map_stories.loop }}
+{{ $ln := len $loop.stops }}
 
 <section class="map-scrolly" id="mapScrolly">
   <div class="map-scrolly__sticky">
@@ -24,6 +26,9 @@
       <span class="map-scrolly__cue-dash" aria-hidden="true"></span>
       <span><strong>{{ $tour.label | default "Take the drive" }}.</strong> {{ $tour.intro }} Keep scrolling.</span>
     </a>
+    {{ with hugo.Data.van_years }}{{ with .years }}
+    <div class="map-replay-year" id="mapReplayYear" aria-hidden="true" hidden></div>
+    {{ end }}{{ end }}
   </div>
 
   <div class="map-scrolly__steps">
@@ -56,37 +61,67 @@
         </div>
         {{ with .Params.us_footnote }}<p class="map-step__note">{{ . }}</p>{{ end }}
         <p class="map-step__note">Every pulsing pin on this map opens a story. Go click a few.</p>
+        {{ with hugo.Data.van_years }}{{ with .years }}
+        <button type="button" class="map-replay-btn" id="mapReplayBtn" hidden>Replay the years &#8635;</button>
+        {{ end }}{{ end }}
       </article>
     </div>
   </div>
 </section>
 
-<section class="map-section map-section--world">
-  <div class="container-wide">
-    <div class="map-head">
-      <div>
-        <span class="eyebrow">{{ .Params.world_eyebrow | default "Farther Afield" }}</span>
-        <h2>{{ .Params.world_heading | default "Then We Bought One-Way Tickets" }}</h2>
-      </div>
-      <ul class="map-legend" aria-hidden="true">
+<section class="map-scrolly map-scrolly--world" id="mapLoop">
+  <div class="map-scrolly__sticky">
+    <div class="map-frame map-frame--scrolly">
+      {{ partial "map-world.html" . }}
+    </div>
+    <div class="map-scrolly__title">
+      <span class="eyebrow">{{ .Params.world_eyebrow | default "Farther Afield" }}</span>
+      <h2>{{ .Params.world_heading | default "Then We Bought One-Way Tickets" }}</h2>
+      {{ with .Params.world_lead }}<div class="map-header__intro"><p>{{ . }}</p></div>{{ end }}
+      <ul class="map-legend map-legend--scrolly" aria-hidden="true">
         <li><span class="map-legend__swatch map-legend__swatch--visited"></span>Together</li>
         <li><span class="map-legend__swatch map-legend__swatch--solo"></span>One of us, before us</li>
         <li><span class="map-legend__swatch map-legend__swatch--dot"></span>Too small to ink</li>
       </ul>
     </div>
-    {{ with .Params.world_lead }}<p class="map-lead">{{ . }}</p>{{ end }}
-    <div class="map-frame">
-      {{ partial "map-world.html" . }}
+    <a href="#loop-0" class="map-scrolly__cue map-scrolly__cue--loop">
+      <span class="map-scrolly__cue-dash" aria-hidden="true"></span>
+      <span><strong>{{ $loop.label | default "Fly the loop" }}.</strong> {{ $loop.intro }} Keep scrolling.</span>
+    </a>
+  </div>
+
+  <div class="map-scrolly__steps">
+    <div class="map-step map-step--intro" data-stop="intro"></div>
+    {{ range $i, $id := $loop.stops }}{{ range where $stories "id" $id }}
+    <div class="map-step" data-stop="{{ $i }}" id="loop-{{ $i }}">
+      <article class="map-step__card">
+        {{ if .photo }}
+        <figure class="map-step__media">{{ partial "respimg.html" (dict "path" .photo "alt" (.alt | default "") "sizes" "(min-width: 769px) 370px, 92vw" "widths" (slice 480 800)) }}</figure>
+        {{ end }}
+        <div class="map-step__body">
+          <span class="map-step__count">Leg {{ add $i 1 }} of {{ $ln }} &middot; {{ .place }}</span>
+          <h3 class="map-step__title">{{ .title }}</h3>
+          <p class="map-step__story">{{ .story }}</p>
+          {{ if .link }}<a class="map-step__link" href="{{ $home }}{{ .link }}">{{ .link_text | default "Read the full story" }} &rarr;</a>{{ end }}
+        </div>
+      </article>
     </div>
-    <div class="map-stats">
-      {{ range .Params.world_stats }}
-      <div class="number-item">
-        <span class="number-value" data-count="{{ .value }}">{{ .value }}</span>
-        <span class="number-label">{{ .label }}</span>
-      </div>
-      {{ end }}
+    {{ end }}{{ end }}
+    <div class="map-step map-step--outro" data-stop="outro">
+      <article class="map-step__card map-step__card--outro">
+        <span class="map-step__count">{{ .Params.world_eyebrow | default "Farther Afield" }}</span>
+        <div class="map-stats map-stats--card">
+          {{ range .Params.world_stats }}
+          <div class="number-item">
+            <span class="number-value" data-count="{{ .value }}">{{ .value }}</span>
+            <span class="number-label">{{ .label }}</span>
+          </div>
+          {{ end }}
+        </div>
+        {{ with .Params.apart_line }}<p class="map-step__note">{{ . }}</p>{{ end }}
+        <p class="map-step__note">The sage chapters are ours from before we met. Those pins open too.</p>
+      </article>
     </div>
-    {{ with .Params.apart_line }}<p class="map-apart">{{ . }}</p>{{ end }}
   </div>
 </section>
 
@@ -100,7 +135,7 @@
   </div>
 </section>
 
-<p class="visually-hidden">Together we have visited all 48 continental United States, plus Thailand, Laos, Vietnam, Cambodia, Malaysia, Singapore, and Indonesia. Before we met, Jesse traveled South Africa and Karlee lived five seasons on St. John in the U.S. Virgin Islands; we each backpacked Europe separately. Sixteen places on these maps open a short story with a photograph and a link to the full essay.</p>
+<p class="visually-hidden">Together we have visited all 48 continental United States, plus Thailand, Laos, Vietnam, Cambodia, Malaysia, Singapore, and Indonesia. Before we met, Jesse traveled South Africa and Karlee lived five seasons on St. John in the U.S. Virgin Islands; we each backpacked Europe separately. Nineteen places on these maps open a short story and a link to the full essay.</p>
 
 <div class="map-tooltip" id="mapTooltip" hidden>
   <img class="map-tooltip__img" src="" alt="" hidden>
@@ -121,7 +156,7 @@
   </div>
 </aside>
 
-<script type="application/json" id="mapStoriesData">{{ dict "home" $home "stories" hugo.Data.map_stories.stories "tour" hugo.Data.map_stories.tour "van" hugo.Data.van_now | jsonify | safeJS }}</script>
+<script type="application/json" id="mapStoriesData">{{ dict "home" $home "stories" hugo.Data.map_stories.stories "tour" hugo.Data.map_stories.tour "loop" hugo.Data.map_stories.loop "van" hugo.Data.van_now "years" hugo.Data.van_years | jsonify | safeJS }}</script>
 
 <script>
 (function () {
@@ -366,22 +401,35 @@
     if (!e.target.closest('.map-svg')) hideTip();
   });
 
-  // --- The drive, scroll-driven: the sticky map flies stop to stop as the
-  // story cards pass the middle of the viewport ---
-  var tour = DATA.tour;
-  var stops = (tour && tour.stops || []).map(function (id) { return byId[id]; })
-    .filter(function (s) { return s && s._px !== undefined; });
+  // --- The tours, scroll-driven: a sticky map flies stop to stop as the
+  // story cards pass the middle of the viewport. One engine, two maps:
+  // the US drive (#mapScrolly) and the SE Asia loop (#mapLoop) ---
+  var cancelReplay = function () {};
 
-  if (usSvg && scrolly && stops.length > 1 && 'IntersectionObserver' in window) {
-    var homeVB = usSvg.getAttribute('viewBox').split(/[\s,]+/).map(Number);
+  function initScrolly(svg, root, stopIds, opts) {
+    var stops = (stopIds || []).map(function (id) { return byId[id]; })
+      .filter(function (s) { return s && s._px !== undefined; });
+    if (!(svg && root && stops.length > 1 && 'IntersectionObserver' in window)) return;
+
+    var homeVB = svg.getAttribute('viewBox').split(/[\s,]+/).map(Number);
     var wide = window.matchMedia('(min-width: 769px)');
     var activeKey = 'intro';
     var routeEl = null;
     var routeTotal = 0;
     var routeLens = [];
     var flight = null;
+    var frameW = opts.frameW;
+    var strokeW = opts.strokeW;
 
-    // Route: gently curved dashed line through the stops, drawn leg by leg.
+    // On the world map the camera zooms ~12x, so pins and markers are shrunk
+    // against the zoom (square-root, so they still grow a little at each stop).
+    var pinEls = opts.scalePins ? [].slice.call(svg.querySelectorAll('.map-pin, .map-marker')) : null;
+    if (pinEls) pinEls.forEach(function (g) {
+      g.style.transformBox = 'fill-box';
+      g.style.transformOrigin = 'center';
+    });
+
+    // Route: gently curved line through the stops, drawn leg by leg.
     function routeD(n) {
       var d = 'M ' + stops[0]._px + ' ' + stops[0]._py;
       for (var i = 1; i < n; i++) {
@@ -389,7 +437,7 @@
         var mx = (a._px + b._px) / 2, my = (a._py + b._py) / 2;
         var dx = b._px - a._px, dy = b._py - a._py;
         var len = Math.sqrt(dx * dx + dy * dy) || 1;
-        var bend = (i % 2 ? 1 : -1) * Math.min(len * 0.18, 26);
+        var bend = (i % 2 ? 1 : -1) * Math.min(len * 0.18, frameW * 0.09);
         d += ' Q ' + (mx - dy / len * bend) + ' ' + (my + dx / len * bend) + ' ' + b._px + ' ' + b._py;
       }
       return d;
@@ -403,22 +451,26 @@
       }
       routeTotal = routeLens[stops.length - 1];
       routeEl = document.createElementNS(SVGNS, 'path');
-      routeEl.setAttribute('class', 'map-route');
+      routeEl.setAttribute('class', 'map-route' + (opts.routeClass ? ' ' + opts.routeClass : ''));
       routeEl.setAttribute('d', routeD(stops.length));
       routeEl.style.strokeDasharray = routeTotal + ' ' + routeTotal;
       routeEl.style.strokeDashoffset = routeTotal;
-      usSvg.insertBefore(routeEl, usSvg.querySelector('.map-pin'));
+      svg.insertBefore(routeEl, svg.querySelector('.map-pin'));
     }
 
     function setViewBox(vb) {
-      usSvg.setAttribute('viewBox', vb.map(function (n) { return Math.round(n * 100) / 100; }).join(' '));
-      if (routeEl) routeEl.style.strokeWidth = (2.2 * vb[2] / homeVB[2]).toFixed(2);
+      svg.setAttribute('viewBox', vb.map(function (n) { return Math.round(n * 100) / 100; }).join(' '));
+      if (routeEl) routeEl.style.strokeWidth = (strokeW * vb[2] / homeVB[2]).toFixed(2);
+      if (pinEls) {
+        var f = Math.sqrt(vb[2] / homeVB[2]).toFixed(3);
+        pinEls.forEach(function (g) { g.style.transform = 'scale(' + f + ')'; });
+      }
     }
 
     function flyTo(vb) {
       if (flight) cancelAnimationFrame(flight);
       if (reduceMotion) { setViewBox(vb); return; }
-      var from = usSvg.getAttribute('viewBox').split(/[\s,]+/).map(Number);
+      var from = svg.getAttribute('viewBox').split(/[\s,]+/).map(Number);
       var t0 = null, dur = 1100;
       function frame(ts) {
         if (!t0) t0 = ts;
@@ -433,7 +485,7 @@
     // Desktop cards sit on the right, so the stop is framed left of center;
     // mobile cards ride low, so the stop is framed high.
     function stopVB(s) {
-      var w = 300, h = w * homeVB[3] / homeVB[2];
+      var w = frameW, h = w * homeVB[3] / homeVB[2];
       return wide.matches
         ? [s._px - w * 0.36, s._py - h * 0.42, w, h]
         : [s._px - w * 0.5, s._py - h * 0.26, w, h];
@@ -442,10 +494,11 @@
     function activate(key) {
       if (key === activeKey) return;
       activeKey = key;
-      usSvg.querySelectorAll('.is-tour-active').forEach(function (el) { el.classList.remove('is-tour-active'); });
+      cancelReplay();
+      svg.querySelectorAll('.is-tour-active').forEach(function (el) { el.classList.remove('is-tour-active'); });
       if (key === 'intro' || key === 'outro') {
         touring = false;
-        scrolly.classList.remove('is-touring');
+        root.classList.remove('is-touring');
         if (key === 'outro' && !routeEl) buildRoute();
         if (routeEl) {
           if (key === 'outro') {
@@ -463,10 +516,10 @@
         if (!routeEl) buildRoute();
         routeEl.classList.remove('map-route--done');
         touring = true;
-        scrolly.classList.add('is-touring');
+        root.classList.add('is-touring');
         hideTip();
         closeStory();
-        usSvg.querySelectorAll('[data-story-id="' + s.id + '"]').forEach(function (el) { el.classList.add('is-tour-active'); });
+        svg.querySelectorAll('[data-story-id="' + s.id + '"]').forEach(function (el) { el.classList.add('is-tour-active'); });
         flyTo(stopVB(s));
         routeEl.style.strokeDashoffset = routeTotal - routeLens[key];
       }
@@ -479,7 +532,53 @@
         activate(d === 'intro' || d === 'outro' ? d : parseInt(d, 10));
       });
     }, { rootMargin: '-42% 0px -42% 0px', threshold: 0 });
-    scrolly.querySelectorAll('.map-step').forEach(function (st) { stepIO.observe(st); });
+    root.querySelectorAll('.map-step').forEach(function (st) { stepIO.observe(st); });
+  }
+
+  initScrolly(usSvg, scrolly, DATA.tour && DATA.tour.stops, { frameW: 300, strokeW: 2.2 });
+  initScrolly(worldSvg, document.getElementById('mapLoop'), DATA.loop && DATA.loop.stops, { frameW: 85, strokeW: 2.2, routeClass: 'map-route--air', scalePins: true });
+
+  // --- Replay the years: re-ink the lower 48 one year at a time,
+  // driven by data/van_years.yaml (the button renders only when it's filled in) ---
+  var yearsData = (DATA.years && DATA.years.years || []).filter(function (y) { return y && (y.states || []).length; });
+  var replayBtn = document.getElementById('mapReplayBtn');
+  if (replayBtn && usSvg && yearsData.length && !reduceMotion) {
+    replayBtn.hidden = false;
+    var yearEl = document.getElementById('mapReplayYear');
+    var replayTimers = [];
+    var replaying = false;
+
+    cancelReplay = function () {
+      if (!replaying) return;
+      replaying = false;
+      replayTimers.forEach(clearTimeout);
+      replayTimers = [];
+      usSvg.classList.remove('map-replay');
+      usSvg.querySelectorAll('.is-replay-on').forEach(function (el) { el.classList.remove('is-replay-on'); });
+      yearEl.hidden = true;
+      scrolly.classList.remove('is-replaying');
+    };
+
+    replayBtn.addEventListener('click', function () {
+      cancelReplay();
+      replaying = true;
+      scrolly.classList.add('is-replaying');
+      usSvg.classList.add('map-replay');
+      var t = 600;
+      yearsData.forEach(function (y) {
+        replayTimers.push(window.setTimeout(function () {
+          yearEl.textContent = y.year;
+          yearEl.hidden = false;
+        }, t));
+        (y.states || []).forEach(function (name, i) {
+          replayTimers.push(window.setTimeout(function () {
+            usSvg.querySelectorAll('[data-name="' + name + '"]').forEach(function (p) { p.classList.add('is-replay-on'); });
+          }, t + 250 + i * 110));
+        });
+        t += 900 + (y.states || []).length * 110;
+      });
+      replayTimers.push(window.setTimeout(cancelReplay, t + 900));
+    });
   }
 
   // --- Odometer stats: count up when they roll into view ---
@@ -509,12 +608,13 @@
     });
   }
 
-  // Deep links: /map/#wa opens a story, /map/#drive scrolls to the first stop
-  // (#drive-3 = jump to a stop; those land natively via the step ids)
+  // Deep links: /map/#wa opens a story, /map/#drive scrolls to the first US
+  // stop, /map/#loop to the first SE Asia leg
+  // (#drive-3 / #loop-2 = jump to a stop; those land natively via the step ids)
   var hash = decodeURIComponent(location.hash.replace('#', ''));
-  var driveMatch = hash.match(/^drive(?:-(\d+))?$/);
-  if (driveMatch) {
-    var stepEl = document.getElementById('drive-' + (driveMatch[1] || 0)) || document.getElementById('drive-0');
+  var tourMatch = hash.match(/^(drive|loop)(?:-(\d+))?$/);
+  if (tourMatch) {
+    var stepEl = document.getElementById(tourMatch[1] + '-' + (tourMatch[2] || 0)) || document.getElementById(tourMatch[1] + '-0');
     if (stepEl) stepEl.scrollIntoView({ behavior: 'instant', block: 'start' });
   } else if (byId[hash]) {
     openStory(hash);
