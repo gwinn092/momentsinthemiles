@@ -5,9 +5,10 @@ layout: "map"
 og_image: "images/pages/og-map.jpg"
 us_eyebrow: "United States"
 us_heading: "The Lower Forty-Eight"
-us_footnote: "Alaska & Hawaii: still on the list."
+us_footnote: "Alaska & Hawaii: still on the list. The odometer reads 129,783."
 us_stats:
   - { value: "48", label: "states together" }
+  - { value: "100,000", count: "100000", label: "miles and counting" }
   - { value: "8", label: "years of van life" }
   - { value: "1", label: "van" }
 world_eyebrow: "Farther Afield"
@@ -21,4 +22,4 @@ apart_line: "Europe we've each crossed separately, a dozen countries between us,
 cta_line: "The map is the outline. The stories are the point."
 ---
 
-We never set out to collect states. But the map filled in mile by mile: a season in the desert, a summer chasing alpenglow, wrong turns that became the whole point. This is where the road has taken us so far. The pulsing pins mark the places that changed us: click one and the story opens, photo and all. Or press **Take the drive** and let the map carry you stop to stop.
+We never set out to collect states. But the map filled in mile by mile: a season in the desert, a summer chasing alpenglow, wrong turns that became the whole point. The pulsing pins mark the places that changed us: click one and the story opens, photo and all. Or just keep scrolling and let the map do the driving.

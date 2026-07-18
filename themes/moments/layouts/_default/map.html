@@ -1,55 +1,62 @@
 {{ define "main" }}
-<header class="map-header">
-  <div class="content-container">
-    <span class="eyebrow">The Map</span>
-    <h1>{{ .Title }}</h1>
-    {{ with .Description }}<p class="map-header__desc">{{ . }}</p>{{ end }}
-    {{ with .Content }}<div class="map-header__intro">{{ . }}</div>{{ end }}
-  </div>
-</header>
+{{ $home := .Site.Home.RelPermalink }}
+{{ $stories := hugo.Data.map_stories.stories }}
+{{ $tour := hugo.Data.map_stories.tour }}
+{{ $n := len $tour.stops }}
 
-<section class="map-section map-section--us">
-  <div class="container-wide">
-    <div class="map-head">
-      <div>
-        <span class="eyebrow">{{ .Params.us_eyebrow | default "United States" }}</span>
-        <h2>{{ .Params.us_heading | default "The Lower Forty-Eight" }}</h2>
-      </div>
-      <div class="map-head__side">
-        <ul class="map-legend" aria-hidden="true">
-          <li><span class="map-legend__swatch map-legend__swatch--visited"></span>Together</li>
-          <li><span class="map-legend__swatch map-legend__swatch--notyet"></span>Still on the list</li>
-          <li><span class="map-legend__swatch map-legend__swatch--pin"></span>A story lives here</li>
-        </ul>
-        <button type="button" class="map-tour-btn" id="mapTourBtn" hidden>
-          <span class="map-tour-btn__dash" aria-hidden="true"></span>{{ .Params.tour_label | default "Take the drive" }}
-        </button>
-      </div>
-    </div>
-    <div class="map-frame map-frame--us">
+<section class="map-scrolly" id="mapScrolly">
+  <div class="map-scrolly__sticky">
+    <div class="map-frame map-frame--us map-frame--scrolly">
       {{ partial "map-us.html" . }}
-      <article class="map-tour" id="mapTour" hidden aria-live="polite">
-        <figure class="map-tour__media"><img id="mapTourImg" src="" alt="" decoding="async"></figure>
-        <div class="map-tour__body">
-          <span class="map-tour__count" id="mapTourCount"></span>
-          <h3 class="map-tour__title" id="mapTourTitle"></h3>
-          <p class="map-tour__caption" id="mapTourCaption"></p>
-          <div class="map-tour__nav">
-            <button type="button" class="map-tour__btn" id="mapTourPrev">&larr; Back</button>
-            <button type="button" class="map-tour__btn map-tour__btn--next" id="mapTourNext">Next stop &rarr;</button>
-            <button type="button" class="map-tour__exit" id="mapTourExit">End the drive</button>
-          </div>
+    </div>
+    <div class="map-scrolly__title">
+      <span class="eyebrow">The Map</span>
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p class="map-header__desc">{{ . }}</p>{{ end }}
+      {{ with .Content }}<div class="map-header__intro">{{ . }}</div>{{ end }}
+      <ul class="map-legend map-legend--scrolly" aria-hidden="true">
+        <li><span class="map-legend__swatch map-legend__swatch--visited"></span>Together</li>
+        <li><span class="map-legend__swatch map-legend__swatch--notyet"></span>Still on the list</li>
+        <li><span class="map-legend__swatch map-legend__swatch--pin"></span>A story lives here</li>
+      </ul>
+    </div>
+    <a href="#drive-0" class="map-scrolly__cue">
+      <span class="map-scrolly__cue-dash" aria-hidden="true"></span>
+      <span><strong>{{ $tour.label | default "Take the drive" }}.</strong> {{ $tour.intro }} Keep scrolling.</span>
+    </a>
+  </div>
+
+  <div class="map-scrolly__steps">
+    <div class="map-step map-step--intro" data-stop="intro"></div>
+    {{ range $i, $id := $tour.stops }}{{ range where $stories "id" $id }}
+    <div class="map-step" data-stop="{{ $i }}" id="drive-{{ $i }}">
+      <article class="map-step__card">
+        {{ if .photo }}
+        <figure class="map-step__media">{{ partial "respimg.html" (dict "path" .photo "alt" (.alt | default "") "sizes" "(min-width: 769px) 370px, 92vw" "widths" (slice 480 800)) }}</figure>
+        {{ end }}
+        <div class="map-step__body">
+          <span class="map-step__count">Stop {{ add $i 1 }} of {{ $n }} &middot; {{ .place }}</span>
+          <h2 class="map-step__title">{{ .title }}</h2>
+          <p class="map-step__story">{{ .story }}</p>
+          {{ if .link }}<a class="map-step__link" href="{{ $home }}{{ .link }}">{{ .link_text | default "Read the full story" }} &rarr;</a>{{ end }}
         </div>
       </article>
     </div>
-    {{ with .Params.us_footnote }}<p class="map-footnote">{{ . }}</p>{{ end }}
-    <div class="map-stats">
-      {{ range .Params.us_stats }}
-      <div class="number-item">
-        <span class="number-value">{{ .value }}</span>
-        <span class="number-label">{{ .label }}</span>
-      </div>
-      {{ end }}
+    {{ end }}{{ end }}
+    <div class="map-step map-step--outro" data-stop="outro">
+      <article class="map-step__card map-step__card--outro">
+        <span class="map-step__count">{{ .Params.us_heading | default "The Lower Forty-Eight" }}</span>
+        <div class="map-stats map-stats--card">
+          {{ range .Params.us_stats }}
+          <div class="number-item">
+            <span class="number-value" data-count="{{ .count | default .value }}">{{ .value }}</span>
+            <span class="number-label">{{ .label }}</span>
+          </div>
+          {{ end }}
+        </div>
+        {{ with .Params.us_footnote }}<p class="map-step__note">{{ . }}</p>{{ end }}
+        <p class="map-step__note">Every pulsing pin on this map opens a story. Go click a few.</p>
+      </article>
     </div>
   </div>
 </section>
@@ -74,7 +81,7 @@
     <div class="map-stats">
       {{ range .Params.world_stats }}
       <div class="number-item">
-        <span class="number-value">{{ .value }}</span>
+        <span class="number-value" data-count="{{ .value }}">{{ .value }}</span>
         <span class="number-label">{{ .label }}</span>
       </div>
       {{ end }}
@@ -114,8 +121,7 @@
   </div>
 </aside>
 
-{{ $home := .Site.Home.RelPermalink }}
-<script type="application/json" id="mapStoriesData">{{ dict "home" $home "stories" hugo.Data.map_stories.stories "tour" hugo.Data.map_stories.tour | jsonify | safeJS }}</script>
+<script type="application/json" id="mapStoriesData">{{ dict "home" $home "stories" hugo.Data.map_stories.stories "tour" hugo.Data.map_stories.tour "van" hugo.Data.van_now | jsonify | safeJS }}</script>
 
 <script>
 (function () {
@@ -129,7 +135,7 @@
 
   var usSvg = document.querySelector('.map-svg--us');
   var worldSvg = document.querySelector('.map-svg--world');
-  var usSection = document.querySelector('.map-section--us');
+  var scrolly = document.getElementById('mapScrolly');
   var touring = false;
 
   function url(p) { return p ? home + p : ''; }
@@ -193,6 +199,30 @@
     }
   });
 
+  // --- The van, right now: gold pin driven by data/van_now.yaml (needs pin:) ---
+  var van = DATA.van;
+  if (usSvg && van && van.pin && van.pin.state) {
+    var vanShape = usSvg.querySelector('[data-name="' + van.pin.state + '"]');
+    if (vanShape) {
+      var vb = vanShape.getBBox();
+      var vx = vb.x + vb.width * (van.pin.fx == null ? 0.5 : van.pin.fx);
+      var vy = vb.y + vb.height * (van.pin.fy == null ? 0.5 : van.pin.fy);
+      var vg = document.createElementNS(SVGNS, 'g');
+      vg.setAttribute('class', 'map-pin map-pin--van');
+      vg.setAttribute('data-name', 'The van, right now');
+      vg.setAttribute('data-note', (van.location || '') + (van.updated ? ' · ' + van.updated : ''));
+      [['map-pin__pulse', 9], ['map-pin__halo', 7], ['map-pin__dot', 3]].forEach(function (c) {
+        var circle = document.createElementNS(SVGNS, 'circle');
+        circle.setAttribute('class', c[0]);
+        circle.setAttribute('cx', vx);
+        circle.setAttribute('cy', vy);
+        circle.setAttribute('r', c[1]);
+        vg.appendChild(circle);
+      });
+      usSvg.appendChild(vg);
+    }
+  }
+
   // --- One-way tickets: flight arc from the US across the Pacific to SE Asia.
   // The world map is centered on 0°, so the Pacific route exits the west edge
   // and re-enters from the east — drawn as two dashed segments.
@@ -200,20 +230,20 @@
     var usShape = worldSvg.querySelector('[data-name="United States"]');
     var thShape = worldSvg.querySelector('[data-name="Thailand"]');
     if (usShape && thShape) {
-      var vb = worldSvg.viewBox.baseVal;
+      var wvb = worldSvg.viewBox.baseVal;
       var ub = usShape.getBBox();
       var tb = thShape.getBBox();
       var ax = ub.x + ub.width * 0.14, ay = ub.y + ub.height * 0.62;   // US west coast
       var bx = tb.x + tb.width * 0.45, by = tb.y + tb.height * 0.40;   // Thailand
-      var edgeY = Math.min(ay, by) - vb.height * 0.06;                 // cruising altitude
-      var left = vb.x + 1, right = vb.x + vb.width - 1;
+      var edgeY = Math.min(ay, by) - wvb.height * 0.06;                // cruising altitude
+      var left = wvb.x + 1, right = wvb.x + wvb.width - 1;
       var arc = document.createElementNS(SVGNS, 'path');
       arc.setAttribute('class', 'map-arc');
       arc.setAttribute('d',
         'M ' + ax + ' ' + ay +
-        ' Q ' + (ax - (ax - left) * 0.55) + ' ' + (edgeY - vb.height * 0.02) + ' ' + left + ' ' + edgeY +
+        ' Q ' + (ax - (ax - left) * 0.55) + ' ' + (edgeY - wvb.height * 0.02) + ' ' + left + ' ' + edgeY +
         ' M ' + right + ' ' + edgeY +
-        ' Q ' + (bx + (right - bx) * 0.55) + ' ' + (edgeY - vb.height * 0.02) + ' ' + bx + ' ' + by);
+        ' Q ' + (bx + (right - bx) * 0.55) + ' ' + (edgeY - wvb.height * 0.02) + ' ' + bx + ' ' + by);
       var firstPin = worldSvg.querySelector('.map-pin');
       firstPin ? worldSvg.insertBefore(arc, firstPin) : worldSvg.appendChild(arc);
     }
@@ -271,6 +301,9 @@
 
   document.getElementById('mapPanelClose').addEventListener('click', closeStory);
   scrim.addEventListener('click', closeStory);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeStory();
+  });
 
   // --- Tooltip ---
   var tip = document.getElementById('mapTooltip');
@@ -333,20 +366,16 @@
     if (!e.target.closest('.map-svg')) hideTip();
   });
 
-  // --- "Take the drive" guided tour ---
+  // --- The drive, scroll-driven: the sticky map flies stop to stop as the
+  // story cards pass the middle of the viewport ---
   var tour = DATA.tour;
   var stops = (tour && tour.stops || []).map(function (id) { return byId[id]; })
     .filter(function (s) { return s && s._px !== undefined; });
-  var tourBtn = document.getElementById('mapTourBtn');
-  var startTourFn = null;
 
-  if (usSvg && tourBtn && stops.length > 1) {
-    var tourCard = document.getElementById('mapTour');
-    var btnPrev = document.getElementById('mapTourPrev');
-    var btnNext = document.getElementById('mapTourNext');
-    var btnExit = document.getElementById('mapTourExit');
+  if (usSvg && scrolly && stops.length > 1 && 'IntersectionObserver' in window) {
     var homeVB = usSvg.getAttribute('viewBox').split(/[\s,]+/).map(Number);
-    var stopIdx = 0;
+    var wide = window.matchMedia('(min-width: 769px)');
+    var activeKey = 'intro';
     var routeEl = null;
     var routeTotal = 0;
     var routeLens = [];
@@ -401,85 +430,92 @@
       flight = requestAnimationFrame(frame);
     }
 
+    // Desktop cards sit on the right, so the stop is framed left of center;
+    // mobile cards ride low, so the stop is framed high.
     function stopVB(s) {
       var w = 300, h = w * homeVB[3] / homeVB[2];
-      return [s._px - w / 2, s._py - h * 0.42, w, h];
+      return wide.matches
+        ? [s._px - w * 0.36, s._py - h * 0.42, w, h]
+        : [s._px - w * 0.5, s._py - h * 0.26, w, h];
     }
 
-    function showStop(i) {
-      stopIdx = i;
-      var s = stops[i];
+    function activate(key) {
+      if (key === activeKey) return;
+      activeKey = key;
       usSvg.querySelectorAll('.is-tour-active').forEach(function (el) { el.classList.remove('is-tour-active'); });
-      usSvg.querySelectorAll('[data-story-id="' + s.id + '"]').forEach(function (el) { el.classList.add('is-tour-active'); });
-      flyTo(stopVB(s));
-      routeEl.style.strokeDashoffset = routeTotal - routeLens[i];
-      document.getElementById('mapTourImg').src = url(s.photo);
-      document.getElementById('mapTourImg').alt = s.alt || '';
-      document.getElementById('mapTourCount').textContent = 'Stop ' + (i + 1) + ' of ' + stops.length + ' — ' + s.place;
-      document.getElementById('mapTourTitle').textContent = s.title;
-      document.getElementById('mapTourCaption').textContent = s.caption || '';
-      btnPrev.disabled = i === 0;
-      btnNext.innerHTML = i === stops.length - 1 ? 'Finish the drive' : 'Next stop &rarr;';
-    }
-
-    function startTour(atStop) {
-      if (!routeEl) buildRoute();
-      routeEl.classList.remove('map-route--done');
-      routeEl.style.strokeDashoffset = routeTotal;
-      touring = true;
-      closeStory();
-      hideTip();
-      usSection.classList.add('is-touring');
-      tourBtn.hidden = true;
-      tourCard.hidden = false;
-      showStop(Math.min(atStop || 0, stops.length - 1));
-      btnNext.focus({ preventScroll: true });
-    }
-
-    function endTour() {
-      touring = false;
-      usSection.classList.remove('is-touring');
-      usSvg.querySelectorAll('.is-tour-active').forEach(function (el) { el.classList.remove('is-tour-active'); });
-      routeEl.style.strokeDashoffset = 0;
-      routeEl.classList.add('map-route--done');
-      tourCard.hidden = true;
-      tourBtn.hidden = false;
-      tourBtn.textContent = '';
-      tourBtn.appendChild(dash.cloneNode(true));
-      tourBtn.appendChild(document.createTextNode('Drive it again'));
-      flyTo(homeVB.slice());
-      tourBtn.focus({ preventScroll: true });
-    }
-
-    var dash = tourBtn.querySelector('.map-tour-btn__dash');
-    startTourFn = startTour;
-    tourBtn.hidden = false;
-    tourBtn.addEventListener('click', startTour);
-    btnNext.addEventListener('click', function () {
-      stopIdx < stops.length - 1 ? showStop(stopIdx + 1) : endTour();
-    });
-    btnPrev.addEventListener('click', function () { if (stopIdx > 0) showStop(stopIdx - 1); });
-    btnExit.addEventListener('click', endTour);
-    document.addEventListener('keydown', function (e) {
-      if (touring) {
-        if (e.key === 'Escape') endTour();
-        if (e.key === 'ArrowRight' && stopIdx < stops.length - 1) showStop(stopIdx + 1);
-        if (e.key === 'ArrowLeft' && stopIdx > 0) showStop(stopIdx - 1);
-      } else if (e.key === 'Escape') {
+      if (key === 'intro' || key === 'outro') {
+        touring = false;
+        scrolly.classList.remove('is-touring');
+        if (key === 'outro' && !routeEl) buildRoute();
+        if (routeEl) {
+          if (key === 'outro') {
+            routeEl.style.strokeDashoffset = 0;
+            routeEl.classList.add('map-route--done');
+          } else {
+            routeEl.style.strokeDashoffset = routeTotal;
+            routeEl.classList.remove('map-route--done');
+          }
+        }
+        flyTo(homeVB.slice());
+      } else {
+        var s = stops[key];
+        if (!s) return;
+        if (!routeEl) buildRoute();
+        routeEl.classList.remove('map-route--done');
+        touring = true;
+        scrolly.classList.add('is-touring');
+        hideTip();
         closeStory();
+        usSvg.querySelectorAll('[data-story-id="' + s.id + '"]').forEach(function (el) { el.classList.add('is-tour-active'); });
+        flyTo(stopVB(s));
+        routeEl.style.strokeDashoffset = routeTotal - routeLens[key];
       }
-    });
-  } else {
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeStory();
+    }
+
+    var stepIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var d = e.target.dataset.stop;
+        activate(d === 'intro' || d === 'outro' ? d : parseInt(d, 10));
+      });
+    }, { rootMargin: '-42% 0px -42% 0px', threshold: 0 });
+    scrolly.querySelectorAll('.map-step').forEach(function (st) { stepIO.observe(st); });
+  }
+
+  // --- Odometer stats: count up when they roll into view ---
+  var counters = document.querySelectorAll('.number-value[data-count]');
+  if (counters.length && !reduceMotion && 'IntersectionObserver' in window) {
+    var statIO = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        obs.unobserve(e.target);
+        var el = e.target;
+        var target = parseInt(el.dataset.count, 10);
+        var t0 = null, dur = 1300;
+        function frame(ts) {
+          if (!t0) t0 = ts;
+          var t = Math.min((ts - t0) / dur, 1);
+          el.textContent = Math.round(target * (1 - Math.pow(1 - t, 3))).toLocaleString('en-US');
+          if (t < 1) requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(function (el) {
+      if (isFinite(parseInt(el.dataset.count, 10))) {
+        el.textContent = '0';
+        statIO.observe(el);
+      }
     });
   }
 
-  // Deep links: /map/#wa opens a story, /map/#drive starts the tour (#drive-3 = jump to a stop)
+  // Deep links: /map/#wa opens a story, /map/#drive scrolls to the first stop
+  // (#drive-3 = jump to a stop; those land natively via the step ids)
   var hash = decodeURIComponent(location.hash.replace('#', ''));
   var driveMatch = hash.match(/^drive(?:-(\d+))?$/);
-  if (driveMatch && startTourFn) {
-    startTourFn(driveMatch[1] ? parseInt(driveMatch[1], 10) : 0);
+  if (driveMatch) {
+    var stepEl = document.getElementById('drive-' + (driveMatch[1] || 0)) || document.getElementById('drive-0');
+    if (stepEl) stepEl.scrollIntoView({ behavior: 'instant', block: 'start' });
   } else if (byId[hash]) {
     openStory(hash);
   }

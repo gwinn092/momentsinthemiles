@@ -1,5 +1,9 @@
-# "Where the van is now" — shown in the site footer.
-# Edit these two lines any time; nothing else to update.
-# Leave location empty ("") to hide the line entirely.
+# "Where the van is now" — shown in the site footer, and (if pin: is set)
+# as the gold pulsing pin on /map/.
+# Edit location/updated any time; leave location empty ("") to hide the footer line.
+# pin: state = the state's name as it appears on the map; fx/fy = where inside
+# that state, as fractions from the left / from the top (0 to 1).
+# Remove or comment out the pin line to take the pin off the map.
 location: "Somewhere in the lower 48"
 updated: "July 2026"
+# pin: { state: "Colorado", fx: 0.55, fy: 0.45 }
