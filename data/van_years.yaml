@@ -16,15 +16,31 @@
 #   South Dakota, Tennessee, Texas, Utah, Vermont, Virginia, Washington,
 #   West Virginia, Wisconsin, Wyoming
 #
-# Uncomment and fill in (the years and states below are just a shape example):
+# Years below were reconstructed July 2026 from the EXIF dates + GPS in the
+# original photos in mitmfolder (the site copies are stripped; the originals
+# never were). Each state sits in the earliest year a geotagged photo puts
+# you inside it. 37 of the 48 have photo evidence.
 #
-# years:
-#   - { year: 2018, states: [California, Oregon] }
-#   - { year: 2019, states: [Washington, Idaho, Montana] }
-#   - { year: 2020, states: [] }
-#   - { year: 2021, states: [] }
-#   - { year: 2022, states: [] }
-#   - { year: 2023, states: [] }
-#   - { year: 2024, states: [] }
-#   - { year: 2025, states: [] }
-#   - { year: 2026, states: [] }
+# STILL NEEDS YOUR MEMORY — 11 states have no geotagged photos, so they're
+# not listed yet and will stay pale during the replay until you slot them in:
+#   Alabama, Connecticut, Delaware, Indiana, Iowa, Mississippi, Nebraska,
+#   New Hampshire, Ohio, Texas, West Virginia
+# (Most were probably drive-through states on the big 2019 CO->FL->Maine->
+# NY->CO loop, or the 2024 Great Lakes/Dakotas run.)
+#
+# NOTE: 2016–2017 below come from the pre-van roadtrip photos (Colorado/Utah
+# 2016, Arizona/Oregon 2017) — you drove them together, but before the van.
+# If you want the replay to start with the van era, move those four states
+# into 2018 and delete the 2016/2017 lines.
+
+years:
+  - { year: 2016, states: [Colorado, Utah] }
+  - { year: 2017, states: [Arizona, Oregon] }
+  - { year: 2018, states: [Wyoming] }
+  - { year: 2019, states: [Arkansas, Florida, Georgia, Kansas, Kentucky, Louisiana, Maine, Massachusetts, Missouri, New York, North Carolina, Oklahoma, Pennsylvania, Rhode Island, South Carolina, Tennessee, Vermont, Virginia] }
+  - { year: 2020, states: [] } # no new states in the photo record — repeat CO/UT/AZ year
+  - { year: 2021, states: [Montana, New Mexico] }
+  - { year: 2022, states: [California, Idaho, Nevada, Washington] }
+  - { year: 2023, states: [Illinois] }
+  - { year: 2024, states: [Maryland, Michigan, Minnesota, New Jersey, North Dakota, South Dakota, Wisconsin] }
+  - { year: 2025, states: [] } # no geotagged photos from 2025 at all — fill from memory if anywhere new
