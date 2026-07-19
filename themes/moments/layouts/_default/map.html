@@ -6,25 +6,34 @@
 {{ $loop := hugo.Data.map_stories.loop }}
 {{ $ln := len $loop.stops }}
 
+<header class="map-header">
+  <div class="content-container">
+    <span class="eyebrow">The Map</span>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="map-header__desc">{{ . }}</p>{{ end }}
+    {{ with .Content }}<div class="map-header__intro">{{ . }}</div>{{ end }}
+    <ul class="map-legend map-legend--scrolly" aria-hidden="true">
+      <li><span class="map-legend__swatch map-legend__swatch--visited"></span>Together</li>
+      <li><span class="map-legend__swatch map-legend__swatch--notyet"></span>Still on the list</li>
+      <li><span class="map-legend__swatch map-legend__swatch--pin"></span>A story lives here</li>
+    </ul>
+  </div>
+</header>
+
 <section class="map-scrolly" id="mapScrolly">
   <div class="map-scrolly__sticky">
     <div class="map-frame map-frame--us map-frame--scrolly">
       {{ partial "map-us.html" . }}
     </div>
-    <div class="map-scrolly__title">
-      <span class="eyebrow">The Map</span>
-      <h1>{{ .Title }}</h1>
-      {{ with .Description }}<p class="map-header__desc">{{ . }}</p>{{ end }}
-      {{ with .Content }}<div class="map-header__intro">{{ . }}</div>{{ end }}
-      <ul class="map-legend map-legend--scrolly" aria-hidden="true">
-        <li><span class="map-legend__swatch map-legend__swatch--visited"></span>Together</li>
-        <li><span class="map-legend__swatch map-legend__swatch--notyet"></span>Still on the list</li>
-        <li><span class="map-legend__swatch map-legend__swatch--pin"></span>A story lives here</li>
-      </ul>
-    </div>
     <a href="#drive-0" class="map-scrolly__cue">
-      <span class="map-scrolly__cue-dash" aria-hidden="true"></span>
-      <span><strong>{{ $tour.label | default "Take the drive" }}.</strong> {{ $tour.intro }} Keep scrolling.</span>
+      <span class="map-scrolly__cue-thumbs" aria-hidden="true">
+        {{ range first 3 $tour.stops }}<img src="{{ $home }}images/map/thumbs/{{ . }}.jpg" alt="" width="176" height="118">{{ end }}
+      </span>
+      <span class="map-scrolly__cue-text">
+        <strong>{{ $tour.label | default "Take the drive" }}</strong>
+        <span>{{ $tour.intro }}</span>
+      </span>
+      <span class="map-scrolly__cue-arrow" aria-hidden="true">&darr;</span>
     </a>
     {{ with hugo.Data.van_years }}{{ with .years }}
     <div class="map-replay-year" id="mapReplayYear" aria-hidden="true" hidden></div>
@@ -85,8 +94,14 @@
       </ul>
     </div>
     <a href="#loop-0" class="map-scrolly__cue map-scrolly__cue--loop">
-      <span class="map-scrolly__cue-dash" aria-hidden="true"></span>
-      <span><strong>{{ $loop.label | default "Fly the loop" }}.</strong> {{ $loop.intro }} Keep scrolling.</span>
+      <span class="map-scrolly__cue-thumbs" aria-hidden="true">
+        {{ range first 3 $loop.stops }}<img src="{{ $home }}images/map/thumbs/{{ . }}.jpg" alt="" width="176" height="118">{{ end }}
+      </span>
+      <span class="map-scrolly__cue-text">
+        <strong>{{ $loop.label | default "Fly the loop" }}</strong>
+        <span>{{ $loop.intro }}</span>
+      </span>
+      <span class="map-scrolly__cue-arrow" aria-hidden="true">&darr;</span>
     </a>
   </div>
 
@@ -171,7 +186,23 @@
   var usSvg = document.querySelector('.map-svg--us');
   var worldSvg = document.querySelector('.map-svg--world');
   var scrolly = document.getElementById('mapScrolly');
+  var loopRoot = document.getElementById('mapLoop');
   var touring = false;
+
+  // The tours are opt-in: story steps stay collapsed until the cue is clicked
+  // (or a #drive/#loop deep link asks for them). No-JS gets the full page.
+  [scrolly, loopRoot].forEach(function (r) { if (r) r.classList.add('is-collapsed'); });
+  function expandScrolly(root) {
+    if (root) root.classList.remove('is-collapsed');
+  }
+  document.querySelectorAll('.map-scrolly__cue').forEach(function (cue) {
+    cue.addEventListener('click', function (e) {
+      e.preventDefault();
+      expandScrolly(cue.closest('.map-scrolly'));
+      var target = document.getElementById(cue.getAttribute('href').slice(1));
+      if (target) target.scrollIntoView({ behavior: reduceMotion ? 'instant' : 'smooth', block: 'start' });
+    });
+  });
 
   function url(p) { return p ? home + p : ''; }
 
@@ -536,7 +567,7 @@
   }
 
   initScrolly(usSvg, scrolly, DATA.tour && DATA.tour.stops, { frameW: 300, strokeW: 2.2 });
-  initScrolly(worldSvg, document.getElementById('mapLoop'), DATA.loop && DATA.loop.stops, { frameW: 85, strokeW: 2.2, routeClass: 'map-route--air', scalePins: true });
+  initScrolly(worldSvg, loopRoot, DATA.loop && DATA.loop.stops, { frameW: 85, strokeW: 2.2, routeClass: 'map-route--air', scalePins: true });
 
   // --- Replay the years: re-ink the lower 48 one year at a time,
   // driven by data/van_years.yaml (the button renders only when it's filled in) ---
@@ -614,6 +645,7 @@
   var hash = decodeURIComponent(location.hash.replace('#', ''));
   var tourMatch = hash.match(/^(drive|loop)(?:-(\d+))?$/);
   if (tourMatch) {
+    expandScrolly(tourMatch[1] === 'drive' ? scrolly : loopRoot);
     var stepEl = document.getElementById(tourMatch[1] + '-' + (tourMatch[2] || 0)) || document.getElementById(tourMatch[1] + '-0');
     if (stepEl) stepEl.scrollIntoView({ behavior: 'instant', block: 'start' });
   } else if (byId[hash]) {

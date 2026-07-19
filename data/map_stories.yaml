@@ -248,7 +248,7 @@ stories:
 # "Take the drive" — the guided tour across the US map, in stop order.
 tour:
   label: "Take the drive"
-  intro: "Nine stops, eight years, no interstate."
+  intro: "Nine stops, eight years, every kind of road."
   stops: [ca, or, wa, mt, wy, co, ut, az, nm]
 
 # "Fly the loop" — the SE Asia tour across the world map, in leg order.
