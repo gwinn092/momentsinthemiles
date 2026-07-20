@@ -72,6 +72,7 @@
         <p class="map-step__note">Every pulsing pin on this map opens a story. Go click a few.</p>
         {{ with hugo.Data.van_years }}{{ with .years }}
         <button type="button" class="map-replay-btn" id="mapReplayBtn" hidden>Replay the years &#8635;</button>
+        <p class="map-step__note map-step__note--years"><a class="map-step__link" href="{{ $home }}years/">Or take the slow version, year by year &rarr;</a></p>
         {{ end }}{{ end }}
       </article>
     </div>
@@ -150,12 +151,13 @@
   </div>
 </section>
 
-<p class="visually-hidden">Together we have visited all 48 continental United States, plus Thailand, Laos, Vietnam, Cambodia, Malaysia, Singapore, and Indonesia. Before we met, Jesse traveled South Africa and Karlee lived five seasons on St. John in the U.S. Virgin Islands; we each backpacked Europe separately. Nineteen places on these maps open a short story and a link to the full essay.</p>
+<p class="visually-hidden">Together we have visited all 48 continental United States, plus Thailand, Laos, Vietnam, Cambodia, Malaysia, Singapore, and Indonesia. Before we met, Jesse traveled South Africa and Karlee lived five seasons on St. John in the U.S. Virgin Islands; we each backpacked Europe separately. Twenty-two places on these maps open a short story and a link to the full essay.</p>
 
 <div class="map-tooltip" id="mapTooltip" hidden>
   <img class="map-tooltip__img" src="" alt="" hidden>
   <span class="map-tooltip__name"></span>
   <span class="map-tooltip__note"></span>
+  <span class="map-tooltip__year"></span>
   <span class="map-tooltip__hint">Click for the story</span>
 </div>
 
@@ -168,6 +170,7 @@
     <h3 class="map-panel__title" id="mapPanelTitle"></h3>
     <p class="map-panel__story" id="mapPanelStory"></p>
     <a class="map-panel__link" id="mapPanelLink" href="">Read the full story &rarr;</a>
+    <button type="button" class="map-panel__share" id="mapPanelShare">Copy link to this story</button>
   </div>
 </aside>
 
@@ -185,6 +188,12 @@
 
   var usSvg = document.querySelector('.map-svg--us');
   var worldSvg = document.querySelector('.map-svg--world');
+
+  // State -> the year we first drove it, from data/van_years.yaml
+  var yearByState = {};
+  (DATA.years && DATA.years.years || []).forEach(function (y) {
+    (y.states || []).forEach(function (name) { yearByState[name] = y.year; });
+  });
   var scrolly = document.getElementById('mapScrolly');
   var loopRoot = document.getElementById('mapLoop');
   var touring = false;
@@ -321,10 +330,34 @@
   var panelImg = document.getElementById('mapPanelImg');
   var panelMedia = document.getElementById('mapPanelMedia');
   var lastFocus = null;
+  var openId = null;
+
+  // Copy link: every story already has a deep link (/map/#id) — make it shareable
+  var shareBtn = document.getElementById('mapPanelShare');
+  var shareTimer = null;
+  shareBtn.addEventListener('click', function () {
+    if (!openId) return;
+    var link = location.origin + location.pathname + '#' + openId;
+    function done(ok) {
+      shareBtn.textContent = ok ? 'Link copied' : link;
+      shareBtn.classList.toggle('is-copied', ok);
+      window.clearTimeout(shareTimer);
+      shareTimer = window.setTimeout(function () {
+        shareBtn.textContent = 'Copy link to this story';
+        shareBtn.classList.remove('is-copied');
+      }, 1800);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(link).then(function () { done(true); }, function () { done(false); });
+    } else {
+      done(false);
+    }
+  });
 
   function openStory(id, opener) {
     var s = byId[id];
     if (!s) return;
+    openId = id;
     lastFocus = opener || document.activeElement;
     hideTip();
     if (s.photo) {
@@ -375,6 +408,7 @@
   var tip = document.getElementById('mapTooltip');
   var tipName = tip.querySelector('.map-tooltip__name');
   var tipNote = tip.querySelector('.map-tooltip__note');
+  var tipYear = tip.querySelector('.map-tooltip__year');
   var tipHint = tip.querySelector('.map-tooltip__hint');
   var tipImg = tip.querySelector('.map-tooltip__img');
   tipImg.addEventListener('error', function () { tipImg.hidden = true; });
@@ -387,6 +421,10 @@
       var note = target.getAttribute('data-note') || '';
       tipNote.textContent = note;
       tipNote.style.display = note ? '' : 'none';
+      var year = target.classList.contains('mp') && target.closest('.map-svg--us')
+        ? yearByState[target.getAttribute('data-name')] : null;
+      tipYear.textContent = year ? 'First driven ' + year : '';
+      tipYear.style.display = year ? '' : 'none';
       tipHint.style.display = (target.dataset.storyId && !touring) ? '' : 'none';
       var ts = target.dataset.storyId && byId[target.dataset.storyId];
       if (ts && ts.photo) {

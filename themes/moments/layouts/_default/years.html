@@ -1,0 +1,116 @@
+{{ define "main" }}
+{{ $home := .Site.Home.RelPermalink }}
+{{ $years := hugo.Data.van_years.years }}
+
+<header class="map-header">
+  <div class="content-container">
+    <span class="eyebrow">{{ .Params.eyebrow | default "The Years" }}</span>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="map-header__desc">{{ . }}</p>{{ end }}
+    {{ with .Content }}<div class="map-header__intro">{{ . }}</div>{{ end }}
+  </div>
+</header>
+
+<section class="map-scrolly map-scrolly--years" id="yearsScrolly">
+  <div class="map-scrolly__sticky">
+    <div class="map-frame map-frame--us map-frame--scrolly">
+      {{ partial "map-us.html" . }}
+    </div>
+    <div class="map-replay-year" id="yearsLabel" aria-hidden="true" hidden></div>
+  </div>
+
+  <div class="map-scrolly__steps">
+    <div class="map-step map-step--intro" data-year="intro"></div>
+    {{ $seen := 0 }}
+    {{ range $years }}
+    {{ $n := len (.states | default (slice)) }}
+    {{ if or (gt $n 0) .line }}
+    {{ $seen = add $seen $n }}
+    <div class="map-step" id="y-{{ .year }}" data-year="{{ .year }}">
+      <article class="map-step__card year-card">
+        <div class="map-step__body">
+          <span class="year-card__num">{{ .year }}</span>
+          <span class="map-step__count">{{ if gt $n 0 }}{{ $n }} new state{{ if ne $n 1 }}s{{ end }} &middot; {{ $seen }} of 48{{ else }}no new states &middot; still {{ $seen }} of 48{{ end }}</span>
+          {{ with .line }}<p class="map-step__story">{{ . }}</p>{{ end }}
+          {{ if gt $n 0 }}
+          <ul class="year-card__states">
+            {{ range .states }}<li>{{ . }}</li>{{ end }}
+          </ul>
+          {{ end }}
+        </div>
+      </article>
+    </div>
+    {{ end }}
+    {{ end }}
+    <div class="map-step map-step--today" id="y-today" data-year="today">
+      <article class="map-step__card year-card">
+        <div class="map-step__body">
+          <span class="year-card__num">{{ .Params.today_heading | default "Today" }}</span>
+          <span class="map-step__count">48 of 48</span>
+          {{ with .Params.today_line }}<p class="map-step__story">{{ . }}</p>{{ end }}
+          {{ with .Params.today_stat }}<p class="map-step__story year-card__stat">{{ . }}</p>{{ end }}
+          {{ with hugo.Data.van_now }}{{ with .location }}<p class="map-step__story year-card__van">The van is parked in {{ . }}.</p>{{ end }}{{ end }}
+          <a class="map-step__link" href="{{ $home }}map/">Open the full map &rarr;</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<script type="application/json" id="yearsData">{{ dict "years" $years | jsonify | safeJS }}</script>
+<script>
+(function () {
+  var svg = document.querySelector('.map-svg--us');
+  var steps = document.querySelectorAll('.map-scrolly--years .map-step');
+  if (!(svg && steps.length && 'IntersectionObserver' in window)) return;
+
+  var years = (JSON.parse(document.getElementById('yearsData').textContent).years || [])
+    .filter(function (y) { return y && y.year; });
+  var label = document.getElementById('yearsLabel');
+
+  // The page starts with the map un-inked; scrolling inks it back in
+  // year by year. No-JS readers get the fully inked map and the list.
+  svg.classList.add('years-mode');
+
+  function paint(key) {
+    if (key === 'intro') {
+      svg.classList.remove('is-all-on');
+      years.forEach(function (y) {
+        (y.states || []).forEach(function (name) {
+          svg.querySelectorAll('[data-name="' + name + '"]').forEach(function (p) {
+            p.classList.remove('is-year-on');
+          });
+        });
+      });
+      label.hidden = true;
+      return;
+    }
+    if (key === 'today') {
+      svg.classList.add('is-all-on');
+      label.textContent = 'Today';
+    } else {
+      svg.classList.remove('is-all-on');
+      years.forEach(function (y) {
+        var on = y.year <= key;
+        (y.states || []).forEach(function (name) {
+          svg.querySelectorAll('[data-name="' + name + '"]').forEach(function (p) {
+            p.classList.toggle('is-year-on', on);
+          });
+        });
+      });
+      label.textContent = key;
+    }
+    label.hidden = false;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var d = e.target.dataset.year;
+      paint(d === 'today' || d === 'intro' ? d : parseInt(d, 10));
+    });
+  }, { rootMargin: '-42% 0px -42% 0px', threshold: 0 });
+  steps.forEach(function (s) { io.observe(s); });
+})();
+</script>
+{{ end }}

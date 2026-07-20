@@ -2831,6 +2831,15 @@ body.nav-open {
   color: rgba(253, 250, 245, 0.75);
   margin-top: 0.15rem;
 }
+.map-tooltip__year {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(253, 250, 245, 0.6);
+  margin-top: 0.25rem;
+}
 
 @media (max-width: 768px) {
   .map-section {
@@ -2998,6 +3007,23 @@ body.nav-open {
   padding-bottom: 2px;
 }
 .map-panel__link:hover { border-bottom-color: var(--terracotta); }
+.map-panel__share {
+  display: block;
+  margin-top: 1.1rem;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(28, 26, 23, 0.55);
+  border-bottom: 1px solid rgba(28, 26, 23, 0.2);
+  padding-bottom: 2px;
+}
+.map-panel__share:hover { color: var(--ink); border-bottom-color: var(--ink); }
+.map-panel__share.is-copied { color: var(--sage); border-bottom-color: var(--sage); }
 
 .map-frame--us {
   position: relative;
@@ -4723,4 +4749,64 @@ body.search-open {
 
 .kit-quiz-nudge a {
   color: var(--terracotta);
+}
+
+/* ============================================================
+   The Years page — /years/ (data/van_years.yaml, layout years.html)
+   Reuses the map-scrolly machinery; scrolling re-inks the lower 48
+   one year at a time.
+   ============================================================ */
+
+.years-mode:not(.is-all-on) .mp--visited:not(.is-year-on),
+.years-mode:not(.is-all-on) .mp--visited:not(.is-year-on):hover {
+  fill: #ECE3D1;
+}
+
+.year-card__num {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 2.6rem;
+  line-height: 1;
+  color: var(--terracotta);
+  margin-bottom: 0.45rem;
+}
+.year-card .map-step__count {
+  margin-bottom: 0.15rem;
+}
+.year-card .map-step__story {
+  margin-top: 0.7rem;
+}
+.year-card__states {
+  list-style: none;
+  margin: 0.2rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+.year-card__states li {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--sand);
+  border-radius: 2px;
+  padding: 0.22rem 0.5rem;
+}
+.year-card__stat,
+.year-card__van {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+.year-card__van {
+  margin-bottom: 1.1rem;
+}
+@media (max-width: 768px) {
+  .map-scrolly--years .map-replay-year {
+    bottom: auto;
+    top: 0.7rem;
+    left: 0.9rem;
+    font-size: 2.8rem;
+  }
 }

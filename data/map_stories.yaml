@@ -124,6 +124,47 @@ stories:
     link_text: "Who Told You It Was Too Late to Travel?"
     pin: { fx: 0.16, fy: 0.14 }
 
+  # --- Eastern chapters (added July 2026, Claude-drafted from the essays — voice-check welcome) ---
+
+  - id: fl
+    map: us
+    match: "Florida"
+    title: "A Season at Santa Rosa Beach"
+    place: "Florida"
+    photo: "images/map/florida-santa-rosa-beach.jpg"
+    alt: "Jesse standing alone at the edge of the Gulf on the white sand of Santa Rosa Beach"
+    caption: "The sand really is that white."
+    story: "Our first winter in the van ended the day we reached the panhandle. We meant to pass through Santa Rosa Beach and stayed a season instead: sugar-white sand, the Gulf warming by April, nowhere we had to be. That was the spring we learned the van was also for staying put."
+    link: "essays/freedom-has-seasons/"
+    link_text: "Freedom Has Seasons"
+    pin: { fx: 0.18, fy: 0.10 }
+
+  - id: me
+    map: us
+    match: "Maine"
+    title: "Up Cadillac in the Dark"
+    place: "Maine"
+    photo: "images/map/maine-cadillac-sunrise.jpg"
+    alt: "Sunrise over the islands of Frenchman Bay from the summit of Cadillac Mountain"
+    caption: "Worth the alarm. Worth the drive north."
+    story: "We drove up Cadillac Mountain in the dark, September cold, coffee in the cupholders and a blanket around Karlee's shoulders. When the sun came up over Frenchman Bay, every stranger on that summit went quiet at the same moment we did. Acadia was the far end of our first big loop; everything after it was the drive home."
+    link: "gallery/"
+    link_text: "See more from the road"
+    pin: { fx: 0.60, fy: 0.68 }
+
+  - id: mi
+    map: us
+    match: "Michigan"
+    title: "Superior, Showing Off"
+    place: "Michigan"
+    photo: "images/map/michigan-pictured-rocks.jpg"
+    alt: "Clear green water below the cliffs at Miners Castle, Pictured Rocks National Lakeshore"
+    caption: "Fresh water doing a tropics impression."
+    story: "Years of mountains and deserts, and then Lake Superior pulled this out: green glass under the cliffs at Miners Castle, kayaks like toys far below. We gave 2024 to the Great Lakes and Michigan kept the best of it, Pictured Rocks one day, Sleeping Bear the next."
+    link: "gallery/"
+    link_text: "See more from the road"
+    pin: { fx: 0.46, fy: 0.24 }
+
   - id: usa
     map: world
     match: "United States"

@@ -1,10 +1,11 @@
-# Year-by-year replay of the US map (/map/) — the "Replay the years" button
-# on the drive's closing card, which re-inks the lower 48 one year at a time.
+# Year-by-year data for two things:
+#   1. The "Replay the years" button on /map/ (re-inks the lower 48 year by year)
+#   2. The /years/ page ("The Slow Version") — each entry becomes a chapter there
 #
-# The button appears automatically once `years:` below is uncommented and at
-# least one year lists states. Put each state in the year you FIRST drove it;
-# every state you list inks in when its year comes up. States you leave out
-# stay pale during the replay, so list all 48 for the full effect.
+# Each year: put every state in the year you FIRST drove it. States you leave
+# out stay pale during the replay and ink in on the /years/ "Today" card.
+# `line:` is the one-or-two-sentence chapter text on /years/ — edit freely,
+# it's plain text, no code. A year with no states and no line is skipped there.
 #
 # State names, exactly as the map knows them (copy-paste from here):
 #   Alabama, Arizona, Arkansas, California, Colorado, Connecticut, Delaware,
@@ -32,15 +33,38 @@
 # 2016, Arizona/Oregon 2017) — you drove them together, but before the van.
 # If you want the replay to start with the van era, move those four states
 # into 2018 and delete the 2016/2017 lines.
+#
+# The `line:` texts were drafted by Claude (July 2026) from the essays and
+# the photo record — voice-check them like any other copy.
 
 years:
-  - { year: 2016, states: [Colorado, Utah] }
-  - { year: 2017, states: [Arizona, Oregon] }
-  - { year: 2018, states: [Wyoming] }
-  - { year: 2019, states: [Arkansas, Florida, Georgia, Kansas, Kentucky, Louisiana, Maine, Massachusetts, Missouri, New York, North Carolina, Oklahoma, Pennsylvania, Rhode Island, South Carolina, Tennessee, Vermont, Virginia] }
-  - { year: 2020, states: [] } # no new states in the photo record — repeat CO/UT/AZ year
-  - { year: 2021, states: [Montana, New Mexico] }
-  - { year: 2022, states: [California, Idaho, Nevada, Washington] }
-  - { year: 2023, states: [Illinois] }
-  - { year: 2024, states: [Maryland, Michigan, Minnesota, New Jersey, North Dakota, South Dakota, Wisconsin] }
-  - { year: 2025, states: [] } # no geotagged photos from 2025 at all — fill from memory if anywhere new
+  - year: 2016
+    states: [Colorado, Utah]
+    line: "Before the van. A roadtrip through Colorado and Utah, back when all of this was still a maybe."
+  - year: 2017
+    states: [Arizona, Oregon]
+    line: "Still pre-van. Arizona and Oregon, and the maybe getting harder to ignore."
+  - year: 2018
+    states: [Wyoming]
+    line: "We moved into the van that October, in Colorado, and learned to winter in it. Wyoming was the first state the van gave us."
+  - year: 2019
+    states: [Arkansas, Florida, Georgia, Kansas, Kentucky, Louisiana, Maine, Massachusetts, Missouri, New York, North Carolina, Oklahoma, Pennsylvania, Rhode Island, South Carolina, Tennessee, Vermont, Virginia]
+    line: "The big loop. South for Mardi Gras and a season on the Florida panhandle, then north all the way to a sunrise on Cadillac Mountain. Eighteen new states in one year."
+  - year: 2020
+    states: []
+    line: "No new ink. We stayed with the places we already loved: Colorado, Utah, Arizona." # no new states in the photo record — repeat CO/UT/AZ year
+  - year: 2021
+    states: [Montana, New Mexico]
+    line: "Two new states, opposite ends of everything: Montana's glacier country and the white dunes of New Mexico."
+  - year: 2022
+    states: [California, Idaho, Nevada, Washington]
+    line: "The West Coast year. California, Nevada, Idaho, Washington, and the 101 driven the slow way."
+  - year: 2023
+    states: [Illinois]
+    line: "Illinois joined the map." # [JESSE] expand this one if 2023 deserves more
+  - year: 2024
+    states: [Maryland, Michigan, Minnesota, New Jersey, North Dakota, South Dakota, Wisconsin]
+    line: "The Great Lakes run. Seven new states between the Dakotas and the Jersey Shore, and Lake Superior showing off the whole way."
+  - year: 2025
+    states: []
+    # line: ""  # no geotagged photos from 2025 at all — fill in from memory if anywhere new
