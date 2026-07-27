@@ -42,7 +42,7 @@ One evening, they invited us over. We assumed it would be brief.
 
 Instead, we walked into a birthday celebration. It was Pan's birthday. Chairs were pulled up without hesitation. There was a whole table of food set out: fish they had caught that day, rice, homemade soup. Someone patiently showed us how to fold a leaf into a bowl, laughing gently as we attempted it.
 
-We sat around that table for hours. We told stories, we laughed a lot, and we drank a lot of beer and the local homemade wine. We lost track of time completely.
+We sat around that table for hours. We told stories, we laughed a lot, and we drank a lot of Bintang and the local homemade wine. We lost track of time completely.
 
 {{< photo src="/images/essays/lembongan-birthday.jpg" alt="A long table of friends celebrating at night on Nusa Lembongan" caption="Pan's birthday, Nusa Lembongan." >}}
 
