@@ -12,9 +12,9 @@ image: "/images/pages/hero-mountaintop.jpg"
 
 The night before we left, we had a bonfire.
 
-My Aunt Marcee's backyard in Lone Tree. Family crowded around the fire, passing food, talking over each other the way our family does. Someone took a group photo, the kind where everyone smiles a little too wide because nobody knows quite what else to do. And at some point in the night I found myself sitting next to my little cousin Ryder.
+My aunt's backyard in Lone Tree. Family crowded around the fire, passing food, talking over each other the way our family does. Someone took a group photo where everyone smiles a little too wide because nobody knows quite what else to do. And at some point in the night I found myself sitting next to my youngest cousin.
 
-He was nine. Quiet the way smart kids are quiet, taking everything in and missing nothing. We'd done a lot together, Ryder and me. His first hike. His first camping trip. The first fish he ever caught, the first fire he ever built, the first s'more that collapsed in his hands before he could get it to his mouth. I was always trying to show him, without making a big thing of it, that the world was bigger than what he could see from where he was standing.
+He was nine. Quiet the way smart kids are quiet, taking everything in and missing nothing. We'd done a lot together, him and me. His first hike. His first camping trip. The first fish he ever caught, the first fire he ever built, the first s'more that collapsed in his hands before he could get it to his mouth. I was always trying to show him, without making a big thing of it, that the world was bigger than what he could see from where he was standing.
 
 That night I didn't know how to explain what we were about to do or why. So I didn't try.
 
@@ -50,6 +50,8 @@ Eight years. All 48 continental states. Tens of thousands of miles of road that 
 
 {{< photo src="/images/essays/antelope-canyon.jpg" alt="Silhouetted together in a slot canyon" caption="Antelope Canyon, Arizona" >}}
 
+{{< photo src="/images/essays/dunes-and-peaks.jpg" alt="Dunes running out toward a distant snow-covered mountain range" caption="The view that stopped whatever we were talking about in the front seats." >}}
+
 The miles gave us all of that.
 
 But more than the places, and this is the part that's harder to explain, they gave us ourselves. A clearer, more honest version. Road life strips away the performance of ordinary life. There's no keeping up with anyone in seventy square feet, and there's no autopilot. You find out quickly what you actually need, what you can let go of, and what kind of person you are when comfort stops being guaranteed.
@@ -58,11 +60,11 @@ We didn't always like what we found. But we needed to see it.
 
 That's what the miles do, if you let them.
 
-I still think about Ryder at that bonfire. He's sixteen now, not so little anymore. Still quiet, still watching, still doesn't miss much.
+I still think about that bonfire. He's not so little anymore. Still quiet, still watching, still doesn't miss much.
 
-I try to show this to my whole family. But it matters most with the little ones, because they're still early enough in their lives that it can actually change the shape of things. What society tells you you're supposed to do, the script you're handed before you're old enough to question it, is not the only option. There are other ways to build something, other definitions of a life well lived.
+And he isn't the only one I think about. There's a whole crew of them now, all my little cousins plus Jesse's niece and nephew, growing up while we've been out here. I try to show this to my whole family. But it lands differently with the young ones, because they're still early enough in their lives that it can change the shape of things. What society tells you you're supposed to do, the script you're handed before you're old enough to question it, is not the only option. There are other ways to build something.
 
-I hope those years on the road showed Ryder something of that. Not that he has to live the way we do; he doesn't, and that's not the point. Just that choices exist outside the ones you were handed, that a life can be built on purpose instead of assembled by default, and that the world really is bigger than the view from where you're standing.
+I hope these years on the road have shown them some of that. Not that any of them has to live the way we do; they don't, and that's not the point. Just that choices exist outside the ones you were handed, that a life can be built on purpose instead of assembled by default, and that the world really is bigger than the view from where you're standing.
 
 I needed someone to show me that once too.
 

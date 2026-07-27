@@ -43,11 +43,13 @@ My grandfather was her opposite in the quietest way. Scruffy, usually elbow-deep
 
 Half the family had moved to Colorado by then. And for as long as I can remember, my grandparents had a plan. Work hard. Save carefully. Retire well. Then buy the camper: travel the country, move freely between the people they loved, finally have time to live. They wanted to see the places they'd only read about. They wanted to pull into a Colorado driveway without it being a whole production. They wanted the freedom to just go.
 
+{{< photo src="/images/essays/karlee-grandparent-beach.jpg" alt="A young Karlee walking on the beach behind her grandmother" caption="Before any of it. Somewhere on the water, upstate." >}}
+
 Retirement was when life would begin.
 
 I was sixteen when my grandmother got sick.
 
-At first they told her it was asthma. She was treated for asthma. Months passed. And by the time anyone looked closer, by the time the real diagnosis came, the cancer had spread into her bones.
+At first they told her it was something minor, and she was treated for the wrong thing. Months passed. By the time anyone looked closer, by the time the real diagnosis came, it had already gone too far to stop.
 
 I didn't know how to handle any of it. I was sixteen. I went to school, I went to work, and I went to her. That was all I knew how to do. Just show up and be near her, because being near her had always been enough before, and I didn't have anything else to offer.
 
@@ -111,7 +113,7 @@ What I carry from her isn't resentment. It's a lesson she gave me without meanin
 
 Now I'm the one with the van, moving freely, crossing state lines, showing up to the people I love without it being a whole production. Seeing the country they wanted to see together.
 
-I think about both of them when I drive.
+I think about both of them when I drive. I have pieces of them with me the whole time: a blue plaid flannel that was my grandfather's, a white sweater that was my grandmother's. They ride along whether I planned on thinking about them that day or not.
 
 You are not being irresponsible or reckless by choosing a life with movement in it. And you are not behind because you haven't followed the script that was handed to you before you knew enough to question it.
 
@@ -121,6 +123,4 @@ The camper never happened. The road is still here.
 
 Go while you can.
 
-<div class="image-placeholder">
-  <span>[IMAGE: Karlee — quiet moment on the road, somewhere that mattered]</span>
-</div>
+{{< photo src="/images/essays/rocky-overlook.jpg" alt="Standing at the edge of a rocky overlook with a valley opening out below" caption="Somewhere they would have loved." >}}

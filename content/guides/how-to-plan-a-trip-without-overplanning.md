@@ -29,6 +29,8 @@ We missed the boat.
 
 What followed was one of the most genuine days of our entire eight months in Asia. His mother made lunch for the four of us, a careful, simple meal we still talk about. The village children went wild over the candy Vieng had suggested we bring. After lunch, the townspeople gathered. Rice wine appeared. More laughter than the language barrier should have allowed. Hours passed without anyone checking the time.
 
+It did not stay that way. The last hours of that day took a turn we were not prepared for, and it's the piece of the trip we've thought about most since. Karlee wrote the whole of it here: [The River That Gave and Took]({{< relref "essays/the-river-that-gave-and-took.md" >}}).
+
 None of that was in the plan. All of it is what we remember.
 
 ## THE DIFFERENCE BETWEEN A FRAMEWORK AND AN ITINERARY

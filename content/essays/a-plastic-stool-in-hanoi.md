@@ -10,15 +10,13 @@ image: "/images/essays/hanoi-banh-mi-shop.jpg"
 hero_position: "center 55%"
 ---
 
-We smelled it before we saw it.
+We didn't smell it before we saw it.
 
-Pork fat and charred bread and something green underneath, fresh herbs maybe, drifting into a street already thick with motorbike exhaust and the heat Hanoi carries at dusk. We weren't looking for anything specific. Just hungry, just walking, letting the city pull us wherever it wanted.
+We turned the corner and the tree caught our eye from all the way down the street. Wide and yellow and impossible to miss, branches spreading out over the road like it had been there long before the buildings on either side. It stopped me mid-step. I still don't know what kind it was, only that it gave the whole corner a quality the rest of the block didn't have, something that made you slow down.
 
-Then we turned the corner and there was this tree.
+We hadn't been looking for anything specific. Just hungry, just walking, letting the city pull us wherever it wanted. The street was already thick with motorbike exhaust and the heat Hanoi carries at dusk, and then underneath all of it: pork fat, charred bread, something green and fresh.
 
-Wide and yellow and impossible to miss, its branches spreading out over the street like it had been there long before the buildings on either side. It stopped me mid-step. I still don't know what kind it was, only that it gave the whole corner a quality the rest of the block didn't have, something that made you slow down.
-
-And below it: red lanterns, strung and glowing. Bold yellow letters on the sign: Bami Bread — Bánh Mì. And a crowd, locals and tourists shoulder to shoulder, nobody seeming to care which was which, perched on tiny plastic stools, yellow and blue, eating with the focused satisfaction of people who had made a good decision.
+And below the tree: red lanterns, strung and glowing. Bold yellow letters on the sign: Bami Bread — Bánh Mì. And a crowd, locals and tourists shoulder to shoulder, nobody seeming to care which was which, perched on tiny plastic stools, yellow and blue, eating with the focused satisfaction of people who had made a good decision.
 
 We got in line without discussing it.
 
@@ -28,21 +26,19 @@ I've worked in restaurants most of my life. I know that rhythm. There's a specif
 
 We came back the next day. And the day after that.
 
-On our third visit they were slammed. The line had spilled down the block and the kitchen was moving at a pace that had no room for anything extra. We could see it from the street: the focused quiet of two people deep in the work.
+On our final visit they were slammed. The kitchen was moving at a pace that had no room for anything extra. We could see it from the street: the focused quiet of two people deep in the work.
 
 {{< photo src="/images/essays/hanoi-stall-cooks.jpg" alt="Two women working behind the counter of a small Hanoi kitchen" caption="No wasted motion, no instructions, a kind of silent fluency." >}}
 
-So we waited, not checking our phones or craning to see how far the line had moved. We just stood there, in the heat, and gave them the space to do what they were doing.
+So we waited. One of the women looked up, caught my eye, smiled, and waved. She never stopped moving while she did it. She kept building the sandwich in her hands and took our order at the same time.
 
-I think they noticed.
-
-Because after a few minutes, one of the women looked up, caught my eye, and with a small wave of her hand gestured us around the counter.
+The place was packed. Not an empty stool anywhere. We paid, and before we'd worked out where we were going to stand with our food, she waved us around the counter.
 
 No words. Just: come here.
 
-So we did.
+So we did. They unstacked two extra yellow stools for us. Then one of them walked to the cooler and came back with two cold Bia Hà Nội, which we hadn't asked for and hadn't paid for.
 
-Jesse and I folded ourselves onto two of those little plastic stools, tucked into the corner of the kitchen, knees almost at our chins, and someone set cold Bia Hà Nội in our hands without being asked. The bottles were sweating before we even got a grip on them. First sip: light, crisp, the exact temperature the moment called for.
+Jesse and I folded ourselves onto those little plastic stools, tucked into the corner of the kitchen, knees almost at our chins. The cans were sweating before we got a grip on them. First sip: light, crisp, the exact temperature the moment called for.
 
 And then we just watched.
 

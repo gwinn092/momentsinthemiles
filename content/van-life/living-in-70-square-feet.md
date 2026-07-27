@@ -1,5 +1,5 @@
 ---
-title: "How Living in 80 Square Feet Quietly Changed Everything"
+title: "How Living in 70 Square Feet Changed Everything"
 tags: ["Van Life", "Sustainability"]
 date: 2025-05-05
 description: "We didn't set out to live sustainably. We set out to live freely. It turns out those two things have a lot more overlap than we expected."
@@ -7,6 +7,8 @@ category: "Van Life"
 author: "Karlee & Jesse"
 draft: false
 image: "/images/van-life/van-interior-lake.jpg"
+aliases:
+  - /van-life/living-in-80-square-feet/
 ---
 
 We didn't set out to live sustainably. We set out to live freely. It turns out those two things have a lot more overlap than we expected.
@@ -17,13 +19,13 @@ Eight years in a van will do that to you. Not because you made a list of virtuou
 
 Let us show you what we mean.
 
-## What 80 square feet actually looks like
+## What 70 square feet actually looks like
 
 People ask us what it's like to live in a van and we never quite know where to start. So let us just tell you what's in front of us right now.
 
 Our kitchen is three steps from our bed. Our living room is our bedroom is our office. Everything we own is within arm's reach, and we mean that literally. There's no spare room, no junk drawer that becomes a junk cabinet that becomes a junk closet. There is just the space, and what we've chosen to put in it.
 
-Eighty square feet sounds small until you realize how much of a larger home you never actually use. The formal dining room that only comes out at holidays. The guest bedroom that's really just storage with a bed in it. The garage full of things you forgot you owned.
+Seventy square feet sounds small until you realize how much of a larger home you never actually use. The formal dining room that only comes out at holidays. The guest bedroom that's really just storage with a bed in it. The garage full of things you forgot you owned.
 
 We don't have any of that. What we have instead is a home that we know completely: every corner, every cabinet, every inch of it. And after eight years, that intimacy with a small space feels less like a limitation and more like clarity.
 
@@ -63,11 +65,13 @@ We hand wash our dishes and use almost no water doing it. Not because we're tryi
 
 The average American household uses about 80–100 gallons of water per person per day. We could not tell you the last time we came close to that in a week.
 
-## Everything we own fits in one vehicle
+{{< photo src="/images/essays/river-boulder-swim.jpg" alt="A wide granite boulder above a clear river with people swimming below" caption="Also: the shower is free and the view is better." >}}
+
+## Almost everything we own fits in one vehicle
 
 This one still gets us when we stop to think about it.
 
-We don't have a storage unit. We don't have a garage. We don't have boxes in someone's basement labeled "misc" that we haven't opened since we moved in. Everything we own — every piece of clothing, every tool, every sentimental object we decided was worth keeping — is in this van. Right now. We know where all of it is.
+We don't have a storage unit. We don't have a garage. What we do have is a few boxes up in an attic: things we've gathered from our travels and some handmade furniture, saved for the one day we have a bigger place to put them. That's the whole exception. Everything else, every piece of clothing, every tool, every sentimental object we decided was worth carrying, is in this van. Right now. We know where all of it is.
 
 There's something radical about that. Most people accumulate things faster than they can process them, and eventually they stop even seeing what they own. It becomes background noise. We can't do that. If something comes in without purpose, it takes up space we don't have. So things come in slowly, intentionally, and they earn their place or they don't stay.
 
@@ -79,7 +83,7 @@ This is minimalism as practical reality, not as an aesthetic. And it turns out t
 
 This is what surprises people the most.
 
-Our monthly costs (van payment, insurance that covers both our home and our vehicle, gas) used to add up to less than most people pay for rent alone. That was eight years ago. We bought when we bought, and those numbers are locked in.
+Our monthly costs (van payment, insurance that covers both our home and our vehicle, gas) have added up to less than most people pay for rent alone. That has been true since we started, eight years ago.
 
 Think about what's happened to rent since then. To groceries. To utilities. To the cost of just existing in a fixed place. We've been largely insulated from all of it because our footprint, financial and physical, was already small.
 

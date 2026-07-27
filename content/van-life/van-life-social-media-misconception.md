@@ -11,7 +11,7 @@ image: "/images/van-life/van-mount-rainier.jpg"
 
 There's a version of van life that lives on the internet. You've probably seen it.
 
-Golden hour through the back doors. Coffee in hand, mountains behind you. A perfectly styled interior that somehow stays clean despite the fact that two people, all their belongings, and the general chaos of daily life exist inside 80 square feet of moving vehicle. The caption says something like "just another Tuesday" and it gets 14,000 likes.
+Golden hour through the back doors. Coffee in hand, mountains behind you. A perfectly styled interior that somehow stays clean despite the fact that two people, all their belongings, and the general chaos of daily life exist inside 70 square feet of moving vehicle. The caption says something like "just another Tuesday" and it gets 14,000 likes.
 
 We've been doing this for eight years. And we're here to tell you: that version is real. It just isn't the whole picture.
 

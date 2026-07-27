@@ -17,6 +17,14 @@ It's for before.
 
 Before the mortgage and the relationship and the career and the kids, before everything that apparently makes movement irresponsible.
 
+And then, eventually, it's for after. After the career is built and the kids are raised and the money is finally saved. After you've earned it.
+
+Which leaves the middle. Decades of it.
+
+We get groomed for that deal early. Your most capable, most vibrant, most physically willing years belong to work, and if you spend them correctly you might come out the far end with enough money and enough health left over to go do the things you wanted to do at thirty. Nobody says it to you out loud. Everybody signs it anyway.
+
+Those in-between years are not a waiting room. They are the most alive stretch most of us get, and they hold a lot more than earning potential.
+
 We've been living inside the contradiction of that story for years. And we want to say clearly: it isn't true.
 
 ## What we were told, and what we found instead
@@ -46,6 +54,8 @@ Planning matters more. Spontaneity is still possible, but it requires a more int
 None of this is an argument against going. It's an argument for going differently.
 
 ## What gets better
+
+{{< photo src="/images/essays/couple-bar-night.jpg" alt="Jesse and Karlee at a bar, leaning in for a photo" caption="Still going out. Just home earlier." >}}
 
 You know yourself better. That alone changes everything.
 

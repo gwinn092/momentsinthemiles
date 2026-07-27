@@ -52,7 +52,7 @@ Our impatience when plans unraveled. Our capacity for discomfort when we leaned 
 
 ## What it looks like now
 
-After nearly a decade together, with van life across the continent, eight months moving slowly through Southeast Asia, and years of independent travel before any of it, growth feels different than it did at twenty-three.
+After a decade together, with van life across the continent, eight months moving slowly through Southeast Asia, and years of independent travel before any of it, growth feels different than it did at twenty-three.
 
 Slower, more deliberate, more integrated.
 
@@ -80,4 +80,4 @@ After all these miles (the European backpacking years, the Caribbean island, the
 
 Travel hasn't made us different people. It has made us more fully ourselves.
 
-And that might be the best thing hidden in the miles.
+There was a travel commercial years ago with a line in it we've never been able to shake: everything we are is because of everywhere we have been. It reads like a slogan until you've gone far enough, and stayed long enough, to feel it land.

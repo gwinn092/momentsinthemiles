@@ -59,6 +59,8 @@ The daily cost of living in parts of Southeast Asia is a fraction of what it cos
 
 Van life built the muscle. International travel put it to work in harder conditions.
 
+{{< photo src="/images/essays/alpine-lake-paddler.jpg" alt="A paddler out on a still alpine lake below a snow-covered peak" caption="The point of the architecture is afternoons like this one." >}}
+
 ## The practical architecture
 
 Here's what the design actually looks like, stripped of romance:

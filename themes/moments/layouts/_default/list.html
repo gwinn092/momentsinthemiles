@@ -3,7 +3,7 @@
 <section class="section-hero">
   {{ $heroStyle := "" }}{{ with $.Params.hero_position }}{{ $heroStyle = printf "object-position: %s" . }}{{ end }}
   {{ partial "respimg.html" (dict "path" . "alt" $.Title "class" "section-hero__img" "sizes" "100vw" "widths" (slice 640 960 1400) "loading" "eager" "fetchpriority" "high" "style" $heroStyle) }}
-  <div class="section-hero__overlay">
+  <div class="section-hero__overlay{{ if eq $.Params.hero_text_position "top" }} section-hero__overlay--top{{ end }}">
     <div class="container-wide section-hero__content">
       <span class="eyebrow">{{ replace $.Section "-" " " | title }}</span>
       <h1>{{ $.Title }}</h1>
@@ -32,14 +32,14 @@
           <ul class="rail-posts">
             {{ $pinned := where $.Pages "Params.pinned" true }}
             {{ $rest := where $.Pages "Params.pinned" "!=" true }}
-            {{ range ($pinned | append $rest) | first 5 }}
+            {{ range ($pinned | append $rest) }}
             <li>
               <a href="{{ .RelPermalink }}">{{ .Title }}</a>
               {{ if .ReadingTime }}<span class="rail-posts__meta">{{ .ReadingTime }} min read</span>{{ end }}
             </li>
             {{ end }}
           </ul>
-          <a class="rail-all" href="#section-posts">Browse all {{ len $.Pages }} posts &darr;</a>
+          <a class="rail-all" href="#section-posts">Browse with photos &darr;</a>
         </div>
       </aside>
     </div>
@@ -49,6 +49,22 @@
 
 <div class="post-list" id="section-posts">
   <div class="container-wide">
+    {{/* Compact index for narrow screens, where the sticky rail is hidden and the
+         photo grid otherwise means scrolling past every post to see the list. */}}
+    <details class="section-index">
+      <summary>All {{ len .Pages }} {{ replace .Section "-" " " }} posts</summary>
+      <ul class="section-index__list">
+        {{ $idxPinned := where .Pages "Params.pinned" true }}
+        {{ $idxRest := where .Pages "Params.pinned" "!=" true }}
+        {{ range ($idxPinned | append $idxRest) }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{ if .ReadingTime }}<span class="section-index__meta">{{ .ReadingTime }} min</span>{{ end }}
+        </li>
+        {{ end }}
+      </ul>
+    </details>
+
     {{ $pinned := where .Pages "Params.pinned" true }}
     {{ $rest := where .Pages "Params.pinned" "!=" true }}
 

@@ -84,6 +84,8 @@ And strangely, I felt calm.
 
 Because this is what saying yes actually looks like. It isn't polished or comfortable or predictable. But it's real.
 
+{{< photo src="/images/essays/mountain-overlook-sit.jpg" alt="Jesse and Karlee sitting on a rock looking out over a mountain range" caption="Every yes since has looked something like this." >}}
+
 ## What it changed
 
 <table class="before-after">

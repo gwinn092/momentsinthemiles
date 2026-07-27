@@ -19,9 +19,15 @@ But travel has a way of revealing what you didn't know you were taking for grant
 
 ## The boat
 
-The boat was old and rickety. Car bench seats lined the interior, worn and loosely placed, not meant for comfort. The engine roared so loudly you couldn't hold a steady conversation. A squat toilet sat in the back, a humbling reminder that this wasn't a curated experience.
+You get three choices for how you go up the river. Two of them are the nicer versions: proper tables and benches, colorful tablecloths, pillows, everything arranged to be looked at. We took the third one, the boat the locals use.
+
+It was old and rickety. Car bench seats lined the interior, worn and loosely placed, not meant for comfort. The engine roared so loudly you couldn't hold a steady conversation. A squat toilet sat in the back, a humbling reminder that this wasn't a curated experience. At one end there was a small snack bar selling bowls of noodles and drinks.
 
 Locals and tourists sat shoulder to shoulder as we drifted down the river. Jungle banks slid past. Small wooden homes perched on stilts. Life unfolding at its own pace.
+
+There are only a few villages along that stretch of river, and they are remote in a way that's hard to hold in your head. The captains stop at them. The kids come down to meet the boat to sell bracelets, or sometimes you just hand over your snacks or some cash.
+
+That first stop was a lot of things for me at once. I was sad and happy at the same time and I wanted to be near them. You can tell they don't have much. They also have some of the biggest smiles I have ever seen. I got off the boat and played on the beach with them, handed out high fives, and got back on.
 
 The first day was calm.
 
@@ -47,7 +53,11 @@ The next morning, we drank coffee on the patio and watched our original boat loa
 
 ## His village
 
-The drive wound through dirt roads and small rural communities. When we arrived, you could see how proud he was. People had put on their good clothes. Children paused to stare, smiling wide.
+The drive wound through dirt roads and small rural communities, and Vieng talked the whole way. He named each village as we passed it. He told us about growing up out here: there was no school in his town, so he went two towns over. The kids walked there, stayed the week, walked home, and did it again. He had one set of clothes to wear for that week.
+
+He said all of it plainly, as just how things were.
+
+When we arrived, you could see how proud he was. People had put on their good clothes. Children paused to stare, smiling wide.
 
 He introduced us to his mother. His family. Showed us the newly built school.
 
@@ -59,7 +69,7 @@ His mother made lunch for the four of us: Vieng, the driver, Jesse, and me. It w
 
 {{< photo src="/images/essays/laos-host-meal.jpg" alt="Jesse and Karlee seated on the floor around baskets of home-cooked food" caption="Lunch in Vieng's village. Simple, careful, made with intention." >}}
 
-After lunch, the townspeople began to gather. Someone produced rice wine. Then more people. Then more rice wine. We sat together for hours, laughing, drinking, listening, the conversation a loose mix of Vieng translating and the universal language of people who are glad to be together.
+After lunch, the townspeople began to gather. Vieng's family brought out the rice wine. Then more people. Then more rice wine. We sat together for hours, laughing, drinking, listening, the conversation a loose mix of Vieng translating and the universal language of people who are glad to be together.
 
 It was exactly what we had imagined a year earlier, back when we were still hesitating to book this trip at all.
 
@@ -73,13 +83,13 @@ I didn't understand how serious it was until we were in the truck.
 
 Jesse and I sat in the back seat. The mother sat between us. The baby's eyes rolled back. His breathing was strained. Sweat ran down his mother's face.
 
-The dirt road felt longer on the way down.
+We were driving fast, and the dirt road still felt longer on the way down.
 
-We pulled into the "doctor's office." No one was there. We were sent to the "hospital." They rushed inside. We followed, unsure where to stand, what to do.
+We pulled into the "doctor's office." No one was there. We were sent to the "hospital." We rushed inside, unsure where to stand, what to do.
 
 There was no doctor waiting. No machines. No urgency the way we understand it.
 
-We sat on the concrete steps outside. Three little boys stood on their toes, trying to see through the window. And all you could hear were a mother's screams.
+We left that room. We sat on the concrete steps outside. Three little boys stood on their toes, trying to see through the window. And all you could hear were a mother's screams.
 
 ## Full circle
 
@@ -93,7 +103,7 @@ At the time, it felt philosophical. By evening, it felt real.
 
 ## What travel really gave us
 
-It's one of the moments I think about often. Not because of how it ended, but because of what it revealed.
+It's one of the moments I think about often. Not only because of how it ended, but because of what it revealed.
 
 When you travel slowly, when you sit in someone's home, meet their mother, share rice wine with their neighbors, ride in their truck, the world stops being abstract. It becomes faces, names, breath.
 
@@ -101,4 +111,8 @@ You start to realize how much you take for granted. Access, healthcare, certaint
 
 That day expanded our world and humbled it at the same time.
 
-And that realization has never really left me.
+I still don't have a clean way to hold both halves of it. The rice wine and the screaming happened on the same day, in the same village, with the same people. Travel writing wants you to pick one and build the story around it. You don't get to.
+
+---
+
+Vieng's bar is **The Hive**, in Pakbeng, northern Laos. If the slow boat puts you there for a night, go find it. Stay an extra day if he offers.

@@ -17,11 +17,31 @@ If something breaks or we stop using it, it comes off the page. No dead links, n
 
 ---
 
+<!-- KARLEE: the entries marked [needs a line] below are products you named but
+     I don't have your stories for. One or two sentences each in your voice and
+     they'll match the rest of the page. Everything else is existing copy. -->
+
 ## Morning ritual
 
 **Aeropress**
 
 We've made coffee in parking lots, on riverbanks, at 11,000 feet, and in the back of the van while it rained for three days straight. The Aeropress has never once let us down. It's light, nearly indestructible, and makes better coffee than most cafés we've been to. We keep a hand grinder next to it and that's the whole setup.
+
+**Moka pot**
+
+Stovetop espresso with no power draw and nothing electronic to fail. It's the slower option and some mornings that's the point. [needs a line]
+
+---
+
+## Cooking in a galley the size of a closet
+
+**Ninja Crispi**
+
+For years the kitchen was an induction stove and whatever we could make work. The Crispi changed that more than anything else we've added. Small victories matter when you live small, and this one stopped being a novelty about a week in.
+
+**Instant Pot**
+
+One appliance covering what would otherwise take three, in a kitchen with counter space for about one and a half. That trade is the entire argument for it in a van. [needs a line]
 
 **Ninja Blender**
 
@@ -34,6 +54,10 @@ Smoothies in the van sound ridiculous until you've been parked somewhere hot for
 **ENO Hammock**
 
 This gets set up more than almost anything else we own. Rest stops, campsites, between two trees at a trailhead. It takes thirty seconds and suddenly you're not in a parking lot anymore. We have the DoubleNest because sharing a single hammock sounds romantic but is actually a fight.
+
+**Kelty low camp chairs**
+
+The van has no good place for two people to sit, which is the one thing we'd change about our build. Outside, these solve it. They sit low, they pack flat, and they're the first thing out of the back doors when we stop somewhere worth staying a while. [needs a line: which Kelty model?]
 
 ---
 
@@ -53,10 +77,6 @@ This is the foundation of how we eat on the road. Dual zone means we run a fridg
 
 ## Outside the van
 
-**Teva Sandals**
-
-The shoes you put on when you don't want to put on shoes. They live next to the sliding door and they're the first thing on our feet every morning. We've worn them on quick grocery runs, campground showers, and short walks we said would be short but turned into two miles.
-
 **Inflatable Kayak**
 
 This was a "do we really need this?" purchase that became one of our favorite things we own. It packs down small enough to store under the bed platform, inflates in about ten minutes, and has taken us to places we never would have seen from shore. Worth every inch of storage space.
@@ -71,9 +91,17 @@ This was a "do we really need this?" purchase that became one of our favorite th
 
 Red light therapy wand that she uses almost every night. Van life is hard on your skin: sun, wind, dry air, inconsistent water quality. This is one of the routines that makes the van feel less like camping and more like home.
 
-**Michael Todd Sonic Cleansing Brush** *(Karlee's pick)*
+---
 
-Works with minimal water, charges via USB, and has somehow survived being knocked off every surface in the van. Skincare in a van is an act of defiance and she's committed to it.
+## Power and sound
+
+**Anker battery packs**
+
+The things that keep everything else alive between the van and wherever you've walked to. We've had these long enough to have opinions, and the opinion is that the cheap ones are not cheaper. [needs a line]
+
+**Bose speaker and headphones**
+
+Two people working in 70 square feet need a way to not be in the same room. The headphones do that. The speaker does the opposite job, for the evenings when we want the whole space to feel like one. [needs a line]
 
 ---
 
@@ -101,4 +129,12 @@ If you want the honest, detailed breakdown of how van power actually works, what
 
 ---
 
-*Everything on this page is something we currently own and use. If that ever changes, we'll say so.*
+## On the list, not in the van yet
+
+We're not going to pretend we've tested things we haven't. But it's a fair question what we're eyeing, so:
+
+**OutIn Nano portable espresso machine.** Espresso without a stove, without a power draw, without the counter space. If it works the way it looks like it works, it changes the morning. We'll report back honestly either way.
+
+---
+
+*Everything above the "on the list" section is something we currently own and use. If that ever changes, we'll say so.*

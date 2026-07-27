@@ -45,6 +45,14 @@
         {{ with .Description }}<p class="article-description">{{ . }}</p>{{ end }}
       </header>
 
+      {{/* Jump-to nav for narrow screens, where the right-hand TOC rail is hidden. */}}
+      {{ if .Fragments.Headings }}
+      <details class="toc-inline">
+        <summary>Jump to a section</summary>
+        <nav class="article-toc">{{ .TableOfContents }}</nav>
+      </details>
+      {{ end }}
+
       <div class="article-body">
         {{ .Content }}
       </div>

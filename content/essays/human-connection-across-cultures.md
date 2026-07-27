@@ -14,9 +14,9 @@ It's easy to think travel is about geography. New landscapes, new languages, new
 
 But over time, the places blur. What stays are the people.
 
-## What St. John taught us first
+## What St. John taught Karlee first
 
-Karlee learned this slowly, over five seasons on a small island in the Caribbean — some of them full years.
+Karlee learned this slowly, over five seasons on a small island in the Caribbean, some of them full years.
 
 Island life compresses distance in a way that's hard to explain until you've lived it. You see the same faces enough times that strangers become familiar. Community isn't something you seek out there; it becomes part of your daily rhythm whether you choose it or not.
 
@@ -40,9 +40,9 @@ On a small island off the coast of Bali, we spent a few days staying next to a l
 
 One evening, they invited us over. We assumed it would be brief.
 
-Instead, we walked into a birthday celebration. It was Pan's birthday. Chairs were pulled up without hesitation. Fresh fish was brought out. Rice was passed. Someone patiently showed us how to fold a leaf into a bowl, laughing gently as we attempted it.
+Instead, we walked into a birthday celebration. It was Pan's birthday. Chairs were pulled up without hesitation. There was a whole table of food set out: fish they had caught that day, rice, homemade soup. Someone patiently showed us how to fold a leaf into a bowl, laughing gently as we attempted it.
 
-We sat around that table for hours, laughing and listening and losing track of time.
+We sat around that table for hours. We told stories, we laughed a lot, and we drank a lot of beer and the local homemade wine. We lost track of time completely.
 
 {{< photo src="/images/essays/lembongan-birthday.jpg" alt="A long table of friends celebrating at night on Nusa Lembongan" caption="Pan's birthday, Nusa Lembongan." >}}
 
@@ -63,6 +63,8 @@ Different customs, same humanity.
 {{< photo src="/images/essays/lembongan-friends.jpg" alt="Karlee and a friend from the island laughing over a camera" caption="Comparing photos after dinner." >}}
 
 There's also humility in being the outsider. You mispronounce names, misunderstand jokes, navigate small awkwardness. And that discomfort can be instructive. It softens certainty and reminds you that your way is not the default.
+
+We left Lembongan with an open invitation to come back and dive with the guys. Karlee is still in touch with them. Whenever we make it back, we already know where we're going first.
 
 The world is not divided into 'us' and 'them.' It's divided into people who have met and people who haven't yet.
 

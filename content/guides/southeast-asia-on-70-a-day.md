@@ -9,8 +9,6 @@ draft: false
 image: "/images/guides/warung-menu.jpg"
 ---
 
-<!-- DRAFT: REVIEW NUMBERS WITH KARLEE BEFORE PUBLISHING -->
-
 Seventy dollars a day sounds like a constraint. In Southeast Asia, it's closer to abundance.
 
 We spent eight months across Thailand, Vietnam, Cambodia, Laos, Malaysia, Singapore, Indonesia, and the Philippines, and $70 a day for two people wasn't a budget we were white-knuckling our way through. It was comfortable. Private rooms. Good food. Cold beer. The occasional boat trip or cooking class. We weren't counting every baht or dong with a spreadsheet open. We were just living, slowly and intentionally, well within what the region actually costs.
@@ -21,7 +19,7 @@ This guide isn't about suffering through travel to save money. It's about unders
 
 The thing nobody tells you before you go is that the hardest part of budget travel in Southeast Asia isn't the money. It's the mental recalibration.
 
-At home, $70 barely covers dinner for two at a mid-range restaurant. You arrive in Chiang Mai and a full meal for two (real food, cold drinks, dessert) comes to $8. Your brain doesn't trust it at first. You keep waiting for the catch.
+At home, $70 barely covers dinner for two at a mid-range restaurant. You arrive in Chiang Mai and a full meal for two (real food, cold drinks, dessert) comes to $8, and that's at a decent sit-down place. The same meal from a street cart or the night market runs about half that. Your brain doesn't trust it at first. You keep waiting for the catch.
 
 There is no catch. The cost of living really is different. Vietnam, Laos, and Cambodia consistently come in at $22–32 per day for a solo budget traveler, which means two people sharing costs can travel comfortably for well under $70 a day without trying particularly hard.
 
@@ -37,7 +35,9 @@ Expect to pay $15–30 a night for a solid private room for two. In Chiang Mai w
 
 The booking approach that works:
 
-Book your first night in advance when arriving somewhere new, enough to land without stress. After that, walk the street and look. Use Booking.com or Agoda to research, then message the guesthouse directly. They'll often match the price and pocket the commission themselves rather than losing 15–20% to the platform. It costs you nothing and means something to them.
+Book your first night in advance when arriving somewhere new, enough to land without stress. After that, walk the street and look. We used [Agoda](https://www.agoda.com) constantly across all eight months; it has the deepest inventory in this part of the world by a wide margin, and Booking.com is the backup. <!-- TODO: swap to Agoda partner URL and add {{< affiliate-note >}} at the top of this page once the affiliate account is live. -->
+
+Research on the platform, then message the guesthouse directly. They'll often match the price and pocket the commission themselves rather than losing 15–20% to the booking site. It costs you nothing and means something to them.
 
 Always ask about weekly rates if you're staying more than four nights. The discount is often significant and rarely advertised. And if you're heading to the Thai islands (Koh Phi Phi, Koh Samui) know that accommodation there runs 30–50% higher than the mainland. The mainland stretches your budget further and often delivers a richer experience anyway.
 
@@ -69,13 +69,13 @@ Between cities, night buses run $10–25 for most major routes. Vietnam's sleepe
 
 Eight months gave us a clear picture of what's worth spending on and what isn't.
 
-Organised tours of things you can do yourself (temples, markets, walking streets) almost never add value. Most of what makes Southeast Asia extraordinary is free or nearly free, and a tour guide between you and it usually takes something away rather than adding to it.
+Organised tours of things you can do yourself (temples, markets, walking streets) almost never add value. Most of what makes Southeast Asia extraordinary is free or nearly free, and a tour company between you and it usually takes something away rather than adding to it.
+
+If you do want a guide, skip the company and find a local. This is much easier than it sounds. We got offers all over the region from people who wanted to show us around their own town and talk about their own culture, and we'd take that over a scheduled itinerary everyone else is also on, every single time. The money goes to the person actually doing the work, and you end up somewhere the tour bus doesn't stop.
 
 Overpriced rooftop bars near landmark areas are a reliable way to spend $15 on a cocktail for a view you could enjoy for $2 in local beer from a riverside guesthouse. We fell for this exactly once.
 
 Moving too fast is probably the biggest budget leak of all, and the least obvious one. Every city change costs in transport, in orientation time, in the price premium of first-night booking. Staying longer in fewer places cuts costs and deepens the experience simultaneously. We learned this in the van and it held true across every country we traveled in Asia.
-
-Elephant riding is expensive and hollow compared to legitimate sanctuary experiences, and that's before the ethical issues, which are real and well-documented. Skip it without hesitation.
 
 ## THE LONGER YOU STAY, THE BETTER THE MATH GETS
 

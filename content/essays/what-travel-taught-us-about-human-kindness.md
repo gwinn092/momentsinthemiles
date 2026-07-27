@@ -12,13 +12,13 @@ hero_position: "center 60%"
 
 ## Chiang Mai, day one
 
-We turned a corner into Old Town and the city hit us all at once.
-
-Motorbikes flying past in every direction. The street humming with engines and voices. And there, just ahead, a 7-Eleven, its door chiming open and shut in a steady rhythm.
+Our first hotel in Chiang Mai put us a block from everything. The old town was right there. So was the night market. So was the 7-Eleven, less than a block away, its door chiming open and shut in a steady rhythm.
 
 Don't judge. If you've done your research, you know they're the holy grail of corner stores in Asia.
 
-But what stopped us wasn't the 7-Eleven. It was what was ten feet from its door: a small food cart with at least six locals sitting on tiny, colorful plastic stools. That's always a good sign in a foreign country. If the locals eat there, you should too.
+We had come straight from Bangkok, so Chiang Mai read as calm from the first hour. Motorbikes still moved past and the street still hummed, but at a volume you could hear yourself inside of.
+
+What stopped us was ten feet from the 7-Eleven door: a small food cart with at least six locals sitting on tiny, colorful plastic stools. That's always a good sign in a foreign country. If the locals eat there, you should too.
 
 As we walked by and made eye contact with one of the men eating, he broke into a wide smile. He pointed to his bowl. Looked at us. Smiled from ear to ear.
 
@@ -52,7 +52,7 @@ Human kindness doesn't require language, wealth, or a reason.
 
 It exists in eye contact, in shared space, in steam rising from a pot on a noisy street.
 
-Travel is about more than what you see. It's about who you meet and how they make you feel.
+Travel is about more than what you see. It's about who you meet, how they make you feel, and how you make them feel.
 
 ## Slow down enough to notice
 
@@ -74,7 +74,7 @@ Travel taught us that generosity is less about grand gestures than about partici
 
 ## The invitation
 
-Now when we think about Chiang Mai, we don't remember the noise first. We remember the plastic stools, the steam rising into thick air, the way our eyes watered before we even took a bite, the couple waving away our money with soft smiles.
+When we think about Chiang Mai now, the first thing we remember is how much easier it was to breathe there after Bangkok. Then the plastic stools, the steam rising into thick air, the way our eyes watered before we even took a bite, the couple waving away our money with soft smiles.
 
 And when we think about those eight months across Asia, it's not the landmarks that rise to the surface. It's the people: the generosity, the unexpected warmth, the reminder that goodness exists everywhere.
 

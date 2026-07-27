@@ -10,13 +10,19 @@ image: "/images/essays/karlee-roses.jpg"
 hero_position: "center 40%"
 ---
 
+We should say where we're standing before we start, because a post about not copying trends can read like a growth strategy, and this isn't one.
+
+We're not trying to collect an audience. We're trying to find the people who want a similar kind of life, and to be honest enough with them that they want to stay. Honesty, and a community of people pointed the same direction. That's the entire goal here.
+
+Which is why the trend thing gets under our skin. Copying is the fastest way we know to end up sounding like everyone else, and sounding like everyone else is the opposite of what we're here for.
+
 There is a version of content creation that feels very productive. You watch what's working for someone else. You reverse-engineer it. You make your own version. You post it and wait.
 
 Sometimes it works. You get a bump. A few new followers, a decent amount of engagement, a brief moment where the numbers move in the right direction.
 
 And then it stops working. And you're back at the beginning, watching someone else, looking for the next thing to borrow.
 
-We've been creating content for eight years. We've watched this cycle play out, in our own work and in the work of people around us. And the conclusion we keep coming back to is this: chasing trends is not a strategy. It's a treadmill. And the longer you stay on it, the harder it becomes to get off.
+We've been creating content for ten years and didn't even know it. Our lives have gone against the norm in one way or another for most of that time, and documenting it was just something we did. Along the way we've watched this cycle play out, in our own work and in the work of people around us. The conclusion we keep coming back to: chasing trends is not a strategy. It's a treadmill. And the longer you stay on it, the harder it becomes to get off.
 
 ## What trend-chasing actually costs you
 
@@ -60,9 +66,11 @@ The best content usually starts with the thing you actually want to say. The thi
 
 {{< photo src="/images/essays/yosemite-walk.jpg" alt="Walking alone through tall golden grass in Yosemite Valley" caption="The slower path is still a path." >}}
 
+{{< photo src="/images/essays/couple-in-van.jpg" alt="Jesse and Karlee in the front of the van, leaning together" caption="Ten years of this. Nobody else can make it." >}}
+
 ## The long game is the only game worth playing
 
-Eight years in, we're still here. Still writing. Still creating. And the content that has served us best (the posts that keep getting found, the pieces readers come back to, the work we're actually proud of) is almost never the content we made because someone else was doing something similar.
+Ten years together, eight of them in the van, and we're still here. Still writing. Still creating. Finally finding ways to connect and share it. And the content that has served us best (the posts that keep getting found, the pieces readers come back to, the work we're actually proud of) is almost never the content we made because someone else was doing something similar.
 
 It's the content that came from us: from the life we're actually living, the things we've figured out, the way we see this world we've chosen.
 

@@ -61,6 +61,8 @@ The freedom we have now, chosen deliberately, built over years, grounded in part
 
 And designed freedom is more sustaining than spontaneous freedom ever was.
 
+{{< photo src="/images/essays/yosemite-valley-dawn.jpg" alt="A figure looking out over a valley at first light, mist low over the river" caption="Some seasons you only recognize on the way out of them." >}}
+
 ## There is grief in outgrowing certain forms of freedom
 
 We want to be honest about this part too.

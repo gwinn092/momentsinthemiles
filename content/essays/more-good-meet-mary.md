@@ -13,7 +13,7 @@ One of the quiet gifts of a life spent moving is the people you meet along the w
 
 Mary is one of those people for us.
 
-We met her while living on St. John, the kind of place that tends to attract people who have followed something: a feeling, a calling, an idea they couldn't shake. Mary had followed all three. And once you know what she's been out there doing, it's hard not to feel like the world could use a few more people like her.
+Karlee met her on St. John, years before there was any talk of a van or a road trip. They spent time sailing the Caribbean together, both of them unsure what came next, both completely certain they were exactly where they were supposed to be in that moment. Later, when Mary's road trip brought her through Denver, Karlee introduced her to Jesse. Once you know what Mary has been out there doing, it's hard not to feel like the world could use a few more of her.
 
 ## 43,000 miles in her mother's old Subaru
 
@@ -27,7 +27,7 @@ What she found, across red states and blue states, in small towns and big cities
 
 ## A road trip that became something much bigger
 
-More Good Today started as a road trip and became a philosophy, a nonprofit, a book in progress, and one of the best things we've come across in years of traveling.
+More Good Today started as a road trip and became a philosophy, a nonprofit, and a book in progress.
 
 Mary has been featured on the Today Show, MSNBC, the Washington Post, the Kelly Clarkson Show, and Maria Shriver's Sunday Paper, not because she was chasing attention, but because what she's doing cuts through something. In a moment when it's easy to believe the world is only getting worse, she went out and proved otherwise. With a Subaru and a voice recorder and an open door.
 
@@ -45,7 +45,9 @@ Whether you're traveling full-time, taking a long trip, or just trying to move t
 
 ## Go find more good
 
-Mary is available for speaking engagements and still actively sharing stories from the road and beyond.
+Mary hasn't stopped moving. She's in Paris at the moment, still collecting stories, still available for speaking engagements. Follow along and let her keep showing you how much beauty is sitting in ordinary people.
+
+Her message matters more now than it did when she started. Looking for the good, and letting yourself feel connected to it, does more than it sounds like it does. It feeds you. It keeps you going. I look up to Mary, and I'm proud to call her my friend. — Karlee
 
 - Website: [moregood.today](https://moregood.today)
 - Substack: [moregoodtoday.substack.com](https://moregoodtoday.substack.com)

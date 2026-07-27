@@ -16,7 +16,7 @@ When we were planning our build, we researched endlessly. We looked at every Ins
 
 If you're in the planning stages of your van build, consider this your shortcut. We're sharing the layouts we think work best for full-time van dwelling, why we believe in them, and the honest lessons we learned from living in a layout that didn't quite fit our life.
 
-A quick note: this post is written specifically for people building a van they plan to live in full-time. Full-time living means your van is your home, not a weekend escape or a seasonal adventure vehicle. Because of that, comfort features matter more here than they might for part-time builds. These recommendations are based on our experience after nearly a decade on the road.
+A quick note: this post is written specifically for people building a van they plan to live in full-time. Full-time living means your van is your home, not a weekend escape or a seasonal adventure vehicle. Because of that, comfort features matter more here than they might for part-time builds. These recommendations are based on our experience after eight years on the road.
 
 {{< photo src="/images/van-life/empty-van-high-five.jpg" alt="Karlee and Jesse high-fiving inside the empty van shell" caption="Day one. No idea what we were in for." >}}
 
@@ -26,35 +26,35 @@ Before you decide on a single layout detail, ask yourself one thing: will I be w
 
 If the answer is yes (whether you're employed remotely or running your own business from the road), your workspace is infrastructure, not a nice-to-have. You need a place where you can sit comfortably for hours, focus, and feel like a functional human being, not someone hunched over a laptop on a couch cushion at a weird angle.
 
-This is something we thought we'd nailed in our own build. We knew we'd be working from the van constantly, so we prioritized a convertible bed-couch-workspace setup that could do it all. In theory, it was brilliant. In practice, it became one of our biggest daily frustrations. We'll get into exactly why in a minute.
+This is the part we thought we had covered. We knew we'd be working from the van constantly, so we built in a table: the top drawer of the shelving unit under the bed pulls out into one. On paper that's clever. In practice there isn't enough room there for two people to work comfortably, and once the table is out, whoever is sitting on the inside is stuck. To get out, you move everything and push the table back in first.
 
-## Our layout: the convertible setup (and why we're moving on)
+We'll come back to that.
 
-Our current van has a U-shaped convertible layout. When it's set up as a couch, it seats us plus two or three other people comfortably, which is great for hosting friends on the road. When it's converted to a bed, it's spacious. And as a workspace, it gives us room to spread out.
+## Our layout: a fixed bed, and the thing it doesn't solve
+
+Our van has a fixed queen mattress across the back. It doesn't convert into anything. It's a bed, all day, every day.
+
+We'd make that call again. The sleep is good, the bed is always made, and the space underneath it is the best storage in the van by a wide margin. Nearly everything we own lives back there.
 
 {{< photo src="/images/van-life/van-galley-window.jpg" alt="The van galley kitchen with a window view over a lake" caption="Our galley. The window does a lot of the work." >}}
 
 {{< photo src="/images/van-life/building-panels.jpg" alt="Jesse drilling panels on the lawn beside the van mid-build" caption="Mid-build. Every panel by hand." >}}
 
-On paper, it's one of the most space-efficient layouts you can do in a van. We still believe that.
+What we never solved is where two people sit.
 
-The problem is what it requires of you every single day.
+The passenger seat swivels around, which helps. But there is still nowhere in this van that's comfortable for both of us to just exist together. Not to work at the same time, not to watch a movie, not to drink coffee on a rainy morning when we're not going anywhere. The only real option is to sit or lie on the bed.
 
-To go from sleeping to working, we have to convert. To go from working to sleeping, we have to convert again. That's making the bed, in the traditional sense, twice a day, except instead of pulling up a comforter, we're moving cushions, rearranging components, and reorganizing the space entirely. After a long day of hiking or driving or exploring, this task is the last thing either of us wants to do.
+Eight years in, that's the thing we notice. Not the square footage. Not the storage. Just the absence of a place that was built to sit in.
 
-So what actually happens? We often just don't convert. We work from bed, which sounds charming and remote-work-dreamy until you've done it for three days straight and your back is screaming at you. Or we leave the van in couch mode and sleep on a surface that feels slightly different than a proper bed because it's made up of separate cushions rather than one continuous mattress.
-
-A comfortable, consistent sleep surface turned out to matter to us more than we anticipated. It might matter to you too.
-
-We share this not to scare you off the convertible layout; it works well for some people, especially if you have guests often or need to maximize seating. But if the idea of converting your living space twice a day already sounds annoying to you just reading about it, trust that instinct. Before you commit to a layout, try renting a van with a similar setup for a few days. One weekend of living in a space will tell you more than months of research.
+So if you take one thing from our build: solve the bed, then solve the seating, and don't assume the bed will double as the seating. It technically will. You will get tired of it.
 
 ## The case for a fixed bed layout
 
-If we were building today (and we will be building again soon), we'd choose a fixed bed without question.
+We have talked seriously about a renovation. Whatever else we change, we'd choose a fixed bed again without question.
 
 A fixed bed means your sleeping area stays a sleeping area. You pull back the covers in the morning and leave them there. You make the bed once, the way you would in a house, and it stays made. Your sheets live on the bed. Your pillows stay on the bed. It's just a bed. A real one.
 
-This sounds so simple that it almost feels silly to list as a selling point. But when you're living in 80 square feet, the things that create daily friction matter enormously. Eliminating even one recurring task, especially one that stands between you and sleep, has a real impact on your quality of life on the road.
+This sounds so simple that it almost feels silly to list as a selling point. But when you're living in 70 square feet, the things that create daily friction matter enormously. Eliminating even one recurring task, especially one that stands between you and sleep, has a real impact on your quality of life on the road.
 
 **Pros of a fixed bed**
 
@@ -72,6 +72,14 @@ This sounds so simple that it almost feels silly to list as a selling point. But
 - The bed tends to sit higher (closer to the ceiling), which can be a consideration if you're tall
 
 For most full-time van dwellers, the trade-offs are worth it. The fixed bed wins on livability, and livability is everything when this is your home, not just your weekend.
+
+## The lift bed, which might be the actual answer
+
+You see these everywhere now, and we understand why. The mattress sits on an electric lift. You make the bed in the morning, hit a button, and it rises up out of the way, opening the floor underneath for a table and real chairs.
+
+Done properly, that gets you both things at once: a bed you never have to break down, and somewhere to sit that isn't the bed. It costs you ceiling height, and it adds a mechanism that can fail a long way from anyone who can fix it. Those aren't small trade-offs.
+
+But it solves the exact problem we've been living around for eight years. If we do renovate, it's the first thing we're pricing out.
 
 ## Other layout considerations worth planning around
 

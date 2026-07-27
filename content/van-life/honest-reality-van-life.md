@@ -29,7 +29,7 @@ The logistics you solve once; the mental load you manage forever. Nobody puts th
 
 ---
 
-## Living with someone in 80 square feet is a personality test you cannot study for.
+## Living with someone in 70 square feet is a personality test you cannot study for.
 
 Jesse and I were together for years before we moved into the van. We thought we knew each other. We did not fully know each other.
 

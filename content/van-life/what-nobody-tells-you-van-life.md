@@ -33,7 +33,7 @@ It gets easier as you learn to read places and build a mental map of what works.
 
 If you're doing this with a partner, buckle up. Not because van life is hard on relationships (it can actually be incredibly good for them) but because it removes every buffer you normally rely on.
 
-There's no separate office to go to. No commute to decompress during. No extra room to retreat to when you need space. It's 80 square feet, two humans, and every unresolved thing you've been carrying.
+There's no separate office to go to. No commute to decompress during. No extra room to retreat to when you need space. It's 70 square feet, two humans, and every unresolved thing you've been carrying.
 
 We had to learn new ways of communicating. Not just talking more, but learning when to talk, how to ask for space without it feeling like rejection, how to give each other room to breathe inside a life that doesn't have much of it. We had to get intentional about carving out time that was just ours, individually, even when the logistics made that hard.
 
@@ -41,7 +41,7 @@ The couples who thrive in van life learned to fight better, and to make space fo
 
 ## Decision fatigue is real and relentless
 
-Every day involves decisions that most people outsource to routine. Where do we park tonight? Where's the nearest potable water? Is the dump station at that campground open? Can we run the AC or will that drain the batteries before morning?
+Every day involves decisions that most people outsource to routine. Where do we park tonight? Where's the nearest potable water? Is the dump station at that campground open? It's going to be ninety degrees at midnight here, so do we drive somewhere higher or just sweat it out with the fan?
 
 In a traditional home, these questions don't exist. In a van, they're the background hum of every single day. Early on, the novelty makes it feel like adventure. After a while, it can feel like cognitive load you didn't sign up for.
 

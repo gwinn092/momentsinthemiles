@@ -37,13 +37,13 @@ If we're in a city or a parking lot or somewhere that doesn't call for lingering
 
 ## Work: yes, we actually work. A lot.
 
-This surprises people most. Van life is a location, not a vacation, and the location moves. We run two websites, manage content, handle affiliate partnerships, answer emails, and do all the same stuff anyone working remotely does, except our office has a windshield and occasionally someone knocks on the window to ask if we're okay.
+This surprises people most. Van life is a location, not a vacation, and the location moves. We run two websites, manage content, handle affiliate partnerships, answer emails, and do all the same stuff anyone working remotely does, except our office has a windshield and the view out of it changes every few days.
 
 **Morning block — usually 8 or 9 to noon**
 
-This is heads-down time. Jesse's usually on site builds or technical stuff. I'm writing, scheduling, working on content. We're in the same 80 square feet but largely in our own worlds. Headphones help. Having a coffee setup we love helps more.
+What this block looks like depends a lot on where we're parked. Most days an hour of it goes to the gym if we're near one, or to a workout outside if we're not. The rest is heads-down. Jesse's usually on site builds or technical stuff. I'm writing, scheduling, working on content. We're in the same 70 square feet but largely in our own worlds. Headphones help. Having a coffee setup we love helps more.
 
-Wifi is the variable that shapes everything. Good signal and the day flows. Spotty signal and you're making decisions: drive somewhere better, use a hotspot, accept that today is a lighter day. After enough years you get good at planning around it rather than fighting it.
+Wifi is the variable that shapes everything. Good signal and the day flows. Spotty signal and you're making decisions: drive somewhere better, use a hotspot, accept that today is a lighter day. We run a wifi booster, which was one of the better calls we made early on, and after enough years you get good at planning around signal instead of fighting it.
 
 ---
 
