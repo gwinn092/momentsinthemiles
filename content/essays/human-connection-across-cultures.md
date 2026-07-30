@@ -16,7 +16,7 @@ But over time, the places blur. What stays are the people.
 
 ## What St. John taught Karlee first
 
-Karlee learned this slowly, over five seasons on a small island in the Caribbean, some of them full years.
+Karlee learned this slowly, over five seasons on a small island in the Caribbean.
 
 Island life compresses distance in a way that's hard to explain until you've lived it. You see the same faces enough times that strangers become familiar. Community isn't something you seek out there; it becomes part of your daily rhythm whether you choose it or not.
 

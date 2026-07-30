@@ -12,7 +12,7 @@ image: "/images/pages/hero-mountaintop.jpg"
 
 The night before we left, we had a bonfire.
 
-My aunt's backyard in Lone Tree. Family crowded around the fire, passing food, talking over each other the way our family does. Someone took a group photo where everyone smiles a little too wide because nobody knows quite what else to do. And at some point in the night I found myself sitting next to my youngest cousin.
+My aunt's backyard in Lone Tree. Family crowded around the fire, passing food, talking over each other the way our family does. Someone took a group photo where everyone smiles a little too wide because nobody knows quite what else to do. And at some point in the night I found myself sitting next to my little cousin.
 
 He was nine. Quiet the way smart kids are quiet, taking everything in and missing nothing. We'd done a lot together, him and me. His first hike. His first camping trip. The first fish he ever caught, the first fire he ever built, the first s'more that collapsed in his hands before he could get it to his mouth. I was always trying to show him, without making a big thing of it, that the world was bigger than what he could see from where he was standing.
 

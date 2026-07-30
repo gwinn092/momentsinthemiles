@@ -19,7 +19,7 @@ But travel has a way of revealing what you didn't know you were taking for grant
 
 ## The boat
 
-You get three choices for how you go up the river. Two of them are the nicer versions: proper tables and benches, colorful tablecloths, pillows, everything arranged to be looked at. We took the third one, the boat the locals use.
+You get three choices for how you go up the river. Two of them are the nicer versions: proper tables and benches, colorful tablecloths, pillows, everything arranged for comfort and the perfect Instagram shot. We took the third one, the boat the locals use.
 
 It was old and rickety. Car bench seats lined the interior, worn and loosely placed, not meant for comfort. The engine roared so loudly you couldn't hold a steady conversation. A squat toilet sat in the back, a humbling reminder that this wasn't a curated experience. At one end there was a small snack bar selling bowls of noodles and drinks.
 
@@ -40,6 +40,8 @@ That's how we met Vieng.
 ## The invitation
 
 Vieng ran our small riverside hotel. He had just opened a bar down the road, simple and homey, overlooking the water.
+
+<!-- TODO (Karlee): link The Hive's Instagram here, plus the bar's location/details. Waiting on the handle from Jesse/Karlee — do not guess it. The closing note at the bottom of this essay already names The Hive, Pakbeng; decide whether the link lives here, there, or both. -->
 
 We ate good food. Drank beer. Played pool. Talked easily; his English was great, warm and direct in a way that made conversation feel effortless.
 
@@ -85,7 +87,7 @@ Jesse and I sat in the back seat. The mother sat between us. The baby's eyes rol
 
 We were driving fast, and the dirt road still felt longer on the way down.
 
-We pulled into the "doctor's office." No one was there. We were sent to the "hospital." We rushed inside, unsure where to stand, what to do.
+We pulled into the "doctor's office." No one was there. We were sent to the "hospital." We rushed inside.
 
 There was no doctor waiting. No machines. No urgency the way we understand it.
 

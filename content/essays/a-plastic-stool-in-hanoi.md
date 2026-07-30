@@ -32,7 +32,7 @@ On our final visit they were slammed. The kitchen was moving at a pace that had 
 
 So we waited. One of the women looked up, caught my eye, smiled, and waved. She never stopped moving while she did it. She kept building the sandwich in her hands and took our order at the same time.
 
-The place was packed. Not an empty stool anywhere. We paid, and before we'd worked out where we were going to stand with our food, she waved us around the counter.
+The place was packed. Not an empty stool anywhere. We paid, and before we'd worked out where we were going to wait for our food, she waved us around the counter.
 
 No words. Just: come here.
 

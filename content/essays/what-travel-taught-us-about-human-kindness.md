@@ -12,11 +12,11 @@ hero_position: "center 60%"
 
 ## Chiang Mai, day one
 
-Our first hotel in Chiang Mai put us a block from everything. The old town was right there. So was the night market. So was the 7-Eleven, less than a block away, its door chiming open and shut in a steady rhythm.
+Our first hotel in Chiang Mai put us one block from everything, right in the middle of old town. The night market was right there. So was the 7-Eleven, its door chiming open and shut in a steady rhythm.
 
 Don't judge. If you've done your research, you know they're the holy grail of corner stores in Asia.
 
-We had come straight from Bangkok, so Chiang Mai read as calm from the first hour. Motorbikes still moved past and the street still hummed, but at a volume you could hear yourself inside of.
+We had come straight from Bangkok, and you could feel the energy change the second we got there. Chiang Mai is calmer. Motorbikes still moved past and the street still hummed, but at a volume you could hear yourself inside of.
 
 What stopped us was ten feet from the 7-Eleven door: a small food cart with at least six locals sitting on tiny, colorful plastic stools. That's always a good sign in a foreign country. If the locals eat there, you should too.
 
@@ -52,7 +52,7 @@ Human kindness doesn't require language, wealth, or a reason.
 
 It exists in eye contact, in shared space, in steam rising from a pot on a noisy street.
 
-Travel is about more than what you see. It's about who you meet, how they make you feel, and how you make them feel.
+You don't remember a place for what it looked like. You remember who was there, how they made you feel, and how you made them feel.
 
 ## Slow down enough to notice
 
