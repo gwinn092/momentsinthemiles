@@ -4870,6 +4870,8 @@ body.search-open {
 
 .kit-quiz-nudge a {
   color: var(--terracotta);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 /* ============================================================
