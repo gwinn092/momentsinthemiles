@@ -1,0 +1,35 @@
+{{/* Builds one outbound booking URL. Args (dict):
+       partner  "agoda" (default) or "booking"
+       city     city or area to search, e.g. "Hanoi"
+       url      an exact property URL instead of a city search (optional)
+
+     Partner IDs come from [params.affiliates] in hugo.toml. If the ID is empty
+     the link still works — it just goes to the plain public URL and earns
+     nothing, so nothing is ever broken or misleading while an account is
+     pending. Returns the URL only; callers wrap it. */}}
+
+{{- $partner := .partner | default "agoda" -}}
+{{- $ids := site.Params.affiliates | default dict -}}
+{{- $out := "" -}}
+
+{{- if eq $partner "booking" -}}
+  {{- $base := .url | default (printf "https://www.booking.com/searchresults.html?ss=%s" (urlquery .city)) -}}
+  {{- with $ids.bookingAid -}}
+    {{- $glue := cond (strings.Contains $base "?") "&" "?" -}}
+    {{- $out = printf "%s%said=%s" $base $glue . -}}
+  {{- else -}}
+    {{- $out = $base -}}
+  {{- end -}}
+{{- else -}}
+  {{- $base := .url | default (printf "https://www.agoda.com/search?textToSearch=%s" (urlquery .city)) -}}
+  {{- with $ids.agodaCid -}}
+    {{- $glue := cond (strings.Contains $base "?") "&" "?" -}}
+    {{- $out = printf "%s%scid=%s" $base $glue . -}}
+  {{- else -}}
+    {{- $out = $base -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* urlquery encodes a space as "+", which Hugo then HTML-escapes into
+     "&#43;" and escapes again at the call site. %20 sidesteps it entirely. */}}
+{{- replace $out "+" "%20" -}}

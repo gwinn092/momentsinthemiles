@@ -1,0 +1,17 @@
+{{/* Inline booking link for use inside a guide's prose.
+
+       {{< book city="Hanoi" >}}
+       {{< book city="Hanoi" text="places to stay in the Old Quarter" >}}
+       {{< book partner="booking" city="Chiang Mai" >}}
+
+     Keep it to one per section and never above the first real paragraph — the
+     point is that it reads as a useful aside, not an ad. The page it lands on
+     must also carry {{< affiliate-note >}}. */}}
+
+{{- $city := .Get "city" -}}
+{{- $url := partial "booking-link.html" (dict
+      "partner" (.Get "partner")
+      "city" $city
+      "url" (.Get "url")) -}}
+{{- $text := .Get "text" | default (printf "where to stay in %s" $city) -}}
+<a class="book-link" href="{{ $url }}" target="_blank" rel="sponsored nofollow noopener">{{ $text }}</a>

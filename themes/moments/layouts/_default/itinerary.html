@@ -1,0 +1,99 @@
+{{ define "main" }}
+{{ $home := .Site.Home.RelPermalink }}
+{{ $stories := hugo.Data.map_stories.stories }}
+
+<article class="itin">
+  {{ with .Params.image }}
+  <div class="article-hero-wrap">
+    {{ partial "respimg.html" (dict
+      "path" .
+      "alt" (default $.Title $.Params.image_alt)
+      "class" "article-hero-img"
+      "sizes" "100vw"
+      "widths" (slice 640 960 1400)
+      "loading" "eager"
+      "fetchpriority" "high") }}
+  </div>
+  {{ end }}
+
+  <div class="content-container itin__head">
+    <nav class="place__crumbs" aria-label="Breadcrumb">
+      <a href="{{ $home }}itineraries/">Itineraries</a>
+      <span aria-hidden="true">&middot;</span>
+      <span>{{ .Title }}</span>
+    </nav>
+
+    <h1 class="place__title">{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="place__deck">{{ . }}</p>{{ end }}
+
+    <ul class="place__facts">
+      <li><span>Stops</span>{{ .Params.stop_count }}</li>
+      {{ with .Params.counted_nights }}{{ if gt . 0 }}
+      <li><span>Nights accounted for</span>{{ . }}</li>
+      {{ end }}{{ end }}
+    </ul>
+
+    {{ with .Params.summary }}<p class="itin__summary">{{ . }}</p>{{ end }}
+
+    {{/* Disclosure sits above the first booking link, as it has to. */}}
+    {{ partial "affiliate-disclosure.html" . }}
+  </div>
+
+  <div class="content-container itin__route">
+    {{ $last := "" }}
+    {{ range .Params.stops }}
+      {{ if ne .country $last }}
+        {{ if $last }}</ol>{{ end }}
+        <h2 class="itin__country">{{ .country }}</h2>
+        <ol class="itin__stops">
+        {{ $last = .country }}
+      {{ end }}
+      <li class="itin__stop">
+        <div class="itin__stop-head">
+          <h3 class="itin__place">{{ .place }}</h3>
+          {{ with .nights }}<span class="itin__nights">{{ . }} {{ cond (eq . 1) "night" "nights" }}</span>{{ end }}
+        </div>
+        {{ with .note }}<p class="itin__note">{{ . }}</p>{{ end }}
+
+        <p class="itin__links">
+          {{ with .story }}
+            {{ range where $stories "id" . }}
+            <a class="itin__story" href="{{ $home }}places/{{ urlize (replace (replace .place "." "") "," "") }}/">The story from {{ .place }} &rarr;</a>
+            {{ end }}
+          {{ end }}
+
+          {{/* A specific place only when one is actually recorded; otherwise the
+               honest version, which is a search of the town. */}}
+          {{ with .stay }}
+            <a class="itin__book" target="_blank" rel="sponsored nofollow noopener"
+               href="{{ partial "booking-link.html" (dict "url" .url "city" $.Params.place) }}">
+              We stayed at {{ .name }} &rarr;
+            </a>
+          {{ else }}
+            {{ with .book }}
+            <a class="itin__book" target="_blank" rel="sponsored nofollow noopener"
+               href="{{ partial "booking-link.html" (dict "city" .) }}">
+              Find a place in {{ . }} &rarr;
+            </a>
+            {{ end }}
+          {{ end }}
+        </p>
+      </li>
+    {{ end }}
+    {{ if $last }}</ol>{{ end }}
+  </div>
+
+  {{ with .Params.guide }}
+  <div class="content-container place__next">
+    <a class="place__read" href="{{ $home }}{{ . }}">
+      <span class="eyebrow">The long version</span>
+      <span class="place__read-title">{{ default "Read the guide" $.Params.guide_text }} <span aria-hidden="true">&rarr;</span></span>
+    </a>
+    <a class="place__map" href="{{ $home }}map/#loop">
+      <span class="eyebrow">On the map</span>
+      <span class="place__read-title">Fly the loop <span aria-hidden="true">&rarr;</span></span>
+    </a>
+  </div>
+  {{ end }}
+</article>
+{{ end }}

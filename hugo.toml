@@ -12,6 +12,15 @@ enableRobotsTXT = true
   author = "Jesse & Karlee"
   googleAnalyticsID = "G-191K9XLXV2"
 
+# Affiliate partner IDs. Leave a value EMPTY and every link for that partner
+# still renders — it just points at the plain public URL and earns nothing.
+# That way the site is never broken or dishonest while an account is pending.
+[params.affiliates]
+  # Agoda partner ("cid"). Sign in at partners.agoda.com to find it.
+  agodaCid = ""
+  # Booking.com affiliate id ("aid"), used as the fallback link.
+  bookingAid = ""
+
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 

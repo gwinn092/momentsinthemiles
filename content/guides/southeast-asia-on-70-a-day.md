@@ -9,6 +9,8 @@ draft: false
 image: "/images/guides/warung-menu.jpg"
 ---
 
+{{< affiliate-note >}}
+
 Seventy dollars a day sounds like a constraint. In Southeast Asia, it's closer to abundance.
 
 We spent eight months across Thailand, Vietnam, Cambodia, Laos, Malaysia, Singapore, Indonesia, and the Philippines, and $70 a day for two people wasn't a budget we were white-knuckling our way through. It was comfortable. Private rooms. Good food. Cold beer. The occasional boat trip or cooking class. We weren't counting every baht or dong with a spreadsheet open. We were just living, slowly and intentionally, well within what the region actually costs.
@@ -35,7 +37,7 @@ Expect to pay $15–30 a night for a solid private room for two. In Chiang Mai w
 
 The booking approach that works:
 
-Book your first night in advance when arriving somewhere new, enough to land without stress. After that, walk the street and look. We used [Agoda](https://www.agoda.com) constantly across all eight months; it has the deepest inventory in this part of the world by a wide margin, and Booking.com is the backup. <!-- TODO: swap to Agoda partner URL and add {{< affiliate-note >}} at the top of this page once the affiliate account is live. -->
+Book your first night in advance when arriving somewhere new, enough to land without stress. After that, walk the street and look. We used Agoda constantly across all eight months; it has the deepest inventory in this part of the world by a wide margin, and Booking.com is the backup. If you want to see what a night actually costs before you commit to the trip, here is {{< book city="Chiang Mai" text="what stays in Chiang Mai run to" >}}.
 
 Research on the platform, then message the guesthouse directly. They'll often match the price and pocket the commission themselves rather than losing 15–20% to the booking site. It costs you nothing and means something to them.
 

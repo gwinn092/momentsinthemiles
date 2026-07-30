@@ -1,0 +1,7 @@
+{{/* FTC disclosure. Renders ONLY when a partner ID is actually configured —
+     a disclosure with nothing to disclose is noise, and while the accounts are
+     pending every "booking link" on the page is just a plain public URL. */}}
+{{ $ids := site.Params.affiliates | default dict }}
+{{ if or $ids.agodaCid $ids.bookingAid }}
+<p class="affiliate-note">Some links here are affiliate links. If you book through one we may earn a small commission, at no extra cost to you. It never changes what we recommend, and we only point you at places we actually went.</p>
+{{ end }}

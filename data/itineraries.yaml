@@ -1,0 +1,191 @@
+# Itineraries. Each one becomes a page at /itineraries/<slug>/ automatically —
+# add an entry here and the page exists on the next build, no file to create.
+#
+# Every stop can carry:
+#   place    (required) where it is
+#   country  (required) groups the stops into chapters
+#   nights   number, or leave out if the guide never said
+#   note     one or two sentences, plain text
+#   book     city name to search for stays. OMIT IT to render no booking link.
+#   stay     the actual place you stayed, IF you remember it. Never guessed —
+#            see the monetization rules in CLAUDE.md. Shape:
+#              stay: { name: "The Hive", url: "https://..." }
+#   story    id of a matching entry in map_stories.yaml, to cross-link
+#
+# EVERY NUMBER BELOW COMES FROM content/guides/eight-months-southeast-asia.md.
+# Nothing here was estimated. Where the guide gave no number, nights is absent.
+
+itineraries:
+  - slug: southeast-asia-eight-months
+    title: "Eight Months Across Southeast Asia"
+    subtitle: "The actual route, in the actual order, with the stops that were too long and the ones that were too short."
+    summary: "Seven countries and thirty-one stops, from landing jet-lagged in Bangkok to the last two nights back in the same Bali hotel eight months later. This is the route as we walked it, not a route we'd design for you."
+    image: "images/guides/mekong-slow-boats-dusk.jpg"
+    image_alt: "Slow boats on the Mekong at dusk"
+    guide: "guides/eight-months-southeast-asia/"
+    guide_text: "Read the full story of these eight months"
+    stops:
+      - place: "Bangkok"
+        country: "Thailand"
+        nights: 8
+        note: "Jet lag, temples in the early morning before the heat settled in, and street food markets. Eight days felt like both too long and not nearly enough."
+        book: "Bangkok"
+        story: tha
+      - place: "Chiang Mai"
+        country: "Thailand"
+        nights: 26
+        note: "Our longest stop in Thailand, partly the city and partly timing — we were there for Yi Peng and Loi Krathong. Thousands of lanterns lifting into a dark sky."
+        book: "Chiang Mai"
+      - place: "Pai"
+        country: "Thailand"
+        nights: 7
+        note: "A week up in the hills north of Chiang Mai."
+        book: "Pai"
+      - place: "Chiang Rai & Chiang Khong"
+        country: "Thailand"
+        note: "The last stop before the Laos border and the slow boat."
+        book: "Chiang Rai"
+      - place: "The slow boat & Pakbeng"
+        country: "Laos"
+        note: "Two days down the Mekong on the boat the locals use, and a night in Pakbeng that turned into two. The day that came out of it is the one we think about most."
+        book: "Pakbeng"
+        story: lao
+      - place: "Luang Prabang"
+        country: "Laos"
+        nights: 12
+        note: "Twelve days, and honestly a few too many. We were getting over a cold and waiting on a visa, and those two things turned a stop into a stay."
+        book: "Luang Prabang"
+      - place: "Hanoi"
+        country: "Vietnam"
+        nights: 5
+        note: "Bun cha, pho, egg coffee, and Hoan Kiem Lake in the early morning. Five days getting our bearings."
+        book: "Hanoi"
+        story: vnm
+      - place: "The Ha Giang Loop"
+        country: "Vietnam"
+        note: "Four days on rented motorbikes near the Chinese border. The highlight of the whole trip. We got lost twice and didn't mind."
+        book: "Ha Giang"
+      - place: "Ha Long Bay"
+        country: "Vietnam"
+        note: "Where Jesse got sick and we ended up in a hospital a few weeks into the country. It turned out to be the best medical care either of us has ever had, and it cost fifty dollars."
+        book: "Ha Long"
+      - place: "Ninh Binh"
+        country: "Vietnam"
+        nights: 5
+        note: "Limestone karsts and Jesse's birthday."
+        book: "Ninh Binh"
+      - place: "Hoi An"
+        country: "Vietnam"
+        note: "We were there for TET."
+        book: "Hoi An"
+      - place: "Nha Trang"
+        country: "Vietnam"
+        nights: 4
+        book: "Nha Trang"
+      - place: "Da Lat"
+        country: "Vietnam"
+        nights: 5
+        note: "A day out in the mountains with the waterfalls."
+        book: "Da Lat"
+      - place: "Ho Chi Minh City"
+        country: "Vietnam"
+        nights: 7
+        book: "Ho Chi Minh City"
+      - place: "The Mekong Delta"
+        country: "Vietnam"
+        nights: 3
+        note: "Thomas drove us around for hours and ended the day feeding us pineapple on the roof of his wife's boat."
+        book: "Can Tho"
+      - place: "Phu Quoc"
+        country: "Vietnam"
+        nights: 3
+        note: "An island in the Gulf of Thailand near the Cambodian border. We'd planned on three slow days and ended up busier than that."
+        book: "Phu Quoc"
+      - place: "Sihanoukville & Koh Rong"
+        country: "Cambodia"
+        note: "We found a hotel we'd never have found if we hadn't turned around, and extended two more nights purely because of it."
+        book: "Koh Rong"
+        story: khm
+      - place: "Bangkok, again"
+        country: "Thailand"
+        nights: 7
+        note: "A week back in Bangkok to have suits made — something we'd been planning since Chiang Mai."
+        book: "Bangkok"
+      - place: "Phuket"
+        country: "Thailand"
+        nights: 5
+        note: "Bigger than its reputation. Quieter beaches and better food than we were told to expect."
+        book: "Phuket"
+      - place: "Krabi"
+        country: "Thailand"
+        nights: 4
+        note: "Limestone cliffs into green water, longtail boats at sunrise, and the beach at Railay you can only reach by sea. We were sad to leave."
+        book: "Krabi"
+      - place: "Kuala Lumpur"
+        country: "Malaysia"
+        nights: 4
+        note: "Cosmopolitan and food-obsessed. A dozen culinary traditions without trying very hard."
+        book: "Kuala Lumpur"
+        story: mys
+      - place: "Penang (George Town)"
+        country: "Malaysia"
+        nights: 3
+        note: "Maybe our favourite city in Malaysia. Char kway teow, asam laksa, cendol, and a wish for more time."
+        book: "George Town"
+      - place: "Kuala Lumpur, again"
+        country: "Malaysia"
+        nights: 2
+        book: "Kuala Lumpur"
+      - place: "Singapore"
+        country: "Singapore"
+        nights: 2
+        note: "Not enough time for Singapore, frankly. Enough to eat at hawker centres and walk the colonial district."
+        book: "Singapore"
+        story: sgp
+      - place: "Manila"
+        country: "The Philippines"
+        nights: 4
+        book: "Manila"
+      - place: "Bohol"
+        country: "The Philippines"
+        nights: 3
+        note: "The Chocolate Hills, and tarsiers clinging to branches in the dark with their enormous eyes."
+        book: "Bohol"
+      - place: "Cebu"
+        country: "The Philippines"
+        nights: 4
+        note: "Canyoneering at Kawasan Falls — cliff jumps into turquoise water. One of the most purely fun things we did in eight months."
+        book: "Cebu"
+      - place: "Puerto Princesa & Port Barton"
+        country: "The Philippines"
+        note: "The Underground River, then the long road north to Port Barton: four days in a village so small it barely registers on most maps."
+        book: "Puerto Princesa"
+      - place: "El Nido"
+        country: "The Philippines"
+        nights: 3
+        note: "Lagoons, limestone karsts, water that really is that colour. Then we got on a four-day boat."
+        book: "El Nido"
+      - place: "Bali"
+        country: "Indonesia"
+        nights: 6
+        note: "Scooters around the island in an afternoon, surfers watched from a cliff, and a warung we ate at so often the woman running it knew our order."
+        book: "Bali"
+        story: idn
+      - place: "Senggigi, Lombok"
+        country: "Indonesia"
+        nights: 11
+        note: "Our longest stop in Indonesia. Lombok sits in Bali's shadow but has its own complete identity."
+        book: "Lombok"
+      - place: "Flores & Komodo"
+        country: "Indonesia"
+        note: "Two nights in Flores, then three days through the islands: the dragons, Pink Beach, and Padar Island at sunrise."
+        book: "Labuan Bajo"
+      - place: "Gili Air"
+        country: "Indonesia"
+        nights: 4
+        book: "Gili Air"
+      - place: "Bali, to finish"
+        country: "Indonesia"
+        nights: 2
+        note: "The same hotel we'd stayed in on our first night, eight months earlier. We hadn't planned that. It landed harder than we expected."
+        book: "Bali"

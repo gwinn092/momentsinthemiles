@@ -1,0 +1,26 @@
+{{/* One page per entry in data/itineraries.yaml. Same pattern as
+     content/places/_content.gotmpl: add an itinerary to the YAML and its page
+     appears on the next build, with no file to write. */}}
+
+{{ range $it := hugo.Data.itineraries.itineraries }}
+  {{ $nights := 0 }}
+  {{ range $it.stops }}{{ $nights = add $nights (default 0 .nights) }}{{ end }}
+
+  {{ $.AddPage (dict
+    "path" $it.slug
+    "title" $it.title
+    "description" (truncate 158 "…" $it.summary)
+    "kind" "page"
+    "layout" "itinerary"
+    "params" (dict
+      "subtitle" $it.subtitle
+      "summary" $it.summary
+      "image" $it.image
+      "image_alt" $it.image_alt
+      "guide" $it.guide
+      "guide_text" $it.guide_text
+      "stops" $it.stops
+      "stop_count" (len $it.stops)
+      "counted_nights" $nights)
+  ) }}
+{{ end }}

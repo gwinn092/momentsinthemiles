@@ -22,6 +22,12 @@ We also drew the whole route on our map, leg by leg. [Fly the loop]({{< relref "
 
 ---
 
+## The route at a glance
+
+If you want the whole eight months as a route rather than a read — every stop in
+order, with the nights we spent in each — that lives here:
+[the full Southeast Asia itinerary]({{< ref "itineraries/southeast-asia-eight-months" >}}).
+
 ## Thailand
 
 ### Bangkok — 8 days

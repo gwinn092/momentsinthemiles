@@ -2115,10 +2115,11 @@ body.nav-open {
 .affiliate-note {
   font-size: 0.85rem;
   line-height: 1.5;
-  color: var(--ink-soft, #6b6459);
+  font-family: var(--font-sans);
+  color: var(--muted);
   border-left: 2px solid var(--rule);
   padding: 0.25rem 0 0.25rem 1rem;
-  margin: 0 0 2rem;
+  margin: 1.75rem 0 0;
 }
 
 /* Opt-in via `hero_text_position: "top"` in a section's front matter, for
@@ -5277,4 +5278,100 @@ body.search-open {
   color: var(--terracotta);
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+
+/* ============================================================
+   Itineraries — /itineraries/ (data/itineraries.yaml + a content adapter).
+   Booking links are deliberately quiet: same size as body text, no button.
+   ============================================================ */
+.itin__summary {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 1.5rem 0 0;
+}
+
+.itin__route {
+  margin-top: 3rem;
+}
+
+.itin__country {
+  font-size: 1.7rem;
+  margin: 3rem 0 1.25rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.itin__country:first-child {
+  margin-top: 0;
+}
+
+.itin__stops {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.itin__stop {
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.itin__stop-head {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.itin__place {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.itin__nights {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.itin__note {
+  margin: 0.55rem 0 0;
+  color: var(--ink);
+  max-width: 62ch;
+}
+
+.itin__links {
+  margin: 0.7rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+}
+
+.itin__story {
+  color: var(--terracotta);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.itin__story:hover {
+  border-bottom-color: var(--terracotta);
+}
+
+/* Booking links stay muted on purpose — they should read as a utility, not a
+   pitch. Terracotta is reserved for our own pages. */
+.itin__book,
+.book-link {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.itin__book:hover,
+.book-link:hover {
+  color: var(--ink);
 }

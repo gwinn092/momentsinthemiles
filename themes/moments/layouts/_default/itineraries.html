@@ -1,0 +1,36 @@
+{{ define "main" }}
+{{ $home := .Site.Home.RelPermalink }}
+
+<section class="section-hero">
+  {{ with .Params.hero_image }}
+    {{ $heroStyle := "" }}{{ with $.Params.hero_position }}{{ $heroStyle = printf "object-position: %s" . }}{{ end }}
+    {{ partial "respimg.html" (dict "path" . "alt" $.Title "class" "section-hero__img" "sizes" "100vw" "widths" (slice 640 960 1400) "loading" "eager" "fetchpriority" "high" "style" $heroStyle) }}
+  {{ end }}
+  <div class="section-hero__overlay">
+    <div class="container-wide section-hero__content">
+      <span class="eyebrow">Routes</span>
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p class="section-hero__desc">{{ . }}</p>{{ end }}
+    </div>
+  </div>
+</section>
+
+<div class="list-intro">
+  <div class="list-intro__inner">{{ .Content }}</div>
+</div>
+
+<div class="content-container place-index">
+  <div class="place-index__grid">
+    {{ range $page := .Pages }}
+    <a class="place-card" href="{{ $page.RelPermalink }}">
+      {{ with $page.Params.image }}
+      {{ partial "respimg.html" (dict "path" . "alt" (default $page.Title $page.Params.image_alt) "class" "place-card__img" "sizes" "(min-width: 900px) 340px, 100vw" "widths" (slice 480 800)) }}
+      {{ end }}
+      <span class="place-card__place">{{ $page.Params.stop_count }} stops</span>
+      <span class="place-card__title">{{ $page.Title }}</span>
+      {{ with $page.Params.subtitle }}<span class="place-card__year">{{ . }}</span>{{ end }}
+    </a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
