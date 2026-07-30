@@ -50,7 +50,8 @@
   --sand: #F5EFE4;
   --ink: #1C1A17;
   --muted: #6B6560;
-  --terracotta: #B5643A;
+  --terracotta: #A35A34;
+  --terracotta-on-dark: #C26B3E;
   --sage: #8A9E85;
   --gold: #C9A96E;
   --rule: rgba(28, 26, 23, 0.12);
@@ -460,7 +461,7 @@ p:last-child {
   font-size: 0.65rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(253, 250, 245, 0.35);
+  color: rgba(253, 250, 245, 0.5);
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -471,7 +472,7 @@ p:last-child {
 
 .footer-copy {
   font-size: 0.75rem;
-  color: rgba(253, 250, 245, 0.4);
+  color: rgba(253, 250, 245, 0.5);
   margin-top: 1rem;
 }
 
@@ -1751,8 +1752,8 @@ body.nav-open {
 /* --- Kit Callout Block --- */
 
 .kit-callout {
-  background: var(--color-sand, #F5EFE4);
-  border-left: 3px solid var(--color-terracotta, #B5643A);
+  background: var(--sand);
+  border-left: 3px solid var(--terracotta);
   padding: 2rem 2.5rem;
   margin: 3rem 0;
   max-width: 640px;
@@ -1763,14 +1764,14 @@ body.nav-open {
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-terracotta, #B5643A);
+  color: var(--terracotta);
   margin: 0 0 0.5rem;
 }
 
 .kit-callout__heading {
   font-family: var(--font-heading, 'Cormorant Garamond', serif);
   font-size: 1.75rem;
-  color: var(--color-ink, #1C1A17);
+  color: var(--ink);
   margin: 0 0 1rem;
   font-weight: 600;
 }
@@ -1779,16 +1780,16 @@ body.nav-open {
   font-family: var(--font-body, 'Jost', sans-serif);
   font-size: 1rem;
   line-height: 1.7;
-  color: var(--color-ink, #1C1A17);
+  color: var(--ink);
   margin: 0 0 1.5rem;
 }
 
 .kit-callout__link {
   font-family: var(--font-body, 'Jost', sans-serif);
   font-size: 0.9rem;
-  color: var(--color-terracotta, #B5643A);
+  color: var(--terracotta);
   text-decoration: none;
-  border-bottom: 1px solid var(--color-terracotta, #B5643A);
+  border-bottom: 1px solid var(--terracotta);
   padding-bottom: 1px;
   transition: opacity 0.2s;
 }
@@ -1889,7 +1890,7 @@ body.nav-open {
   text-align: center;
 }
 .by-the-numbers .eyebrow {
-  color: var(--terracotta);
+  color: var(--terracotta-on-dark);
 }
 .numbers-grid {
   display: grid;
@@ -3875,6 +3876,7 @@ body.nav-open {
   height: clamp(250px, 42vh, 390px);
   width: auto;
   max-width: 78vw;
+  object-fit: cover;
   border-radius: 3px;
   user-select: none;
   -webkit-user-drag: none;
@@ -4053,7 +4055,7 @@ body.nav-open {
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(253, 250, 245, 0.4);
+  color: rgba(253, 250, 245, 0.5);
   margin-bottom: 1.1rem;
 }
 
@@ -4247,7 +4249,7 @@ body.nav-open {
 }
 
 .footer-now__date {
-  color: rgba(253, 250, 245, 0.4);
+  color: rgba(253, 250, 245, 0.5);
 }
 
 .next-post {

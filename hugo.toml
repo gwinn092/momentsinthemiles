@@ -2,6 +2,7 @@ baseURL = "https://www.momentsinthemiles.com/"
 languageCode = "en-us"
 title = "Moments in the Miles"
 theme = "moments"
+enableRobotsTXT = true
 paginate = 10
 
 [params]

@@ -2,9 +2,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#FDFAF5">
 
-<title>{{ if .IsHome }}{{ .Site.Title }} — {{ .Site.Params.tagline }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+{{/* Titles: keep the brand suffix on short titles, drop it once the page title
+     alone would push the tag past what search results actually display. */}}
+{{ $pageTitle := "" }}
+{{ if .IsHome }}
+  {{ $pageTitle = printf "%s — %s" .Site.Title .Site.Params.tagline }}
+{{ else if ge (len .Title) 45 }}
+  {{ $pageTitle = .Title }}
+{{ else }}
+  {{ $pageTitle = printf "%s | %s" .Title .Site.Title }}
+{{ end }}
+<title>{{ $pageTitle }}</title>
 
-<meta name="description" content="{{ if .Description }}{{ .Description }}{{ else if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+{{/* Descriptions: page front matter first, then a written-out fallback for
+     taxonomy pages so the 12 tag listings don't all share one string. */}}
+{{ $desc := .Site.Params.description }}
+{{ with .Description }}{{ $desc = . }}{{ else }}
+  {{ if eq .Kind "term" }}
+    {{ $desc = printf "Every essay, guide, and van life story on Moments in the Miles tagged %s — %d in all, written from eight years on the road." .Title (len .Pages) }}
+  {{ else if eq .Kind "taxonomy" }}
+    {{ $desc = "Browse Moments in the Miles by subject: van life, slow travel, Southeast Asia, budget, gear, fear, and the rest of what eight years on the road taught us." }}
+  {{ end }}
+{{ end }}
+<meta name="description" content="{{ $desc }}">
 <link rel="canonical" href="{{ .Permalink }}">
 
 <!-- Favicon -->
@@ -19,7 +39,7 @@
 
 <!-- Open Graph -->
 <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
-<meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta property="og:description" content="{{ $desc }}">
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:site_name" content="{{ .Site.Title }}">
@@ -31,7 +51,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
-<meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta name="twitter:description" content="{{ $desc }}">
 <meta name="twitter:image" content="{{ $shareImg }}">
 <meta name="twitter:image:alt" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
 
@@ -59,30 +79,31 @@
 
 <!-- Structured data -->
 {{ if .IsPage }}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": {{ .Title | jsonify }},
-  "description": {{ (.Description | default .Site.Params.description) | jsonify }},
-  "image": {{ $shareImg | jsonify }},
-  "author": { "@type": "Person", "name": {{ (.Params.author | default .Site.Params.author) | jsonify }} },
-  "publisher": { "@type": "Organization", "name": {{ .Site.Title | jsonify }} },
-  {{ if not .Date.IsZero }}"datePublished": {{ .Date.Format "2006-01-02" | jsonify }},{{ end }}
-  {{ if not .Lastmod.IsZero }}"dateModified": {{ .Lastmod.Format "2006-01-02" | jsonify }},{{ end }}
-  "mainEntityOfPage": { "@type": "WebPage", "@id": {{ .Permalink | jsonify }} }
-}
-</script>
+  {{ $ld := dict
+    "@context" "https://schema.org"
+    "@type" "Article"
+    "headline" .Title
+    "description" $desc
+    "image" $shareImg
+    "author" (dict "@type" "Person" "name" (.Params.author | default .Site.Params.author))
+    "publisher" (dict
+      "@type" "Organization"
+      "name" .Site.Title
+      "logo" (dict "@type" "ImageObject" "url" (printf "%sfavicon.svg" .Site.Home.Permalink)))
+    "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+  }}
+  {{ if not .Date.IsZero }}{{ $ld = merge $ld (dict "datePublished" (.Date.Format "2006-01-02")) }}{{ end }}
+  {{ if not .Lastmod.IsZero }}{{ $ld = merge $ld (dict "dateModified" (.Lastmod.Format "2006-01-02")) }}{{ end }}
+<script type="application/ld+json">{{ $ld | jsonify | safeJS }}</script>
 {{ else }}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": {{ .Site.Title | jsonify }},
-  "url": {{ .Site.Home.Permalink | jsonify }},
-  "description": {{ .Site.Params.description | jsonify }}
-}
-</script>
+  {{ $ld := dict
+    "@context" "https://schema.org"
+    "@type" "WebSite"
+    "name" .Site.Title
+    "url" .Site.Home.Permalink
+    "description" $desc
+  }}
+<script type="application/ld+json">{{ $ld | jsonify | safeJS }}</script>
 {{ end }}
 
 <!-- RSS -->

@@ -27,7 +27,7 @@
     </div>
     <a href="#drive-0" class="map-scrolly__cue">
       <span class="map-scrolly__cue-thumbs" aria-hidden="true">
-        {{ range first 3 $tour.stops }}<img src="{{ $home }}images/map/thumbs/{{ . }}.jpg" alt="" width="176" height="118">{{ end }}
+        {{ range first 3 $tour.stops }}<img src="{{ $home }}images/map/thumbs/{{ . }}.jpg" alt="" width="176" height="118" loading="lazy" decoding="async">{{ end }}
       </span>
       <span class="map-scrolly__cue-text">
         <strong>{{ $tour.label | default "Take the drive" }}</strong>
@@ -96,7 +96,7 @@
     </div>
     <a href="#loop-0" class="map-scrolly__cue map-scrolly__cue--loop">
       <span class="map-scrolly__cue-thumbs" aria-hidden="true">
-        {{ range first 3 $loop.stops }}<img src="{{ $home }}images/map/thumbs/{{ . }}.jpg" alt="" width="176" height="118">{{ end }}
+        {{ range first 3 $loop.stops }}<img src="{{ $home }}images/map/thumbs/{{ . }}.jpg" alt="" width="176" height="118" loading="lazy" decoding="async">{{ end }}
       </span>
       <span class="map-scrolly__cue-text">
         <strong>{{ $loop.label | default "Fly the loop" }}</strong>
