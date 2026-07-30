@@ -41,8 +41,6 @@ That's how we met Vieng.
 
 Vieng ran our small riverside hotel. He had just opened a bar down the road, simple and homey, overlooking the water.
 
-<!-- TODO (Karlee): link The Hive's Instagram here, plus the bar's location/details. Waiting on the handle from Jesse/Karlee — do not guess it. The closing note at the bottom of this essay already names The Hive, Pakbeng; decide whether the link lives here, there, or both. -->
-
 We ate good food. Drank beer. Played pool. Talked easily; his English was great, warm and direct in a way that made conversation feel effortless.
 
 By the end of the night, he offered something unexpected: he would help us reschedule our boat, extend our stay, and take us to his home village the next day, an hour away. He wanted us to see where he grew up.
@@ -95,25 +93,33 @@ We left that room. We sat on the concrete steps outside. Three little boys stood
 
 ## Full circle
 
-Earlier that day, we had been talking about how beautiful this life was. The simplicity. The connection. The joy.
+Earlier that day, Jesse and Vieng had been talking about how beautiful this life was. No traffic. No calendar. Nobody running anywhere. Jesse said the thing out loud that everyone thinks in a place like that: how nice it would be to live somewhere this quiet, away from the rat race.
 
-Vieng had looked at Jesse and said quietly, "Yes… but people get sick and die."
+Vieng let it sit for a second. Then he looked at Jesse and said quietly, "Yes… but people get sick and die."
 
-At the time, it felt philosophical. By evening, it felt real.
+He told us he says a version of that to his own village, too. That there is a world out there running on different rules than theirs does, and the kids should at least know it exists so they can choose. He wasn't apologizing for where he came from. He was refusing to let it be the only thing anyone there could picture.
+
+At the time it sounded philosophical. By evening it was a fact.
+
+The baby didn't make it.
 
 {{< photo src="/images/essays/mekong-sunset-mirror.jpg" alt="Sunset reflected in the still water of the Mekong" caption="The river, at the end of that day." >}}
 
 ## What travel really gave us
 
-It's one of the moments I think about often. Not only because of how it ended, but because of what it revealed.
+I think about that baby more than I have ever told anyone.
+
+A fever, a dirt road, and a room with nothing in it. At home he would have been seen within the hour and been fine by the weekend. That is the whole difference. Not effort, not love, not anything his mother did or failed to do. Just where he happened to be born.
 
 When you travel slowly, when you sit in someone's home, meet their mother, share rice wine with their neighbors, ride in their truck, the world stops being abstract. It becomes faces, names, breath.
 
-You start to realize how much you take for granted. Access, healthcare, certainty. Things you never had to question.
+You start to realize how much you take for granted. Access, healthcare, certainty. Things you never had to question, and things a lot of the world lives without on an ordinary afternoon.
 
-That day expanded our world and humbled it at the same time.
+We spent that whole day wanting Vieng's life. He spent that whole day trying to show his village there is more than it. Both of those are honest, and they happened at the same table.
 
-I still don't have a clean way to hold both halves of it. The rice wine and the screaming happened on the same day, in the same village, with the same people. Travel writing wants you to pick one and build the story around it. You don't get to.
+The grass looked greener from the truck. It usually does. You don't find out what the other side actually costs until you are sitting in the back seat with someone who has been paying it their whole life.
+
+That is what that day gave us. Less certainty about whose life is better than whose, and a great deal more compassion for the people living the one we had spent all afternoon romanticizing.
 
 ---
 

@@ -26,7 +26,7 @@ And if you keep moving long enough, you start to notice what it's doing beneath 
 
 Before we built a life together, we both traveled independently, and we each learned the same thing: movement clarifies.
 
-We each backpacked through Europe in our early twenties. Jesse spent time in South Africa. Karlee spent five seasons, some of them full years, living on the island of St. John in the Caribbean. Back then, travel felt electric, spontaneous, untethered. You said yes quickly, adjusted plans constantly, and trusted that things would work out because they always seemed to.
+We each backpacked through Europe in our early twenties. Jesse spent time in South Africa. Karlee spent five seasons living on the island of St. John in the Caribbean. Back then, travel felt electric, spontaneous, untethered. You said yes quickly, adjusted plans constantly, and trusted that things would work out because they always seemed to.
 
 Growth felt accidental. Which was exactly right for that season.
 
