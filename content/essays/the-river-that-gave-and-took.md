@@ -93,11 +93,13 @@ We left that room. We sat on the concrete steps outside. Three little boys stood
 
 ## Full circle
 
-Earlier that day, Jesse and Vieng had been talking about how beautiful this life was. No traffic. No calendar. Nobody running anywhere. Jesse said the thing out loud that everyone thinks in a place like that: how nice it would be to live somewhere this quiet, away from the rat race.
+Earlier that day, sitting in the village, Jesse and Vieng had been talking about how beautiful this life was. No traffic. No calendar. Nobody running anywhere. Jesse said the thing out loud that everyone thinks in a place like that: how nice it would be to live somewhere this quiet, away from the rat race.
 
-Vieng let it sit for a second. Then he looked at Jesse and said quietly, "Yes… but people get sick and die."
+Vieng let it sit for a second. Then he looked at him and said quietly, "Yes… but people get sick and die."
 
-He told us he says a version of that to his own village, too. That there is a world out there running on different rules than theirs does, and the kids should at least know it exists so they can choose. He wasn't apologizing for where he came from. He was refusing to let it be the only thing anyone there could picture.
+He said it there, in his own village, in the middle of the best afternoon we'd had in months. It hit hard enough that neither of us had an answer for it.
+
+He told us he says a version of it to his own people, too. That there is a world out there running on different rules than theirs, and the kids should at least know it exists so they can choose. He wasn't apologizing for where he came from. He was refusing to let it be the only thing anyone there could picture.
 
 At the time it sounded philosophical. By evening it was a fact.
 
@@ -107,7 +109,7 @@ The baby didn't make it.
 
 ## What travel really gave us
 
-I think about that baby more than I have ever told anyone.
+We think about that baby more than we have ever told anyone.
 
 A fever, a dirt road, and a room with nothing in it. At home he would have been seen within the hour and been fine by the weekend. That is the whole difference. Not effort, not love, not anything his mother did or failed to do. Just where he happened to be born.
 
@@ -116,6 +118,8 @@ When you travel slowly, when you sit in someone's home, meet their mother, share
 You start to realize how much you take for granted. Access, healthcare, certainty. Things you never had to question, and things a lot of the world lives without on an ordinary afternoon.
 
 We spent that whole day wanting Vieng's life. He spent that whole day trying to show his village there is more than it. Both of those are honest, and they happened at the same table.
+
+It took us a long time to be able to hold it. For a while we couldn't set the two halves of that day next to each other at all.
 
 The grass looked greener from the truck. It usually does. You don't find out what the other side actually costs until you are sitting in the back seat with someone who has been paying it their whole life.
 
