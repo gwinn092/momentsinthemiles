@@ -2,11 +2,12 @@
 title: "Day in the Life: What Full-Time Van Living Actually Looks Like"
 tags: ["Van Life"]
 date: 2025-05-12
-description: "Some days we're parked somewhere so beautiful it still doesn't feel real. Some days we're in a Planet Fitness parking lot because the wifi is reliable and we needed a shower. Here's the composite."
+description: "Some days we're parked somewhere so beautiful it doesn't feel real. Some days it's a Planet Fitness lot because we needed a shower."
 category: "Van Life"
 author: "Karlee & Jesse"
 draft: false
 image: "/images/van-life/van-colorado-fall.jpg"
+seo_title: "Day in the Life: What Full-Time Van Living Looks Like"
 ---
 
 People imagine one of two things when they picture a day in a van. Either it's golden hour on a cliff somewhere, coffee in hand, laptop open to an inbox that only contains good news. Or it's chaos: cramped, dirty, one wrong turn from a breakdown.

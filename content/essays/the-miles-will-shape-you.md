@@ -2,12 +2,13 @@
 title: "The Miles Will Shape You (If You Let Them)"
 tags: ["Mindset", "Van Life", "Fear"]
 date: 2025-01-15
-description: "The pre-departure essay. For readers who are still deciding."
+description: "A bonfire in my aunt's backyard, my little cousin beside me, and no way to explain what we were about to do. So I didn't try."
 category: "Essays"
 author: "Karlee"
 draft: false
 pinned: true
 image: "/images/pages/hero-mountaintop.jpg"
+seo_title: "The Miles Will Shape You"
 ---
 
 The night before we left, we had a bonfire.

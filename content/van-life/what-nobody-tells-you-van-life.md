@@ -2,7 +2,7 @@
 title: "What Nobody Tells You Before You Start Van Life"
 tags: ["Van Life"]
 date: 2025-06-02
-description: "After eight years of living this life full-time, the things that actually shape you, challenge you, and sometimes nearly break you are rarely the things anyone leads with."
+description: "After eight years full-time, the things that actually shape you, challenge you, and sometimes nearly break you are rarely what anyone leads with."
 category: "Van Life"
 author: "Karlee & Jesse"
 draft: false

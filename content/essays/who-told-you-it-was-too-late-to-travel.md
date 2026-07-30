@@ -7,6 +7,7 @@ category: "Essays"
 author: "Karlee"
 draft: false
 image: "/images/essays/grandparents.jpg"
+seo_title: "Who Told You It Was Too Late?"
 ---
 
 I've been asked some version of this question more times than I can count.

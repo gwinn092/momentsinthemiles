@@ -1,0 +1,56 @@
+{{/* Builds one page per entry in data/map_stories.yaml.
+
+     The stories were already written — they just had no URL of their own, so
+     the only way to read one was to find its pin on /map/ and click it. This
+     gives each place a page search engines and links can point at. Adding a
+     story to map_stories.yaml is still the only step: a page appears here on
+     the next build, no file to create. */}}
+
+{{ $years := hugo.Data.van_years.years }}
+{{ $photos := default (slice) hugo.Data.photo_dates.photos }}
+
+{{ range $story := hugo.Data.map_stories.stories }}
+  {{/* "St. John, U.S. Virgin Islands" would urlize to a slug full of stray dots. */}}
+  {{ $slug := urlize (replace (replace $story.place "." "") "," "") }}
+
+  {{/* The year they first drove this state, if van_years records it. */}}
+  {{ $firstYear := 0 }}
+  {{ range $years }}
+    {{ $y := .year }}
+    {{ range (default (slice) .states) }}
+      {{ if and (eq . $story.place) (eq $firstYear 0) }}{{ $firstYear = $y }}{{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{/* Every dated photo the archive puts in this place. */}}
+  {{ $gallery := where $photos "place" $story.place }}
+
+  {{ $params := dict
+    "story_id" $story.id
+    "place" $story.place
+    "map" $story.map
+    "story" $story.story
+    "image" $story.photo
+    "photo_alt" $story.alt
+    "photo_caption" $story.caption
+    "read_link" $story.link
+    "read_link_text" $story.link_text
+    "first_year" $firstYear
+    "gallery" $gallery
+  }}
+
+  {{ $content := dict "mediaType" "text/markdown" "value" $story.story }}
+
+  {{/* Titled by place, not by the story's headline — several headlines are
+       word-for-word the title of the essay they link to, and two pages
+       competing for one phrase helps neither. The headline becomes the deck. */}}
+  {{ $.AddPage (dict
+    "path" $slug
+    "title" $story.place
+    "params" (merge $params (dict "deck" $story.title))
+    "description" (printf "%s: %s" $story.title (truncate (sub 152 (len $story.title)) "…" $story.story))
+    "kind" "page"
+    "layout" "place"
+    "content" $content
+  ) }}
+{{ end }}

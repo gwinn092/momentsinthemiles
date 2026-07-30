@@ -7,6 +7,7 @@ category: "Guides"
 author: "Karlee & Jesse"
 draft: false
 image: "/images/guides/van-interior-galley.jpg"
+seo_title: "Gear That's Earned Its Spot"
 ---
 
 We don't do gear reviews. We're not going to test products for a week and tell you what we think. Everything on this list has lived in our van (a 2017 Ram ProMaster) for months or years. Some of it has survived eight years on the road. Some of it replaced something that didn't.

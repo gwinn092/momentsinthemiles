@@ -8,6 +8,7 @@ author: "Karlee & Jesse"
 draft: false
 image: "/images/essays/karlee-roses.jpg"
 hero_position: "center 40%"
+seo_title: "Why Copying Trends Slows Growth"
 ---
 
 We should say where we're standing before we start, because a post about not copying trends can read like a growth strategy, and this isn't one.

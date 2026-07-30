@@ -1,9 +1,10 @@
 baseURL = "https://www.momentsinthemiles.com/"
-languageCode = "en-us"
+locale = "en-us"
 title = "Moments in the Miles"
 theme = "moments"
 enableRobotsTXT = true
-paginate = 10
+[pagination]
+  pagerSize = 10
 
 [params]
   tagline = "Stories shaped by distance. Perspective earned by miles."

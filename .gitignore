@@ -15,3 +15,6 @@ Thumbs.db
 *.swp
 *.swo
 Miles in the Moments Photo dump/
+
+# Cached boundary data for scripts/build_photo_dates.py
+.cache/

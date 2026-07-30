@@ -2,7 +2,7 @@
 title: "A Misconception About Van Life Created by Social Media"
 tags: ["Van Life", "Mindset"]
 date: 2025-05-26
-description: "The highlight reel isn't dishonest, exactly. But a gap opened up between what van life looks like online and what it actually is, and that gap has convinced a lot of people they're doing it wrong."
+description: "The highlight reel isn't dishonest. But a gap opened between what van life looks like online and what it is, and that gap convinces people they're doing it wrong."
 category: "Van Life"
 author: "Karlee & Jesse"
 draft: false

@@ -7,6 +7,7 @@ category: "Guides"
 author: "Karlee & Jesse"
 draft: false
 image: "/images/guides/laos-sunset.jpg"
+seo_title: "Plan a Trip Without Overplanning It"
 ---
 
 There's a version of trip planning that feels productive but quietly ruins the trip before it starts.

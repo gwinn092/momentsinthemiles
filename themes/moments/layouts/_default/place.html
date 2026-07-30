@@ -1,0 +1,89 @@
+{{ define "main" }}
+{{ $home := .Site.Home.RelPermalink }}
+
+<article class="place">
+  {{ with .Params.image }}
+  <div class="article-hero-wrap">
+    {{ partial "respimg.html" (dict
+      "path" .
+      "alt" (default $.Title $.Params.photo_alt)
+      "class" "article-hero-img"
+      "sizes" "100vw"
+      "widths" (slice 640 960 1400)
+      "loading" "eager"
+      "fetchpriority" "high") }}
+    {{ with $.Params.photo_caption }}<p class="place__hero-caption">{{ . }}</p>{{ end }}
+  </div>
+  {{ end }}
+
+  <div class="content-container place__head">
+    <nav class="place__crumbs" aria-label="Breadcrumb">
+      <a href="{{ $home }}places/">Places</a>
+      <span aria-hidden="true">&middot;</span>
+      <span>{{ .Params.place }}</span>
+    </nav>
+
+    <h1 class="place__title">{{ .Title }}</h1>
+    {{ with .Params.deck }}<p class="place__deck">{{ . }}</p>{{ end }}
+
+    <ul class="place__facts">
+      {{ with .Params.first_year }}{{ if gt . 0 }}
+      <li><span>First driven</span>{{ . }}</li>
+      {{ end }}{{ end }}
+      {{ with .Params.gallery }}
+      <li><span>Photos here</span>{{ len . }}</li>
+      {{ end }}
+    </ul>
+  </div>
+
+  <div class="content-container place__body">
+    {{ .Content }}
+  </div>
+
+  {{/* Every dated photo the archive places here, beyond the hero. */}}
+  {{ $others := where (default (slice) .Params.gallery) "src" "!=" .Params.image }}
+  {{ with $others }}
+  <div class="content-container place__gallery">
+    <h2 class="place__gallery-title">More from {{ $.Params.place }}</h2>
+    <div class="place__grid">
+      {{ range . }}
+      <figure class="place__grid-item">
+        {{ partial "respimg.html" (dict
+          "path" .src
+          "alt" (default (printf "A photo from %s" $.Params.place) .alt)
+          "sizes" "(min-width: 800px) 320px, 45vw"
+          "widths" (slice 480 800)) }}
+        <figcaption>{{ dateFormat "January 2006" .date }}</figcaption>
+      </figure>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+  <div class="content-container place__next">
+    {{ with .Params.read_link }}
+    <a class="place__read" href="{{ $home }}{{ . }}">
+      <span class="eyebrow">Read on</span>
+      <span class="place__read-title">{{ default "Keep reading" $.Params.read_link_text }} <span aria-hidden="true">&rarr;</span></span>
+    </a>
+    {{ end }}
+    <a class="place__map" href="{{ $home }}map/#{{ .Params.story_id }}">
+      <span class="eyebrow">On the map</span>
+      <span class="place__read-title">See this pin in place <span aria-hidden="true">&rarr;</span></span>
+    </a>
+  </div>
+
+  {{/* Neighbours on the same map, so no place page is a dead end. */}}
+  {{ $siblings := where (where .Parent.Pages "Params.map" .Params.map) "Permalink" "!=" .Permalink }}
+  {{ with first 6 (shuffle $siblings) }}
+  <div class="content-container place__more">
+    <h2 class="place__gallery-title">Other stops</h2>
+    <ul class="place__more-list">
+      {{ range . }}
+      <li><a href="{{ .RelPermalink }}"><strong>{{ .Params.place }}</strong>{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+</article>
+{{ end }}

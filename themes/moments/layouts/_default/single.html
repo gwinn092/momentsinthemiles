@@ -57,6 +57,8 @@
         {{ .Content }}
       </div>
 
+      {{ partial "reduce-friction-line.html" . }}
+
       <!-- POST FOOTER -->
       <footer class="post-footer">
         {{ with .GetTerms "tags" }}

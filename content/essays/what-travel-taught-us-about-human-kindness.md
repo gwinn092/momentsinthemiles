@@ -8,6 +8,7 @@ author: "Karlee"
 draft: false
 image: "/images/guides/thai-street-cart.jpg"
 hero_position: "center 60%"
+seo_title: "What Travel Taught Us About Kindness"
 ---
 
 ## Chiang Mai, day one

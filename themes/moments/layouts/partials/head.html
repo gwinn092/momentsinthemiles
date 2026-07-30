@@ -4,13 +4,17 @@
 
 {{/* Titles: keep the brand suffix on short titles, drop it once the page title
      alone would push the tag past what search results actually display. */}}
+{{/* `seo_title` in front matter overrides the on-page title for search results
+     only — use it when the headline you want on the page runs too long to
+     survive a SERP. The <h1> is unaffected. */}}
 {{ $pageTitle := "" }}
+{{ $t := .Params.seo_title | default .Title }}
 {{ if .IsHome }}
   {{ $pageTitle = printf "%s — %s" .Site.Title .Site.Params.tagline }}
-{{ else if ge (len .Title) 45 }}
-  {{ $pageTitle = .Title }}
+{{ else if ge (len $t) 45 }}
+  {{ $pageTitle = $t }}
 {{ else }}
-  {{ $pageTitle = printf "%s | %s" .Title .Site.Title }}
+  {{ $pageTitle = printf "%s | %s" $t .Site.Title }}
 {{ end }}
 <title>{{ $pageTitle }}</title>
 

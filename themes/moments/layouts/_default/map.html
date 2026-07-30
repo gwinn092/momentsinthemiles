@@ -70,6 +70,7 @@
         </div>
         {{ with .Params.us_footnote }}<p class="map-step__note">{{ . }}</p>{{ end }}
         <p class="map-step__note">Every pulsing pin on this map opens a story. Go click a few.</p>
+        <p class="map-step__note map-step__note--years"><a class="map-step__link" href="{{ $home }}places/">Or read them as pages, place by place &rarr;</a></p>
         {{ with hugo.Data.van_years }}{{ with .years }}
         <button type="button" class="map-replay-btn" id="mapReplayBtn" hidden>Replay the years &#8635;</button>
         <p class="map-step__note map-step__note--years"><a class="map-step__link" href="{{ $home }}years/">Or take the slow version, year by year &rarr;</a></p>
