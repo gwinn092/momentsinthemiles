@@ -1,0 +1,39 @@
+{{/* A plain, tappable list of every stop on one of the maps.
+
+     Why this exists: on a phone the map draws about 240px tall, and nine of the
+     twenty-two pins and story states come out under 24px across — the smallest
+     is 6x4. Tapping them is not realistic, and before this the only text route
+     into the stories was one link at the very bottom of the page. This gives
+     every story a target you can actually hit with a thumb.
+
+     It links to the /places/ pages rather than opening the JS panel, because a
+     real page is the better destination on mobile: it survives a back button,
+     it can be shared, and it is the same story either way.
+
+     Shown under 768px only — on a pointer device the map itself is a fine
+     control. See .map-stops in main.css.
+
+     Params: stories (slice from data/map_stories.yaml), label (heading text) */}}
+
+{{ $stories := .stories }}
+{{ $label := .label | default "Every stop on this map" }}
+
+{{ with $stories }}
+<nav class="map-stops" aria-label="{{ $label }}">
+  <h2 class="map-stops__title">{{ $label }}</h2>
+  <ul class="map-stops__list">
+    {{ range . }}
+      {{/* Same slug rule as content/places/_content.gotmpl — "St. John, U.S.
+           Virgin Islands" would otherwise urlize with stray dots. */}}
+      {{ $slug := urlize (replace (replace .place "." "") "," "") }}
+      <li>
+        <a href="{{ site.Home.RelPermalink }}places/{{ $slug }}/">
+          <span class="map-stops__place">{{ .place }}</span>
+          <span class="map-stops__story">{{ .title }}</span>
+          <span class="map-stops__arrow" aria-hidden="true">&rarr;</span>
+        </a>
+      </li>
+    {{ end }}
+  </ul>
+</nav>
+{{ end }}

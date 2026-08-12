@@ -5455,3 +5455,137 @@ body.search-open {
   align-items: center;
   justify-content: center;
 }
+
+/* ============================================================
+   Map on a phone.
+   The maps are landscape (US 959x593, world 1000x493) and the
+   scrolly stage is a full viewport tall, so in portrait the map
+   could only ever fill about a third of it — measured at 390px
+   wide the US map drew 377x239 inside a 774px stage, leaving
+   535px of empty space, and the world map left 583px.
+   So: in the OVERVIEW state only, let the stage be as tall as the
+   map actually draws and put the title and cue back in normal
+   flow. The tour is untouched — it zooms to fill 99% of the
+   stage already, and that is worth keeping full-height.
+   ============================================================ */
+@media (max-width: 768px) {
+  .map-scrolly.is-collapsed .map-scrolly__sticky {
+    position: static;
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
+
+  .map-scrolly.is-collapsed .map-frame--scrolly {
+    height: auto;
+  }
+
+  /* Match the viewBox so the box is exactly the map, with no letterboxing. */
+  .map-scrolly.is-collapsed .map-frame--scrolly .map-svg {
+    height: auto;
+    aspect-ratio: 959 / 593;
+  }
+  .map-scrolly--world.is-collapsed .map-frame--scrolly .map-svg {
+    aspect-ratio: 1000 / 493;
+  }
+
+  /* The world map keeps its title inside the stage; the US map's lives in
+     .map-header already. Out of the overlay, it needs no scrim. */
+  .map-scrolly.is-collapsed .map-scrolly__title {
+    position: static;
+    background: none;
+    padding: 0 1.5rem 1.4rem;
+  }
+
+  /* The cue was absolutely positioned over the bottom of the stage. */
+  .map-scrolly.is-collapsed .map-scrolly__cue {
+    position: static;
+    transform: none;
+    margin: 1.6rem auto 0;
+    max-width: 92vw;
+  }
+}
+
+/* ============================================================
+   The stops list — the mobile way into the stories.
+   Hidden on pointer devices, where the map itself works fine.
+   ============================================================ */
+.map-stops {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .map-stops {
+    display: block;
+    padding: 2.4rem 1.25rem 0;
+    max-width: 34rem;
+    margin: 0 auto;
+  }
+
+  .map-stops__title {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 0.9rem;
+  }
+
+  .map-stops__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .map-stops__list li {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .map-stops__list a {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    gap: 0.15rem 0.75rem;
+    /* Comfortably past the 24px WCAG minimum and close to the 44px
+       platform guideline, which the pins themselves cannot reach. */
+    min-height: 48px;
+    padding: 0.85rem 0.15rem;
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .map-stops__place {
+    font-family: var(--font-serif);
+    font-size: 1.18rem;
+    line-height: 1.25;
+  }
+
+  .map-stops__story {
+    grid-column: 1;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    line-height: 1.4;
+    color: var(--muted);
+  }
+
+  .map-stops__arrow {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+    color: var(--terracotta);
+    font-size: 1rem;
+  }
+
+  .map-stops__list a:active .map-stops__place {
+    color: var(--terracotta);
+  }
+}
+
+/* Transparent tap target under each pin — see fitHitAreas() in map.html.
+   pointer-events must stay on: it is the whole point of the circle. */
+.map-pin__hit {
+  fill: transparent;
+  stroke: none;
+}

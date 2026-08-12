@@ -40,6 +40,8 @@
     {{ end }}{{ end }}
   </div>
 
+  {{ partial "map-stops.html" (dict "stories" (where $stories "map" "us") "label" "Every stop on this map") }}
+
   <div class="map-scrolly__steps">
     <div class="map-step map-step--intro" data-stop="intro"></div>
     {{ range $i, $id := $tour.stops }}{{ range where $stories "id" $id }}
@@ -106,6 +108,8 @@
       <span class="map-scrolly__cue-arrow" aria-hidden="true">&darr;</span>
     </a>
   </div>
+
+  {{ partial "map-stops.html" (dict "stories" (where $stories "map" "world") "label" "Every stop on this map") }}
 
   <div class="map-scrolly__steps">
     <div class="map-step map-step--intro" data-stop="intro"></div>
@@ -263,6 +267,14 @@
       g.setAttribute('tabindex', '0');
       g.setAttribute('role', 'button');
       g.setAttribute('aria-label', s.place + ' — ' + s.title + '. Open the story.');
+      // Transparent hit circle first, so it sits under the visible rings and
+      // never paints over them. Its radius is set in fitHitAreas() below.
+      var hit = document.createElementNS(SVGNS, 'circle');
+      hit.setAttribute('class', 'map-pin__hit');
+      hit.setAttribute('cx', px);
+      hit.setAttribute('cy', py);
+      hit.setAttribute('r', 8 * scale);
+      g.appendChild(hit);
       [['map-pin__pulse', 8], ['map-pin__halo', 6.5], ['map-pin__dot', 2.8]].forEach(function (c) {
         var circle = document.createElementNS(SVGNS, 'circle');
         circle.setAttribute('class', c[0]);
@@ -298,6 +310,49 @@
       usSvg.appendChild(vg);
     }
   }
+
+  // --- Touch targets ---------------------------------------------------
+  // The maps are landscape, so on a portrait phone they draw small and every
+  // pin scales down with them: measured at 390px wide, the story pins came out
+  // about 7px across and the smallest story state 6x4. That is well under the
+  // 24px WCAG 2.2 minimum. Each pin and marker gets a transparent circle sized
+  // in user units from the map's CURRENT rendered scale, so the tap area stays
+  // a real-world 44px however the map is scaled. Recomputed on resize, and on
+  // tour zoom the pins grow anyway so this only ever helps.
+  function fitHitAreas() {
+    [usSvg, worldSvg].forEach(function (svg) {
+      if (!svg) return;
+      var vb = svg.viewBox.baseVal;
+      var rect = svg.getBoundingClientRect();
+      if (!vb || !vb.width || !rect.width) return;
+      // CSS px per user unit at the map's resting size.
+      var pxPerUnit = rect.width / vb.width;
+      if (!pxPerUnit) return;
+      var wantRadius = 22 / pxPerUnit; // 44px across
+
+      svg.querySelectorAll('.map-pin, .map-marker').forEach(function (g) {
+        var visible = g.querySelector('.map-pin__halo, .map-marker__halo');
+        if (!visible) return;
+        var hit = g.querySelector('.map-pin__hit');
+        if (!hit) {
+          hit = document.createElementNS(SVGNS, 'circle');
+          hit.setAttribute('class', 'map-pin__hit');
+          hit.setAttribute('cx', visible.getAttribute('cx'));
+          hit.setAttribute('cy', visible.getAttribute('cy'));
+          g.insertBefore(hit, g.firstChild);
+        }
+        var own = parseFloat(visible.getAttribute('r')) || 0;
+        hit.setAttribute('r', Math.max(own, wantRadius));
+      });
+    });
+  }
+
+  fitHitAreas();
+  var hitFitTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(hitFitTimer);
+    hitFitTimer = setTimeout(fitHitAreas, 150);
+  });
 
   // --- One-way tickets: flight arc from the US across the Pacific to SE Asia.
   // The world map is centered on 0°, so the Pacific route exits the west edge
