@@ -91,3 +91,16 @@ every article, that is a regression, not cosmetic.
 
 ## Local dev
 - `hugo server`, no flags.
+
+## What CI will reject
+Three gates run after the build in `.github/workflows/hugo.yml`. Run them before
+pushing rather than finding out from a red deploy:
+- `python3 scripts/check_links.py public <base_url>` — dead internal links.
+- `python3 scripts/check_invariants.py public` — one tag spelled two ways,
+  `shuffle` in a template, photos in `data/photo_dates.yaml` with no `alt` or
+  listed twice under different names, root-relative paths in templates,
+  `[params.ads] preview = true`, and leftover `gwinn092.github.io` references.
+- **The build must be reproducible.** Two builds of one commit are diffed and
+  must be byte-identical. Nothing in a template may roll dice at build time —
+  on a static site that never varies what a reader sees, it just rewrites pages
+  every deploy and hides real diffs.

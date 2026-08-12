@@ -61,6 +61,28 @@ jobs:
       - name: Check internal links
         run: python3 scripts/check_links.py public "${{ steps.pages.outputs.base_url }}/"
 
+      - name: Check invariants
+        run: python3 scripts/check_invariants.py public
+
+      # A second build of the same commit must produce the same bytes. When it
+      # does not, something in a template is rolling dice at build time, which
+      # rewrites pages on every deploy and buries real diffs in the noise.
+      - name: Check the build is reproducible
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_ENVIRONMENT: production
+        run: |
+          hugo --gc --minify \
+            --destination public_repeat \
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
+          if ! diff -r public public_repeat > /tmp/build-diff.txt 2>&1; then
+            echo "::error::Build is not reproducible — see the differing files below."
+            head -40 /tmp/build-diff.txt
+            exit 1
+          fi
+          echo "Build is reproducible."
+          rm -rf public_repeat
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
