@@ -5,6 +5,8 @@ seo_title: "Work With Us"
 image: "/images/pages/kit-open-road.jpg"
 hero_position: "center 55%"
 category: "Partnerships"
+# No ads on the sponsorship pitch page — an ad here undercuts the pitch.
+ads: false
 author: "Jesse & Karlee"
 ---
 

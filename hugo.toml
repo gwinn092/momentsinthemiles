@@ -15,6 +15,32 @@ enableRobotsTXT = true
 # Affiliate partner IDs. Leave a value EMPTY and every link for that partner
 # still renders — it just points at the plain public URL and earns nothing.
 # That way the site is never broken or dishonest while an account is pending.
+# Display advertising. This is SEPARATE from the affiliate/sponsorship policy in
+# CLAUDE.md — that one is still confined to /guides/ and /itineraries/. Display
+# ads are allowed sitewide (Jesse, Aug 12 2026) because essays are the pageview
+# engine and pageviews are what a network pays for.
+#
+# Nothing renders until enabled = true. The slots exist now so a network can be
+# dropped in later without reflowing a finished design; reserving the space is
+# the part that is expensive to retrofit, not the ad tag.
+[params.ads]
+  enabled = false
+  # Draws the reserved space with a labelled placeholder so the layout can be
+  # checked without a network. Local only — never ship this true.
+  preview = false
+  # Sections that never carry ads whatever the above says. reduce-friction holds
+  # the quiz and the $27 Kit sales page; an ad there competes with the product.
+  excludeSections = ["reduce-friction"]
+  # Body paragraphs required before any in-content slot is inserted at all.
+  minParagraphs = 12
+  # Insert an in-content slot every N top-level paragraphs.
+  everyParagraphs = 9
+  # Hard cap on in-content slots per page, regardless of length.
+  maxInContent = 3
+  # Paragraphs at the end of a post that never get a slot placed before them —
+  # the end-of-content slot already covers that ground.
+  tailBuffer = 3
+
 [params.affiliates]
   # Agoda partner ("cid"). Sign in at partners.agoda.com to find it.
   agodaCid = ""

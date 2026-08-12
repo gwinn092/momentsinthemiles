@@ -1,6 +1,8 @@
 ---
 title: "Terms of Use"
 description: "Terms of use for Moments in the Miles."
+# Legal pages carry no advertising.
+ads: false
 ---
 
 By using Moments in the Miles, you agree to the following.

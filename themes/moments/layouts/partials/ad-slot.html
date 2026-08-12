@@ -1,0 +1,41 @@
+{{/* One reserved display-ad slot.
+
+     Renders NOTHING unless [params.ads] enabled or preview is true, so the slot
+     positions can live in the templates long before there is a network to fill
+     them. The point of shipping it early is the reserved height: a network tag
+     dropped into an unreserved space shifts the page as it loads, and CLS is
+     both a Core Web Vitals penalty and the thing that makes ad-heavy sites feel
+     cheap. Reserving now costs nothing and cannot be retrofitted for free.
+
+     Call with: {{ partial "ad-slot.html" (dict "name" "end" "page" .) }}
+     name  — placement label, also the CSS modifier: in-content | end
+     index — optional ordinal, exposed as data-ad-index for the network config
+     page  — the page, so exclusions apply. Omit only when the caller has
+             already checked partial "ads-allowed.html" (article-body.html does,
+             once, rather than re-testing it for every paragraph).
+
+     Tags trim their own whitespace so that an ads-off build emits nothing at
+     all here — not a stack of blank lines. */ -}}
+
+{{- $ads := site.Params.ads | default dict -}}
+{{- $page := .page -}}
+{{- $ok := false -}}
+{{- if $page -}}
+  {{- $ok = partial "ads-allowed.html" $page -}}
+{{- else -}}
+  {{- $ok = or $ads.enabled $ads.preview -}}
+{{- end -}}
+{{- if $ok -}}
+  {{- $name := .name | default "in-content" -}}
+  {{- $index := .index | default 0 -}}
+<aside class="ad-slot ad-slot--{{ $name }}"
+       data-ad-slot="{{ $name }}"{{ with $index }} data-ad-index="{{ . }}"{{ end }}
+       aria-label="Advertisement">
+  <span class="ad-slot__label">Advertisement</span>
+  <div class="ad-slot__unit">
+    {{- if and $ads.preview (not $ads.enabled) -}}
+    <span class="ad-slot__placeholder">reserved &middot; {{ $name }}{{ with $index }} #{{ . }}{{ end }}</span>
+    {{- end -}}
+  </div>
+</aside>
+{{- end -}}

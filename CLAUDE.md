@@ -34,6 +34,41 @@ useful. Not pushy is the whole point, so the boundaries below are firm.
   the city search instead — an honest "find a place in Hanoi" beats a fabricated
   recommendation. Ask Jesse for real names; do not fill the gap.
 
+## Display advertising (policy set Aug 12 2026 — Jesse's call)
+Display ads are a **separate policy from affiliate/sponsorship above**, and the
+scopes are deliberately different. Do not merge the two rules.
+
+- **Affiliate + sponsorship**: `/guides/` and `/itineraries/` only. Unchanged.
+- **Display ads**: allowed **sitewide**, essays included. The reasoning is that
+  story content converts affiliate clicks badly but accumulates the pageviews an
+  ad network actually pays for, so confining ads to the guides would monetize
+  only the pages that already earn and leave the traffic earning nothing.
+
+**Never carry ads**, whatever the config says:
+- `/reduce-friction/` — the quiz and the $27 Kit sales page. An ad there competes
+  with the product. Enforced by `excludeSections` in `hugo.toml`.
+- `/privacy/`, `/terms/` — legal pages. Enforced by `ads: false` front matter.
+- `/work-with-us/` — an ad on the sponsorship pitch page undercuts the pitch.
+  Enforced by `ads: false` front matter.
+
+**How it works.** Nothing renders until `enabled = true` under `[params.ads]`.
+The slots exist now because reserving the space is what is expensive to retrofit,
+not the ad tag.
+- `partials/ads-allowed.html` — the single source of truth for "may this page
+  carry an ad". Both other partials ask it. Do not re-implement the check.
+- `partials/ad-slot.html` — one reserved slot. Keep the `min-height`; an ad
+  loading into an unreserved box shifts the text under it, which is a CLS
+  penalty and the thing that makes a site feel cheap.
+- `partials/article-body.html` — weaves in-content slots into `.Content` at
+  top-level paragraph boundaries, scaled to article length. Tuning lives in
+  `[params.ads]`, not in the template.
+- `preview = true` (or `HUGO_PARAMS_ADS_PREVIEW=true`) draws the reserved space
+  locally. **Never ship it true.**
+
+⚠️ **Ads off must stay byte-identical to no-ads output.** That was verified when
+this shipped; if a change to these partials starts emitting stray whitespace into
+every article, that is a regression, not cosmetic.
+
 ## Internal links and image paths
 - Every internal link and image `src` in a template must use the
   `{{ .Site.Home.RelPermalink }}` prefix followed by a path with **no leading

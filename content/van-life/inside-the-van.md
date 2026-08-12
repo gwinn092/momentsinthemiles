@@ -6,7 +6,7 @@ author: "Karlee"
 category: "Van Life"
 image: "/images/van-life/van-galley-window.jpg"
 layout: "van-tour"
-tags: ["van-life"]
+tags: ["Van Life"]
 tour_image: "images/van-life/van-galley-window.jpg"
 tour_alt: "The van galley — butcher block counter, sink, plants on the windowsill, and a lake framed in the window"
 hotspots:

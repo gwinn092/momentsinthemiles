@@ -1,0 +1,70 @@
+{{/* The article body, with in-content ad slots woven in at safe paragraph
+     boundaries.
+
+     Why this exists as a partial rather than a shortcode Karlee has to place by
+     hand: ad placement should follow article length, and asking a writer to
+     remember it means it drifts. This derives placement from the rendered
+     content instead, so every post is consistent and nothing appears in a draft
+     until the network is switched on.
+
+     How it splits safely
+     Goldmark emits every top-level paragraph starting at column 0, so "\n<p>"
+     marks a real paragraph boundary. It also emits column-0 <p> INSIDE
+     blockquotes, which would put an ad inside a pull quote, so before every
+     insertion we check that all <figure> and <blockquote> opened so far are
+     closed. Nothing on the site uses a blockquote today; the guard is here so
+     that stays true when someone eventually writes one.
+
+     Every action tag below trims its own whitespace — without that this partial
+     emits a stack of blank lines before the first paragraph, which shows up as
+     a diff on every article for no reason.
+
+     Tuning lives in [params.ads] in hugo.toml, not here. */ -}}
+
+{{- $page := . -}}
+{{- $ads := site.Params.ads | default dict -}}
+{{- $raw := printf "%s" $page.Content -}}
+
+{{- /* Ads off, section excluded, or `ads: false` in front matter — emit untouched. */ -}}
+{{- $allowed := partial "ads-allowed.html" $page -}}
+
+{{- if not $allowed -}}
+  {{- $raw | safeHTML -}}
+{{- else -}}
+  {{- $parts := split $raw "\n<p>" -}}
+  {{- $total := len $parts -}}
+  {{- $min := int ($ads.minParagraphs | default 12) -}}
+  {{- $every := int ($ads.everyParagraphs | default 9) -}}
+  {{- $max := int ($ads.maxInContent | default 3) -}}
+  {{- $tail := int ($ads.tailBuffer | default 3) -}}
+
+  {{- if or (lt $total $min) (lt $every 1) -}}
+    {{- /* Too short to interrupt — the end-of-content slot carries it alone. */ -}}
+    {{- $raw | safeHTML -}}
+  {{- else -}}
+    {{- $out := slice -}}
+    {{- $seen := "" -}}
+    {{- $placed := 0 -}}
+
+    {{- range $i, $p := $parts -}}
+      {{- $chunk := cond (eq $i 0) $p (printf "\n<p>%s" $p) -}}
+
+      {{- $balanced := and
+           (eq (strings.Count "<figure" $seen) (strings.Count "</figure>" $seen))
+           (eq (strings.Count "<blockquote" $seen) (strings.Count "</blockquote>" $seen)) -}}
+
+      {{- $due := and (gt $i 0) (eq (mod $i $every) 0) -}}
+      {{- $room := and (lt $placed $max) (le $i (sub $total $tail)) -}}
+
+      {{- if and $due $room $balanced -}}
+        {{- $placed = add $placed 1 -}}
+        {{- $out = $out | append (partial "ad-slot.html" (dict "name" "in-content" "index" $placed)) -}}
+      {{- end -}}
+
+      {{- $out = $out | append $chunk -}}
+      {{- $seen = printf "%s%s" $seen $chunk -}}
+    {{- end -}}
+
+    {{- delimit $out "" | safeHTML -}}
+  {{- end -}}
+{{- end -}}

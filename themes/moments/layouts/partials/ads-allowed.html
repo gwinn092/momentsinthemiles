@@ -1,0 +1,15 @@
+{{- /* Single source of truth for "may this page carry a display ad?".
+
+     Both ad-slot.html and article-body.html ask this, so a page can never end up
+     with an end-of-post ad but no in-content ones, or vice versa.
+
+     Returns a bool. Call as: {{ if partial "ads-allowed.html" . }} */ -}}
+
+{{- $page := . -}}
+{{- $ads := site.Params.ads | default dict -}}
+
+{{- $live := or $ads.enabled $ads.preview -}}
+{{- $excluded := in ($ads.excludeSections | default slice) $page.Section -}}
+{{- $optOut := eq $page.Params.ads false -}}
+
+{{- return and $live (not $excluded) (not $optOut) -}}

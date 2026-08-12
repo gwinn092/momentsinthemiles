@@ -5375,3 +5375,83 @@ body.search-open {
 .book-link:hover {
   color: var(--ink);
 }
+
+/* ============================================================
+   Display ad slots — reserved space only.
+   Nothing renders until [params.ads] enabled/preview in hugo.toml.
+   The min-height is the whole point: an ad tag dropped into an
+   unreserved box shifts the text under it as it loads, which is
+   both a CLS penalty and the thing that makes a site feel cheap.
+   Heights match the standard units a network will actually serve —
+   336x280 on mobile, 728x90 on desktop — plus room for the label.
+   ============================================================ */
+.ad-slot {
+  display: block;
+  margin: 3rem auto;
+  padding: 0;
+  max-width: 100%;
+  text-align: center;
+  /* 280px unit + label + breathing room */
+  min-height: 314px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.ad-slot__label {
+  display: block;
+  padding: 0.5rem 0 0.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.ad-slot__unit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+  overflow: hidden;
+}
+
+/* The slot sits inside the 720px reading column; let it use the full width
+   of that column but never push past it and cause a horizontal scroll. */
+.ad-slot--in-content {
+  width: 100%;
+}
+
+.ad-slot--end {
+  margin-top: 3.5rem;
+  margin-bottom: 0;
+}
+
+/* Desktop serves a leaderboard, which is far shorter. Re-reserve to match
+   so we are not holding 280px of empty space on a 90px unit. */
+@media (min-width: 900px) {
+  .ad-slot {
+    min-height: 124px;
+  }
+
+  .ad-slot__unit {
+    min-height: 90px;
+  }
+}
+
+/* Preview placeholder — local only, never ships enabled. */
+.ad-slot__placeholder {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background-color: var(--sand);
+  border: 2px dashed var(--rule);
+  border-radius: 2px;
+  width: 100%;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

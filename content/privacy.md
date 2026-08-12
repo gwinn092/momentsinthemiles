@@ -1,6 +1,8 @@
 ---
 title: "Privacy Policy"
 description: "How Moments in the Miles handles your data."
+# Legal pages carry no advertising.
+ads: false
 ---
 
 Wander US LLC operates Moments in the Miles.
