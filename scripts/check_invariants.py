@@ -16,7 +16,7 @@ that shipped, or nearly shipped, without anyone seeing them:
     old project-pages subpath, and invisible until the base URL moves.
   - [params.ads] preview left on, which ships placeholder ad boxes to readers.
 
-Usage: python3 scripts/check_invariants.py [public_dir]
+Usage: python3 scripts/check_invariants.py [public_dir] [base_url]
 Only stdlib. Exits non-zero with a report, so CI fails instead of deploying.
 """
 import hashlib
@@ -157,10 +157,35 @@ class ImgAlt(HTMLParser):
             self.missing += 1
 
 
-def check_built(public):
+def site_hosts():
+    """Every host this site is known by: the custom domain and the Pages one."""
+    hosts = set()
+    cname = os.path.join(ROOT, "static", "CNAME")
+    if os.path.exists(cname):
+        v = open(cname, encoding="utf-8").read().strip()
+        if v:
+            hosts.add(v)
+    m = re.search(r'baseURL\s*=\s*"https?://([^/"]+)', read("hugo.toml")) \
+        if os.path.exists(os.path.join(ROOT, "hugo.toml")) else None
+    if m:
+        hosts.add(m.group(1))
+    return hosts
+
+
+def check_built(public, base_url):
+    """base_url is the host this build was made for. Anything absolute pointing
+    at one of the site's OTHER hosts is stale — which is the failure mode of the
+    domain move, in either direction. Without a base URL we cannot tell which
+    host is correct, so the check is skipped rather than guessed."""
     if not public or not os.path.isdir(public):
         return
-    stale = []
+    base_host = ""
+    if base_url:
+        m = re.match(r"https?://([^/]+)", base_url)
+        base_host = m.group(1) if m else ""
+
+    others = {h for h in site_hosts() | {"gwinn092.github.io"} if h and h != base_host}
+    stale = defaultdict(list)
     missing_alt = 0
     for dirpath, _, names in os.walk(public):
         for n in names:
@@ -168,14 +193,20 @@ def check_built(public):
                 continue
             p = os.path.join(dirpath, n)
             text = open(p, encoding="utf-8", errors="replace").read()
-            if "gwinn092.github.io" in text:
-                stale.append(os.path.relpath(p, public))
+            if base_host:
+                for h in others:
+                    if h in text:
+                        stale[h].append(os.path.relpath(p, public))
             parser = ImgAlt()
             parser.feed(text)
             missing_alt += parser.missing
-    if stale:
+
+    if not base_host:
+        notes.append("no base URL given, so the stale-host check was skipped")
+    for h, pages in stale.items():
         fail("stale-host",
-             f"{len(stale)} page(s) still reference gwinn092.github.io, e.g. {stale[:3]}")
+             f"{len(pages)} page(s) point at {h} but this build is for "
+             f"{base_host}, e.g. {pages[:3]}")
     if missing_alt:
         fail("a11y", f"{missing_alt} <img> tag(s) have no alt attribute at all "
                      "(alt=\"\" is fine for decorative images; a missing attribute is not)")
@@ -184,13 +215,14 @@ def check_built(public):
 def main():
     public = sys.argv[1] if len(sys.argv) > 1 else "public"
     public = public if os.path.isabs(public) else os.path.join(ROOT, public)
+    base_url = sys.argv[2] if len(sys.argv) > 2 else ""
 
     check_tag_slugs()
     check_determinism()
     check_photo_archive()
     check_template_paths()
     check_ads()
-    check_built(public)
+    check_built(public, base_url)
 
     for n in notes:
         print(f"note: {n}")

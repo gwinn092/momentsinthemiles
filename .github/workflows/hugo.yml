@@ -62,7 +62,7 @@ jobs:
         run: python3 scripts/check_links.py public "${{ steps.pages.outputs.base_url }}/"
 
       - name: Check invariants
-        run: python3 scripts/check_invariants.py public
+        run: python3 scripts/check_invariants.py public "${{ steps.pages.outputs.base_url }}/"
 
       # A second build of the same commit must produce the same bytes. When it
       # does not, something in a template is rolling dice at build time, which
