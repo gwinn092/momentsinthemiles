@@ -73,9 +73,27 @@
     </a>
   </div>
 
-  {{/* Neighbours on the same map, so no place page is a dead end. */}}
-  {{ $siblings := where (where .Parent.Pages "Params.map" .Params.map) "Permalink" "!=" .Permalink }}
-  {{ with first 6 (shuffle $siblings) }}
+  {{/* Neighbours on the same map, so no place page is a dead end.
+
+       Rotated by this page's own position in the list rather than shuffled.
+       shuffle() re-rolls at BUILD time, not per visitor, so on a static site it
+       never actually varies what a reader sees — it just froze a random order
+       until the next deploy, and rewrote all 22 place pages every build, which
+       churned caches for nothing. Offsetting instead gives each place a
+       different set of neighbours and is stable across builds. */}}
+  {{ $family := where .Parent.Pages "Params.map" .Params.map }}
+  {{ $siblings := where $family "Permalink" "!=" .Permalink }}
+  {{ $offset := 0 }}
+  {{ range $i, $p := $family }}
+    {{ if eq $p.Permalink $.Permalink }}{{ $offset = $i }}{{ end }}
+  {{ end }}
+  {{ $n := len $siblings }}
+  {{ $rotated := $siblings }}
+  {{ if gt $n 0 }}
+    {{ $at := mod $offset $n }}
+    {{ $rotated = append (first $at $siblings) (after $at $siblings) }}
+  {{ end }}
+  {{ with first 6 $rotated }}
   <div class="content-container place__more">
     <h2 class="place__gallery-title">Other stops</h2>
     <ul class="place__more-list">

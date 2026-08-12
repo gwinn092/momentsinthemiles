@@ -26,7 +26,10 @@
   {{ end }}
 
   {{ $t := time.AsTime $best.date }}
-  {{ $years := int (div (sub $now.Unix $t.Unix) 31557600) }}
+  {{/* Round, and floor at 1, to match the inline script below. Truncating here
+       made the server say "1 year ago" where the script said "2" for the same
+       photo, so the pre-JS render and the post-JS render disagreed. */}}
+  {{ $years := int (math.Max 1 (math.Round (div (float (sub $now.Unix $t.Unix)) 31557600.0))) }}
 
 <section class="otd" id="on-this-day" aria-labelledby="otd-heading">
   <div class="container-wide otd__inner">
