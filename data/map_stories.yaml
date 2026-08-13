@@ -31,7 +31,7 @@ stories:
     story: "We drove the Oregon coast slower than any road before it. Every pull-out was another sea stack, another beach with nobody on it. The fog rolls in, the coffee gets refilled, and you stop pretending you have somewhere else to be."
     link: "gallery/"
     link_text: "See more from the road"
-    pin: { fx: 0.07, fy: 0.42 }
+    pin: { fx: 0.13, fy: 0.45 }
 
   - id: ca
     map: us
@@ -44,7 +44,7 @@ stories:
     story: "We'd seen the photos our whole lives; none of them prepare you for the scale. We stayed until the last light left the granite and drove out of the valley in the dark, not talking, the way you leave a place that just rearranged something in you."
     link: "gallery/"
     link_text: "See more from the road"
-    pin: { fx: 0.55, fy: 0.38 }
+    pin: { fx: 0.51, fy: 0.44 }
 
   - id: az
     map: us
@@ -150,7 +150,7 @@ stories:
     story: "We drove up Cadillac Mountain in the dark, September cold, coffee in the cupholders and a blanket around Karlee's shoulders. When the sun came up over Frenchman Bay, every stranger on that summit went quiet at the same moment we did. Acadia was the far end of our first big loop; everything after it was the drive home."
     link: "gallery/"
     link_text: "See more from the road"
-    pin: { fx: 0.60, fy: 0.68 }
+    pin: { fx: 0.63, fy: 0.62 }
 
   - id: mi
     map: us
@@ -227,7 +227,7 @@ stories:
     story: "A short boat ride off Bali there's a smaller island, and off that one, a smaller one still. Orange umbrellas, water you could read a book through, and no good reason to check the calendar. Nusa Lembongan is where we stopped counting days."
     link: "guides/southeast-asia-on-70-a-day/"
     link_text: "Southeast Asia on $70 a Day"
-    pin: { fx: 0.44, fy: 0.84 }
+    pin: { fx: 0.427, fy: 0.867 }
 
   - id: khm
     map: world
@@ -271,7 +271,7 @@ stories:
     story: "The Philippines came after weeks of mainland travel and felt like a reset: islands again, a different light. Manila, then Bohol and the Chocolate Hills, then Palawan — Puerto Princesa, the long road north to Port Barton, and El Nido. The four-day boat through the archipelago is slow and occasionally uncomfortable and completely worth it. You sleep on the boat. We came off it feeling like different people than the ones who got on."
     link: "guides/eight-months-southeast-asia/"
     link_text: "Eight Months in Southeast Asia"
-    pin: { fx: 0.45, fy: 0.5 }
+    pin: { fx: 0.44, fy: 0.21 }
 
   - id: zaf
     map: world

@@ -6,4 +6,4 @@
 # Remove or comment out the pin line to take the pin off the map.
 location: "New York City"
 updated: "July 2026"
-pin: { state: "New York", fx: 0.72, fy: 0.90 }
+pin: { state: "New York", fx: 0.37, fy: 0.51 }
