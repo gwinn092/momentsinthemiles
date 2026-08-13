@@ -4998,6 +4998,126 @@ body.search-open {
 }
 
 /* ============================================================
+   Postcard from the map — homepage block (partials/postcard.html,
+   data/map_stories.yaml). A tilted print on the left, the dateline and
+   story link on the right. The tilt is the whole idea, so it survives to
+   mobile; only the stamp and the shadow scale back.
+   ============================================================ */
+.postcard {
+  padding: 5rem 0;
+  background: var(--sand);
+  overflow: hidden; /* the tilted frame overhangs its column */
+}
+
+.postcard__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 4rem;
+  align-items: center;
+  max-width: var(--max-site);
+  margin: 0 auto;
+}
+
+.postcard__frame {
+  position: relative;
+  margin: 0;
+  padding: 0.85rem 0.85rem 4rem;
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 18px 40px rgba(28, 26, 23, 0.16);
+  transform: rotate(-2deg);
+  transition: transform 0.4s ease;
+}
+
+.postcard:hover .postcard__frame {
+  transform: rotate(-0.75deg);
+}
+
+.postcard__img {
+  width: 100%;
+  height: clamp(240px, 34vw, 380px);
+  object-fit: cover;
+  border-radius: 1px;
+  display: block;
+}
+
+/* The stamp. Corner of the print, rotated the other way so it reads as
+   applied rather than printed. */
+.postcard__frame::after {
+  content: "";
+  position: absolute;
+  right: 1.1rem;
+  bottom: 0.7rem;
+  width: 42px;
+  height: 52px;
+  background: var(--sand);
+  border: 1px dashed var(--rule);
+  border-radius: 2px;
+  transform: rotate(3deg);
+  background-image:
+    linear-gradient(var(--terracotta), var(--terracotta)),
+    linear-gradient(var(--sage), var(--sage));
+  background-size: 26px 14px, 26px 9px;
+  background-position: 10px 12px, 10px 30px;
+  background-repeat: no-repeat;
+}
+
+.postcard__body {
+  max-width: 46ch;
+}
+
+.postcard__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 4vw, 2.7rem);
+  line-height: 1.12;
+  font-weight: 400;
+  margin: 0.4rem 0 0.6rem;
+}
+
+.postcard__place {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin: 0 0 1rem;
+}
+
+.postcard__caption {
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+  max-width: 42ch;
+}
+
+@media (max-width: 860px) {
+  .postcard {
+    padding: 3.5rem 0;
+  }
+  .postcard__inner {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+  .postcard__frame {
+    padding: 0.6rem 0.6rem 3.25rem;
+    box-shadow: 0 12px 26px rgba(28, 26, 23, 0.14);
+  }
+  .postcard__frame::after {
+    right: 0.8rem;
+    bottom: 0.55rem;
+    width: 34px;
+    height: 42px;
+    background-size: 20px 10px, 20px 6px;
+    background-position: 7px 9px, 7px 23px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .postcard__frame {
+    transition: none;
+  }
+}
+
+/* ============================================================
    Places — /places/ index and per-place story pages.
    Pages are generated from data/map_stories.yaml by
    content/places/_content.gotmpl; layouts are places.html + place.html.

@@ -1,0 +1,89 @@
+{{/* "Postcard from the map" — one map story on the homepage, as a front door to
+     /map/. Stories come from data/map_stories.yaml; only the ones with a photo
+     are eligible.
+
+     Hugo renders a fixed pick (the first eligible story) so the block works with
+     JavaScript off and so two builds of one commit stay byte-identical — the CI
+     reproducibility check rejects build-time randomness, and on a static site it
+     would re-roll per deploy rather than per reader, which is not what we want
+     anyway. The inline script below swaps in a random story per page view, which
+     is where the variety belongs. */}}
+
+{{ $cards := slice }}
+{{ range default (slice) hugo.Data.map_stories.stories }}
+  {{ if and .id .title .photo }}
+    {{ $path := strings.TrimPrefix "/" .photo }}
+    {{ $src := printf "%s%s" site.Home.RelPermalink $path }}
+    {{ $res := resources.Get $path }}
+    {{ if and $res (in (slice "jpeg" "png" "webp") $res.MediaType.SubType) (gt $res.Width 900) }}
+      {{ $src = ($res.Resize "900x q82").RelPermalink }}
+    {{ end }}
+    {{ $cards = $cards | append (dict
+      "id" .id
+      "title" .title
+      "place" (default "" .place)
+      "caption" (default "" .caption)
+      "alt" (default "" .alt)
+      "photo" $path
+      "src" $src) }}
+  {{ end }}
+{{ end }}
+
+{{ if $cards }}
+{{ $first := index $cards 0 }}
+<section class="postcard" id="postcard" aria-labelledby="postcard-heading">
+  <div class="container-wide postcard__inner">
+    <figure class="postcard__frame">
+      {{ partial "respimg.html" (dict
+        "path" $first.photo
+        "alt" (default $first.title $first.alt)
+        "class" "postcard__img"
+        "sizes" "(min-width: 900px) 520px, 100vw"
+        "widths" (slice 480 900)) }}
+    </figure>
+    <div class="postcard__body">
+      <span class="eyebrow" id="postcard-heading">Postcard from the map</span>
+      <h2 class="postcard__title" data-pc-title>{{ $first.title }}</h2>
+      <p class="postcard__place" data-pc-place{{ if not $first.place }} hidden{{ end }}>{{ $first.place }}</p>
+      <p class="postcard__caption" data-pc-caption{{ if not $first.caption }} hidden{{ end }}>{{ $first.caption }}</p>
+      <a class="link-arrow" data-pc-link href="{{ site.Home.RelPermalink }}map/#{{ $first.id }}">
+        Open the story <span aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var cards = {{ $cards | jsonify | safeJS }};
+  var section = document.getElementById('postcard');
+  if (!section || cards.length < 2) return;
+
+  var pick = cards[Math.floor(Math.random() * cards.length)];
+  if (!pick || pick.id === {{ $first.id }}) return;
+
+  var set = function (sel, text) {
+    var el = section.querySelector(sel);
+    if (!el) return;
+    if (text) { el.textContent = text; el.hidden = false; }
+    else { el.hidden = true; }
+  };
+  set('[data-pc-title]', pick.title);
+  set('[data-pc-place]', pick.place);
+  set('[data-pc-caption]', pick.caption);
+
+  var link = section.querySelector('[data-pc-link]');
+  if (link) link.setAttribute('href', {{ site.Home.RelPermalink }} + 'map/#' + pick.id);
+
+  var img = section.querySelector('.postcard__img');
+  if (img) {
+    // The srcset was built for the server-rendered photo, so it has to go before
+    // src is repointed or the browser keeps serving the old candidates.
+    img.removeAttribute('srcset');
+    img.removeAttribute('sizes');
+    img.src = pick.src;
+    img.alt = pick.alt || pick.title;
+  }
+})();
+</script>
+{{ end }}
