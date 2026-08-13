@@ -262,6 +262,17 @@ stories:
     link_text: "Eight Months in Southeast Asia"
     pin: { fx: 0.5, fy: 0.5 }
 
+  - id: phl
+    map: world
+    match: "Philippines"
+    title: "Four Days on a Boat"
+    place: "The Philippines"
+    caption: "You sleep on the boat."
+    story: "The Philippines came after weeks of mainland travel and felt like a reset: islands again, a different light. Manila, then Bohol and the Chocolate Hills, then Palawan — Puerto Princesa, the long road north to Port Barton, and El Nido. The four-day boat through the archipelago is slow and occasionally uncomfortable and completely worth it. You sleep on the boat. We came off it feeling like different people than the ones who got on."
+    link: "guides/eight-months-southeast-asia/"
+    link_text: "Eight Months in Southeast Asia"
+    pin: { fx: 0.45, fy: 0.5 }
+
   - id: zaf
     map: world
     match: "South Africa"
@@ -295,5 +306,5 @@ tour:
 # "Fly the loop" — the SE Asia tour across the world map, in leg order.
 loop:
   label: "Fly the loop"
-  intro: "Seven countries, eight months, one-way tickets."
-  stops: [tha, lao, vnm, khm, mys, sgp, idn]
+  intro: "Eight countries, eight months, one-way tickets."
+  stops: [tha, lao, vnm, khm, mys, sgp, phl, idn]
