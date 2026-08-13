@@ -179,7 +179,16 @@
   </div>
 </aside>
 
-<script type="application/json" id="mapStoriesData">{{ dict "home" $home "stories" hugo.Data.map_stories.stories "tour" hugo.Data.map_stories.tour "loop" hugo.Data.map_stories.loop "van" hugo.Data.van_now "years" hugo.Data.van_years | jsonify | safeJS }}</script>
+{{/* Each story also gets the URL of its own /places/ page, so "Copy link to this
+     story" shares the story rather than a map anchor. The slug rule has to match
+     content/places/_content.gotmpl exactly or the link 404s. */}}
+{{ $storiesWithPages := slice }}
+{{ range hugo.Data.map_stories.stories }}
+  {{ $slug := urlize (replace (replace .place "." "") "," "") }}
+  {{ $storiesWithPages = $storiesWithPages | append (merge . (dict "page" (printf "%splaces/%s/" site.Home.RelPermalink $slug))) }}
+{{ end }}
+
+<script type="application/json" id="mapStoriesData">{{ dict "home" $home "stories" $storiesWithPages "tour" hugo.Data.map_stories.tour "loop" hugo.Data.map_stories.loop "van" hugo.Data.van_now "years" hugo.Data.van_years | jsonify | safeJS }}</script>
 
 <script>
 (function () {
@@ -388,12 +397,16 @@
   var lastFocus = null;
   var openId = null;
 
-  // Copy link: every story already has a deep link (/map/#id) — make it shareable
+  // Copy link: share the story's own page, not the map anchor. A shared /map/#id
+  // dropped the reader at the top of a full-screen map to find the story again.
   var shareBtn = document.getElementById('mapPanelShare');
   var shareTimer = null;
   shareBtn.addEventListener('click', function () {
     if (!openId) return;
-    var link = location.origin + location.pathname + '#' + openId;
+    var s = byId[openId];
+    var link = s && s.page
+      ? location.origin + s.page
+      : location.origin + location.pathname + '#' + openId;
     function done(ok) {
       shareBtn.textContent = ok ? 'Link copied' : link;
       shareBtn.classList.toggle('is-copied', ok);
