@@ -93,13 +93,23 @@ every article, that is a regression, not cosmetic.
 - `hugo server`, no flags.
 
 ## What CI will reject
-Three gates run after the build in `.github/workflows/hugo.yml`. Run them before
+Four gates run after the build in `.github/workflows/hugo.yml`. Run them before
 pushing rather than finding out from a red deploy:
 - `python3 scripts/check_links.py public <base_url>` — dead internal links.
 - `python3 scripts/check_invariants.py public` — one tag spelled two ways,
   `shuffle` in a template, photos in `data/photo_dates.yaml` with no `alt` or
   listed twice under different names, root-relative paths in templates,
   `[params.ads] preview = true`, and leftover `gwinn092.github.io` references.
+- `python3 scripts/check_content.py` — prose that no longer matches the data
+  under it: a stated count in an itinerary summary that disagrees with the stop
+  list, a country inked on the world map with neither a story in
+  `map_stories.yaml` nor a `data-note`, one hero `image:` on two published
+  pages, and a section `_index.md` using a photo that is also one of its own
+  post cards. Takes no arguments — it reads source, not `public/`.
+  Canada and Mexico are inked with no story yet and sit in that script's
+  `KNOWN_SILENT` set, which keeps the gate green while printing the debt on
+  every run. **Delete a name from that set the moment its story lands** — the
+  gate fails on a stale entry as well as on a new silent country.
 - **The build must be reproducible.** Two builds of one commit are diffed and
   must be byte-identical. Nothing in a template may roll dice at build time —
   on a static site that never varies what a reader sees, it just rewrites pages
