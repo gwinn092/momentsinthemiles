@@ -608,6 +608,18 @@
 
     var homeVB = svg.getAttribute('viewBox').split(/[\s,]+/).map(Number);
     var wide = window.matchMedia('(min-width: 769px)');
+
+    // The maps are landscape and a phone screen is not, so "meet" letterboxes
+    // the painted map into a ~240px band floating in the middle of a ~774px
+    // pane — exactly where the bottom sheet covers it. Pinning that band to the
+    // top of the pane on small screens puts the map in the clear strip above
+    // the sheet. Desktop panes are close to the viewBox ratio already, so they
+    // keep the centred fit.
+    function applyFit() {
+      svg.setAttribute('preserveAspectRatio', wide.matches ? 'xMidYMid meet' : 'xMidYMin meet');
+    }
+    applyFit();
+    if (wide.addEventListener) wide.addEventListener('change', applyFit);
     var progress = opts.progressId ? document.getElementById(opts.progressId) : null;
     var dots = progress ? [].slice.call(progress.querySelectorAll('.map-progress__dot')) : [];
     var readout = progress ? progress.querySelector('.map-progress__at') : null;
@@ -680,13 +692,22 @@
       flight = requestAnimationFrame(frame);
     }
 
-    // Desktop cards sit on the right, so the stop is framed left of center;
-    // mobile cards ride low, so the stop is framed high.
+    // Desktop cards sit on the right, so the stop is framed left of center.
+    // On phones the card is a bottom sheet covering the lower ~65% of the map,
+    // so the stop is framed into the clear band above it — at 0.26 the active
+    // pin landed behind the sheet, which pointed the camera at something the
+    // reader could not see.
     function stopVB(s) {
       var w = frameW, h = w * homeVB[3] / homeVB[2];
       return wide.matches
         ? [s._px - w * 0.36, s._py - h * 0.42, w, h]
-        : [s._px - w * 0.5, s._py - h * 0.26, w, h];
+        : [s._px - w * 0.5, s._py - h * 0.13, w, h];
+    }
+
+    // One flag for "some tour on this page is running", read from the DOM so it
+    // stays right no matter which of the two tours changed state.
+    function syncTouringFlag() {
+      document.documentElement.classList.toggle('is-map-touring', !!document.querySelector('.map-scrolly.is-touring'));
     }
 
     function activate(key) {
@@ -722,6 +743,7 @@
         routeEl.style.strokeDashoffset = routeTotal - routeLens[key];
       }
       paintProgress(key);
+      syncTouringFlag();
     }
 
     function paintProgress(key) {

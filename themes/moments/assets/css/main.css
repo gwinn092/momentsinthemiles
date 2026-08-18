@@ -2485,6 +2485,15 @@ body.nav-open {
 .back-to-top:hover {
   background: var(--terracotta);
 }
+/* During a map tour the button sits on top of the "keep driving" bar and, on a
+   phone, actually wins the tap at the arrow end of it — so pressing continue
+   threw you to the top of the page instead. A tour has its own navigation, and
+   scrolling up still works, so the button stands down until the tour ends. */
+html.is-map-touring .back-to-top {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
 
 /* ===================================================
    SCROLL REVEAL — applied via JS (graceful if JS off)
@@ -3642,9 +3651,66 @@ body.nav-open {
   .map-progress__dot.is-current { transform: none; }
 }
 
-/* Phones: the map fills the frame and the cards ride low over it, so a rail
-   down the left edge would sit on top of the map art. Lay it along the top
-   instead, where the sticky title has already faded out. */
+/* --- Phones: the story card becomes a bottom sheet -----------------------
+   Centred, the card covered 84% of the sticky map and left 4% of it showing,
+   which hides the one thing the page exists to show. Dropped to the bottom and
+   capped it leaves roughly a third of the map clear, which is where the camera
+   already frames each stop on small screens (see stopVB() in map.html).
+
+   A full card wants ~600px and the map pane is ~774px, so on a phone the two
+   cannot both be whole: the photo is cut to 2:1 and the padding tightened to
+   buy back most of it, and anything still over the cap scrolls inside the body.
+   The card is a flex column so that inner scrolling never takes the photo or
+   the "keep driving" bar out of view — only the prose moves.
+
+   No overscroll-behavior here on purpose. Containing the scroll would stop a
+   swipe that reaches the end of the story from carrying on down the page, which
+   on a scroll-driven tour means the sheet swallows the gesture that advances it. */
+@media (max-width: 768px) {
+  .map-step {
+    align-items: flex-end;
+    padding-bottom: 0.9rem;
+    /* One step = one pane, so the sheet lands just above the bottom edge
+       instead of leaving a strip of empty page under it. */
+    min-height: var(--mapvis);
+  }
+  .map-step__card {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    max-height: 60svh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 14px 14px 4px 4px;
+  }
+  .map-step__media { flex: none; }
+  .map-step__media img { aspect-ratio: 2 / 1; }
+  .map-step__body {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 0.85rem 1.1rem 1rem;
+  }
+  .map-step__story {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 0.7rem;
+  }
+  .map-step__next {
+    flex: none;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+  }
+  /* The outro card carries stats rather than a story, and no next bar, so it
+     sizes to its content instead of being capped. */
+  .map-step__card--outro {
+    max-height: none;
+    display: block;
+  }
+}
+
+/* The progress rail: a rail down the left edge would sit on the map art, so on
+   phones it lies along the top where the sticky title has already faded out. */
 @media (max-width: 768px) {
   .map-progress {
     left: 50%;
