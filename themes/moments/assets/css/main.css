@@ -62,6 +62,19 @@
   --max-content: 720px;
   --max-site: 1140px;
   --max-wide: 1600px;
+
+  /* Hero scrims — the dark layer that keeps white text legible over a photo.
+     The shape is always peak (at the text edge) -> mid -> fully transparent.
+     Reaching zero, and reaching it early, is what stops the scrim from
+     reading as a dull photo; a lingering 5% wash over the whole frame is
+     what it used to do. Peak is what protects the text, so raise `reach`
+     before raising `peak` if something looks thin. Defaults are the section
+     heroes; .home-hero__scrim overrides them for a taller box. */
+  --scrim-dir: to top;
+  --scrim-peak: 0.72;
+  --scrim-mid: 0.28;
+  --scrim-mid-stop: 38%;
+  --scrim-reach: 66%;
 }
 
 /* --- Reset & Base --- */
@@ -1993,7 +2006,11 @@ body.nav-open {
   inset: 0;
   display: flex;
   align-items: flex-end;
-  background: linear-gradient(to top, rgba(28, 26, 23, 0.72) 0%, rgba(28, 26, 23, 0.28) 38%, rgba(28, 26, 23, 0) 66%);
+  background: linear-gradient(
+    var(--scrim-dir),
+    rgba(28, 26, 23, var(--scrim-peak)) 0%,
+    rgba(28, 26, 23, var(--scrim-mid)) var(--scrim-mid-stop),
+    rgba(28, 26, 23, 0) var(--scrim-reach));
 }
 .section-hero__content {
   width: 100%;
@@ -2126,7 +2143,9 @@ body.nav-open {
    photos where a bottom-anchored title lands on top of the subject. */
 .section-hero__overlay--top {
   align-items: flex-start;
-  background: linear-gradient(to bottom, rgba(28, 26, 23, 0.72) 0%, rgba(28, 26, 23, 0.28) 38%, rgba(28, 26, 23, 0) 66%);
+  /* Both classes land on one element, so flipping the direction token is
+     enough — the gradient above re-resolves against it. */
+  --scrim-dir: to bottom;
 }
 .section-hero__overlay--top .section-hero__content {
   padding-top: clamp(2rem, 5vw, 3.5rem);
@@ -3667,9 +3686,26 @@ body.nav-open {
 .home-hero__scrim {
   position: absolute;
   inset: 0;
+  /* Taller box than a section hero, so the scrim can clear the photo sooner
+     and still cover three lines of headline plus the buttons. */
+  --scrim-peak: 0.78;
+  --scrim-mid: 0.26;
+  --scrim-mid-stop: 32%;
+  --scrim-reach: 58%;
+  /* Second, top-edge layer — homepage only. The header sits transparent over
+     the hero here, so the logo and nav need their own contrast. */
+  --scrim-top-peak: 0.3;
+  --scrim-top-reach: 16%;
   background:
-    linear-gradient(to bottom, rgba(28, 26, 23, 0.3), rgba(28, 26, 23, 0) 16%),
-    linear-gradient(to top, rgba(28, 26, 23, 0.78), rgba(28, 26, 23, 0.26) 32%, rgba(28, 26, 23, 0) 58%);
+    linear-gradient(
+      to bottom,
+      rgba(28, 26, 23, var(--scrim-top-peak)),
+      rgba(28, 26, 23, 0) var(--scrim-top-reach)),
+    linear-gradient(
+      var(--scrim-dir),
+      rgba(28, 26, 23, var(--scrim-peak)) 0%,
+      rgba(28, 26, 23, var(--scrim-mid)) var(--scrim-mid-stop),
+      rgba(28, 26, 23, 0) var(--scrim-reach));
 }
 
 .home-hero__content {
