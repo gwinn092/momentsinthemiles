@@ -14,7 +14,7 @@ What nobody tells you about van life, what the photos don't show and the highlig
 
 But in between the sunsets and the open roads, there are messy mornings and cramped kitchens and the particular challenge of cooking a real meal in a space that doesn't care about your ambitions.
 
-{{< fullbleed src="/images/van-life/van-golden-hour.jpg" alt="The van parked at golden hour" >}}
+{{< fullbleed src="/images/van-life/sink-mountain-view.jpg" alt="The galley sink under a window looking out at the Tetons across the lake" >}}
 
 We figured out a rhythm fast. You have to. Jesse cooks, I prep, and somehow we move around each other in a galley the size of a closet without losing our minds, most of the time. For years it was just an induction stove and whatever we could make work. Getting a Ninja Crispi changed everything. Small victories matter when you live small.
 
@@ -22,7 +22,7 @@ And then there are the late nights. Parked somewhere new, the day finally done, 
 
 Eight years. All 48 continental states. Waking up in national forests, riding out desert storms, watching the light change over landscapes that looked different every single morning.
 
-{{< fullbleed src="/images/van-life/van-colorado-fall.jpg" alt="The van surrounded by Colorado fall color" >}}
+{{< fullbleed src="/images/van-life/colorado-summit.jpg" alt="Feet up at a Colorado summit, snow still sitting on the peaks across the valley" >}}
 
 It wasn't always pretty or comfortable. But it was ours, built on purpose, adjusted constantly, and worth every cramped, laughing, messy moment of it.
 

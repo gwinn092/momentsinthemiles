@@ -2,7 +2,7 @@
 title: "Work With Us"
 description: "Partnerships, sponsored stories, and press for Moments in the Miles — what we take on, what we don't, and how to reach us."
 seo_title: "Work With Us"
-image: "/images/pages/kit-open-road.jpg"
+image: "/images/gallery/rainier-road.jpg"
 hero_position: "center 55%"
 category: "Partnerships"
 # No ads on the sponsorship pitch page — an ad here undercuts the pitch.
