@@ -1,0 +1,29 @@
+# Netlify build config for Moments in the Miles.
+#
+# The site is deployed by Netlify; GitHub Actions is kept as a pure CI check
+# (see .github/workflows/hugo.yml) and no longer publishes anywhere, so there
+# is only ever one live copy of the site to index.
+#
+# baseURL is passed as -b $URL rather than read from hugo.toml, so a build is
+# always correct for wherever it is being served: the production domain, the
+# *.netlify.app subdomain before DNS lands, or a deploy preview.
+#
+# The three content gates run as part of the build command on purpose. A gate
+# that only runs somewhere else can still let a broken page go live; here, a
+# failing check fails the deploy and the previous version stays up.
+
+[build]
+  publish = "public"
+  command = "hugo --gc --minify -b $URL && python3 scripts/check_links.py public $URL && python3 scripts/check_invariants.py public $URL && python3 scripts/check_content.py"
+
+[build.environment]
+  HUGO_VERSION = "0.164.0"
+  HUGO_ENVIRONMENT = "production"
+
+# Previews and branch builds must not advertise the production URL, or every
+# link in a preview points at the live site.
+[context.deploy-preview]
+  command = "hugo --gc --minify -b $DEPLOY_PRIME_URL && python3 scripts/check_links.py public $DEPLOY_PRIME_URL && python3 scripts/check_invariants.py public $DEPLOY_PRIME_URL && python3 scripts/check_content.py"
+
+[context.branch-deploy]
+  command = "hugo --gc --minify -b $DEPLOY_PRIME_URL && python3 scripts/check_links.py public $DEPLOY_PRIME_URL && python3 scripts/check_invariants.py public $DEPLOY_PRIME_URL && python3 scripts/check_content.py"

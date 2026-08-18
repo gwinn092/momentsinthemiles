@@ -1,29 +1,37 @@
-name: Deploy Hugo site to GitHub Pages
+# Quality gates for Moments in the Miles.
+#
+# This workflow does NOT deploy. The site is built and published by Netlify
+# (see netlify.toml); publishing from here as well would put a second copy of
+# the site on gwinn092.github.io with its own canonical URLs, which is a
+# duplicate-content problem rather than a backup.
+#
+# What it does instead is the one thing Netlify's build cannot: prove the build
+# is reproducible, by building the same commit twice and diffing the bytes.
+
+name: Checks
 
 on:
   push:
     branches:
       - main
+  pull_request:
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
 
 defaults:
   run:
     shell: bash
 
 jobs:
-  build:
+  check:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.164.0
+      # The gates take a base URL so they can spot links pointing at the wrong
+      # host. It only has to match what the build was given, not be reachable.
+      BASE_URL: https://www.momentsinthemiles.com/
     steps:
       - name: Install Hugo CLI
         run: |
@@ -44,25 +52,17 @@ jobs:
           restore-keys: |
             hugo-resources-
 
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
-
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
-        run: |
-          hugo \
-            --gc \
-            --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+        run: hugo --gc --minify --baseURL "$BASE_URL"
 
       - name: Check internal links
-        run: python3 scripts/check_links.py public "${{ steps.pages.outputs.base_url }}/"
+        run: python3 scripts/check_links.py public "$BASE_URL"
 
       - name: Check invariants
-        run: python3 scripts/check_invariants.py public "${{ steps.pages.outputs.base_url }}/"
+        run: python3 scripts/check_invariants.py public "$BASE_URL"
 
       # Prose that disagrees with the data under it. These all ship green and
       # read wrong: a stale count in a summary, a country inked on the map with
@@ -80,7 +80,7 @@ jobs:
         run: |
           hugo --gc --minify \
             --destination public_repeat \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            --baseURL "$BASE_URL"
           if ! diff -r public public_repeat > /tmp/build-diff.txt 2>&1; then
             echo "::error::Build is not reproducible — see the differing files below."
             head -40 /tmp/build-diff.txt
@@ -88,19 +88,3 @@ jobs:
           fi
           echo "Build is reproducible."
           rm -rf public_repeat
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./public
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4

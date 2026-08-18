@@ -92,9 +92,26 @@ every article, that is a regression, not cosmetic.
 ## Local dev
 - `hugo server`, no flags.
 
+## Hosting
+The site is built and deployed by **Netlify** (`netlify.toml`), not GitHub Pages.
+CAVL is on Netlify too, so both sites live in one dashboard — but their DNS
+values are completely different and must never be copied across.
+
+`.github/workflows/hugo.yml` no longer deploys anything. It is a pure CI check:
+publishing from there as well would put a second copy of the site on
+`gwinn092.github.io` with its own canonical URLs, which is duplicate content
+rather than a backup.
+
+`baseURL` is passed as `-b $URL` at build time rather than trusted from
+`hugo.toml`, so a build is correct wherever it is served — production domain,
+`*.netlify.app`, or a deploy preview. `static/CNAME` is now inert; it is left in
+place only because it costs nothing.
+
 ## What CI will reject
-Four gates run after the build in `.github/workflows/hugo.yml`. Run them before
-pushing rather than finding out from a red deploy:
+Four gates. The first three also run inside the Netlify build command, so a
+failing check fails the deploy and the previous version stays up; the fourth
+runs only in GitHub Actions. Run them before pushing rather than finding out
+from a red deploy:
 - `python3 scripts/check_links.py public <base_url>` — dead internal links.
 - `python3 scripts/check_invariants.py public` — one tag spelled two ways,
   `shuffle` in a template, photos in `data/photo_dates.yaml` with no `alt` or
