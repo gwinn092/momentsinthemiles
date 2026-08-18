@@ -38,13 +38,29 @@
     {{ with hugo.Data.van_years }}{{ with .years }}
     <div class="map-replay-year" id="mapReplayYear" aria-hidden="true" hidden></div>
     {{ end }}{{ end }}
+    {{/* Scrubber: where you are in the route, and a way back to any stop.
+         Hidden until the tour is actually running (JS unhides on is-touring). */}}
+    <nav class="map-progress" id="mapProgressDrive" aria-label="Drive progress" hidden>
+      <span class="map-progress__readout"><span class="map-progress__at">1</span><span class="map-progress__of"> / {{ $n }}</span></span>
+      <ol class="map-progress__dots">
+        {{ range $i, $id := $tour.stops }}{{ range where $stories "id" $id }}
+        <li><button type="button" class="map-progress__dot" data-goto="drive-{{ $i }}"><span class="visually-hidden">Stop {{ add $i 1 }}: {{ .place }}</span></button></li>
+        {{ end }}{{ end }}
+      </ol>
+    </nav>
   </div>
 
   {{ partial "map-stops.html" (dict "stories" (where $stories "map" "us") "label" "Every stop on this map") }}
 
   <div class="map-scrolly__steps">
     <div class="map-step map-step--intro" data-stop="intro"></div>
-    {{ range $i, $id := $tour.stops }}{{ range where $stories "id" $id }}
+    {{ range $i, $id := $tour.stops }}
+    {{/* Where "keep driving" goes. Every card used to end with nothing but the
+         outbound article link, so the only clickable thing on the card was the
+         one that ended the tour. */}}
+    {{ $nextPlace := "" }}{{ $nextHref := "drive-end" }}
+    {{ if lt (add $i 1) $n }}{{ $nextHref = printf "drive-%d" (add $i 1) }}{{ range where $stories "id" (index $tour.stops (add $i 1)) }}{{ $nextPlace = .place }}{{ end }}{{ end }}
+    {{ range where $stories "id" $id }}
     <div class="map-step" data-stop="{{ $i }}" id="drive-{{ $i }}">
       <article class="map-step__card">
         {{ if .photo }}
@@ -56,10 +72,18 @@
           <p class="map-step__story">{{ .story }}</p>
           {{ if .link }}<a class="map-step__link" href="{{ $home }}{{ .link }}">{{ .link_text | default "Read the full story" }} &rarr;</a>{{ end }}
         </div>
+        <button type="button" class="map-step__next" data-goto="{{ $nextHref }}">
+          <span class="map-step__next-text">
+            <span class="map-step__next-label">{{ if $nextPlace }}Keep driving{{ else }}Finish the drive{{ end }}</span>
+            <span class="map-step__next-place">{{ with $nextPlace }}{{ . }}{{ else }}The totals{{ end }}</span>
+          </span>
+          <span class="map-step__next-arrow" aria-hidden="true">&darr;</span>
+        </button>
       </article>
     </div>
-    {{ end }}{{ end }}
-    <div class="map-step map-step--outro" data-stop="outro">
+    {{ end }}
+    {{ end }}
+    <div class="map-step map-step--outro" data-stop="outro" id="drive-end">
       <article class="map-step__card map-step__card--outro">
         <span class="map-step__count">{{ .Params.us_heading | default "The Lower Forty-Eight" }}</span>
         <div class="map-stats map-stats--card">
@@ -107,13 +131,26 @@
       </span>
       <span class="map-scrolly__cue-arrow" aria-hidden="true">&darr;</span>
     </a>
+    {{/* Scrubber: where you are in the route, and a way back to any stop.
+         Hidden until the tour is actually running (JS unhides on is-touring). */}}
+    <nav class="map-progress" id="mapProgressLoop" aria-label="Loop progress" hidden>
+      <span class="map-progress__readout"><span class="map-progress__at">1</span><span class="map-progress__of"> / {{ $ln }}</span></span>
+      <ol class="map-progress__dots">
+        {{ range $i, $id := $loop.stops }}{{ range where $stories "id" $id }}
+        <li><button type="button" class="map-progress__dot" data-goto="loop-{{ $i }}"><span class="visually-hidden">Leg {{ add $i 1 }}: {{ .place }}</span></button></li>
+        {{ end }}{{ end }}
+      </ol>
+    </nav>
   </div>
 
   {{ partial "map-stops.html" (dict "stories" (where $stories "map" "world") "label" "Every stop on this map") }}
 
   <div class="map-scrolly__steps">
     <div class="map-step map-step--intro" data-stop="intro"></div>
-    {{ range $i, $id := $loop.stops }}{{ range where $stories "id" $id }}
+    {{ range $i, $id := $loop.stops }}
+    {{ $nextPlace := "" }}{{ $nextHref := "loop-end" }}
+    {{ if lt (add $i 1) $ln }}{{ $nextHref = printf "loop-%d" (add $i 1) }}{{ range where $stories "id" (index $loop.stops (add $i 1)) }}{{ $nextPlace = .place }}{{ end }}{{ end }}
+    {{ range where $stories "id" $id }}
     <div class="map-step" data-stop="{{ $i }}" id="loop-{{ $i }}">
       <article class="map-step__card">
         {{ if .photo }}
@@ -125,10 +162,18 @@
           <p class="map-step__story">{{ .story }}</p>
           {{ if .link }}<a class="map-step__link" href="{{ $home }}{{ .link }}">{{ .link_text | default "Read the full story" }} &rarr;</a>{{ end }}
         </div>
+        <button type="button" class="map-step__next" data-goto="{{ $nextHref }}">
+          <span class="map-step__next-text">
+            <span class="map-step__next-label">{{ if $nextPlace }}Next leg{{ else }}Finish the loop{{ end }}</span>
+            <span class="map-step__next-place">{{ with $nextPlace }}{{ . }}{{ else }}The totals{{ end }}</span>
+          </span>
+          <span class="map-step__next-arrow" aria-hidden="true">&darr;</span>
+        </button>
       </article>
     </div>
-    {{ end }}{{ end }}
-    <div class="map-step map-step--outro" data-stop="outro">
+    {{ end }}
+    {{ end }}
+    <div class="map-step map-step--outro" data-stop="outro" id="loop-end">
       <article class="map-step__card map-step__card--outro">
         <span class="map-step__count">{{ .Params.world_eyebrow | default "Farther Afield" }}</span>
         <div class="map-stats map-stats--card">
@@ -225,6 +270,18 @@
       var target = document.getElementById(cue.getAttribute('href').slice(1));
       if (target) target.scrollIntoView({ behavior: reduceMotion ? 'instant' : 'smooth', block: 'start' });
     });
+  });
+
+  // Every in-tour jump control — the "keep driving" bar at the foot of each
+  // card and the dots on the progress rail — is a [data-goto] pointing at a
+  // step id. One handler covers both.
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest && e.target.closest('[data-goto]');
+    if (!btn) return;
+    var target = document.getElementById(btn.getAttribute('data-goto'));
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: reduceMotion ? 'instant' : 'smooth', block: 'start' });
   });
 
   function url(p) { return p ? home + p : ''; }
@@ -551,6 +608,9 @@
 
     var homeVB = svg.getAttribute('viewBox').split(/[\s,]+/).map(Number);
     var wide = window.matchMedia('(min-width: 769px)');
+    var progress = opts.progressId ? document.getElementById(opts.progressId) : null;
+    var dots = progress ? [].slice.call(progress.querySelectorAll('.map-progress__dot')) : [];
+    var readout = progress ? progress.querySelector('.map-progress__at') : null;
     var activeKey = 'intro';
     var routeEl = null;
     var routeTotal = 0;
@@ -661,7 +721,41 @@
         flyTo(stopVB(s));
         routeEl.style.strokeDashoffset = routeTotal - routeLens[key];
       }
+      paintProgress(key);
     }
+
+    function paintProgress(key) {
+      if (!progress) return;
+      var atStop = typeof key === 'number';
+      // The rail belongs to the tour: gone before it starts and once the
+      // outro card has taken over as the finish line.
+      progress.hidden = (key === 'intro' || key === 'outro');
+      dots.forEach(function (d, i) {
+        d.classList.toggle('is-current', atStop && i === key);
+        d.classList.toggle('is-done', key === 'outro' || (atStop && i < key));
+        if (atStop && i === key) d.setAttribute('aria-current', 'step');
+        else d.removeAttribute('aria-current');
+      });
+      if (readout) readout.textContent = atStop ? key + 1 : (key === 'outro' ? stops.length : 1);
+    }
+
+    // Left/right walk the route. Up/down are left alone so normal scrolling,
+    // which is still the primary way through, keeps working untouched.
+    document.addEventListener('keydown', function (e) {
+      if (!root.classList.contains('is-touring')) return;
+      if (e.metaKey || e.ctrlKey || e.altKey || e.shiftKey) return;
+      var tag = (e.target.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'textarea' || e.target.isContentEditable) return;
+      var dir = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!dir) return;
+      var cur = typeof activeKey === 'number' ? activeKey : (activeKey === 'outro' ? stops.length : -1);
+      var want = cur + dir;
+      if (want < 0) return;
+      var el = document.getElementById(want >= stops.length ? opts.prefix + '-end' : opts.prefix + '-' + want);
+      if (!el) return;
+      e.preventDefault();
+      el.scrollIntoView({ behavior: reduceMotion ? 'instant' : 'smooth', block: 'start' });
+    });
 
     var stepIO = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
@@ -673,8 +767,8 @@
     root.querySelectorAll('.map-step').forEach(function (st) { stepIO.observe(st); });
   }
 
-  initScrolly(usSvg, scrolly, DATA.tour && DATA.tour.stops, { frameW: 300, strokeW: 2.2 });
-  initScrolly(worldSvg, loopRoot, DATA.loop && DATA.loop.stops, { frameW: 85, strokeW: 2.2, routeClass: 'map-route--air', scalePins: true });
+  initScrolly(usSvg, scrolly, DATA.tour && DATA.tour.stops, { frameW: 300, strokeW: 2.2, prefix: 'drive', progressId: 'mapProgressDrive' });
+  initScrolly(worldSvg, loopRoot, DATA.loop && DATA.loop.stops, { frameW: 85, strokeW: 2.2, routeClass: 'map-route--air', scalePins: true, prefix: 'loop', progressId: 'mapProgressLoop' });
 
   // --- Replay the years: re-ink the lower 48 one year at a time,
   // driven by data/van_years.yaml (the button renders only when it's filled in) ---

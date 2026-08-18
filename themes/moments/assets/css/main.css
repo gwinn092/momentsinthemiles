@@ -3506,6 +3506,159 @@ body.nav-open {
   border-bottom-color: var(--terracotta);
 }
 
+/* --- Keeping the tour going ---------------------------------------------
+   Every step card used to end with the outbound article link and nothing else,
+   so the only clickable thing on a card was the one that left the tour. The bar
+   below is the "keep going" action and is deliberately the heavier of the two:
+   full card width, its own tinted band, sat under the quiet text link. */
+.map-step__next {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: 100%;
+  margin: 0;
+  padding: 0.8rem 1.35rem;
+  border: 0;
+  border-top: 1px solid var(--rule);
+  background: var(--sand);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.map-step__next:hover,
+.map-step__next:focus-visible {
+  background: var(--terracotta);
+  color: var(--warm-white);
+}
+.map-step__next-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  min-width: 0;
+}
+.map-step__next-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.72;
+}
+.map-step__next-place {
+  font-family: var(--font-serif);
+  font-size: 1.12rem;
+  line-height: 1.1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.map-step__next-arrow {
+  flex: none;
+  font-size: 1.05rem;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+.map-step__next:hover .map-step__next-arrow {
+  transform: translateY(3px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .map-step__next,
+  .map-step__next-arrow { transition: none; }
+  .map-step__next:hover .map-step__next-arrow { transform: none; }
+}
+
+/* --- Progress rail -------------------------------------------------------
+   Sits on the empty left half of the sticky map (the cards ride the right),
+   so it never covers the route. Answers "how far in am I, how much is left"
+   and doubles as a way back to a stop already passed. */
+.map-progress {
+  position: absolute;
+  left: clamp(1rem, 4vw, 3rem);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  pointer-events: auto;
+  /* The rail floats above both the map art and the passing story cards, so it
+     carries its own backing rather than relying on whatever is behind it. */
+  padding: 0.7rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(253, 250, 245, 0.86);
+  box-shadow: 0 2px 14px rgba(28, 26, 23, 0.12);
+}
+@supports (backdrop-filter: blur(6px)) {
+  .map-progress {
+    background: rgba(253, 250, 245, 0.7);
+    backdrop-filter: blur(6px);
+  }
+}
+.map-progress__readout {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  flex: none;
+  white-space: nowrap;
+  line-height: 1;
+}
+.map-progress__at {
+  color: var(--terracotta);
+  font-size: 0.95rem;
+}
+.map-progress__dots {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.map-progress__dot {
+  display: block;
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 1px solid rgba(28, 26, 23, 0.28);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+.map-progress__dot:hover { border-color: var(--terracotta); transform: scale(1.25); }
+.map-progress__dot.is-done { background: rgba(163, 90, 52, 0.45); border-color: transparent; }
+.map-progress__dot.is-current {
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+  transform: scale(1.45);
+}
+@media (prefers-reduced-motion: reduce) {
+  .map-progress__dot { transition: none; }
+  .map-progress__dot:hover,
+  .map-progress__dot.is-current { transform: none; }
+}
+
+/* Phones: the map fills the frame and the cards ride low over it, so a rail
+   down the left edge would sit on top of the map art. Lay it along the top
+   instead, where the sticky title has already faded out. */
+@media (max-width: 768px) {
+  .map-progress {
+    left: 50%;
+    right: auto;
+    top: 0.9rem;
+    transform: translateX(-50%);
+    flex-direction: row;
+    gap: 0.6rem;
+    padding: 0.4rem 0.85rem;
+  }
+  .map-progress__dots { flex-direction: row; gap: 0.45rem; }
+  .map-progress__dot { width: 8px; height: 8px; }
+}
+
 .map-step__card--outro {
   text-align: center;
   padding: 1.6rem 1.4rem 1.8rem;
