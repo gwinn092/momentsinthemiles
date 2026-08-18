@@ -3581,6 +3581,15 @@ html.is-map-touring .back-to-top {
    Sits on the empty left half of the sticky map (the cards ride the right),
    so it never covers the route. Answers "how far in am I, how much is left"
    and doubles as a way back to a stop already passed. */
+/* `display: flex` beats the UA stylesheet's `[hidden] { display: none }`, so
+   without this the rail stays on screen the whole time despite being marked
+   hidden — before the tour starts and after it ends. Same for the scrubber,
+   which JS only reveals when there is year data to scrub. */
+.map-progress[hidden],
+.map-scrub[hidden] {
+  display: none;
+}
+
 .map-progress {
   position: absolute;
   left: clamp(1rem, 4vw, 3rem);
@@ -3837,6 +3846,70 @@ html.is-map-touring .back-to-top {
   background: var(--sand);
   border-color: var(--ink);
 }
+/* --- Year scrubber ------------------------------------------------------- */
+.map-scrub {
+  margin-top: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+.map-scrub__label {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.map-scrub__value {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--terracotta);
+  line-height: 1;
+}
+.map-scrub__range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  max-width: 260px;
+  height: 22px;
+  background: none;
+  cursor: pointer;
+}
+.map-scrub__range::-webkit-slider-runnable-track {
+  height: 2px;
+  background: var(--rule);
+  border-radius: 2px;
+}
+.map-scrub__range::-moz-range-track {
+  height: 2px;
+  background: var(--rule);
+  border-radius: 2px;
+}
+.map-scrub__range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  margin-top: -7px;
+  border-radius: 50%;
+  background: var(--terracotta);
+  border: 2px solid var(--warm-white);
+  box-shadow: 0 1px 4px rgba(28, 26, 23, 0.25);
+}
+.map-scrub__range::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--terracotta);
+  border: 2px solid var(--warm-white);
+  box-shadow: 0 1px 4px rgba(28, 26, 23, 0.25);
+}
+.map-scrub__range:focus-visible {
+  outline: 2px solid var(--terracotta);
+  outline-offset: 4px;
+}
+
 .map-replay-year {
   position: absolute;
   left: clamp(1.2rem, 4vw, 3rem);

@@ -102,7 +102,18 @@
         <p class="map-step__note">Every pulsing pin on this map opens a story. Go click a few.</p>
         <p class="map-step__note map-step__note--years"><a class="map-step__link" href="{{ $home }}places/">Or read them as pages, place by place &rarr;</a></p>
         {{ with hugo.Data.van_years }}{{ with .years }}
+        {{ $ys := . }}
         <button type="button" class="map-replay-btn" id="mapReplayBtn" hidden>Replay the years &#8635;</button>
+        {{/* Same data as the replay animation, under the reader's thumb instead
+             of on a timer. Dragging to the far right leaves year mode entirely
+             and returns the map to today. */}}
+        <div class="map-scrub" id="mapScrub" hidden>
+          <label class="map-scrub__label" for="mapScrubRange">Drag through the years</label>
+          <input type="range" class="map-scrub__range" id="mapScrubRange"
+                 min="{{ (index $ys 0).year }}" max="{{ (index $ys (sub (len $ys) 1)).year }}"
+                 step="1" value="{{ (index $ys (sub (len $ys) 1)).year }}">
+          <output class="map-scrub__value" id="mapScrubValue" for="mapScrubRange">Today</output>
+        </div>
         <p class="map-step__note map-step__note--years"><a class="map-step__link" href="{{ $home }}years/">Or take the slow version, year by year &rarr;</a></p>
         {{ end }}{{ end }}
       </article>
@@ -943,6 +954,41 @@
       });
       replayTimers.push(window.setTimeout(cancelReplay, t + 900));
     });
+  }
+
+  // --- Scrub the years by hand ---
+  // The replay button plays the same data on a timer; this puts it under the
+  // reader's thumb. Dragging to the last year leaves year mode altogether and
+  // shows the map as it stands today, which also means the states still missing
+  // a year in van_years.yaml never read as "not visited" at the end of the drag.
+  var scrubRange = document.getElementById('mapScrubRange');
+  if (scrubRange && usSvg && yearsData.length) {
+    var scrubWrap = document.getElementById('mapScrub');
+    var scrubOut = document.getElementById('mapScrubValue');
+    var scrubYearEl = document.getElementById('mapReplayYear');
+    var scrubMax = parseInt(scrubRange.max, 10);
+    scrubWrap.hidden = false;
+
+    function paintYear(y) {
+      cancelReplay();
+      if (y >= scrubMax) {
+        usSvg.classList.remove('map-replay');
+        usSvg.querySelectorAll('.is-replay-on').forEach(function (el) { el.classList.remove('is-replay-on'); });
+        scrolly.classList.remove('is-replaying');
+        if (scrubYearEl) scrubYearEl.hidden = true;
+        scrubOut.textContent = 'Today';
+        return;
+      }
+      usSvg.classList.add('map-replay');
+      scrolly.classList.add('is-replaying');
+      usSvg.querySelectorAll('.mp--visited').forEach(function (el) {
+        var yr = yearByState[el.getAttribute('data-name')];
+        el.classList.toggle('is-replay-on', yr !== undefined && yr <= y);
+      });
+      if (scrubYearEl) { scrubYearEl.textContent = y; scrubYearEl.hidden = false; }
+      scrubOut.textContent = y;
+    }
+    scrubRange.addEventListener('input', function () { paintYear(parseInt(scrubRange.value, 10)); });
   }
 
   // --- Odometer stats: count up when they roll into view ---
