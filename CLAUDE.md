@@ -102,10 +102,21 @@ publishing from there as well would put a second copy of the site on
 `gwinn092.github.io` with its own canonical URLs, which is duplicate content
 rather than a backup.
 
+**The live site is `https://momentsinthemiles.com` — the bare apex, not `www`.**
+`www.momentsinthemiles.com` is a domain alias that 301-redirects to it. This is
+the opposite of CAVL, which uses `www` as primary; it was chosen on launch day
+(Aug 18 2026) because the apex was already live and fully consistent, and
+switching would have meant a second canonical migration hours before launch.
+Netlify warns that an apex primary gets less CDN benefit than a `www` one —
+that is a known, accepted trade.
+
 `baseURL` is passed as `-b $URL` at build time rather than trusted from
 `hugo.toml`, so a build is correct wherever it is served — production domain,
-`*.netlify.app`, or a deploy preview. `static/CNAME` is now inert; it is left in
-place only because it costs nothing.
+`*.netlify.app`, or a deploy preview. `hugo.toml` and the CI `BASE_URL` are
+still kept in sync with the real primary domain so nothing in the repo
+disagrees with what is actually served. `static/CNAME` is now inert (it names
+`www` and GitHub Pages is disabled); it is left in place only because it costs
+nothing.
 
 ## What CI will reject
 Four gates. The first three also run inside the Netlify build command, so a

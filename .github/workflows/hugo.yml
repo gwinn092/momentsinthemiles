@@ -31,7 +31,7 @@ jobs:
       HUGO_VERSION: 0.164.0
       # The gates take a base URL so they can spot links pointing at the wrong
       # host. It only has to match what the build was given, not be reachable.
-      BASE_URL: https://www.momentsinthemiles.com/
+      BASE_URL: https://momentsinthemiles.com/
     steps:
       - name: Install Hugo CLI
         run: |

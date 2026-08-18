@@ -1,4 +1,4 @@
-baseURL = "https://www.momentsinthemiles.com/"
+baseURL = "https://momentsinthemiles.com/"
 locale = "en-us"
 title = "Moments in the Miles"
 theme = "moments"
