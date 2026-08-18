@@ -64,6 +64,12 @@ jobs:
       - name: Check invariants
         run: python3 scripts/check_invariants.py public "${{ steps.pages.outputs.base_url }}/"
 
+      # Prose that disagrees with the data under it. These all ship green and
+      # read wrong: a stale count in a summary, a country inked on the map with
+      # no story behind it, two pages sharing one photo.
+      - name: Check content consistency
+        run: python3 scripts/check_content.py
+
       # A second build of the same commit must produce the same bytes. When it
       # does not, something in a template is rolling dice at build time, which
       # rewrites pages on every deploy and buries real diffs in the noise.

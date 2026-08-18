@@ -18,3 +18,7 @@ Miles in the Moments Photo dump/
 
 # Cached boundary data for scripts/build_photo_dates.py
 .cache/
+
+# Python bytecode from running the CI check scripts locally
+__pycache__/
+*.pyc
