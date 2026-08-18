@@ -196,4 +196,92 @@
   </div>
 </section>
 
+<script>
+  /* Fold the long About sections behind a Read more.
+
+     Progressive enhancement on purpose: the markup ships fully expanded, so
+     if this never runs the page is long but complete — nothing readable is
+     gated behind the script, and crawlers see the whole story either way. */
+  (function () {
+    var sections = document.querySelectorAll('.about-section__content');
+    if (!sections.length || !window.matchMedia) return;
+
+    /* Walk up for the first painted background: the sections alternate
+       warm-white and sand, and a transparent one has to inherit from body. */
+    function backdrop(el) {
+      for (var n = el; n && n !== document.documentElement; n = n.parentElement) {
+        var c = getComputedStyle(n).backgroundColor;
+        var m = c.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)$/);
+        if (m && (m[4] === undefined || parseFloat(m[4]) > 0)) {
+          return m[1] + ', ' + m[2] + ', ' + m[3];
+        }
+      }
+      return '253, 250, 245';
+    }
+
+    function chevron() {
+      var ns = 'http://www.w3.org/2000/svg';
+      var svg = document.createElementNS(ns, 'svg');
+      svg.setAttribute('viewBox', '0 0 24 24');
+      svg.setAttribute('width', '14');
+      svg.setAttribute('height', '14');
+      svg.setAttribute('fill', 'none');
+      svg.setAttribute('stroke', 'currentColor');
+      svg.setAttribute('stroke-width', '2');
+      svg.setAttribute('stroke-linecap', 'round');
+      svg.setAttribute('stroke-linejoin', 'round');
+      svg.setAttribute('aria-hidden', 'true');
+      var path = document.createElementNS(ns, 'path');
+      path.setAttribute('d', 'M6 9l6 6 6-6');
+      svg.appendChild(path);
+      return svg;
+    }
+
+    Array.prototype.forEach.call(sections, function (content, i) {
+      var foldPx = parseFloat(getComputedStyle(content).getPropertyValue('--fold-height')) * 16;
+      if (!foldPx) return;
+
+      /* Only worth a click if a decent amount is actually hidden. Below that
+         the button costs more attention than the folding saves. */
+      if (content.scrollHeight - foldPx < 600) return;
+
+      var name = (content.querySelector('.eyebrow') || {}).textContent || 'this section';
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'about-more';
+      btn.setAttribute('aria-expanded', 'false');
+      btn.id = 'about-more-' + i;
+      content.id = content.id || 'about-content-' + i;
+      btn.setAttribute('aria-controls', content.id);
+
+      var label = document.createElement('span');
+      label.textContent = 'Read more';
+      btn.appendChild(label);
+      btn.appendChild(chevron());
+      btn.setAttribute('aria-label', 'Read more of ' + name);
+
+      content.style.setProperty('--fold-fade', backdrop(content));
+      content.classList.add('is-folded');
+      content.appendChild(btn);
+
+      btn.addEventListener('click', function () {
+        var folded = content.classList.toggle('is-folded');
+        btn.setAttribute('aria-expanded', String(!folded));
+        label.textContent = folded ? 'Read more' : 'Show less';
+        btn.setAttribute('aria-label',
+          (folded ? 'Read more of ' : 'Collapse ') + name);
+        if (folded) {
+          /* Collapsing from far down the section would otherwise leave the
+             reader stranded below the fold with no context. */
+          var top = content.getBoundingClientRect().top + window.scrollY - 90;
+          if (window.scrollY > top) {
+            var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            window.scrollTo({ top: top, behavior: calm ? 'auto' : 'smooth' });
+          }
+        }
+      });
+    });
+  })();
+</script>
+
 {{ end }}

@@ -1205,6 +1205,78 @@ p:last-child {
   margin-bottom: 0;
 }
 
+/* --- About — fold the long sections behind a Read more ------------------
+   These sections run several thousand pixels on a phone, which is more than
+   an About page can ask of someone skimming. JS adds .is-folded on load and
+   only where enough is hidden to be worth a click, so with no JS the prose
+   is simply all there — nothing is gated behind the script.
+
+   --fold-fade is the section's own background, set inline by the script,
+   because the sections alternate warm-white and sand. It is an "r, g, b"
+   triplet so the gradient can fade to transparent in the same hue instead
+   of drifting grey through rgba(0, 0, 0, 0). */
+.about-section__content {
+  --fold-height: 34rem;
+}
+
+.about-section__content.is-folded {
+  position: relative;
+  max-height: var(--fold-height);
+  overflow: hidden;
+}
+
+.about-section__content.is-folded::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 10rem;
+  /* Solid across the bottom third so the button sits on clean ground rather
+     than on top of a half-faded line of text. */
+  background: linear-gradient(
+    to top,
+    rgb(var(--fold-fade)) 0%,
+    rgb(var(--fold-fade)) 32%,
+    rgba(var(--fold-fade), 0) 100%);
+  pointer-events: none;
+}
+
+.about-more {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--terracotta);
+  background: none;
+  border: 0;
+  padding: 0.4rem 0;
+  margin-top: 1.25rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.about-more:hover {
+  text-decoration: underline;
+}
+
+.about-more svg {
+  transition: transform 0.2s ease;
+}
+
+.about-more[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+/* Sits over the fade while folded, and drops back into the flow once open. */
+.about-section__content.is-folded .about-more {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  margin-top: 0;
+}
+
 .about-placeholder {
   padding: 3rem;
   background-color: var(--sand);
@@ -1443,6 +1515,10 @@ body.nav-open {
      every section, where it reads as the portrait for the name underneath. */
   .about-section__image {
     order: -1;
+  }
+
+  .about-section__content {
+    --fold-height: 24rem;
   }
 
   /* Featured grid */
