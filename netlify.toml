@@ -27,3 +27,14 @@
 
 [context.branch-deploy]
   command = "hugo --gc --minify -b $DEPLOY_PRIME_URL && python3 scripts/check_links.py public $DEPLOY_PRIME_URL && python3 scripts/check_invariants.py public $DEPLOY_PRIME_URL && python3 scripts/check_content.py"
+
+# The production *.netlify.app host serves a complete second copy of the site.
+# Every page already self-canonicalises to the custom domain, but a canonical is
+# a hint and a redirect is a rule, so the duplicate is closed off properly.
+# Deploy previews live on deploy-preview-N--<site>.netlify.app, a different
+# host, so they are unaffected by this.
+[[redirects]]
+  from = "https://momentsinthemiles.netlify.app/*"
+  to = "https://www.momentsinthemiles.com/:splat"
+  status = 301
+  force = true

@@ -10,7 +10,11 @@
 {{ $pageTitle := "" }}
 {{ $t := .Params.seo_title | default .Title }}
 {{ if .IsHome }}
-  {{ $pageTitle = printf "%s — %s" .Site.Title .Site.Params.tagline }}
+  {{ $pageTitle = .Params.seo_title | default (printf "%s — %s" .Site.Title .Site.Params.tagline) }}
+{{ else if eq .Kind "term" }}
+  {{/* Without this a tag page and a section of the same name ship an identical
+       title tag — /tags/van-life/ and /van-life/ were both "Van Life | ...". */}}
+  {{ $pageTitle = printf "%s — tagged stories | %s" $t .Site.Title }}
 {{ else if ge (len $t) 45 }}
   {{ $pageTitle = $t }}
 {{ else }}
@@ -35,11 +39,21 @@
 <link rel="icon" href="{{ .Site.Home.RelPermalink }}favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="{{ .Site.Home.RelPermalink }}favicon.svg">
 
-<!-- Share image: post image > og_image > site default -->
-{{ $shareImg := "" }}
-{{ with .Params.image }}{{ $shareImg = printf "%s%s" $.Site.Home.RelPermalink (strings.TrimPrefix "/" .) | absURL }}{{ end }}
+<!-- Share image: post image > og_image > site default.
+     The page photo is cropped to 1200x630 because that is the ratio every
+     share card is displayed at. Handing the platforms a 4:3 or portrait
+     original just lets them centre-crop it blindly, which decapitates people
+     in the tall shots; a smart crop at least aims at the subject. og_image is
+     the escape hatch and is passed through untouched — /map/, /years/ and
+     /places/ point it at a card built by hand at the right ratio already. -->
+{{ $sharePath := "images/pages/hero-mountaintop.jpg" }}
+{{ with .Params.image }}{{ $sharePath = strings.TrimPrefix "/" . }}{{ end }}
+{{ $shareImg := printf "%s%s" $.Site.Home.RelPermalink $sharePath | absURL }}
+{{ $shareRes := resources.Get $sharePath }}
+{{ if and $shareRes (in (slice "jpeg" "png" "webp") $shareRes.MediaType.SubType) }}
+  {{ $shareImg = ($shareRes.Fill "1200x630 smart q82").Permalink }}
+{{ end }}
 {{ with .Params.og_image }}{{ $shareImg = . | absURL }}{{ end }}
-{{ if not $shareImg }}{{ $shareImg = printf "%simages/pages/hero-mountaintop.jpg" $.Site.Home.RelPermalink | absURL }}{{ end }}
 
 <!-- Open Graph -->
 <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
