@@ -185,6 +185,12 @@ def check_built(public, base_url):
         base_host = m.group(1) if m else ""
 
     others = {h for h in site_hosts() | {"gwinn092.github.io"} if h and h != base_host}
+    # Match a host only where it actually IS the host of a URL: right after the
+    # "//" of a scheme, and ending at a real delimiter. A plain substring test
+    # reports every "www.example.com" as a stale "example.com", because one
+    # contains the other — that false positive failed 83 pages of a real deploy.
+    host_res = {h: re.compile(r"(?<=//)" + re.escape(h) + r"(?=[/\"'\s:<>?#\\]|$)")
+                for h in others}
     stale = defaultdict(list)
     missing_alt = 0
     for dirpath, _, names in os.walk(public):
@@ -194,8 +200,8 @@ def check_built(public, base_url):
             p = os.path.join(dirpath, n)
             text = open(p, encoding="utf-8", errors="replace").read()
             if base_host:
-                for h in others:
-                    if h in text:
+                for h, rx in host_res.items():
+                    if rx.search(text):
                         stale[h].append(os.path.relpath(p, public))
             parser = ImgAlt()
             parser.feed(text)
