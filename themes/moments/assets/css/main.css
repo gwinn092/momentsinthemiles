@@ -3605,6 +3605,49 @@ html.is-map-touring .back-to-top {
     backdrop-filter: blur(6px);
   }
 }
+.map-progress__play {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid rgba(28, 26, 23, 0.18);
+  border-radius: 50%;
+  background: var(--warm-white);
+  color: var(--terracotta);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.map-progress__play:hover,
+.map-progress__play[aria-pressed="true"] {
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+  color: var(--warm-white);
+}
+/* Triangle by default; two bars once it is playing. */
+.map-progress__play-icon {
+  display: block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  border-left: 9px solid currentColor;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+}
+.map-progress__play[aria-pressed="true"] .map-progress__play-icon {
+  width: 9px;
+  height: 11px;
+  margin-left: 0;
+  border: 0;
+  background: linear-gradient(to right,
+    currentColor 0 3px, transparent 3px 6px, currentColor 6px 9px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .map-progress__play { transition: none; }
+}
+
 .map-progress__readout {
   font-family: var(--font-sans);
   font-size: 0.72rem;
