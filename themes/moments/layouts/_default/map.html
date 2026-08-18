@@ -647,16 +647,64 @@
       g.style.transformOrigin = 'center';
     });
 
-    // Route: gently curved line through the stops, drawn leg by leg.
+    // Route geometry.
+    //
+    // A leg with no route data is drawn the way it always was: one gentle
+    // alternating bend, which reads as a journey rather than a ruler line but
+    // is not a road and does not claim to be.
+    //
+    // A leg that has `via` in data/map_stories.yaml is drawn through the places
+    // it actually passed, as a smooth spline hitting every one of them. The two
+    // styles coexist on purpose, so routes can be filled in one leg at a time
+    // and each leg straightens into its real shape as its data lands.
+    //
+    // `via` is keyed by the stop the leg arrives at, and each entry is either a
+    // shape name from the SVG ("Nevada") or {name, fx, fy} to aim at a point
+    // inside that shape rather than its middle.
+    var viaMap = (opts.via || {});
+
+    function viaPoints(stopId) {
+      return (viaMap[stopId] || []).map(function (v) {
+        var name = typeof v === 'string' ? v : v.name;
+        var el = svg.querySelector('[data-name="' + name + '"]');
+        if (!el) return null;
+        var bb = el.getBBox();
+        var fx = (typeof v === 'object' && v.fx !== undefined) ? v.fx : 0.5;
+        var fy = (typeof v === 'object' && v.fy !== undefined) ? v.fy : 0.5;
+        return { x: bb.x + bb.width * fx, y: bb.y + bb.height * fy };
+      }).filter(Boolean);
+    }
+
+    // Catmull-Rom through the points, emitted as cubic beziers, so the line
+    // passes through every waypoint instead of near them.
+    function splineD(pts) {
+      var d = '';
+      for (var i = 0; i < pts.length - 1; i++) {
+        var p0 = pts[i - 1] || pts[i];
+        var p1 = pts[i];
+        var p2 = pts[i + 1];
+        var p3 = pts[i + 2] || p2;
+        d += ' C ' + (p1.x + (p2.x - p0.x) / 6) + ' ' + (p1.y + (p2.y - p0.y) / 6) +
+             ' ' + (p2.x - (p3.x - p1.x) / 6) + ' ' + (p2.y - (p3.y - p1.y) / 6) +
+             ' ' + p2.x + ' ' + p2.y;
+      }
+      return d;
+    }
+
     function routeD(n) {
       var d = 'M ' + stops[0]._px + ' ' + stops[0]._py;
       for (var i = 1; i < n; i++) {
         var a = stops[i - 1], b = stops[i];
-        var mx = (a._px + b._px) / 2, my = (a._py + b._py) / 2;
-        var dx = b._px - a._px, dy = b._py - a._py;
-        var len = Math.sqrt(dx * dx + dy * dy) || 1;
-        var bend = (i % 2 ? 1 : -1) * Math.min(len * 0.18, frameW * 0.09);
-        d += ' Q ' + (mx - dy / len * bend) + ' ' + (my + dx / len * bend) + ' ' + b._px + ' ' + b._py;
+        var via = viaPoints(b.id);
+        if (via.length) {
+          d += splineD([{ x: a._px, y: a._py }].concat(via, [{ x: b._px, y: b._py }]));
+        } else {
+          var mx = (a._px + b._px) / 2, my = (a._py + b._py) / 2;
+          var dx = b._px - a._px, dy = b._py - a._py;
+          var len = Math.sqrt(dx * dx + dy * dy) || 1;
+          var bend = (i % 2 ? 1 : -1) * Math.min(len * 0.18, frameW * 0.09);
+          d += ' Q ' + (mx - dy / len * bend) + ' ' + (my + dx / len * bend) + ' ' + b._px + ' ' + b._py;
+        }
       }
       return d;
     }
@@ -851,8 +899,8 @@
     root.querySelectorAll('.map-step').forEach(function (st) { stepIO.observe(st); });
   }
 
-  initScrolly(usSvg, scrolly, DATA.tour && DATA.tour.stops, { frameW: 300, strokeW: 2.2, prefix: 'drive', progressId: 'mapProgressDrive', word: 'drive' });
-  initScrolly(worldSvg, loopRoot, DATA.loop && DATA.loop.stops, { frameW: 85, strokeW: 2.2, routeClass: 'map-route--air', scalePins: true, prefix: 'loop', progressId: 'mapProgressLoop', word: 'loop' });
+  initScrolly(usSvg, scrolly, DATA.tour && DATA.tour.stops, { frameW: 300, strokeW: 2.2, prefix: 'drive', progressId: 'mapProgressDrive', word: 'drive', via: DATA.tour && DATA.tour.via });
+  initScrolly(worldSvg, loopRoot, DATA.loop && DATA.loop.stops, { frameW: 85, strokeW: 2.2, routeClass: 'map-route--air', scalePins: true, prefix: 'loop', progressId: 'mapProgressLoop', word: 'loop', via: DATA.loop && DATA.loop.via });
 
   // --- Replay the years: re-ink the lower 48 one year at a time,
   // driven by data/van_years.yaml (the button renders only when it's filled in) ---

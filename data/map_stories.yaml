@@ -302,6 +302,22 @@ tour:
   label: "Take the drive"
   intro: "Nine stops, eight years, every kind of road."
   stops: [ca, or, wa, mt, wy, co, ut, az, nm]
+  # OPTIONAL — the real route, one leg at a time.
+  #
+  # Keyed by the stop a leg ARRIVES at, listing the places it actually drove
+  # through on the way. A leg listed here is drawn as a line passing through
+  # every one of them; a leg left out keeps the gentle curve it has now. So this
+  # can be filled in gradually, and each leg straightens into its real shape as
+  # its entry lands. Nothing here is guessed — these are Jesse and Karlee's
+  # roads to state, not mine to invent.
+  #
+  # Entries are SVG shape names, e.g. "Nevada". Use {name, fx, fy} instead of a
+  # bare name to aim at a point inside a shape rather than its middle, where
+  # fx/fy are fractions of its bounding box (0.5/0.5 is the centre).
+  #
+  # via:
+  #   or: ["Nevada"]
+  #   mt: [{ name: "Idaho", fx: 0.45, fy: 0.7 }]
 
 # "Fly the loop" — the SE Asia tour across the world map, in leg order.
 loop:
