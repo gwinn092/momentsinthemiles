@@ -5,7 +5,7 @@ layout: "map"
 og_image: "images/pages/og-map.jpg"
 us_eyebrow: "United States"
 us_heading: "The Lower Forty-Eight"
-us_footnote: "Alaska & Hawaii: still on the list. The odometer reads 129,783."
+us_footnote: "Alaska & Hawaii: still on the list. The odometer reads 129,783; a hundred thousand of those are ours."
 us_stats:
   - { value: "48", label: "states together" }
   - { value: "100,000", count: "100000", label: "miles and counting" }

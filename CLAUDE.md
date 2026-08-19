@@ -2,26 +2,38 @@
 
 These layer on top of the global rules in `~/.claude/CLAUDE.md`.
 
-## Monetization (policy changed July 30 2026 — Jesse's call)
-MitM now carries affiliate links and sponsorship. The old "no monetization in the
-story" hard line is retired. The model is Salt in Our Hair: soft, contextual,
-useful. Not pushy is the whole point, so the boundaries below are firm.
+## Monetization (loosened Aug 19 2026 — Jesse's call; supersedes July 30 2026)
+MitM carries affiliate links and sponsorship. The model is still Salt in Our
+Hair: soft, contextual, useful. What changed on Aug 19 is the **scope**: the old
+section whitelist (`/guides/` and `/itineraries/` only) is retired. Jesse's
+instruction was to loosen it and use judgement.
 
-**Where money is allowed**
-- Guides (`/guides/`) and itineraries (`/itineraries/`). These are the pages
-  people read with a trip to plan, so a booking link is a service, not an ad.
-- The Leave Anyway Kit and Reduce Friction, as before. Keep Reduce Friction in
-  the nav; it is the only route to the Kit.
-- Sponsorship, via `/work-with-us/`.
+**The judgement rule, which replaces the whitelist**
+A booking or affiliate link belongs wherever a reader could plausibly act on it
+*right there* — the page names a real place, and someone reading it might want to
+go. That now includes Van Life posts, essays, `/places/` and Start Here, which
+were previously off limits. Ask "would a reader be glad this link was here, or
+would they notice they were being sold to?" If it is the second, leave it out.
+When it is genuinely a close call, leave it out — the trust is what makes any of
+this convert, and one restrained page costs far less than one page that reads as
+an ad.
 
-**Where money is NOT allowed — this part is still a hard line**
-- Essays, Van Life, About, Start Here, The Map, Places, Gallery, The Years.
-  Those pages are the trust engine, and the trust is what makes a guide convert
-  at all. No booking links, no sponsored blocks, no product placement there.
-- No product roundups, comparison tables, or "best X of 2026" pages anywhere on
-  MitM. That format lives on CAVL (`../affiliation.vansite`) and stays there.
-- Never more than one booking block per section of a guide, and never above the
-  first real paragraph of the page.
+**What is still firm — do not treat these as loosened**
+- **Legal and honesty lines are absolute** and are covered below: FTC disclosure
+  on every page carrying a link, and never inventing a business they used.
+- **No product roundups, comparison tables, or "best X of 2026" pages anywhere on
+  MitM.** That format lives on CAVL (`../affiliation.vansite`) and stays there.
+  This is a cross-site boundary, not a tone preference.
+- **Nothing above the first real paragraph of a page.** A reader gets the writing
+  before they get an offer, always.
+- **No monetization at all** on `/about/`, `/work-with-us/`, `/privacy/`,
+  `/terms/`, or the Reduce Friction quiz and Kit pages. The first two are
+  credentials, the next two are legal, and the last two are already selling the
+  $27 Kit — a booking link there competes with the product.
+- **Restraint over density.** One booking block per section of a page remains the
+  ceiling, and most sections should have none.
+- Keep Reduce Friction in the nav; it is the only route to the Kit.
+- Sponsorship still routes through `/work-with-us/`.
 
 **Rules for every affiliate link**
 - Use the `{{< book >}}` shortcode or `partials/booking-link.html`. Never write a
@@ -38,7 +50,8 @@ useful. Not pushy is the whole point, so the boundaries below are firm.
 Display ads are a **separate policy from affiliate/sponsorship above**, and the
 scopes are deliberately different. Do not merge the two rules.
 
-- **Affiliate + sponsorship**: `/guides/` and `/itineraries/` only. Unchanged.
+- **Affiliate + sponsorship**: judgement-based sitewide as of Aug 19 2026, with
+  the firm exclusions listed above. No longer a section whitelist.
 - **Display ads**: allowed **sitewide**, essays included. The reasoning is that
   story content converts affiliate clicks badly but accumulates the pageviews an
   ad network actually pays for, so confining ads to the guides would monetize

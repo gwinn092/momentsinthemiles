@@ -28,8 +28,8 @@ hotspots:
     text: "Jesse cooks, I prep, and we move around each other in a galley the size of a closet without losing our minds, most of the time. Real meals come off this counter every day. A kitchen doesn't need to be big, just yours."
   - x: 55
     y: 6
-    title: "The ceiling"
-    text: "Jesse laid every piece of this wood himself, back when the van was an empty metal shell in a driveway and this life was still just a theory. Eight years later it's the first thing we see every morning. We don't take it for granted."
+    title: "The cabinets"
+    text: "That pale wood is the underside of the cabinets that run the length of the galley. Jesse cut and laid every piece of it himself, back when the van was an empty metal shell in a driveway and this life was still just a theory. Eight years later it's still the wood over our heads every morning, and we don't take it for granted."
   - x: 87
     y: 40
     title: "The front seats"
