@@ -20,6 +20,9 @@ Each check exists because the bug it describes actually shipped:
     a buyer landed on what looked like the same page.
   - The Van Life landing page ran two photos as in-body fullbleeds that were
     also, further down the same page, the card heroes of two of its own posts.
+  - The affiliate disclosure partial keyed off two partner IDs by name, so a
+    link for any third partner would have gone out earning a real commission
+    with no disclosure beside it, and nothing would have failed.
 
 Scope note: the ink check covers the world map only. The US map inks all 48
 states deliberately — most have no story and that is the point — so applying it
@@ -241,11 +244,34 @@ def check_section_image_reuse():
                      f"one page")
 
 
+def check_affiliate_disclosure():
+    """Every page carrying an affiliate link must also carry the disclosure.
+
+    This is an FTC requirement, so it is checked at source rather than in the
+    build output: the disclosure partial deliberately renders nothing while all
+    partner IDs are blank, which would make a rendered-output check pass for the
+    wrong reason and then start failing the day money got switched on.
+
+    The bug this replaces: the partial tested `agodaCid` or `bookingAid` by
+    name, so a link for any third partner would have shipped with no disclosure
+    at all and nothing would have said so.
+    """
+    for path in glob.glob(os.path.join(ROOT, "content", "**", "*.md"), recursive=True):
+        text = read(os.path.relpath(path, ROOT))
+        has_link = "{{< book" in text or 'rel="sponsored' in text
+        if has_link and "{{< affiliate-note" not in text:
+            fail("affiliate-disclosure",
+                 f"{os.path.relpath(path, ROOT)} has an affiliate link but no "
+                 "{{< affiliate-note >}} — that is an FTC requirement, not a "
+                 "preference")
+
+
 def main():
     check_itinerary_counts()
     check_map_ink()
     check_hero_uniqueness()
     check_section_image_reuse()
+    check_affiliate_disclosure()
 
     for n in notes:
         print(f"note: {n}")

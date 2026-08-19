@@ -1,7 +1,30 @@
-{{/* FTC disclosure. Renders ONLY when a partner ID is actually configured —
-     a disclosure with nothing to disclose is noise, and while the accounts are
-     pending every "booking link" on the page is just a plain public URL. */}}
-{{ $ids := site.Params.affiliates | default dict }}
-{{ if or $ids.agodaCid $ids.bookingAid }}
+{{/* FTC disclosure.
+
+     Renders when ANY affiliate partner is configured, or when a page sets
+     `affiliate: true` in its front matter.
+
+     It used to test `agodaCid` or `bookingAid` by name, which meant a link for
+     any third partner — Harvest Hosts was the one on the cards — would have
+     shipped earning a real commission with no disclosure beside it, silently,
+     because neither of those two IDs was set. Anything non-empty under
+     [params.affiliates] now switches it on, so a new partner discloses itself
+     the moment its ID lands in hugo.toml rather than the day someone notices.
+
+     The original reason for suppressing it still holds: while every ID is blank
+     the "booking links" are plain public URLs that earn nothing, and a notice
+     claiming a commission that cannot exist is worse than no notice.
+
+     `affiliate: true` is the escape hatch for a partner whose link carries no
+     configurable ID. Set it on any page like that; there is a CI gate on this
+     (scripts/check_content.py, scripts/check_invariants.py). */}}
+{{ $page := . }}
+{{ $on := false }}
+{{ range $k, $v := (site.Params.affiliates | default dict) }}
+  {{ if $v }}{{ $on = true }}{{ end }}
+{{ end }}
+{{ if and (not $on) $page.Params }}
+  {{ if $page.Params.affiliate }}{{ $on = true }}{{ end }}
+{{ end }}
+{{ if $on }}
 <p class="affiliate-note">Some links here are affiliate links. If you book through one we may earn a small commission, at no extra cost to you. It never changes what we recommend, and we only point you at places we actually went.</p>
 {{ end }}

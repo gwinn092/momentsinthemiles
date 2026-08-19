@@ -172,6 +172,22 @@ def site_hosts():
     return hosts
 
 
+def affiliates_live():
+    """True once any partner ID under [params.affiliates] is non-empty.
+
+    The disclosure partial suppresses itself while every ID is blank, because
+    the links are then plain public URLs that earn nothing. So the built-output
+    check below only means something once money is actually switched on — and
+    it must start meaning something on that exact day, without anyone
+    remembering to enable it."""
+    block = re.search(r"\[params\.affiliates\](.*?)(?:\n\[|\Z)",
+                      read("hugo.toml"), re.S)
+    if not block:
+        return False
+    return any(v.strip() for v in re.findall(r'^\s*\w+\s*=\s*"([^"]*)"',
+                                             block.group(1), re.M))
+
+
 def check_built(public, base_url):
     """base_url is the host this build was made for. Anything absolute pointing
     at one of the site's OTHER hosts is stale — which is the failure mode of the
@@ -200,6 +216,10 @@ def check_built(public, base_url):
     # links. safeURL on the whole URL is the fix; this is the tripwire.
     mangled_qs = re.compile(r'href="[^"]*\?[^"]*%3[dD][^"]*"')
     mangled = []
+    # FTC: a page that earns a commission must say so. Only meaningful once a
+    # partner ID exists — see affiliates_live().
+    money_on = affiliates_live()
+    undisclosed = []
     for dirpath, _, names in os.walk(public):
         for n in names:
             if not n.endswith(".html"):
@@ -212,6 +232,11 @@ def check_built(public, base_url):
                         stale[h].append(os.path.relpath(p, public))
             if mangled_qs.search(text):
                 mangled.append(os.path.relpath(p, public))
+            # Both patterns must tolerate --minify, which strips attribute
+            # quotes: class="affiliate-note" ships as class=affiliate-note.
+            if money_on and re.search(r'rel="?sponsored', text) \
+                    and not re.search(r'class="?affiliate-note', text):
+                undisclosed.append(os.path.relpath(p, public))
             parser = ImgAlt()
             parser.feed(text)
             missing_alt += parser.missing
@@ -222,6 +247,15 @@ def check_built(public, base_url):
         fail("stale-host",
              f"{len(pages)} page(s) point at {h} but this build is for "
              f"{base_host}, e.g. {pages[:3]}")
+    if undisclosed:
+        fail("affiliate-disclosure",
+             f"{len(undisclosed)} page(s) carry an affiliate link with no "
+             f"disclosure rendered on them, e.g. {undisclosed[:3]} — FTC "
+             f"requirement; add {{{{< affiliate-note >}}}} or set "
+             f"affiliate: true in front matter")
+    elif not money_on:
+        notes.append("no affiliate partner IDs are set, so the disclosure "
+                     "check on built pages is dormant")
     if mangled:
         fail("escaped-query",
              f"{len(mangled)} page(s) have an href whose query string is "
