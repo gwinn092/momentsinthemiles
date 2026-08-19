@@ -266,12 +266,108 @@ def check_affiliate_disclosure():
                  "preference")
 
 
+# --- 6. road-trip stops: the honesty rules, enforced ------------------------
+def check_road_trip_stops():
+    """A stop we have never been to must say so, and must never earn money.
+
+    data/road_trips.yaml publishes an invented ROUTE built from real STOPS. The
+    whole thing rests on one promise: `status: list` means we have not been
+    there, it is labelled as such on the page, and it carries no booking link.
+    That promise is one careless edit away from breaking silently, so it is
+    checked here rather than remembered.
+
+    Parsed with regex on purpose — this script has no YAML dependency.
+    """
+    path = os.path.join(ROOT, "data", "road_trips.yaml")
+    if not os.path.exists(path):
+        return
+    text = open(path, encoding="utf-8").read()
+
+    body = text.split("\nstops:", 1)
+    if len(body) < 2:
+        return
+    regions = set(re.findall(r'^\s*-\s*id:\s*([A-Za-z0-9_-]+)', body[0], re.M))
+    story_ids = set()
+    ms = os.path.join(ROOT, "data", "map_stories.yaml")
+    if os.path.exists(ms):
+        story_ids = set(re.findall(r'^\s*-\s*id:\s*([A-Za-z0-9_-]+)',
+                                   open(ms, encoding="utf-8").read(), re.M))
+
+    spines = defaultdict(list)
+    for block in re.split(r'\n  - id:', body[1])[1:]:
+        sid = block.split("\n", 1)[0].strip()
+
+        def field(name):
+            m = re.search(rf'^\s{{4}}{name}:\s*(.*?)\s*$', block, re.M)
+            if not m:
+                return ""
+            raw = m.group(1)
+            quoted = re.match(r'"([^"]*)"', raw)
+            if quoted:
+                return quoted.group(1).strip()
+            # A bare value ends at an inline comment: `status: been  # note`.
+            return raw.split("#", 1)[0].strip()
+
+        if field("example") == "true":
+            continue
+
+        status = field("status")
+        if status not in ("been", "list"):
+            fail("road-trip-stop",
+                 f"stop '{sid}' has status '{status or "(none)"}' — must be "
+                 f"'been' or 'list'. Without it the page cannot tell a reader "
+                 f"whether we have actually been there.")
+
+        if status == "list" and not field("why_listed"):
+            fail("road-trip-stop",
+                 f"stop '{sid}' is marked 'list' (never been) with no "
+                 f"why_listed. A stop we have not visited must say who told us "
+                 f"or what we drove past, or it is filler.")
+
+        if status == "list" and re.search(r'^\s+\w*(book|affiliate)\w*:', block,
+                                          re.M | re.I):
+            fail("road-trip-stop",
+                 f"stop '{sid}' has never been visited but carries a booking or "
+                 f"affiliate field. We do not earn a commission on a place we "
+                 f"have not been — it is the one thing that would make every "
+                 f"other recommendation untrustworthy.")
+
+        region = field("region")
+        if regions and region not in regions:
+            fail("road-trip-stop",
+                 f"stop '{sid}' names region '{region}', which is not defined "
+                 f"in the regions list.")
+
+        story = field("story_id")
+        if story and story_ids and story not in story_ids:
+            fail("road-trip-stop",
+                 f"stop '{sid}' points at story_id '{story}', which does not "
+                 f"exist in map_stories.yaml — its photo and prose would be "
+                 f"silently missing.")
+
+        spine = field("spine")
+        if spine:
+            spines[region].append((spine, sid))
+
+    for region, entries in spines.items():
+        seen = defaultdict(list)
+        for spine, sid in entries:
+            seen[spine].append(sid)
+        for spine, ids in seen.items():
+            if len(ids) > 1:
+                fail("road-trip-stop",
+                     f"region '{region}' has {len(ids)} stops sharing spine "
+                     f"{spine} ({', '.join(ids)}) — the driving order between "
+                     f"them is undefined and would flip between builds.")
+
+
 def main():
     check_itinerary_counts()
     check_map_ink()
     check_hero_uniqueness()
     check_section_image_reuse()
     check_affiliate_disclosure()
+    check_road_trip_stops()
 
     for n in notes:
         print(f"note: {n}")

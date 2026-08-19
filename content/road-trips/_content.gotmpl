@@ -1,0 +1,54 @@
+{{/* One page per region in data/road_trips.yaml. Same pattern as
+     content/places/ and content/itineraries/: add a region to the YAML and its
+     page appears on the next build, with no file to write.
+
+     Stops are resolved and sorted here rather than in the template, so the
+     template only has to render. Each stop carries its matching map_stories
+     entry under `story`, looked up by `story_id`, which is why the photo and
+     prose are never copied into road_trips.yaml — one definition, one alt text.
+
+     A region marked `draft: true` is passed through to the page's own draft
+     flag, so it appears under `hugo server -D` and is absent from production
+     until someone lifts it. Draft STOPS are filtered in the template instead,
+     because that check needs site.BuildDrafts. */}}
+
+{{ $stories := dict }}
+{{ range hugo.Data.map_stories.stories }}
+  {{ $stories = merge $stories (dict .id .) }}
+{{ end }}
+
+{{ range $region := hugo.Data.road_trips.regions }}
+
+  {{/* `example: true` entries are documentation of the format, never content. */}}
+  {{ $stops := where (where hugo.Data.road_trips.stops "region" $region.id) "example" "!=" true }}
+  {{ $stops = sort $stops "spine" }}
+
+  {{ $resolved := slice }}
+  {{ range $s := $stops }}
+    {{ $story := "" }}
+    {{ with $s.story_id }}{{ $story = index $stories . }}{{ end }}
+    {{ $resolved = $resolved | append (merge $s (dict "story" $story)) }}
+  {{ end }}
+
+  {{ $been := len (where $stops "status" "been") }}
+
+  {{ $.AddPage (dict
+    "path" $region.id
+    "title" $region.title
+    "description" (printf "%s A road trip through %s, built from the places we would actually send you to."
+                    $region.deck (delimit $region.states ", " " and "))
+    "kind" "page"
+    "layout" "roadtrip"
+    "draft" (default false $region.draft)
+    "sitemap" (dict "priority" -1.0)
+    "params" (dict
+      "region_id" $region.id
+      "deck" $region.deck
+      "states" $region.states
+      "spine_order" $region.spine_order
+      "days" $region.days
+      "stops" $resolved
+      "stop_count" (len $stops)
+      "been_count" $been)
+  ) }}
+{{ end }}

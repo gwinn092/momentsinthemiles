@@ -1,0 +1,126 @@
+{{ define "main" }}
+{{ $home := .Site.Home.RelPermalink }}
+
+{{/* Draft stops are half-written — no nights, no season, nothing a reader could
+     plan around. They render under `hugo server -D` so the shape can be checked
+     while Karlee is still writing, and are absent from production. */}}
+{{ $stops := .Params.stops }}
+{{ if not site.BuildDrafts }}
+  {{ $stops = where $stops "draft" "!=" true }}
+{{ end }}
+
+<article class="roadtrip">
+  <div class="content-container roadtrip__head">
+    <span class="eyebrow">The Road Trip We'd Drive</span>
+    <h1 class="roadtrip__title">{{ .Title }}</h1>
+    {{ with .Params.deck }}<p class="roadtrip__deck">{{ . }}</p>{{ end }}
+
+    <ul class="roadtrip__facts">
+      <li><span>States</span>{{ delimit .Params.states ", " " and " }}</li>
+      {{ with .Params.days }}<li><span>Works for</span>{{ .min }}&ndash;{{ .max }} days</li>{{ end }}
+      <li><span>Stops</span>{{ len $stops }}</li>
+    </ul>
+  </div>
+
+  {{/* The honesty framing. This is not flavour text — it is the promise the
+       whole page rests on, and it belongs above the stops, not in a footnote.
+       ⚠️ Voice-check this with Jesse and Karlee; it is Claude-drafted. */}}
+  <div class="content-container roadtrip__intro">
+    <p>
+      We have crossed this country more times than we can count, and never once
+      in a straight line. So this is not a trip we took. It is the one we would
+      drive if we started again tomorrow, built out of the places we would
+      actually send you to.
+    </p>
+    <p>
+      Most of these we have been to. A few we have not, and those say so plainly
+      &mdash; we would rather tell you a place is worth your time on someone
+      else's word than pretend we have stood there ourselves.
+    </p>
+  </div>
+
+  {{ if $stops }}
+  <div class="content-container roadtrip__stops">
+    <h2 class="roadtrip__stops-title">
+      The route, {{ .Params.spine_order | default "in order" }}
+    </h2>
+
+    <ol class="roadtrip__list">
+      {{ range $i, $stop := $stops }}
+      <li class="roadtrip__stop{{ if eq $stop.status "list" }} roadtrip__stop--unvisited{{ end }}"
+          id="stop-{{ $stop.id }}">
+
+        <div class="roadtrip__stop-head">
+          <span class="roadtrip__stop-num" aria-hidden="true">{{ add $i 1 }}</span>
+          <div>
+            <h3 class="roadtrip__stop-place">{{ $stop.place }}</h3>
+            <p class="roadtrip__stop-state">{{ $stop.state }}</p>
+          </div>
+        </div>
+
+        {{/* Never quietly present somewhere they have not been as somewhere
+             they have. The badge sits on the stop itself, not in a disclaimer
+             at the bottom of the page where nobody reads it. */}}
+        {{ if eq $stop.status "list" }}
+        <p class="roadtrip__badge roadtrip__badge--list">
+          <strong>We haven't been here yet.</strong>
+          {{ with $stop.why_listed }}{{ . }}{{ end }}
+        </p>
+        {{ end }}
+
+        {{ with $stop.nights }}
+          {{ with .ideal }}<p class="roadtrip__nights">{{ . }} night{{ if ne . 1 }}s{{ end }}{{ with $stop.nights.min }}{{ if ne . $stop.nights.ideal }}, {{ . }} at a push{{ end }}{{ end }}</p>{{ end }}
+        {{ end }}
+
+        {{ with $stop.why }}<p class="roadtrip__why">{{ . }}</p>{{ end }}
+
+        {{/* The photo and the story come from map_stories.yaml via story_id, so
+             they exist in exactly one place and keep their own alt text. */}}
+        {{ with $stop.story }}
+          {{ with .photo }}
+          <figure class="roadtrip__stop-figure">
+            {{ partial "respimg.html" (dict
+              "path" .
+              "alt" ($stop.story.alt | default $stop.place)
+              "sizes" "(min-width: 800px) 640px, 100vw"
+              "widths" (slice 480 800 1200)) }}
+            {{ with $stop.story.caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+          </figure>
+          {{ end }}
+          {{ with .story }}<blockquote class="roadtrip__story">{{ . }}</blockquote>{{ end }}
+        {{ end }}
+
+        <dl class="roadtrip__details">
+          {{ with $stop.stay }}<dt>Where to stay</dt><dd>{{ . }}</dd>{{ end }}
+          {{ with $stop.season }}<dt>When to go</dt><dd>{{ . }}</dd>{{ end }}
+          {{ with $stop.tips }}<dt>What we'd tell you</dt><dd>{{ . }}</dd>{{ end }}
+          {{ with $stop.costs }}
+          <dt>What it costs</dt>
+          <dd>
+            <ul class="roadtrip__costs">
+              {{ range . }}<li>{{ .what }}{{ with .amount }} &mdash; {{ . }}{{ end }}</li>{{ end }}
+            </ul>
+          </dd>
+          {{ end }}
+        </dl>
+
+        {{ with $stop.story_id }}
+        <a class="roadtrip__pin link-arrow" href="{{ $home }}map/#{{ . }}">
+          See this one on the map <span aria-hidden="true">&rarr;</span>
+        </a>
+        {{ end }}
+      </li>
+      {{ end }}
+    </ol>
+  </div>
+  {{ else }}
+  <div class="content-container roadtrip__empty">
+    <p>This route is still being written.</p>
+  </div>
+  {{ end }}
+
+  <div class="content-container roadtrip__next">
+    <a class="link-arrow" href="{{ $home }}map/">See every place we've stopped on the map <span aria-hidden="true">&rarr;</span></a>
+  </div>
+</article>
+{{ end }}
