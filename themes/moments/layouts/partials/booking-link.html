@@ -31,5 +31,12 @@
 {{- end -}}
 
 {{/* urlquery encodes a space as "+", which Hugo then HTML-escapes into
-     "&#43;" and escapes again at the call site. %20 sidesteps it entirely. */}}
-{{- replace $out "+" "%20" -}}
+     "&#43;" and escapes again at the call site. %20 sidesteps it entirely.
+
+     `return` hands back a plain string instead of rendered template output.
+     Rendered output is HTML-escaped once inside this partial and then a second
+     time when the caller drops it into an href, so the "&" before cid= shipped
+     as "&amp;amp;" — which a browser reads as the parameter "amp;cid", not
+     "cid". The partner ID was silently discarded on every link. With `return`
+     the caller escapes exactly once, giving the correct "&amp;" in the markup. */}}
+{{- return (replace $out "+" "%20") -}}

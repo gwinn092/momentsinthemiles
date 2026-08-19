@@ -216,6 +216,15 @@ def check_built(public, base_url):
     # links. safeURL on the whole URL is the fix; this is the tripwire.
     mangled_qs = re.compile(r'href="[^"]*\?[^"]*%3[dD][^"]*"')
     mangled = []
+    # The same failure from the other direction. A partial that RENDERS a URL
+    # has its output escaped once inside the partial and again when the caller
+    # drops it into an href, so "&cid=" ships as "&amp;amp;cid=" — which a
+    # browser parses as a parameter called "amp;cid". The affiliate ID is
+    # silently dropped and every commission is lost. Only visible once a partner
+    # ID is set, which is exactly when it costs money. `return` in the partial
+    # is the fix; this is the tripwire. Tolerates --minify stripping quotes.
+    double_amp = re.compile(r'href="?[^"\s>]*&amp;amp;')
+    doubled = []
     # FTC: a page that earns a commission must say so. Only meaningful once a
     # partner ID exists — see affiliates_live().
     money_on = affiliates_live()
@@ -232,6 +241,8 @@ def check_built(public, base_url):
                         stale[h].append(os.path.relpath(p, public))
             if mangled_qs.search(text):
                 mangled.append(os.path.relpath(p, public))
+            if double_amp.search(text):
+                doubled.append(os.path.relpath(p, public))
             # Both patterns must tolerate --minify, which strips attribute
             # quotes: class="affiliate-note" ships as class=affiliate-note.
             if money_on and re.search(r'rel="?sponsored', text) \
@@ -261,6 +272,13 @@ def check_built(public, base_url):
              f"{len(mangled)} page(s) have an href whose query string is "
              f"percent-encoded (%3d for =), which makes the link inert — pipe "
              f"the whole URL through safeURL, e.g. {mangled[:3]}")
+    if doubled:
+        fail("double-escaped-query",
+             f"{len(doubled)} page(s) have an href containing &amp;amp; — the "
+             f"URL was escaped twice, so the parameter after it is read as "
+             f"\"amp;<name>\" and its value is discarded. On an affiliate link "
+             f"that silently loses the commission. Have the partial `return` "
+             f"the URL instead of rendering it, e.g. {doubled[:3]}")
     if missing_alt:
         fail("a11y", f"{missing_alt} <img> tag(s) have no alt attribute at all "
                      "(alt=\"\" is fine for decorative images; a missing attribute is not)")
