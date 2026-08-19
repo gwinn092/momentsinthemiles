@@ -16,6 +16,12 @@
       data-netlify="true"
       netlify-honeypot="bot-field">
   <input type="hidden" name="form-name" value="partnerships">
+  {{/* Netlify reads a field literally named `subject` as the subject line of the
+       notification email, instead of storing it as a submitted field. Without it
+       every enquiry arrives under a generic default and they are impossible to
+       pick out of an inbox. Only Netlify's own %{...} variables interpolate here
+       — a submitted value like the sender's name does not. */}}
+  <input type="hidden" name="subject" value="Partnership enquiry — Moments in the Miles">
   <p class="partner-form__hp" aria-hidden="true">
     <label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off"></label>
   </p>
