@@ -6,12 +6,16 @@
   {{ $nights := 0 }}
   {{ range $it.stops }}{{ $nights = add $nights (default 0 .nights) }}{{ end }}
 
+  {{/* "sitemap" below: without it AddPage emits the zero-value priority, so every
+       generated page shipped <priority>0</priority> while hand-written pages
+       emitted none. -1 restores Hugo's "omit the tag" default. */}}
   {{ $.AddPage (dict
     "path" $it.slug
     "title" $it.title
     "description" (truncate 158 "…" $it.summary)
     "kind" "page"
     "layout" "itinerary"
+    "sitemap" (dict "priority" -1.0)
     "params" (dict
       "subtitle" $it.subtitle
       "summary" $it.summary

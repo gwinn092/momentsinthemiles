@@ -352,7 +352,7 @@
       lightbox.classList.add('is-open');
       lightbox.setAttribute('aria-hidden', 'false');
     };
-    const closeLb = () => { lightbox.classList.remove('is-open'); lightbox.setAttribute('aria-hidden', 'true'); lbImg.src = ''; };
+    const closeLb = () => { lightbox.classList.remove('is-open'); lightbox.setAttribute('aria-hidden', 'true'); lbImg.removeAttribute('src'); };
     allItems.forEach((btn) => btn.addEventListener('click', () => openLb(visibleItems().indexOf(btn))));
 
     // --- Gallery category filter ---

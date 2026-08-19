@@ -44,6 +44,9 @@
   {{/* Titled by place, not by the story's headline — several headlines are
        word-for-word the title of the essay they link to, and two pages
        competing for one phrase helps neither. The headline becomes the deck. */}}
+  {{/* "sitemap" below: without it AddPage emits the zero-value priority, so every
+       generated page shipped <priority>0</priority> while hand-written pages
+       emitted none. -1 restores Hugo's "omit the tag" default. */}}
   {{ $.AddPage (dict
     "path" $slug
     "title" $story.place
@@ -51,6 +54,7 @@
     "description" (printf "%s: %s" $story.title (truncate (sub 152 (len $story.title)) "…" $story.story))
     "kind" "page"
     "layout" "place"
+    "sitemap" (dict "priority" -1.0)
     "content" $content
   ) }}
 {{ end }}
