@@ -1,0 +1,139 @@
+# Road trips — the route we would drive if we did it again.
+#
+# NOT a log of a trip we took. We have crossed the country too many times for
+# there to be one clean story, and a reconstructed 2019 loop helps nobody. This
+# is a recommendation: the best version of a region, assembled from places we
+# actually rate.
+#
+# The unit here is a STOP, not an itinerary. Each place is written once, and the
+# builder on the region page recombines stops to fit whatever the reader asks
+# for — "Oregon and Washington, two weeks" — ordering them along the region's
+# spine and spending their nights budget on the stops that deserve it.
+#
+# ── THE HONESTY RULE, which is the whole point ────────────────────────────────
+# The ROUTE is invented. Every STOP must be real.
+#   status: been  — we have actually been there. Write it from memory.
+#   status: list  — we have NOT been. Allowed, encouraged, and ALWAYS labelled
+#                   as such on the page, with `why_listed` saying specifically
+#                   who told us or what we drove past. "It is supposed to be
+#                   beautiful" is filler; "Daniel and Serena would not shut up
+#                   about it" is a reason.
+# ⛔ A `list` stop may NEVER carry a booking or affiliate link. We do not earn a
+#    commission on somewhere we have never been. This is enforced in CI, not
+#    left to memory — see scripts/check_content.py.
+# ⛔ Never invent a stop, a price, a season or a place to stay. A missing field
+#    is fine. A plausible guess is not. Ask Jesse and Karlee.
+#
+# ── HOW ORDERING WORKS ────────────────────────────────────────────────────────
+# No routing engine and no coordinates. Each region has a geographic SPINE, and
+# every stop carries a `spine:` number along it. Sorting any subset of stops by
+# that number gives a sensible driving order, and reversing it drives the other
+# way. Leave gaps (10, 20, 30...) so a stop can be inserted later without
+# renumbering the whole region.
+#
+# ── PHOTOS AND STORIES ────────────────────────────────────────────────────────
+# `story_id` points at an entry in data/map_stories.yaml. The template pulls the
+# photo, alt text and story from there rather than copying them, so a photo can
+# never end up defined twice with two different alts — and the existing
+# same-photo-on-two-pages CI gate keeps working.
+#
+# ── DRAFTS ────────────────────────────────────────────────────────────────────
+# `draft: true` keeps a half-written stop out of the built site. Every stop
+# below that is still missing Karlee's answers is marked draft. Delete the flag
+# when the required fields are filled; CI will tell you if you delete it early.
+
+regions:
+  - id: pacific-coast
+    title: "The Pacific Coast"
+    # Shown under the title on the region page.
+    deck: "Washington to California, at the speed the coast deserves."
+    states: ["Washington", "Oregon", "California"]
+    # Stops sort by `spine` ascending = north to south. The builder reverses it
+    # if the reader's trip reads better southbound.
+    spine_order: "north to south"
+    # Shortest and longest trip the builder will assemble for this region, in
+    # days. Outside that it tells the reader plainly rather than guessing.
+    days: { min: 5, max: 28 }
+    draft: true   # ← lift once there are enough real stops to build a route
+
+  # The other three regions are deliberately not started. Pacific Coast ships
+  # and proves the format first.
+  # - id: southwest        Utah, Arizona, New Mexico, Colorado
+  # - id: northern-rockies Montana, Wyoming
+  # - id: eastern-loop     Maine, Michigan, Florida
+
+stops:
+  # ── SEEDED FROM WHAT IS ALREADY WRITTEN ──────────────────────────────────────
+  # These three are real: the story, photo and caption already exist in
+  # map_stories.yaml and are Jesse and Karlee's own words. Everything a reader
+  # would PLAN around — nights, where to stay, season, cost — is still missing,
+  # because nobody has been asked yet. Those fields are left empty on purpose.
+  # They are what Karlee's brief asks for, and they are why these are drafts.
+
+  - id: rainier
+    region: pacific-coast
+    state: "Washington"
+    place: "Mount Rainier National Park"
+    spine: 10
+    status: been
+    story_id: wa            # "The Overlook Above Rainier" — photo + story + alt
+    nights: {}              # TODO Karlee — how many nights does it deserve?
+    why: ""                 # TODO Karlee — why it is worth the time, 2-4 sentences
+    stay: ""                # TODO Karlee — where you would point someone
+    season: ""              # TODO Karlee — best time, and any time to avoid
+    costs: []               # TODO Karlee — real amounts only, or leave empty
+    tips: ""                # TODO Karlee — anything to skip or do differently
+    draft: true
+
+  - id: oregon-coast-101
+    region: pacific-coast
+    state: "Oregon"
+    place: "Highway 101, the Oregon coast"
+    spine: 40
+    status: been
+    story_id: or            # "Highway 101, No Hurry"
+    # ⚠️ This one is a DRIVE, not a single town. When Karlee sends her stops it
+    # should probably become several — Cannon Beach, Newport, Bandon — with this
+    # kept as the thread connecting them. Ask her before splitting it.
+    nights: {}
+    why: ""
+    stay: ""
+    season: ""
+    costs: []
+    tips: ""
+    draft: true
+
+  - id: yosemite
+    region: pacific-coast
+    state: "California"
+    place: "Yosemite National Park"
+    spine: 80
+    status: been
+    story_id: ca            # "Last Light in Yosemite"
+    nights: {}
+    why: ""
+    stay: ""
+    season: ""
+    costs: []
+    tips: ""
+    draft: true
+
+  # ── EXAMPLE ONLY — NOT REAL, DO NOT PUBLISH ─────────────────────────────────
+  # Kept here as the reference for the shape of a finished stop, including a
+  # `list` stop. `example: true` keeps it out of every build and out of CI's
+  # completeness checks. Delete it once a few real stops have landed.
+  - id: _example_crater_lake
+    example: true
+    region: pacific-coast
+    state: "Oregon"
+    place: "Crater Lake National Park"
+    spine: 60
+    status: list
+    why_listed: ""          # REQUIRED for status: list — who told us, or what we drove past
+    nights: { min: 1, ideal: 2 }
+    why: ""
+    stay: ""
+    season: ""
+    costs: []
+    tips: ""
+    draft: true
