@@ -38,3 +38,16 @@
   to = "https://www.momentsinthemiles.com/:splat"
   status = 301
   force = true
+
+# Netlify's Pretty URLs post-processing strips ".html" and lowercases the path,
+# so /AgodaPartnerVerification.html 301s to /agodapartnerverification. The
+# content is fine at the end of that hop, but Agoda's verifier requests the
+# exact mixed-case .html URL and a checker that does not follow redirects sees
+# only the 301. status = 200 is a rewrite rather than a redirect: the file is
+# served at the URL as requested, no hop. force = true so this beats the
+# automatic pretty-URL rule. Safe to delete once the domain is verified.
+[[redirects]]
+  from = "/AgodaPartnerVerification.html"
+  to = "/agodapartnerverification"
+  status = 200
+  force = true
