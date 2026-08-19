@@ -63,10 +63,9 @@ attention than a discount code buys.
 
 ## Get in touch
 
-Email us and tell us what you have in mind, what the timeline is, and what the
-budget looks like. We answer everything, including the ones we turn down.
+Tell us what you have in mind, what the timeline is, and what the budget looks
+like. We answer everything, including the ones we turn down.
 
-<!-- TODO [Jesse]: put the real partnerships email address here. I don't have
-     one to use, and a wrong address on this page costs actual money. -->
+{{< partner-form >}}
 
 *Moments in the Miles is operated by Wander US LLC.*

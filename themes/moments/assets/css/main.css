@@ -1027,6 +1027,91 @@ p:last-child {
   font-size: 0.8rem;
 }
 
+/* Partnership enquiry form (/work-with-us/) — Netlify Forms.
+   Deliberately quieter than the newsletter block: this one is a business
+   enquiry, not a conversion, so it sits on the page rather than shouting. */
+.partner-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 2rem 0 1rem;
+  max-width: 34rem;
+}
+
+.partner-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.partner-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.partner-form label {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.partner-form input[type="text"],
+.partner-form input[type="email"],
+.partner-form textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background: var(--warm-white);
+  color: var(--ink);
+  outline: none;
+}
+
+.partner-form textarea {
+  resize: vertical;
+}
+
+.partner-form input:focus,
+.partner-form textarea:focus {
+  border-color: var(--terracotta);
+  box-shadow: 0 0 0 3px rgba(163, 90, 52, 0.12);
+}
+
+.partner-form__hint {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.partner-form .btn {
+  align-self: flex-start;
+  padding: 0.8rem 1.6rem;
+}
+
+/* Netlify's honeypot: reachable by a bot parsing the HTML, gone for everyone
+   else. Not display:none — some bots skip those. */
+.partner-form__hp {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 560px) {
+  .partner-form__row {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Hide right rail when there isn't room for three columns */
 @media (max-width: 1180px) {
   .article-layout {

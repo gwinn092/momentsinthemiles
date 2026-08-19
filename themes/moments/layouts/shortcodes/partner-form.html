@@ -1,0 +1,46 @@
+{{/* Partnership enquiry form, handled by Netlify Forms.
+
+     Why a form and not a mailto: there is no partnerships address to publish,
+     and a published address on a page this visible gets scraped within days.
+     Netlify picks the form up from the built HTML at deploy time and mails the
+     submission to whatever address is set under Forms → notifications in the
+     Netlify dashboard — so the address lives there, never in this repo.
+
+     The fields are the three things the paragraph above already asks for.
+     `bot-field` is Netlify's honeypot: hidden from people, filled in by bots,
+     and any submission carrying it is dropped. */}}
+<form class="partner-form"
+      name="partnerships"
+      method="POST"
+      action="{{ .Site.Home.RelPermalink }}work-with-us/thanks/"
+      data-netlify="true"
+      netlify-honeypot="bot-field">
+  <input type="hidden" name="form-name" value="partnerships">
+  <p class="partner-form__hp" aria-hidden="true">
+    <label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+  </p>
+
+  <div class="partner-form__row">
+    <div class="partner-form__field">
+      <label for="pf-name">Your name</label>
+      <input type="text" id="pf-name" name="name" required autocomplete="name">
+    </div>
+    <div class="partner-form__field">
+      <label for="pf-email">Email</label>
+      <input type="email" id="pf-email" name="email" required autocomplete="email">
+    </div>
+  </div>
+
+  <div class="partner-form__field">
+    <label for="pf-org">Brand, board, or publication</label>
+    <input type="text" id="pf-org" name="organisation" autocomplete="organization">
+  </div>
+
+  <div class="partner-form__field">
+    <label for="pf-message">What you have in mind</label>
+    <textarea id="pf-message" name="message" rows="6" required></textarea>
+    <span class="partner-form__hint">Timeline and budget here too, if you have them.</span>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Send it over</button>
+</form>
