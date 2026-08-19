@@ -32,7 +32,7 @@ time there — a few days is a brochure, a few weeks is a story.
 properly than thirty once. If something earns a permanent place in the van, we
 will keep saying so for years.
 
-**Photography licensing.** Nine years of archive across the American West and
+**Photography licensing.** Eight years of archive across the American West and
 Southeast Asia.
 
 ## What we say no to

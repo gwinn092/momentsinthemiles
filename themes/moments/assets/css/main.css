@@ -1876,12 +1876,31 @@ body.nav-open {
   font-weight: 600;
 }
 
+.kit-callout__match {
+  font-family: var(--font-body, 'Jost', sans-serif);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ink);
+  margin: 0 0 1rem;
+}
+
+.kit-callout__match-label {
+  font-weight: 600;
+  color: var(--terracotta);
+}
+
 .kit-callout__body {
   font-family: var(--font-body, 'Jost', sans-serif);
   font-size: 1rem;
   line-height: 1.7;
   color: var(--ink);
   margin: 0 0 1.5rem;
+}
+
+/* The generic product line is background once a specific section is named. */
+.kit-callout__match:not([hidden]) + .kit-callout__body {
+  font-size: 0.9rem;
+  color: var(--muted);
 }
 
 .kit-callout__link {
@@ -2729,6 +2748,12 @@ html.is-map-touring .back-to-top {
   margin-bottom: 0.5rem;
 }
 
+.author-bio__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+
 /* End-of-post newsletter CTA */
 .post-cta {
   background-color: var(--sand);
@@ -2777,6 +2802,9 @@ html.is-map-touring .back-to-top {
     text-align: center;
     justify-items: center;
     gap: 1.25rem;
+  }
+  .author-bio__links {
+    justify-content: center;
   }
   .post-cta {
     padding: 2.5rem 1.5rem;

@@ -193,6 +193,13 @@ def check_built(public, base_url):
                 for h in others}
     stale = defaultdict(list)
     missing_alt = 0
+    # Hugo's contextual autoescaping percent-encodes the separators of a query
+    # string built with querify inside an href, turning ?a=1&b=2 into
+    # ?a%3d1%26b%3d2 — one garbled parameter name with no value. It broke every
+    # share button on the site silently, because nobody clicks their own share
+    # links. safeURL on the whole URL is the fix; this is the tripwire.
+    mangled_qs = re.compile(r'href="[^"]*\?[^"]*%3[dD][^"]*"')
+    mangled = []
     for dirpath, _, names in os.walk(public):
         for n in names:
             if not n.endswith(".html"):
@@ -203,6 +210,8 @@ def check_built(public, base_url):
                 for h, rx in host_res.items():
                     if rx.search(text):
                         stale[h].append(os.path.relpath(p, public))
+            if mangled_qs.search(text):
+                mangled.append(os.path.relpath(p, public))
             parser = ImgAlt()
             parser.feed(text)
             missing_alt += parser.missing
@@ -213,6 +222,11 @@ def check_built(public, base_url):
         fail("stale-host",
              f"{len(pages)} page(s) point at {h} but this build is for "
              f"{base_host}, e.g. {pages[:3]}")
+    if mangled:
+        fail("escaped-query",
+             f"{len(mangled)} page(s) have an href whose query string is "
+             f"percent-encoded (%3d for =), which makes the link inert — pipe "
+             f"the whole URL through safeURL, e.g. {mangled[:3]}")
     if missing_alt:
         fail("a11y", f"{missing_alt} <img> tag(s) have no alt attribute at all "
                      "(alt=\"\" is fine for decorative images; a missing attribute is not)")

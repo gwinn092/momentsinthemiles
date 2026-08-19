@@ -48,21 +48,29 @@ results:
     text: "Not the money, not the timing. It's the suspicion that you couldn't handle it. What eight years on the road taught us is that readiness doesn't arrive before you go. It gets built by going. Every person we've met out here felt exactly what you're feeling now, left anyway, and found out they were more capable than the version of themselves that stayed up worrying. The fear doesn't get a vote on whether you're allowed to want this."
     link: "essays/the-miles-will-shape-you/"
     link_text: "Read: The Miles Will Shape You (If You Let Them)"
+    kit_section: "02 — What if it doesn't work"
+    kit_line: "The fear nobody says out loud. It gets its own section, and it comes before any of the practical stuff."
   money:
     title: "It's the money story."
     text: "Notice we didn't say the money. We said the money story. For most people the wall isn't the actual number; it's never having sat down and found out what the number really is. Travel can cost wildly less than the life you're currently funding: we spent eight months across Southeast Asia on less than most people's rent. Real math is almost always kinder than the vague dread. Get the real number, and the wall usually turns out to be a curb."
     link: "guides/eight-months-southeast-asia/"
     link_text: "Read: Eight Months in Southeast Asia"
+    kit_section: "04 — Money"
+    kit_line: "Where you work out the real number: burn rate, runway, and what enough actually looks like for you. Not a savings calculator."
   people:
     title: "It's the people."
     text: "The hardest part of your trip isn't a border crossing. It's a conversation at a kitchen table. We had to learn this one ourselves: the people who love you are reacting to the script they were given, the same one you were. Most of them come around the moment your plan stops being a vibe and starts being a plan. And the ones who don't? They're allowed to not understand. You're still allowed to go."
     link: "start-here/"
     link_text: "Read: how we stopped waiting"
+    kit_section: "03 — The people who don't get it"
+    kit_line: "Your parents, your coworkers, the friends who think you are having a crisis — and how to have those conversations before you go."
   logistics:
     title: "It's the logistics."
     text: "The mail, the job, the lease, the insurance, the forty-item list you keep re-reading instead of shrinking. Good news: logistics is the most solvable blocker on this list. Every single item on yours has been solved by thousands of people, including us. The catch is that a to-do list can also be a very respectable place to hide. Handle the items one at a time and they end; use them as a reason and they never do."
     link: "reduce-friction/"
     link_text: "Read: Reduce Friction, the systems we use"
+    kit_section: "07 — The logistics layer"
+    kit_line: "Mail, insurance, banking across borders, the phone plan. The whole list, handled one item at a time, until it ends."
 ---
 
 You keep saying someday. This finds out what's actually behind the word.

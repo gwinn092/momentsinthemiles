@@ -30,7 +30,10 @@
       <div class="kit-callout quiz__kit">
         <p class="kit-callout__eyebrow">Built for exactly this</p>
         <p class="kit-callout__heading">The Leave Anyway Kit</p>
-        <p class="kit-callout__body">A 10-section guided workspace for working through the real stuff before you leave — the fear, the money, the people who don't get it, the logistics you've been avoiding. Whatever your wall is, there's a section that takes it apart.</p>
+        {{/* Filled in per result: names the one section that matches the wall the
+             quiz just found. Stays hidden if a result has no kit_section set. */}}
+        <p class="kit-callout__match" id="quizKitMatch" hidden><span class="kit-callout__match-label" id="quizKitSection"></span> <span id="quizKitLine"></span></p>
+        <p class="kit-callout__body">A 10-section guided workspace for working through the real stuff before you leave — the fear, the money, the people who don't get it, the logistics you've been avoiding.</p>
         <a href="https://wanderus.gumroad.com/l/pinqn" class="kit-callout__link">Get the kit &rarr;</a>
       </div>
       <button type="button" class="quiz__back" id="quizRestart">Start over</button>
@@ -94,6 +97,14 @@
     var link = document.getElementById('quizResultLink');
     link.href = DATA.home + r.link;
     link.innerHTML = r.link_text + ' <span aria-hidden="true">&rarr;</span>';
+    var match = document.getElementById('quizKitMatch');
+    if (r.kit_section && r.kit_line) {
+      document.getElementById('quizKitSection').textContent = 'Section ' + r.kit_section + '.';
+      document.getElementById('quizKitLine').textContent = r.kit_line;
+      match.hidden = false;
+    } else {
+      match.hidden = true;
+    }
     card.hidden = true;
     result.hidden = false;
   }
