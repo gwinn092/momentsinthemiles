@@ -391,7 +391,7 @@ a.print:hover,
   background-size: 100% 0.42em;
   transition: background-size 0.2s ease, background-color 0.2s ease;
   padding: 0 0.08em;
-  border-radius: 2px;
+  border-radius: var(--r-sm);
 }
 
 .swash:hover {
@@ -409,7 +409,7 @@ a.print:hover,
   justify-content: center;
   min-height: 300px;
   padding: 2rem;
-  border-radius: 3px;
+  border-radius: var(--r-sm);
 }
 
 .image-placeholder span {
@@ -649,7 +649,7 @@ a.print:hover,
 }
 
 .hero__image {
-  border-radius: 3px;
+  border-radius: var(--r-sm);
   overflow: hidden;
 }
 
@@ -926,7 +926,7 @@ a.print:hover,
   font-family: var(--font-sans);
   font-size: 0.9rem;
   border: 1px solid var(--rule);
-  border-radius: 3px;
+  border-radius: var(--r-sm);
   background-color: var(--warm-white);
   color: var(--ink);
   outline: none;
@@ -1096,7 +1096,7 @@ a.print:hover,
   margin-bottom: 0.5rem;
 }
 .article-body img {
-  border-radius: 3px;
+  border-radius: var(--r-sm);
   margin: 2.5rem 0;
 }
 /* In-body photos are prints too, with the caption sitting inside the mat —
@@ -1145,7 +1145,7 @@ a.print:hover,
   background-size: 100% 0.42em;
   transition: background-size 0.2s ease;
   padding: 0 0.08em;
-  border-radius: 2px;
+  border-radius: var(--r-sm);
 }
 
 .article-body p > a:not([rel~="sponsored"]):not(.btn):not(.stay__link):hover,
@@ -1217,7 +1217,7 @@ a.print:hover,
   font-family: var(--font-sans);
   font-size: 0.85rem;
   border: 1px solid var(--rule);
-  border-radius: 3px;
+  border-radius: var(--r-sm);
   background: var(--warm-white);
   color: var(--ink);
   outline: none;
@@ -1271,7 +1271,7 @@ a.print:hover,
   font-size: 0.95rem;
   line-height: 1.5;
   border: 1px solid var(--rule);
-  border-radius: 3px;
+  border-radius: var(--r-sm);
   background: var(--warm-white);
   color: var(--ink);
   outline: none;
@@ -1568,7 +1568,7 @@ a.print:hover,
 .about-placeholder {
   padding: 3rem;
   background-color: var(--sand);
-  border-radius: 3px;
+  border-radius: var(--r-sm);
   font-family: var(--font-serif);
   font-style: italic;
   font-size: 1.1rem;
@@ -1904,7 +1904,7 @@ body.nav-open {
   height: 480px;
   object-fit: cover;
   display: block;
-  border-radius: 3px 3px 0 0;
+  border-radius: var(--r-sm) var(--r-sm) 0 0;
 }
 
 /* Tagline emphasis */
@@ -2002,7 +2002,7 @@ body.nav-open {
 .kit-price {
   border: 1px solid var(--rule);
   background-color: var(--sand);
-  border-radius: 4px;
+  border-radius: var(--r-sm);
   padding: 3rem;
   text-align: center;
 }
@@ -2052,7 +2052,7 @@ body.nav-open {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 3px;
+  border-radius: var(--r-sm);
 }
 
 .kit-about__inner {
@@ -2288,7 +2288,7 @@ body.nav-open {
   display: block;
   flex-shrink: 0;
   overflow: hidden;
-  border-radius: 2px;
+  border-radius: var(--r-sm);
 }
 .post-item__img {
   width: 100%;
@@ -2429,7 +2429,7 @@ body.nav-open {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 2px;
+  border-radius: var(--r-sm);
 }
 
 /* ===================================================
@@ -2710,7 +2710,7 @@ body.nav-open {
   display: block;
   background: var(--warm-white);
   border: 1px solid var(--rule);
-  border-radius: 4px;
+  border-radius: var(--r-sm);
   padding: 2.25rem 2.25rem 2rem;
   text-decoration: none;
   border-left: 3px solid var(--terracotta);
@@ -2859,7 +2859,7 @@ html.is-map-touring .back-to-top {
   text-transform: uppercase;
   padding: 0.45rem 1.1rem;
   border: 1px solid var(--ink);
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   background: transparent;
   color: var(--ink);
   cursor: pointer;
@@ -2881,24 +2881,38 @@ html.is-map-touring .back-to-top {
   column-count: 3;
   column-gap: 1.25rem;
 }
+/* Gallery tiles are prints in a masonry wall. The mat is thinner than the
+   standard --mat: at three columns a full 8px border on every tile turns the
+   wall into a grid of frames rather than a spread of photographs. */
 .gallery-item {
   display: block;
   width: 100%;
   margin: 0 0 1.25rem;
-  padding: 0;
-  border: none;
-  background: var(--sand);
-  border-radius: 3px;
+  padding: 5px;
+  border: 1px solid rgba(28, 26, 23, 0.07);
+  background: var(--warm-white);
+  border-radius: var(--r-md);
+  box-shadow: var(--sh-2);
   overflow: hidden;
   cursor: zoom-in;
   break-inside: avoid;
   line-height: 0;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.gallery-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--sh-3);
 }
 .gallery-item img {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: calc(var(--r-md) - 5px);
   transition: transform 0.4s ease, opacity 0.3s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .gallery-item { transition: none; }
+  .gallery-item:hover { transform: none; }
 }
 .gallery-item:hover img {
   transform: scale(1.04);
@@ -2936,7 +2950,7 @@ html.is-map-touring .back-to-top {
   max-height: 80vh;
   width: auto;
   height: auto;
-  border-radius: 3px;
+  border-radius: var(--r-sm);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 .lightbox__caption {
@@ -2976,7 +2990,7 @@ html.is-map-touring .back-to-top {
   color: var(--muted);
   background: var(--sand);
   border: 1px solid var(--rule);
-  border-radius: 100px;
+  border-radius: var(--r-pill);
   padding: 0.4rem 0.9rem;
   text-decoration: none;
   transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
@@ -3065,7 +3079,7 @@ html.is-map-touring .back-to-top {
 /* End-of-post newsletter CTA */
 .post-cta {
   background-color: var(--sand);
-  border-radius: 4px;
+  border-radius: var(--r-sm);
   padding: 3rem 2.5rem;
   text-align: center;
   margin: 3.5rem 0;
@@ -3227,7 +3241,7 @@ html.is-map-touring .back-to-top {
 .map-legend__swatch {
   width: 14px;
   height: 14px;
-  border-radius: 2px;
+  border-radius: var(--r-sm);
   display: inline-block;
 }
 .map-legend__swatch--visited {
@@ -3382,7 +3396,7 @@ html.is-map-touring .back-to-top {
   z-index: 250;
   background: rgba(28, 26, 23, 0.96);
   color: var(--warm-white);
-  border-radius: 3px;
+  border-radius: var(--r-sm);
   padding: 0.55rem 0.9rem 0.6rem;
   pointer-events: none;
   max-width: 260px;
@@ -3624,7 +3638,7 @@ html.is-map-touring .back-to-top {
     width: 100%;
     height: auto;
     max-height: 84vh;
-    border-radius: 10px 10px 0 0;
+    border-radius: var(--r-md) var(--r-md) 0 0;
     box-shadow: 0 -12px 40px rgba(28, 26, 23, 0.3);
     transform: translateY(105%);
   }
@@ -3704,7 +3718,7 @@ html.is-map-touring .back-to-top {
   padding: 0.75rem 1.25rem 0.75rem 0.85rem;
   background: rgba(253, 250, 245, 0.95);
   border: 1px solid var(--rule);
-  border-radius: 4px;
+  border-radius: var(--r-sm);
   box-shadow: 0 12px 34px rgba(28, 26, 23, 0.18);
   transition: opacity 0.45s ease, visibility 0.45s, box-shadow 0.25s ease, transform 0.25s ease;
 }
@@ -3720,7 +3734,7 @@ html.is-map-touring .back-to-top {
   width: 54px;
   height: 40px;
   object-fit: cover;
-  border-radius: 3px;
+  border-radius: var(--r-sm);
   border: 2px solid var(--warm-white);
   box-shadow: 0 3px 10px rgba(28, 26, 23, 0.3);
 }
@@ -3800,7 +3814,7 @@ html.is-map-touring .back-to-top {
   margin-left: auto;
   margin-right: clamp(1rem, 5vw, 4.5rem);
   background: var(--warm-white);
-  border-radius: 4px;
+  border-radius: var(--r-sm);
   box-shadow: 0 14px 44px rgba(28, 26, 23, 0.25);
   overflow: hidden;
 }
@@ -3940,7 +3954,7 @@ html.is-map-touring .back-to-top {
   /* The rail floats above both the map art and the passing story cards, so it
      carries its own backing rather than relying on whatever is behind it. */
   padding: 0.7rem 0.55rem;
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   background: rgba(253, 250, 245, 0.86);
   box-shadow: 0 2px 14px rgba(28, 26, 23, 0.12);
 }
@@ -4069,7 +4083,7 @@ html.is-map-touring .back-to-top {
     max-height: 60svh;
     display: flex;
     flex-direction: column;
-    border-radius: 14px 14px 4px 4px;
+    border-radius: var(--r-md) var(--r-md) var(--r-sm) var(--r-sm);
   }
   .map-step__media { flex: none; }
   .map-step__media img { aspect-ratio: 2 / 1; }
@@ -4173,7 +4187,7 @@ html.is-map-touring .back-to-top {
   color: var(--ink);
   background: none;
   border: 1px solid var(--rule);
-  border-radius: 2px;
+  border-radius: var(--r-sm);
   padding: 0.55rem 1.1rem;
   cursor: pointer;
   transition: background 0.25s ease, border-color 0.25s ease;
@@ -4215,12 +4229,12 @@ html.is-map-touring .back-to-top {
 .map-scrub__range::-webkit-slider-runnable-track {
   height: 2px;
   background: var(--rule);
-  border-radius: 2px;
+  border-radius: var(--r-sm);
 }
 .map-scrub__range::-moz-range-track {
   height: 2px;
   background: var(--rule);
-  border-radius: 2px;
+  border-radius: var(--r-sm);
 }
 .map-scrub__range::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -4697,7 +4711,7 @@ html.is-map-touring .back-to-top {
   gap: 0.9rem;
   padding: 1.5rem;
   border: 1px solid var(--rule);
-  border-radius: 3px;
+  border-radius: var(--r-sm);
   background: var(--sand);
   font-family: var(--font-serif);
   font-size: 1.35rem;
@@ -4936,7 +4950,7 @@ html.is-map-touring .back-to-top {
 }
 
 .list-intro .full-bleed img {
-  border-radius: 3px;
+  border-radius: var(--r-sm);
   max-height: 56vh;
 }
 
@@ -5047,7 +5061,7 @@ html.is-map-touring .back-to-top {
   max-width: 1140px;
   margin: 0 auto;
   border: 1px solid var(--rule);
-  border-radius: 4px;
+  border-radius: var(--r-sm);
   overflow: hidden;
   background: var(--warm-white);
   text-decoration: none;
@@ -5186,7 +5200,7 @@ body.search-open {
 .search-close {
   border: 1px solid var(--rule);
   background: none;
-  border-radius: 4px;
+  border-radius: var(--r-sm);
   font-family: var(--font-sans);
   font-size: 0.7rem;
   letter-spacing: 0.08em;
@@ -5212,7 +5226,7 @@ body.search-open {
   display: block;
   padding: 1rem 0.75rem;
   margin: 0 -0.75rem;
-  border-radius: 4px;
+  border-radius: var(--r-sm);
   text-decoration: none;
   transition: background-color 0.15s ease;
 }
@@ -5272,7 +5286,7 @@ body.search-open {
   width: calc(100% + 1.8rem);
   aspect-ratio: 176 / 118;
   object-fit: cover;
-  border-radius: 3px 3px 0 0;
+  border-radius: var(--r-sm) var(--r-sm) 0 0;
   margin: -0.55rem -0.9rem 0.5rem;
 }
 
@@ -5350,7 +5364,7 @@ body.search-open {
 
 .tour__stage {
   position: relative;
-  border-radius: 4px;
+  border-radius: var(--r-sm);
   overflow: hidden;
 }
 
@@ -5542,7 +5556,7 @@ body.search-open {
 
 .quiz__card {
   border: 1px solid var(--rule);
-  border-radius: 4px;
+  border-radius: var(--r-sm);
   background: var(--warm-white);
   padding: clamp(1.75rem, 4vw, 2.75rem);
   margin-top: 1rem;
@@ -5565,7 +5579,7 @@ body.search-open {
 .quiz__bar {
   height: 3px;
   background: var(--sand);
-  border-radius: 2px;
+  border-radius: var(--r-sm);
   overflow: hidden;
 }
 
@@ -5597,7 +5611,7 @@ body.search-open {
   color: var(--ink);
   background: none;
   border: 1px solid var(--rule);
-  border-radius: 4px;
+  border-radius: var(--r-sm);
   padding: 0.95rem 1.15rem;
   cursor: pointer;
   transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.15s ease;
@@ -5694,7 +5708,7 @@ body.search-open {
   text-transform: uppercase;
   color: var(--ink);
   background: var(--sand);
-  border-radius: 2px;
+  border-radius: var(--r-sm);
   padding: 0.22rem 0.5rem;
 }
 .year-card__stat,
@@ -5826,7 +5840,7 @@ body.search-open {
   width: 100%;
   height: clamp(240px, 34vw, 380px);
   object-fit: cover;
-  border-radius: 2px;
+  border-radius: 2px; /* polaroid: deliberately near-square, see .postcard__frame */
   display: block;
 }
 
@@ -5841,7 +5855,7 @@ body.search-open {
   height: 52px;
   background: var(--sand);
   border: 1px dashed var(--rule);
-  border-radius: 2px;
+  border-radius: var(--r-sm);
   transform: rotate(3deg);
   background-image:
     linear-gradient(var(--terracotta), var(--terracotta)),
@@ -6003,7 +6017,7 @@ body.search-open {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 3px;
+  border-radius: var(--r-sm);
   display: block;
 }
 
@@ -6028,7 +6042,7 @@ body.search-open {
   display: block;
   padding: 1.5rem;
   border: 1px solid var(--rule);
-  border-radius: 3px;
+  border-radius: var(--r-sm);
   text-decoration: none;
   color: var(--ink);
   transition: border-color 0.2s ease, background-color 0.2s ease;
@@ -6107,7 +6121,7 @@ body.search-open {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 3px;
+  border-radius: var(--r-sm);
   display: block;
   margin-bottom: 0.9rem;
   transition: opacity 0.2s ease;
@@ -6292,12 +6306,17 @@ body.search-open {
    than by being loud. No button, no rounded corners, no terracotta on the
    body text: terracotta stays the "this is our own writing" colour and is
    spent here only on the outbound link itself. */
+/* The block was two hairlines across the column, which read as a horizontal
+   rule someone had filled in. It is a panel now, matching the pull quote it
+   sits near. The restraint is unchanged and deliberate: sand ground, no
+   coloured button, terracotta still reserved for links to our own pages. */
 .stay {
   background: var(--sand);
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-  margin: 2.5rem 0;
-  padding: 1.25rem clamp(1rem, 3vw, 1.5rem) 1.35rem;
+  border: 1px solid rgba(28, 26, 23, 0.07);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--r-xs) var(--r-md) var(--r-md) var(--r-xs);
+  margin: 2.75rem 0;
+  padding: 1.35rem clamp(1.1rem, 3vw, 1.6rem) 1.45rem;
   display: flex;
   flex-direction: column;
   gap: 0.55rem;
@@ -6415,7 +6434,7 @@ body.search-open {
   color: var(--muted);
   background-color: var(--sand);
   border: 2px dashed var(--rule);
-  border-radius: 2px;
+  border-radius: var(--r-sm);
   width: 100%;
   align-self: stretch;
   display: flex;
@@ -6672,7 +6691,7 @@ body.search-open {
   line-height: 1.6;
   background: var(--warm-white);
   border: 1px solid var(--rule);
-  border-radius: 3px;
+  border-radius: var(--r-sm);
   padding: 0.75rem 1rem;
   margin: 1.25rem 0 0;
 }
@@ -6702,7 +6721,7 @@ body.search-open {
 .roadtrip__stop-figure img {
   width: 100%;
   height: auto;
-  border-radius: 2px;
+  border-radius: var(--r-sm);
 }
 
 .roadtrip__stop-figure figcaption {
@@ -6857,4 +6876,102 @@ body.search-open {
 .page-hero--bare {
   padding-bottom: clamp(1.75rem, 3vw, 2.5rem);
   border-bottom: 1px solid var(--rule);
+}
+
+/* ============================================
+   PLANNING BLOCK — the closing booking unit
+   ============================================
+   See layouts/shortcodes/planning.html for the editorial rules. This is the
+   only place on the site where the disclosure and an offer share a container,
+   and that is the point: the reader gets the admission and the offer in one
+   breath, at the end, instead of a legal line floating on its own.
+
+   Visually it is a print like everything else, on the gold tint — the warmest
+   surface in the palette, because this block is the one that says thank you. */
+.planning {
+  background: var(--gold-tint);
+  border: 1px solid rgba(28, 26, 23, 0.07);
+  border-radius: var(--r-lg);
+  padding: clamp(1.4rem, 3vw, 2rem);
+  margin: 3rem 0 0;
+}
+
+.planning__eyebrow {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.7rem;
+}
+
+.planning__note {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin: 0 0 1.1rem;
+  color: var(--ink);
+}
+
+.planning__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .planning__list {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+/* No coloured button, same as the .stay block: terracotta stays reserved for
+   links to our own pages, and a bright CTA here would undo the restraint the
+   rest of the site trades on. */
+.planning__link {
+  display: block;
+  background: var(--warm-white);
+  border: 1px solid rgba(28, 26, 23, 0.08);
+  border-radius: var(--r-md);
+  padding: 0.85rem 1rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.planning__link:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sh-2);
+  text-decoration: none;
+}
+
+.planning__where {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.planning__via {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+
+.planning .affiliate-note {
+  border-left: none;
+  padding-left: 0;
+  margin-top: 1.1rem;
+  font-size: 0.8rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .planning__link { transition: none; }
+  .planning__link:hover { transform: none; }
 }
