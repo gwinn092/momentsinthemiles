@@ -1,0 +1,20 @@
+{{/* Inline gear link, for a product named inside a story.
+
+       {{< gear "Aeropress" >}}
+       {{< gear q="Dometic CFX65DZ" text="the Dometic" >}}
+
+     This is the ONLY register gear gets on Moments in the Miles. It is the same
+     muted underline as {{< book >}} — a useful aside mid-sentence, not an ad.
+
+     ⛔ What this is not for: roundups, comparison tables, "best X of 2026", or
+     any ranked list of products. That format lives on Create A Van Life, and
+     the reason is not taste — two sites we own competing for the same product
+     keywords splits our own ranking, and that loss is not recoverable.
+     The rule in one line: a product named in a story, linked once. Never a list.
+
+     The page must also carry {{< affiliate-note >}} — an FTC requirement. */}}
+
+{{- $q := .Get "q" | default (.Get 0) -}}
+{{- $text := .Get "text" | default $q -}}
+{{- $url := partial "gear-link.html" (dict "q" $q "url" (.Get "url")) -}}
+<a class="book-link" href="{{ $url }}" target="_blank" rel="sponsored nofollow noopener">{{ $text }}</a>

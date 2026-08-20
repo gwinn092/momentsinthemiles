@@ -1,17 +1,5 @@
 {{ define "main" }}
-{{ with .Params.hero_image }}
-<section class="section-hero">
-  {{ $heroStyle := "" }}{{ with $.Params.hero_position }}{{ $heroStyle = printf "object-position: %s" . }}{{ end }}
-  {{ partial "respimg.html" (dict "path" . "alt" $.Title "class" "section-hero__img" "sizes" "100vw" "widths" (slice 640 960 1400) "loading" "eager" "fetchpriority" "high" "style" $heroStyle) }}
-  <div class="section-hero__overlay">
-    <div class="container-wide section-hero__content">
-      <span class="eyebrow">Gallery</span>
-      <h1>{{ $.Title }}</h1>
-      {{ with $.Description }}<p class="section-hero__desc">{{ . }}</p>{{ end }}
-    </div>
-  </div>
-</section>
-{{ end }}
+{{ partial "page-hero.html" (dict "page" . "eyebrow" "Gallery" "desc" .Description) }}
 
 {{ with .Content }}
 <div class="list-intro">

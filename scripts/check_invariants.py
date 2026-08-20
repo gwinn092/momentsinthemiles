@@ -284,6 +284,38 @@ def check_built(public, base_url):
                      "(alt=\"\" is fine for decorative images; a missing attribute is not)")
 
 
+# --- Editorial notes that leak into public HTML ----------------------------
+def check_editorial_comments():
+    """An HTML comment in a markdown file is published to readers.
+
+    Markdown passes `<!-- ... -->` straight through to the output, so a note
+    written to Jesse or Karlee inside content/ ends up in the page source of a
+    live page. This has now shipped three times: the "REVIEW NUMBERS BEFORE
+    PUBLISHING" markers on two guides (Aug 20 2026), and then a note to Karlee
+    on the gear page plus a GA4 TODO on Work With Us.
+
+    The fix each time is the same — move the note into front matter, which is
+    never rendered. This gate exists so there is not a fourth time.
+
+    Hugo's own `{{/* ... */}}` comments are fine and are not matched here;
+    they are stripped at build time. Only raw HTML comments in content are.
+    """
+    for path in walk("content", (".md",)):
+        body = read(path)
+        # front matter is not rendered, so only look after it
+        if body.startswith("---"):
+            end = body.find("\n---", 3)
+            body = body[end + 4:] if end != -1 else body
+        if "<!--" in body:
+            rel = os.path.relpath(path, ROOT)
+            snippet = body[body.index("<!--"):][:70].replace("\n", " ")
+            fail(
+                "editorial comment in content",
+                f"{rel} contains an HTML comment, which markdown publishes to "
+                f"readers: {snippet}... Move it into front matter instead.",
+            )
+
+
 def main():
     public = sys.argv[1] if len(sys.argv) > 1 else "public"
     public = public if os.path.isabs(public) else os.path.join(ROOT, public)
@@ -293,6 +325,7 @@ def main():
     check_determinism()
     check_photo_archive()
     check_template_paths()
+    check_editorial_comments()
     check_ads()
     check_built(public, base_url)
 

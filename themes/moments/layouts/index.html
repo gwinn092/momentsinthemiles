@@ -1,23 +1,47 @@
 {{ define "main" }}
 
-<!-- HERO -->
+<!-- HERO — headline on the page, photo as a framed print beneath it.
+     The photo is shown whole: no scrim, no crop, no fixed height. -->
 <section class="home-hero">
-  <div class="home-hero__media">
-    {{ partial "respimg.html" (dict "path" "images/pages/hero-mountaintop.jpg" "alt" "Mountaintop view from the road" "sizes" "100vw" "widths" (slice 640 960 1400) "loading" "eager" "fetchpriority" "high") }}
+  <div class="container-wide home-hero__inner">
+    <div class="home-hero__content">
+      <span class="eyebrow home-hero__eyebrow">A travel journal from the road</span>
+      <h1 class="home-hero__headline">Stories shaped by <em>distance</em>.<br>Perspective earned by <em>miles</em>.</h1>
+      <p class="home-hero__sub">Eight years of van life. All 48 continental states. Eight months across Southeast Asia. Written down honestly, the uncomfortable parts included.</p>
+      <div class="hero__buttons home-hero__buttons">
+        <a href="{{ .Site.Home.RelPermalink }}start-here/" class="btn btn-primary">Start Here</a>
+        <a href="{{ .Site.Home.RelPermalink }}essays/" class="btn btn-hero">Explore the Road</a>
+      </div>
+    </div>
+    <figure class="home-hero__frame print">
+      {{ partial "respimg.html" (dict "path" "images/pages/hero-mountaintop.jpg" "alt" "Jesse and Karlee looking out over the peaks at Mount Rainier" "sizes" "(min-width: 1400px) 1320px, 94vw" "widths" (slice 640 960 1400) "loading" "eager" "fetchpriority" "high") }}
+    </figure>
   </div>
-  <div class="home-hero__scrim" aria-hidden="true"></div>
-  <div class="container-wide home-hero__content">
-    <span class="eyebrow home-hero__eyebrow">A travel journal from the road</span>
-    <h1 class="home-hero__headline">Stories shaped by <em>distance</em>.<br>Perspective earned by <em>miles</em>.</h1>
-    <p class="home-hero__sub">Eight years of van life. All 48 continental states. Eight months across Southeast Asia. Written down honestly, the uncomfortable parts included.</p>
-    <div class="hero__buttons home-hero__buttons">
-      <a href="{{ .Site.Home.RelPermalink }}start-here/" class="btn btn-primary">Start Here</a>
-      <a href="{{ .Site.Home.RelPermalink }}essays/" class="btn btn-hero">Explore the Road</a>
+</section>
+
+<!-- THIS IS US — second thing on the page, not the eighth.
+     On a travel journal the two of them ARE the product. It used to sit at
+     section 8 of 11, 58% down, which meant a first-time reader could decide
+     whether to stay long before finding out a real couple wrote any of it.
+     Carries cream so the band rhythm holds: hero white -> this-is-us cream ->
+     mission white -> map sage. -->
+<section class="this-is-us">
+  <div class="container container-wide">
+    <div class="this-is-us__inner">
+      <div class="this-is-us__image">
+        {{ partial "respimg.html" (dict "path" "images/pages/about-beach-sunset.jpg" "alt" "Jesse and Karlee" "class" "page-image" "sizes" "(min-width: 760px) 540px, 100vw" "widths" (slice 480 800)) }}
+      </div>
+      <div class="this-is-us__content">
+        <span class="eyebrow">This Is Us</span>
+        <p>We were somewhere in the middle of nowhere, headed to Florida, when we realized we were rolling straight into Mardi Gras. A friend from my St. John days had invited us to crash with him in Louisiana. What he forgot to mention was that we'd be arriving in the middle of the biggest party in the country.</p>
+        <p>We hadn't planned any of it. But we could stop, so we did.</p>
+        <p>One night turned into four days: beads flying, music everywhere, an electricity in the air that gets into your chest before you've figured out where you are. We had a local guide, a front row seat, and nowhere else we needed to be.</p>
+        <p>That's the life we've built. It isn't perfect and it's rarely planned, but it's flexible enough to say yes when something worth saying yes to shows up.</p>
+        <p>We're Jesse and Karlee. Eight years in a van, forty-eight states, eight months across Southeast Asia, and more wrong turns than we can count. Most of them led somewhere better than where we were headed.</p>
+        <a href="{{ .Site.Home.RelPermalink }}about/" class="link-arrow">Read our full story <span aria-hidden="true">&rarr;</span></a>
+      </div>
     </div>
   </div>
-  <a href="#mission" class="home-hero__cue" aria-label="Scroll to our story">
-    <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16"/><path d="M5 13l7 7 7-7"/></svg>
-  </a>
 </section>
 
 <!-- MISSION STATEMENT -->
@@ -32,6 +56,33 @@
       <p>You're allowed to rewrite the script you were handed before you were old enough to question it. We built this space to show you that, with real stories, honest mistakes, and practical guidance from actually being out there.</p>
       <p>Whatever brought you here, whether it's curiosity, restlessness, or a feeling that something is missing, you're in the right place.</p>
     </div>
+  </div>
+</section>
+
+<!-- THE MAP — the site's most distinctive asset, given a real entry point.
+     It was previously reachable only from deep-links buried in film-strip
+     captions and one text link at the bottom of the stat band; a visitor could
+     scroll the whole homepage without ever learning it existed.
+
+     The SVG is inlined and DELIBERATELY INERT here — no pins, no tour, no JS,
+     pointer-events off. It is a picture of eight years, and the whole thing is
+     one link to the real map. -->
+<section class="home-map">
+  <div class="container-wide home-map__inner">
+    <div class="home-map__text">
+      <span class="eyebrow">The Map</span>
+      <h2>Eight years, drawn out</h2>
+      <p>Every state we have slept in, every country we have landed in, and the stories attached to the ones that changed something. It is the only thing on this site you cannot get anywhere else.</p>
+      <ul class="home-map__stats">
+        <li><b>48</b><span>continental states</span></li>
+        <li><b>12</b><span>countries together</span></li>
+        <li><b>100k</b><span>miles of van life</span></li>
+      </ul>
+      <a href="{{ .Site.Home.RelPermalink }}map/" class="btn btn-primary">Open the map</a>
+    </div>
+    <a href="{{ .Site.Home.RelPermalink }}map/" class="home-map__figure" aria-label="Open the interactive map">
+      {{ partial "map-us.html" . }}
+    </a>
   </div>
 </section>
 
@@ -118,26 +169,6 @@
 <!-- POSTCARD FROM THE MAP -->
 {{ partial "postcard.html" . }}
 
-<!-- THIS IS US -->
-<section class="this-is-us">
-  <div class="container container-wide">
-    <div class="this-is-us__inner">
-      <div class="this-is-us__image">
-        {{ partial "respimg.html" (dict "path" "images/pages/about-beach-sunset.jpg" "alt" "Jesse and Karlee" "class" "page-image" "sizes" "(min-width: 760px) 540px, 100vw" "widths" (slice 480 800)) }}
-      </div>
-      <div class="this-is-us__content">
-        <span class="eyebrow">This Is Us</span>
-        <p>We were somewhere in the middle of nowhere, headed to Florida, when we realized we were rolling straight into Mardi Gras. A friend from my St. John days had invited us to crash with him in Louisiana. What he forgot to mention was that we'd be arriving in the middle of the biggest party in the country.</p>
-        <p>We hadn't planned any of it. But we could stop, so we did.</p>
-        <p>One night turned into four days: beads flying, music everywhere, an electricity in the air that gets into your chest before you've figured out where you are. We had a local guide, a front row seat, and nowhere else we needed to be.</p>
-        <p>That's the life we've built. It isn't perfect and it's rarely planned, but it's flexible enough to say yes when something worth saying yes to shows up.</p>
-        <p>We're Jesse and Karlee. Eight years in a van, forty-eight states, eight months across Southeast Asia, and more wrong turns than we can count. Most of them led somewhere better than where we were headed.</p>
-        <a href="{{ .Site.Home.RelPermalink }}about/" class="link-arrow">Read our full story <span aria-hidden="true">&rarr;</span></a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FEATURED CONTENT -->
 <section class="featured">
   <div class="container container-wide">
@@ -199,16 +230,10 @@
 <!-- NEWSLETTER -->
 <section class="newsletter">
   <div class="container">
-    <div class="newsletter__inner">
-      <span class="eyebrow">Stay in the Loop</span>
-      <h2>More where this came from</h2>
-      <p>Honest stories, travel notes, and the occasional nudge to go do the thing you've been putting off. A few times a month. No spam. Unsubscribe whenever.</p>
-      <form class="newsletter-form seva-form" action="https://app.kit.com/forms/9172727/subscriptions" method="post" data-sv-form="9172727" data-uid="26bf91ae52" data-version="5">
-        <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
-        <input type="email" name="email_address" placeholder="Your email address" aria-label="Email address" required>
-        <button data-element="submit" type="submit" class="btn btn-primary">I'm in</button>
-      </form>
-    </div>
+    {{ partial "newsletter-form.html" (dict
+        "eyebrow" "Stay in the Loop"
+        "heading" "More where this came from"
+        "body" "Honest stories, travel notes, and the occasional nudge to go do the thing you've been putting off. A few times a month. No spam. Unsubscribe whenever.") }}
   </div>
 </section>
 

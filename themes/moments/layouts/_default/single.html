@@ -2,19 +2,34 @@
 <div class="reading-progress"><span class="reading-progress__fill"></span></div>
 
 <article class="article">
-  {{ with .Params.image }}
-  <div class="article-hero-wrap">
+  {{/* Headline first, photo second. The article used to open with a 740px
+       full-bleed photo band, which put the title below the fold — a reader
+       had to scroll past the whole image to find out what they were reading.
+       The headline and the hero print share one padded container so their
+       left edges line up with the body column below. */}}
+  <div class="article-head">
+    <header class="article-headline">
+      {{ with .Params.category }}<span class="eyebrow">{{ . }}</span>{{ end }}
+      <h1 class="article-title">{{ .Title }}</h1>
+      {{ with .Description }}<p class="article-description">{{ . }}</p>{{ end }}
+    </header>
+
+    {{ partial "audio-player.html" . }}
+
+    {{ with .Params.image }}
     {{ $heroStyle := "" }}{{ with $.Params.hero_position }}{{ $heroStyle = printf "object-position: %s" . }}{{ end }}
-    {{ partial "respimg.html" (dict "path" . "alt" $.Title "class" "article-hero-img" "sizes" "100vw" "widths" (slice 640 960 1400) "loading" "eager" "fetchpriority" "high" "style" $heroStyle) }}
+    {{ $shape := partial "frame-shape.html" (dict "path" .) }}
+    <figure class="article-hero print frame--{{ $shape }}">
+      {{ partial "respimg.html" (dict "path" . "alt" $.Title "class" "article-hero__img" "sizes" "(min-width: 1400px) 1320px, 94vw" "widths" (slice 640 960 1400) "loading" "eager" "fetchpriority" "high" "style" $heroStyle) }}
+    </figure>
+    {{ end }}
   </div>
-  {{ end }}
 
   <div class="article-layout">
 
     <!-- Sticky meta + share rail -->
     <aside class="article-rail">
       <div class="article-rail__inner">
-        {{ with .Params.category }}<span class="eyebrow">{{ . }}</span>{{ end }}
         <ul class="article-rail__meta">
           {{ if not .Date.IsZero }}<li>{{ .Date.Format "January 2, 2006" }}</li>{{ end }}
           {{ if .ReadingTime }}<li>{{ .ReadingTime }} min read</li>{{ end }}
@@ -40,11 +55,6 @@
 
     <!-- Main column -->
     <div class="article-main">
-      <header class="article-headline">
-        <h1 class="article-title">{{ .Title }}</h1>
-        {{ with .Description }}<p class="article-description">{{ . }}</p>{{ end }}
-      </header>
-
       {{/* Jump-to nav for narrow screens, where the right-hand TOC rail is hidden. */}}
       {{ if .Fragments.Headings }}
       <details class="toc-inline">
@@ -56,6 +66,8 @@
       <div class="article-body">
         {{ partial "article-body.html" . }}
       </div>
+
+      {{ partial "faq.html" . }}
 
       {{- partial "ad-slot.html" (dict "name" "end" "page" .) }}
 
@@ -88,14 +100,10 @@
 
         <!-- End-of-post newsletter CTA -->
         <div class="post-cta">
-          <span class="eyebrow">Before you go</span>
-          <h2>More where this came from</h2>
-          <p>Honest stories, travel notes, and the occasional nudge to go do the thing you've been putting off. A few times a month. No spam.</p>
-          <form class="newsletter-form seva-form" action="https://app.kit.com/forms/9172727/subscriptions" method="post" data-sv-form="9172727" data-uid="26bf91ae52" data-version="5">
-            <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
-            <input type="email" name="email_address" placeholder="Your email address" aria-label="Email address" required>
-            <button data-element="submit" type="submit" class="btn btn-primary">I'm in</button>
-          </form>
+          {{ partial "newsletter-form.html" (dict
+              "eyebrow" "Before you go"
+              "heading" "More where this came from"
+              "body" "Honest stories, travel notes, and the occasional nudge to go do the thing you've been putting off. A few times a month. No spam.") }}
         </div>
       </footer>
     </div>
@@ -110,10 +118,7 @@
         <div class="aside-newsletter">
           <span class="eyebrow">The Newsletter</span>
           <p class="aside-newsletter__text">Honest stories and travel notes. A few times a month. No spam.</p>
-          <form class="seva-form aside-form" action="https://app.kit.com/forms/9172727/subscriptions" method="post" data-sv-form="9172727" data-uid="26bf91ae52" data-version="5">
-            <input type="email" name="email_address" placeholder="Your email" aria-label="Email address" required>
-            <button type="submit" class="btn btn-primary">I'm in</button>
-          </form>
+          {{ partial "newsletter-form.html" (dict "variant" "aside") }}
         </div>
         {{ end }}
       </div>

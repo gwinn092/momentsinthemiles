@@ -1,4 +1,20 @@
 ---
+faq:
+  - q: "How much does a 10-day trip to Southeast Asia cost for two people?"
+    a: "Our 10-day total on the ground came to $900 for two people — that is $45
+       per person per day, all in. Adding international flights at $700 to $1,100
+       per person return from the US, a 10-day trip for two lands somewhere
+       between $2,500 and $3,200 total."
+  - q: "How much are flights to Southeast Asia from the US?"
+    a: "Budget $700 to $1,100 per person for a return flight from the United
+       States, depending on how flexible your dates are and when you book.
+       Flights are the single largest line item on a short trip — on our 10-day
+       breakdown they cost roughly as much as everything else combined."
+  - q: "What does getting around Southeast Asia cost?"
+    a: "Scooter rentals run $5 to $8 per day if you are comfortable riding.
+       Between cities, sleeper buses and night trains run $10 to $30 for long
+       hauls — and an overnight bus saves you a night of accommodation at the
+       same time. Grab makes city transport cheap and scam-proof."
 title: "Our Exact 10-Day Travel Budget Breakdown (With Real Numbers)"
 tags: ["Budget", "Planning", "Southeast Asia"]
 date: 2025-03-31

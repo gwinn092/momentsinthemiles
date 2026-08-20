@@ -1,4 +1,11 @@
 ---
+todo_karlee: >-
+  Five entries still run one sentence short and would read better with Karlee's
+  own line, in her voice: Moka pot, Instant Pot, Kelty chairs (which model?),
+  Anker battery packs, Bose speaker/headphones. Do NOT invent these. The visible
+  "[needs a line]" markers were removed on Aug 20 2026 because they were live on
+  a published page; each entry reads as a complete thought without them, so this
+  is an improvement to make, not a hole to plug.
 title: "Gear That's Earned Its Spot in the Van"
 tags: ["Gear", "Van Life"]
 date: 2025-07-01
@@ -18,19 +25,15 @@ If something breaks or we stop using it, it comes off the page. No dead links, n
 
 ---
 
-<!-- KARLEE: the entries marked [needs a line] below are products you named but
-     I don't have your stories for. One or two sentences each in your voice and
-     they'll match the rest of the page. Everything else is existing copy. -->
-
 ## Morning ritual
 
 **Aeropress**
 
-We've made coffee in parking lots, on riverbanks, at 11,000 feet, and in the back of the van while it rained for three days straight. The Aeropress has never once let us down. It's light, nearly indestructible, and makes better coffee than most cafés we've been to. We keep a hand grinder next to it and that's the whole setup.
+We've made coffee in parking lots, on riverbanks, at 11,000 feet, and in the back of the van while it rained for three days straight. The {{< gear "Aeropress" >}} has never once let us down. It's light, nearly indestructible, and makes better coffee than most cafés we've been to. We keep a hand grinder next to it and that's the whole setup.
 
 **Moka pot**
 
-Stovetop espresso with no power draw and nothing electronic to fail. It's the slower option and some mornings that's the point. [needs a line]
+Stovetop espresso with no power draw and nothing electronic to fail. It's the slower option and some mornings that's the point.
 
 ---
 
@@ -38,15 +41,15 @@ Stovetop espresso with no power draw and nothing electronic to fail. It's the sl
 
 **Ninja Crispi**
 
-For years the kitchen was an induction stove and whatever we could make work. The Crispi changed that more than anything else we've added. Small victories matter when you live small, and this one stopped being a novelty about a week in.
+For years the kitchen was an induction stove and whatever we could make work. The {{< gear q="Ninja Crispi" text="Crispi" >}} changed that more than anything else we've added. Small victories matter when you live small, and this one stopped being a novelty about a week in.
 
 **Instant Pot**
 
-One appliance covering what would otherwise take three, in a kitchen with counter space for about one and a half. That trade is the entire argument for it in a van. [needs a line]
+One appliance covering what would otherwise take three, in a kitchen with counter space for about one and a half. That trade is the entire argument for it in a van.
 
 **Ninja Blender**
 
-Smoothies in the van sound ridiculous until you've been parked somewhere hot for a week and the idea of cooking anything makes you want to cry. The Ninja earns its counter space. We also use it for soups and the occasional frozen margarita when the day calls for it.
+Smoothies in the van sound ridiculous until you've been parked somewhere hot for a week and the idea of cooking anything makes you want to cry. The {{< gear q="Ninja blender" text="Ninja" >}} earns its counter space. We also use it for soups and the occasional frozen margarita when the day calls for it.
 
 ---
 
@@ -54,11 +57,11 @@ Smoothies in the van sound ridiculous until you've been parked somewhere hot for
 
 **ENO Hammock**
 
-This gets set up more than almost anything else we own. Rest stops, campsites, between two trees at a trailhead. It takes thirty seconds and suddenly you're not in a parking lot anymore. We have the DoubleNest because sharing a single hammock sounds romantic but is actually a fight.
+This gets set up more than almost anything else we own. Rest stops, campsites, between two trees at a trailhead. It takes thirty seconds and suddenly you're not in a parking lot anymore. We have the {{< gear q="ENO DoubleNest hammock" text="DoubleNest" >}} because sharing a single hammock sounds romantic but is actually a fight.
 
 **Kelty low camp chairs**
 
-The van has no good place for two people to sit, which is the one thing we'd change about our build. Outside, these solve it. They sit low, they pack flat, and they're the first thing out of the back doors when we stop somewhere worth staying a while. [needs a line: which Kelty model?]
+The van has no good place for two people to sit, which is the one thing we'd change about our build. Outside, these solve it. They sit low, they pack flat, and they're the first thing out of the back doors when we stop somewhere worth staying a while.
 
 ---
 
@@ -66,11 +69,11 @@ The van has no good place for two people to sit, which is the one thing we'd cha
 
 **Hydro Flask**
 
-Eight years. Multiple dents. Still keeps ice frozen for a full day in Arizona heat. We each have one and they never leave the van. If you're debating between this and a cheaper option, don't. The cheap ones work for six months. This one works forever.
+Eight years. Multiple dents. Still keeps ice frozen for a full day in Arizona heat. The {{< gear q="Hydro Flask water bottle" text="Hydro Flask" >}} is the one bottle we have never replaced. We each have one and they never leave the van. If you're debating between this and a cheaper option, don't. The cheap ones work for six months. This one works forever.
 
 **Dometic CFX65DZ Fridge**
 
-This is the foundation of how we eat on the road. Dual zone means we run a fridge side and a freezer side. We've kept groceries fresh for over a week in the desert with no shore power. It draws more power than anything else in the van, which is exactly why the solar and battery setup matters so much.
+The {{< gear q="Dometic CFX65DZ" text="Dometic CFX65DZ" >}} is the foundation of how we eat on the road. Dual zone means we run a fridge side and a freezer side. We've kept groceries fresh for over a week in the desert with no shore power. It draws more power than anything else in the van, which is exactly why the solar and battery setup matters so much.
 
 {{< photo src="/images/guides/dometic-fridge.jpg" alt="The Dometic dual-zone fridge" caption="The foundation of how we eat on the road." >}}
 
@@ -90,7 +93,7 @@ This was a "do we really need this?" purchase that became one of our favorite th
 
 **Solawave** *(Karlee's pick)*
 
-Red light therapy wand that she uses almost every night. Van life is hard on your skin: sun, wind, dry air, inconsistent water quality. This is one of the routines that makes the van feel less like camping and more like home.
+{{< gear q="Solawave red light therapy wand" text="Red light therapy wand" >}} that she uses almost every night. Van life is hard on your skin: sun, wind, dry air, inconsistent water quality. This is one of the routines that makes the van feel less like camping and more like home.
 
 ---
 
@@ -98,11 +101,11 @@ Red light therapy wand that she uses almost every night. Van life is hard on you
 
 **Anker battery packs**
 
-The things that keep everything else alive between the van and wherever you've walked to. We've had these long enough to have opinions, and the opinion is that the cheap ones are not cheaper. [needs a line]
+The things that keep everything else alive between the van and wherever you've walked to. We've had these long enough to have opinions, and the opinion is that the cheap ones are not cheaper.
 
 **Bose speaker and headphones**
 
-Two people working in 70 square feet need a way to not be in the same room. The headphones do that. The speaker does the opposite job, for the evenings when we want the whole space to feel like one. [needs a line]
+Two people working in 70 square feet need a way to not be in the same room. The headphones do that. The speaker does the opposite job, for the evenings when we want the whole space to feel like one.
 
 ---
 
@@ -139,3 +142,5 @@ We're not going to pretend we've tested things we haven't. But it's a fair quest
 ---
 
 *Everything above the "on the list" section is something we currently own and use. If that ever changes, we'll say so.*
+
+{{< affiliate-note >}}

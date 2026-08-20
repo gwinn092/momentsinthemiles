@@ -7,10 +7,17 @@ category: "Van Life"
 author: "Karlee & Jesse"
 draft: true
 image: "/images/van-life/van-interior-lake.jpg"
+todo_before_publish: >-
+  DRAFT — affiliate links need to be added/confirmed before publishing. [Jesse] notes throughout. Also needs a link to the fan breakdown post once that's live.
+todo_before_publish_1: >-
+  [Jesse: confirm affiliate program availability for VanLab and Lost Hiway]
+
+todo_before_publish_2: >-
+  [Jesse: confirm the specific system you'd spec and whether this is something to include as a recommendation at our build level. Affiliate link TBD.]
+
+todo_before_publish_3: >-
+  [Link to fan breakdown post when live]
 ---
-
-<!-- DRAFT — affiliate links need to be added/confirmed before publishing. [Jesse] notes throughout. Also needs a link to the fan breakdown post once that's live. -->
-
 We've been living in a van for eight years. We know what works, what we'd redo, and what we wish had existed when we first started building. Lately, a handful of products have crossed our radar that stopped us mid-scroll. One of us holds up the phone to show the other and says: okay, but what if we rebuilt.
 
 This isn't a roundup of the usual suspects. These are the finds that are actually changing what a van interior can look and feel like: more considered, more beautiful, more livable. Some we'd use on day one. Some are going straight into the "next build" folder. All of them are worth knowing about.
@@ -57,8 +64,6 @@ VanLab makes a modular cabinet system built specifically for vans: proportions t
 
 We went full custom on our current build and don't regret it. But if we were weighing options today, both of these would be on the shortlist.
 
-<!-- [Jesse: confirm affiliate program availability for VanLab and Lost Hiway] -->
-
 ---
 
 ## Hydronic heating — hot water, hot air, and radiant floor heat. All at once.
@@ -67,15 +72,11 @@ This one is firmly in the next-build folder, but it's too good not to include.
 
 A hydronic heating system does three things a standard diesel heater doesn't: it heats your air, heats your water, and runs radiant heat through your floor. The radiant floor heat alone (waking up to a warm floor in January) is enough to make a case. It's a bigger investment, but the efficiency and the comfort are on another level.
 
-<!-- [Jesse: confirm the specific system you'd spec and whether this is something to include as a recommendation at our build level. Affiliate link TBD.] -->
-
 ---
 
 ## Brushless fans — a quick note on the upgrade worth making
 
 Van fan technology has gotten good in the last couple of years, and brushless motors are leading the charge: quieter, more efficient, and longer-lasting than the older designs most builds are still running. We're doing a full breakdown in a separate post (Maxxair vs. the best brushless options on the market right now) so you can make a real comparison before you buy.
-
-<!-- [Link to fan breakdown post when live] -->
 
 ---
 

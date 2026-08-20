@@ -1,0 +1,60 @@
+{{/* Closing "Planning this trip?" block — the third and last booking register.
+
+       {{< planning cities="Chiang Mai, Luang Prabang, Hanoi" >}}
+       {{< planning cities="Geneva, Zermatt" partner="booking" >}}
+
+     The idea is lifted from Salt in Our Hair and then made more restrained:
+     they fuse the FTC disclosure and the affiliate menu into one warm unit at
+     the very end of an article, so the ask reads as "here is the thing you
+     would go looking for next" rather than an advert dropped mid-story. Ours
+     carries the same fusion but offers only what we can honestly offer.
+
+     ⚠️ This block renders the disclosure ITSELF by default, so a page using
+     {{< planning >}} must NOT also carry {{< affiliate-note >}} — or pass
+     disclosure="false" here if it does.
+
+     Which to choose: on a SHORT guide, let this block carry the disclosure and
+     drop the separate note. On a LONG one, keep {{< affiliate-note >}} near the
+     top and pass disclosure="false", because a notice that only appears after
+     the reader has scrolled past six booking blocks is not "clear and
+     conspicuous" in any useful sense.
+
+     Where it belongs: the end of a guide or itinerary that names real places a
+     reader could act on. It is a CLOSING block — never mid-article, never above
+     the first real paragraph, and never on /about/, /work-with-us/, /privacy/,
+     /terms/, the quiz or the Kit page.
+
+     Why only city searches: the honesty rule in CLAUDE.md. A named property is
+     only ever allowed when somebody actually stayed there and confirmed the
+     name — that belongs in {{< stay name="..." >}}, not here. A city search is
+     the truthful default and it still earns.
+
+     Args:
+       cities   required — comma-separated. Two or three. Four starts to read
+                as a directory, which is the roundup format that lives on CAVL.
+       partner  optional — "agoda" (default) or "booking". Europe wants booking.
+       heading  optional — defaults to "Planning this trip?"
+       disclosure optional — "false" to suppress the FTC note because the page
+                already carries {{< affiliate-note >}} higher up. Never set this
+                on a page that has no disclosure anywhere else. */}}
+
+{{- $cities := split (.Get "cities") "," -}}
+{{- $partner := .Get "partner" -}}
+<aside class="planning">
+  <span class="planning__eyebrow">{{ .Get "heading" | default "Planning this trip?" }}</span>
+  <p class="planning__note">If you book through one of these it costs you nothing extra, and it helps keep this site going. Thank you — genuinely.</p>
+  <ul class="planning__list">
+    {{- range $cities }}
+    {{- $city := trim . " " }}
+    {{- if $city }}
+    <li>
+      <a class="planning__link" href="{{ partial "booking-link.html" (dict "partner" $partner "city" $city) }}" target="_blank" rel="sponsored nofollow noopener">
+        <span class="planning__where">{{ $city }}</span>
+        <span class="planning__via">Find a room{{ if eq ($partner | default "agoda") "booking" }} via Booking.com{{ else }} via Agoda{{ end }}</span>
+      </a>
+    </li>
+    {{- end }}
+    {{- end }}
+  </ul>
+  {{ if ne (.Get "disclosure") "false" }}{{ partial "affiliate-disclosure.html" .Page }}{{ end }}
+</aside>

@@ -1,0 +1,32 @@
+{{- /* Generated llms.txt. See the [outputFormats.LLMS] note in hugo.toml for an
+     honest assessment of whether this does anything. It is generated rather than
+     hand-written so it stays true as content changes. */ -}}
+# {{ .Site.Title }}
+
+> {{ .Site.Params.description }}
+
+{{ .Site.Params.authorBio }}
+
+Everything here is first-hand. Numbers, routes and costs come from trips we
+actually took, not from research. Where we have not been somewhere, we say so.
+
+## Guides
+{{ range where (where .Site.RegularPages "Section" "guides") "Params.draft" "!=" true -}}
+- [{{ .Title }}]({{ .Permalink }}){{ with .Description }}: {{ . }}{{ end }}
+{{ end }}
+## Itineraries
+{{ range where (where .Site.RegularPages "Section" "itineraries") "Params.draft" "!=" true -}}
+- [{{ .Title }}]({{ .Permalink }}){{ with .Description }}: {{ . }}{{ end }}
+{{ end }}
+## Van life
+{{ range where (where .Site.RegularPages "Section" "van-life") "Params.draft" "!=" true -}}
+- [{{ .Title }}]({{ .Permalink }}){{ with .Description }}: {{ . }}{{ end }}
+{{ end }}
+## Essays
+{{ range where (where .Site.RegularPages "Section" "essays") "Params.draft" "!=" true -}}
+- [{{ .Title }}]({{ .Permalink }}){{ with .Description }}: {{ . }}{{ end }}
+{{ end }}
+## About
+- [About Jesse and Karlee]({{ .Site.Home.Permalink }}about/): who we are and how long we have been doing this.
+- [The map]({{ .Site.Home.Permalink }}map/): every state and country we have been to, with the stories attached.
+- [Work with us]({{ .Site.Home.Permalink }}work-with-us/): what we take on and what we decline.

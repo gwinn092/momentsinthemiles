@@ -1,0 +1,27 @@
+{{/* The Kit subscribe form. Was pasted in three places with the same form id,
+     data-uid and action — which meant changing the list, the provider or the
+     button copy needed three synchronised edits, and a missed one would silently
+     keep posting to the old form. One partial now.
+
+     Args (dict), all optional:
+       eyebrow  small label above the heading
+       heading  the ask
+       body     one line of supporting copy
+       cta      button text (default "I'm in")
+       variant  "aside" for the narrow sidebar version
+
+     ⛔ The form ids come from site config, not from this markup. If Kit is ever
+     replaced, this file and hugo.toml are the only places to touch. */}}
+{{- $variant := .variant | default "" -}}
+<div class="newsletter__inner{{ if eq $variant "aside" }} newsletter__inner--aside{{ end }}">
+  {{- with .eyebrow }}<span class="eyebrow">{{ . }}</span>{{ end }}
+  {{- with .heading }}<h2>{{ . }}</h2>{{ end }}
+  {{- with .body }}<p>{{ . }}</p>{{ end }}
+  <form class="{{ if eq $variant "aside" }}seva-form aside-form{{ else }}newsletter-form seva-form{{ end }}"
+        action="https://app.kit.com/forms/9172727/subscriptions" method="post"
+        data-sv-form="9172727" data-uid="26bf91ae52" data-version="5">
+    <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+    <input type="email" name="email_address" placeholder="Your email address" aria-label="Email address" required>
+    <button data-element="submit" type="submit" class="btn btn-primary">{{ .cta | default "I'm in" }}</button>
+  </form>
+</div>

@@ -1,0 +1,37 @@
+{{/* "Listen to this essay" — narration by the person who lived it.
+
+     Front matter:
+       audio: "/audio/the-miles-will-shape-you.mp3"
+       audio_duration: "6:41"        # optional, shown as small print
+       audio_reader: "Karlee"        # optional, defaults to the page author
+
+     Renders nothing when there is no `audio:` value, so it can sit in the
+     template permanently and light up file by file as recordings land.
+
+     ⚠️ Deliberately a NATIVE <audio controls>. A custom player means rebuilding
+     keyboard control, focus order, ARIA state and screen-reader announcements
+     from scratch, and media players are the single most common place that gets
+     botched. The browser's own controls are fully accessible for free; the
+     styling here wraps them rather than replacing them.
+
+     preload="none" so a 30MB narration never competes with the hero image for
+     bandwidth. The file is fetched only when someone presses play.
+
+     ⛔ This does NOT "protect the page from AI" — the essay text is still right
+     there, and it should be. Audio is here because hearing Karlee read the
+     hospital story is something a model cannot generate, and because some
+     people would rather listen. Those are the reasons. */}}
+{{- with .Params.audio }}
+{{- $reader := $.Params.audio_reader | default ($.Params.author | default "us") }}
+<div class="listen">
+  <div class="listen__head">
+    <span class="listen__label">Listen to this {{ if eq $.Section "essays" }}essay{{ else }}piece{{ end }}</span>
+    <span class="listen__meta">Read by {{ $reader }}{{ with $.Params.audio_duration }} &middot; {{ . }}{{ end }}</span>
+  </div>
+  <audio class="listen__player" controls preload="none"
+         src="{{ if hasPrefix . "http" }}{{ . }}{{ else }}{{ $.Site.Home.RelPermalink }}{{ strings.TrimPrefix "/" . }}{{ end }}">
+    Your browser does not support audio playback.
+    <a href="{{ if hasPrefix . "http" }}{{ . }}{{ else }}{{ $.Site.Home.RelPermalink }}{{ strings.TrimPrefix "/" . }}{{ end }}">Download the recording</a> instead.
+  </audio>
+</div>
+{{- end }}

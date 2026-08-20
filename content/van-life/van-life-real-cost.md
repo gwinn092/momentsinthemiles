@@ -7,10 +7,9 @@ category: "Van Life"
 author: "Karlee & Jesse"
 draft: true
 image: "/images/van-life/van-lake-powell.jpg"
+todo_before_publish: >-
+  DRAFT — needs Jesse's maintenance average before publishing. See [JESSE] note below.
 ---
-
-<!-- DRAFT — needs Jesse's maintenance average before publishing. See [JESSE] note below. -->
-
 This is the question we get asked more than any other. More than how we find parking, more than what we do for showers, more than whether we're safe. People want to know: can I actually afford this? And we get it. We asked the same thing before we left.
 
 Eight years in, we can finally give you an honest answer. Not a polished highlight reel, the real breakdown of what van life costs us right now, in 2025, in the middle of some of the highest inflation we've seen in years.

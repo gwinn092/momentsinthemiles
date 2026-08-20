@@ -1,0 +1,36 @@
+# Media kit numbers for /work-with-us/.
+#
+# ⚠️ THE WHOLE POINT OF THIS FILE: nothing renders until a value is filled in.
+# An empty value is skipped, and if every value is empty the entire stats block
+# disappears from the page. That is deliberate — a media kit with invented
+# numbers is worse than one with none, and a brand that catches a padded figure
+# never replies again.
+#
+# Fill these from GA4 and Kit once there are ~3 months of real data. Round down.
+# Use the LOWEST honest figure; being beaten by your own numbers in a meeting is
+# the best position to negotiate from.
+#
+# `note` is optional and shows as small print under the number.
+
+updated: ""            # e.g. "November 2026" — shown so a brand knows it is current
+
+stats:
+  - label: "Monthly sessions"
+    value: ""          # GA4 → Reports → Life cycle → Traffic acquisition
+    note: ""
+  - label: "Newsletter subscribers"
+    value: ""          # Kit → Subscribers → Confirmed
+    note: ""
+  - label: "Top country"
+    value: ""          # e.g. "United States — 61%"
+    note: ""
+  - label: "Years on the road"
+    value: "Eight"     # This one is already true and does not need GA4.
+    note: "All 48 continental states"
+
+# Optional: two or three pieces a brand can look at as examples of the work.
+# Leave empty until there is something genuinely representative.
+examples: []
+  # - title: "Eight Months in Southeast Asia"
+  #   url: "/guides/eight-months-southeast-asia/"
+  #   why: "Long-form, first-hand, with real budget numbers."

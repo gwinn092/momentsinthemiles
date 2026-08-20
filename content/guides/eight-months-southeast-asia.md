@@ -1,4 +1,25 @@
 ---
+faq:
+  - q: "How much does eight months in Southeast Asia cost for two people?"
+    a: "We averaged about $70 a day for two people — accommodation, food,
+       transport and activities included. Over eight months that came to roughly
+       $34,000 for both of us. Vietnam and Laos ran well under that average;
+       Singapore and the Philippines ran well over it."
+  - q: "Which countries did you visit, and in what order?"
+    a: "Eight countries across eight months: Thailand, Laos, Vietnam, Cambodia,
+       southern Thailand again, Malaysia and Singapore, the Philippines, and
+       Indonesia — then Switzerland for 23 days to close the trip. We rerouted
+       constantly, and the changes were usually the best part."
+  - q: "How long should you spend in each country?"
+    a: "Longer than you think. Our best stretches were the slow ones — twelve
+       days in Luang Prabang, eleven in Senggigi, a week in Pai. The places that
+       became ours were the ones we stayed in long enough to stop being tourists.
+       The urge to cover more ground was almost always wrong."
+  - q: "What happens if you get sick while travelling long-term?"
+    a: "Jesse got sick in Ha Long Bay and we ended up in a Vietnamese hospital a
+       few weeks into the country. It turned out to be the best medical care
+       either of us has ever received, and it cost fifty dollars. Get travel
+       insurance anyway — but it is not a reason to stay home."
 title: "Eight Months in Southeast Asia: The Whole Honest Story"
 tags: ["Southeast Asia", "Planning", "Slow Travel"]
 date: 2025-06-23
@@ -361,3 +382,6 @@ We've had a lot of time to think about what the trip actually gave us, beyond th
 **The people are the trip.** The landscapes in northern Vietnam are extraordinary. The temples in Luang Prabang are extraordinary. But what surfaces when someone asks us about the trip is almost always a person. Vieng, who let us cancel a boat ticket and drove us up to the village he grew up in. Daniel and Serena, who we met because four people happened to book the same tour, and who we now get on planes to go see. Thomas, who drove us around the Mekong Delta for hours and ended the day feeding us pineapple on the roof of his wife's boat. The woman at Sapir Kecia who knew our order by the third visit. The Canadian family we met on our last night on one island and had breakfast with on our last morning in the country. Pay attention to people.
 
 **Eight months is both a long time and not enough.** We came home with a list of places we want to go back to longer than the list we started with. That feels right.
+
+{{< planning cities="Chiang Mai, Hanoi, Nusa Lembongan" disclosure="false" >}}
+

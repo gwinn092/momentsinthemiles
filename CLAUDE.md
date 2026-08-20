@@ -32,6 +32,14 @@ an ad.
   $27 Kit — a booking link there competes with the product.
 - **Restraint over density.** One booking block per section of a page remains the
   ceiling, and most sections should have none.
+- **The closing `{{< planning >}}` block is for LONG pillar guides and
+  itineraries only** (Jesse, Aug 20 2026). Never the short guides: on a
+  ~1,500-word guide that already has a `{{< stay >}}` block, a closing block is
+  the second ask in a short space and reads as a pitch. It is live on the SE
+  Asia guide, which carries it only because the page is enormous and each inline
+  block sits in its own country section.
+  Pass `disclosure="false"` when the page already shows `{{< affiliate-note >}}`
+  near the top — but never on a page with no disclosure anywhere else.
 - Keep Reduce Friction in the nav; it is the only route to the Kit.
 - Sponsorship still routes through `/work-with-us/`.
 
@@ -90,6 +98,13 @@ every article, that is a regression, not cosmetic.
   is served from a GitHub Pages subpath and those 404 in production.
 
 ## Photos
+- ⛔ **Do NOT crop source photos to landscape** (Jesse, Aug 20 2026 — he has told
+  Karlee to stop). The frame adapts to the photograph instead:
+  `partials/frame-shape.html` reads each source's aspect ratio at build time and
+  picks 2:1, 3:2 or a narrow 4:5 portrait. Most of their photos are 4:3 phone
+  shots and eleven heroes are portrait — that is a feature, because phone-shaped
+  photos read as someone actually being there. Never "fix" a portrait hero by
+  re-cropping it, and never ask for landscape reshoots.
 - Strip metadata from every photo before it enters the repo:
   `magick "$SRC" -resize 1400x1400\> -quality 82 -strip "$DST"`
 - Blur or patch anything identifying that ends up in frame — license plates,

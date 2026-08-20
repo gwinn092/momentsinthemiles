@@ -1,4 +1,20 @@
 ---
+faq:
+  - q: "Is $70 a day enough for two people in Southeast Asia?"
+    a: "Yes, comfortably. We spent eight months across eight countries on $70 a
+       day for two and were not white-knuckling it — private rooms, good food,
+       cold beer, the occasional boat trip or cooking class. For most of the
+       region $70 a day is not a ceiling. It is a comfortable floor."
+  - q: "How much does accommodation cost in Southeast Asia?"
+    a: "Expect $15 to $30 a night for a solid private room for two. In Chiang Mai
+       we regularly found lovely rooms, sometimes with breakfast, for under $20.
+       Hanoi and Hoi An run slightly higher and rarely break $35 for something
+       nice. Family-run guesthouses are the sweet spot."
+  - q: "How much does food cost in Southeast Asia?"
+    a: "Street meals run $1 to $3 each. Sit-down local restaurants land at $4 to
+       $8 for a main. A proper dinner for two with drinks at a genuinely good
+       local restaurant rarely exceeds $15 to $20. A full meal for two in Chiang
+       Mai came to about $8 at a decent sit-down place."
 title: "A Realistic Guide to Traveling Southeast Asia on $70 a Day"
 tags: ["Southeast Asia", "Budget"]
 date: 2025-04-14

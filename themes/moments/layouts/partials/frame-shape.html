@@ -1,0 +1,30 @@
+{{/* Returns a frame-shape class for a hero photo: "wide", "mid" or "tall".
+
+     Why this exists. Every hero used to be forced into one 2:1 landscape box,
+     which is fine for a landscape photo and awful for a portrait one — the
+     Hanoi essay's 822x1400 shot was showing 29% of its own height. A print
+     frame should take its shape FROM the photograph, not impose one on it.
+
+       wide  ratio >= 1.5   landscape        -> 2:1, full frame width
+       mid   1.15 - 1.5     4:3 and friends  -> 3:2, full frame width
+       tall  ratio < 1.15   portrait/square  -> 4:5, narrow and centred
+
+     A 4:3 source in the old 2:1 box kept 67% of its height; in a 3:2 box it
+     keeps 89%. That is the single biggest crop win here and it costs nothing.
+
+     Falls back to "wide" if the image cannot be read, which is the old
+     behaviour — so a missing file degrades rather than breaking the layout.
+
+     Args (dict): path — the image path as written in front matter. */}}
+{{- $p := strings.TrimPrefix "/" .path -}}
+{{- $res := resources.Get $p -}}
+{{- $shape := "wide" -}}
+{{- if and $res (in (slice "jpeg" "png" "webp") $res.MediaType.SubType) -}}
+  {{- $r := div (float $res.Width) (float $res.Height) -}}
+  {{- if lt $r 1.15 -}}
+    {{- $shape = "tall" -}}
+  {{- else if lt $r 1.5 -}}
+    {{- $shape = "mid" -}}
+  {{- end -}}
+{{- end -}}
+{{- return $shape -}}
