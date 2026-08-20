@@ -4193,7 +4193,11 @@ html.is-map-touring .back-to-top {
 
 .home-hero {
   position: relative;
-  min-height: clamp(560px, 94svh, 900px);
+  /* Width-driven, because what the box crops off the photo depends on the
+     box's aspect ratio, not its height: the photo is cropped just above
+     Mt. Rainier, and 58vw is the ratio that still keeps the peaks in frame.
+     The svh term stops a short window from pushing the hero off-screen. */
+  min-height: clamp(480px, min(58vw, 92svh), 880px);
   display: flex;
   align-items: flex-end;
   overflow: hidden;
@@ -4209,7 +4213,9 @@ html.is-map-touring .back-to-top {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 40%;
+  /* Top-anchored: whatever the box cannot fit comes off the bottom of the
+     frame — a little of the rock — never off the peaks. */
+  object-position: 50% 0%;
   animation: heroDrift 14s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
@@ -4330,6 +4336,12 @@ html.is-map-touring .back-to-top {
 @media (max-width: 768px) {
   .home-hero {
     min-height: clamp(480px, 86svh, 720px);
+  }
+  /* A tall, narrow box crops the photo's width instead of its height, and the
+     two of them sit right of centre — so the frame pans right here, or Karlee
+     falls off the edge. */
+  .home-hero__media img {
+    object-position: 70% 50%;
   }
   .home-hero__cue {
     display: none;
