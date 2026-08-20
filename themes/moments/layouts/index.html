@@ -19,6 +19,31 @@
   </div>
 </section>
 
+<!-- THIS IS US — second thing on the page, not the eighth.
+     On a travel journal the two of them ARE the product. It used to sit at
+     section 8 of 11, 58% down, which meant a first-time reader could decide
+     whether to stay long before finding out a real couple wrote any of it.
+     Carries cream so the band rhythm holds: hero white -> this-is-us cream ->
+     mission white -> map sage. -->
+<section class="this-is-us">
+  <div class="container container-wide">
+    <div class="this-is-us__inner">
+      <div class="this-is-us__image">
+        {{ partial "respimg.html" (dict "path" "images/pages/about-beach-sunset.jpg" "alt" "Jesse and Karlee" "class" "page-image" "sizes" "(min-width: 760px) 540px, 100vw" "widths" (slice 480 800)) }}
+      </div>
+      <div class="this-is-us__content">
+        <span class="eyebrow">This Is Us</span>
+        <p>We were somewhere in the middle of nowhere, headed to Florida, when we realized we were rolling straight into Mardi Gras. A friend from my St. John days had invited us to crash with him in Louisiana. What he forgot to mention was that we'd be arriving in the middle of the biggest party in the country.</p>
+        <p>We hadn't planned any of it. But we could stop, so we did.</p>
+        <p>One night turned into four days: beads flying, music everywhere, an electricity in the air that gets into your chest before you've figured out where you are. We had a local guide, a front row seat, and nowhere else we needed to be.</p>
+        <p>That's the life we've built. It isn't perfect and it's rarely planned, but it's flexible enough to say yes when something worth saying yes to shows up.</p>
+        <p>We're Jesse and Karlee. Eight years in a van, forty-eight states, eight months across Southeast Asia, and more wrong turns than we can count. Most of them led somewhere better than where we were headed.</p>
+        <a href="{{ .Site.Home.RelPermalink }}about/" class="link-arrow">Read our full story <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- MISSION STATEMENT -->
 <section class="section mission" id="mission">
   <div class="content-container">
@@ -143,26 +168,6 @@
 
 <!-- POSTCARD FROM THE MAP -->
 {{ partial "postcard.html" . }}
-
-<!-- THIS IS US -->
-<section class="this-is-us">
-  <div class="container container-wide">
-    <div class="this-is-us__inner">
-      <div class="this-is-us__image">
-        {{ partial "respimg.html" (dict "path" "images/pages/about-beach-sunset.jpg" "alt" "Jesse and Karlee" "class" "page-image" "sizes" "(min-width: 760px) 540px, 100vw" "widths" (slice 480 800)) }}
-      </div>
-      <div class="this-is-us__content">
-        <span class="eyebrow">This Is Us</span>
-        <p>We were somewhere in the middle of nowhere, headed to Florida, when we realized we were rolling straight into Mardi Gras. A friend from my St. John days had invited us to crash with him in Louisiana. What he forgot to mention was that we'd be arriving in the middle of the biggest party in the country.</p>
-        <p>We hadn't planned any of it. But we could stop, so we did.</p>
-        <p>One night turned into four days: beads flying, music everywhere, an electricity in the air that gets into your chest before you've figured out where you are. We had a local guide, a front row seat, and nowhere else we needed to be.</p>
-        <p>That's the life we've built. It isn't perfect and it's rarely planned, but it's flexible enough to say yes when something worth saying yes to shows up.</p>
-        <p>We're Jesse and Karlee. Eight years in a van, forty-eight states, eight months across Southeast Asia, and more wrong turns than we can count. Most of them led somewhere better than where we were headed.</p>
-        <a href="{{ .Site.Home.RelPermalink }}about/" class="link-arrow">Read our full story <span aria-hidden="true">&rarr;</span></a>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- FEATURED CONTENT -->
 <section class="featured">

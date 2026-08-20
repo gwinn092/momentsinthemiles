@@ -718,9 +718,13 @@ a.print:hover,
   margin-bottom: 1.25rem;
 }
 
-/* --- This Is Us --- */
+/* --- This Is Us ---
+   Band rhythm: cream. It sits between the white hero and the white mission
+   statement, so it needs a ground of its own or the page opens with three
+   identical bands stacked. */
 .this-is-us {
   padding: 5rem 0;
+  background: var(--cream);
 }
 
 .this-is-us__inner {
