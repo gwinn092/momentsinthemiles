@@ -1,4 +1,9 @@
 ---
+todo_jesse: >-
+  Add real numbers to the media-kit section once pulled from GA4 and Kit —
+  monthly sessions, newsletter subscribers, top countries, and the split between
+  search and social. A media kit without numbers gets ignored, and they must not
+  be invented.
 title: "Work With Us"
 description: "Partnerships, sponsored stories, and press for Moments in the Miles — what we take on, what we don't, and how to reach us."
 seo_title: "Work With Us"
@@ -55,11 +60,6 @@ whether to book a trip, buy the van, or keep waiting.
 They are not here for a deal. They are here because they are trying to work out
 whether a different life is available to them. That is a different kind of
 attention than a discount code buys.
-
-<!-- TODO [Jesse]: add real numbers here once you pull them from GA4 and Kit —
-     monthly sessions, newsletter subscribers, top countries, and the split
-     between search and social. A media kit without numbers gets ignored, and
-     I am not going to invent them. -->
 
 ## Get in touch
 

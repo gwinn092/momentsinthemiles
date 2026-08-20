@@ -46,6 +46,12 @@ enableRobotsTXT = true
   agodaCid = ""
   # Booking.com affiliate id ("aid"), used as the fallback link.
   bookingAid = ""
+  # Amazon Associates store tag, e.g. "momentsmiles-20". Gear links fall back to
+  # a plain Amazon search while this is empty, so nothing breaks and nothing
+  # misleads before the account exists.
+  # ⚠️ BOTH momentsinthemiles.com AND createavanlife.com must be registered on
+  # the Associates account before this is filled in.
+  amazonTag = ""
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]

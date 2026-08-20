@@ -1,0 +1,27 @@
+{{/* Builds one outbound Amazon URL. Args (dict):
+       q    required — the product as we name it in prose, e.g. "Aeropress"
+       url  optional — an exact product URL instead of a search
+
+     The tag comes from [params.affiliates] amazonTag in hugo.toml. While it is
+     empty the link still works, it just goes to a plain Amazon search and earns
+     nothing — the same contract as booking-link.html, so nothing is broken or
+     misleading before the account exists.
+
+     ⚠️ A SEARCH, not a guessed ASIN. We link the product BY THE NAME ALREADY IN
+     THE PROSE. Picking a specific listing means asserting which model, colour
+     and seller they own, and that is exactly the kind of thing CLAUDE.md says
+     never to invent. If someone confirms the exact product, pass `url`.
+
+     `return` hands back a plain string. Rendered template output would be
+     HTML-escaped once here and again at the call site, which is how the
+     booking links once shipped "&amp;amp;" and silently lost the partner ID on
+     every click. Do not change this to plain output. */}}
+
+{{- $tag := (site.Params.affiliates | default dict).amazonTag -}}
+{{- $base := .url | default (printf "https://www.amazon.com/s?k=%s" (urlquery .q)) -}}
+{{- $out := $base -}}
+{{- with $tag -}}
+  {{- $glue := cond (strings.Contains $base "?") "&" "?" -}}
+  {{- $out = printf "%s%stag=%s" $base $glue . -}}
+{{- end -}}
+{{- return (replace $out "+" "%20") -}}
