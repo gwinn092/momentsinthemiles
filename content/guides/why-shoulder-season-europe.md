@@ -9,6 +9,8 @@ draft: false
 image: "/images/pages/guides-oregon-coast.jpg"
 ---
 
+{{< affiliate-note >}}
+
 My first time in Paris, I was lost.
 
 Not metaphorically. Actually lost, backpack digging into my shoulders, my friend equally exhausted beside me, both of us trying to find our hostel after a day of travel that had taken everything we had. Tired past the point where anything charms you. You just want to put something down.
@@ -94,6 +96,10 @@ Set price alerts early. Use Skyscanner or Going to track fares across a flexible
 Don't anchor to one date. A one or two day shift in departure can mean hundreds of dollars in savings. Build the flexibility into your planning before you commit.
 
 Book accommodation weekly when staying put. Boutique guesthouses and apartments in Europe often offer substantial weekly discounts. Just ask.
+
+{{< stay city="Geneva" partner="booking" >}}
+We flew into Geneva with eight months of Southeast Asia behind us, and the contrast was immediate. Central Europe is at its best in May and early June, or September — comfortable temperatures, tourist pressure not yet peaked.
+{{< /stay >}}
 
 Shoulder season doesn't mean cold. Southern Europe in September is warm and golden. Paris in May is one of the finest versions of Paris. Pack a layer and don't let calendar assumptions talk you out of good weather.
 

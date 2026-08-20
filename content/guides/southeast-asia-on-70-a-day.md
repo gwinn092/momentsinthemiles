@@ -35,6 +35,10 @@ Private guesthouses are the sweet spot. Not hostels, not hotels, but the family-
 
 Expect to pay $15–30 a night for a solid private room for two. In Chiang Mai we regularly found lovely rooms (sometimes with breakfast) for under $20. Hanoi and Hoi An run slightly higher but rarely break $35 for something nice.
 
+{{< stay city="Hanoi" >}}
+Hanoi runs slightly higher than the rest of Vietnam and still rarely breaks $35 for something nice. Family-run guesthouses are the sweet spot, not hostels and not hotels.
+{{< /stay >}}
+
 The booking approach that works:
 
 Book your first night in advance when arriving somewhere new, enough to land without stress. After that, walk the street and look. We used Agoda constantly across all eight months; it has the deepest inventory in this part of the world by a wide margin, and Booking.com is the backup. If you want to see what a night actually costs before you commit to the trip, here is {{< book city="Chiang Mai" text="what stays in Chiang Mai run to" >}}.

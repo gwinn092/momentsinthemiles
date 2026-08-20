@@ -10,6 +10,8 @@ image: "/images/guides/laos-sunset.jpg"
 seo_title: "Plan a Trip Without Overplanning It"
 ---
 
+{{< affiliate-note >}}
+
 There's a version of trip planning that feels productive but quietly ruins the trip before it starts.
 
 You know the one. The color-coded spreadsheet. The hourly itinerary. The ranked list of restaurants with backup options for each. Every museum pre-booked, every transfer timed to the minute, every day accounted for so thoroughly that the only thing left to do is execute the plan you made three months ago from your living room.
@@ -67,6 +69,10 @@ It always has been for us.
 ## HOW WE ACTUALLY PLAN
 
 Book the first night only. Arriving somewhere new without accommodation sorted creates anxiety, not adventure. Book one night in advance so you can land without stress. After that, decide in person.
+
+{{< stay city="Pakbeng" eyebrow="The first night" >}}
+Pakbeng is the overnight stop halfway down the slow boat to Luang Prabang, and it is exactly the kind of place this rule is for: one night booked ahead, everything after it decided in person. It is also where we met Vieng.
+{{< /stay >}}
 
 Identify your anchors. Every trip has two or three things we genuinely don't want to miss. We book those in advance if they require it. Everything else stays open.
 

@@ -1,0 +1,48 @@
+{{/* Block-level booking aside — the second of two registers.
+
+       {{< stay city="Chiang Mai" >}}
+       Old town puts you one block from the night market.
+       {{< /stay >}}
+
+       {{< stay city="Geneva" partner="booking" >}}…{{< /stay >}}
+       {{< stay city="Hanoi" name="Hanoi Old Quarter Guesthouse" >}}…{{< /stay >}}
+
+     Why this exists alongside {{< book >}}: the inline link is deliberately
+     muted (see .book-link in main.css) and is easy to read straight past. This
+     one is visible because it is SEPARATED from the prose, not because it
+     shouts — terracotta stays reserved for links to our own pages, and a
+     coloured button would undo the restraint the rest of the site trades on.
+
+     Args:
+       city     required — the search target, e.g. "Chiang Mai"
+       name     optional — a property we ACTUALLY stayed at. Changes the link to
+                "We stayed at X". ⛔ Never fill this in with a plausible guess;
+                if nobody has confirmed the name, leave it out and the city
+                search is the honest version. Same rule the itinerary template
+                follows for its `stay` field.
+       url      optional — exact property URL to pair with `name`
+       partner  optional — "agoda" (default) or "booking". Europe wants booking;
+                Agoda's inventory there is thin.
+       eyebrow  optional — defaults to "Where to stay"
+       label    optional — override the whole link text
+
+     Inner text is the note. Write it from prose ALREADY ON THE PAGE so the
+     block cannot drift away from what we actually said.
+
+     One per page, maximum. Never above the first real paragraph. The page must
+     also carry {{< affiliate-note >}} — that is an FTC requirement.
+
+     ⚠️ Markup is deliberately kept off column 0 after the opening tag: the
+     ad weaver in partials/article-body.html splits content on "\n<p>" and would
+     otherwise be free to drop an ad slot inside this block. */}}
+
+{{- $city := .Get "city" -}}
+{{- $name := .Get "name" -}}
+{{- $url := partial "booking-link.html" (dict
+      "partner" (.Get "partner")
+      "city" $city
+      "url" (.Get "url")) -}}
+{{- $label := .Get "label" | default (cond (ne $name "")
+      (printf "We stayed at %s" $name)
+      (printf "Find a room in %s" $city)) -}}
+<div class="stay"><span class="stay__eyebrow">{{ .Get "eyebrow" | default "Where to stay" }}</span><div class="stay__note">{{ .Inner | markdownify }}</div><a class="stay__link" href="{{ $url }}" target="_blank" rel="sponsored nofollow noopener">{{ $label }} <span aria-hidden="true">&rarr;</span></a></div>

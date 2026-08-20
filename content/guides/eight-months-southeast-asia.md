@@ -10,6 +10,8 @@ image: "/images/guides/mekong-slow-boats-dusk.jpg"
 hero_position: "center 62%"
 ---
 
+{{< affiliate-note >}}
+
 Eight months was the plan. We booked it that way on purpose, because the van had already taught us that the good stuff shows up after you stop moving, and three weeks in a country doesn't buy you that.
 
 What we didn't plan was the shape it took. This part of the world keeps handing you one more reason to stay: one more bus to catch, one more village you've never heard of that turns out to be the one you'll talk about for years.
@@ -53,6 +55,10 @@ We moved through four different neighborhoods during our stay (Phra Singh, Hai Y
 The reason we were there for 26 days was partly the city itself and partly timing. We were there for the Yi Peng lantern festival, Loi Krathong, and if you've ever seen a photograph of thousands of paper lanterns lifting into a dark sky above a city and wondered if it could possibly be as beautiful in person, the answer is that it is more beautiful. It is one of the most extraordinary things we have ever witnessed. We stood in a crowd of strangers and launched a lantern together and didn't say anything for a long time.
 
 We also spent a day in the Mae Wang District to see elephants, ethically, at a sanctuary where they roam freely and you walk among them rather than ride them. We're still not over it.
+
+{{< stay city="Chiang Mai" >}}
+We booked a week and kept extending until it was 26 days. We moved through four neighborhoods doing it, and the old town inside the moat was the one that felt almost like a village.
+{{< /stay >}}
 
 ### Pai — 1 week
 
@@ -102,6 +108,10 @@ Worth saying plainly in a guide like this: not every famous place is going to be
 
 {{< photo src="/images/guides/laap-sticky-rice.jpg" alt="Laap and sticky rice served in simple dishes" caption="The Laos order: laap, sticky rice, repeat." >}}
 
+{{< stay city="Luang Prabang" >}}
+Twelve days was a few too many for us, and it is still objectively beautiful: a peninsula between two rivers, French colonial streets, temples that glow in the evening light.
+{{< /stay >}}
+
 Then we got on a 27-hour bus to Vietnam.
 
 That bus was an entire experience of its own, and we've written it up properly in [our Southeast Asia budget guide]({{< relref "guides/southeast-asia-on-70-a-day.md" >}}). Short version: a mountain range, a border at dawn, and a fraction of the cost of flying. We'd do it again.
@@ -119,6 +129,10 @@ We spent five days getting our bearings, eating bun cha and pho and egg coffee, 
 We also found a bánh mì shop under a big yellow tree and went back three times. On the last visit they waved us behind the counter, unstacked two extra stools, and handed us cold beers while we waited. That one got its own essay: [A Plastic Stool in Hanoi]({{< relref "essays/a-plastic-stool-in-hanoi.md" >}}).
 
 {{< photo src="/images/guides/hanoi-old-quarter.jpg" alt="A Hanoi Old Quarter street at night, red lanterns under a yellow tree" caption="The Old Quarter at night: lanterns, stools, and the best sandwich in the city." >}}
+
+{{< stay city="Hanoi" >}}
+Five days in the Old Quarter was enough to get our bearings. The street food culture is so good and so cheap that it becomes difficult to eat anywhere indoors.
+{{< /stay >}}
 
 ### The Ha Giang Loop — the highlight of the trip
 
@@ -212,6 +226,10 @@ So we went back to Sihanoukville, to the hotel we'd stopped at on the way throug
 
 We extended two more nights purely because of it. Sometimes that's the whole story. You find somewhere that gets the details right and you don't need another reason.
 
+{{< stay city="Sihanoukville" eyebrow="Where we stayed" >}}
+Onederz is the reason Sihanoukville ended up being the best part of Cambodia for us. Good food, good staff, a perfect pool, and no particular reason to leave.
+{{< /stay >}}
+
 ### Back through Bangkok
 
 A bus back into Bangkok for a week. We had suits made, something we'd been planning since Chiang Mai and finally had the timeline to do properly. Bangkok's tailors are excellent and the process, if you have the time, is worth it entirely. We walked out with clothes that fit in a way off-the-rack never quite manages.
@@ -237,6 +255,10 @@ A flight into Kuala Lumpur for four days. KL is a great city: cosmopolitan, food
 A ferry to Penang (George Town) for three days. George Town might be our favorite city in Malaysia. UNESCO-listed for its historic architecture, covered in street art that somehow manages not to feel forced, home to one of the best food cultures in a country already renowned for its food. We ate char kway teow and asam laksa and cendol and wished we had more time.
 
 Two more days back in KL before flying to Singapore for two days, which is not enough time for Singapore, frankly, but enough to eat at hawker centres, walk the colonial district, and feel the order and ambition of a city-state that decided to take everything seriously.
+
+{{< stay city="George Town" >}}
+Three days in George Town and it might be our favorite city in Malaysia — UNESCO-listed architecture, street art that somehow doesn't feel forced, and one of the best food cultures in a country already known for food. We wished we had more time.
+{{< /stay >}}
 
 ---
 
@@ -275,6 +297,10 @@ On our last night on Lembongan we met the Canadian family who would keep turning
 {{< photo src="/images/guides/nusa-blue-lagoon.jpg" alt="Turquoise water and limestone coastline on Nusa Lembongan" caption="The coastline that made us cancel the ferry twice." >}}
 
 {{< photo src="/images/guides/warung-plate.jpg" alt="A warung plate piled with rice, tempeh, greens, and fried chicken" caption="Warung lunch, Nusa Lembongan. The bill came to almost nothing." >}}
+
+{{< stay city="Nusa Lembongan" >}}
+Six days on a car-free island southeast of Bali, with mangroves and surf breaks and a pace that Bali itself has largely outgrown. You can circle the whole thing on a scooter in an afternoon.
+{{< /stay >}}
 
 ### Lombok & Senggigi
 

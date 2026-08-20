@@ -6068,6 +6068,64 @@ body.search-open {
   color: var(--ink);
 }
 
+/* --- Booking aside: the block register ---
+   The inline .book-link above is easy to read straight past, which is fine
+   mid-sentence and useless as the only setting. This one earns attention by
+   being SEPARATED from the prose — a sand band with hairline rules — rather
+   than by being loud. No button, no rounded corners, no terracotta on the
+   body text: terracotta stays the "this is our own writing" colour and is
+   spent here only on the outbound link itself. */
+.stay {
+  background: var(--sand);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  margin: 2.5rem 0;
+  padding: 1.25rem clamp(1rem, 3vw, 1.5rem) 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.stay__eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* markdownify returns the note INLINE for a single paragraph and only wraps it
+   in <p> when there are several, so the type has to be set on the container and
+   the <p> reset to match. Targeting only `.stay__note p` silently missed every
+   one-paragraph block — which is all of them. */
+.stay__note,
+.stay__note p {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.stay__link {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  color: var(--terracotta);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(163, 90, 52, 0.35);
+  align-self: flex-start;
+  padding-bottom: 1px;
+}
+
+.stay__link:hover {
+  border-bottom-color: var(--terracotta);
+}
+
+.article-body .stay__note,
+.article-body .stay__note p {
+  font-size: 1.2rem;
+}
+
 /* ============================================================
    Display ad slots — reserved space only.
    Nothing renders until [params.ads] enabled/preview in hugo.toml.

@@ -11,6 +11,8 @@ image: "/images/guides/vietnam-banh-mi.jpg"
 
 <!-- DRAFT: REVIEW NUMBERS WITH KARLEE BEFORE PUBLISHING -->
 
+{{< affiliate-note >}}
+
 Here's something most travel blogs won't tell you upfront: Southeast Asia is cheaper than your monthly car payment.
 
 We know because we lived it. Eight months across Thailand, Vietnam, Cambodia, Malaysia, Singapore, Indonesia, the Philippines, and Laos, and by the time we did the honest math, the trip cost less than staying home would have. That's not a sales pitch. It's just geography, and a willingness to look at the actual numbers before assuming you can't afford it.
@@ -32,6 +34,10 @@ For this breakdown, we're anchoring in Thailand and Vietnam, two countries we kn
 Private rooms in family-run guesthouses run $15–$30 a night across most of Thailand and Vietnam. In Laos, you can find clean, comfortable rooms for even less. In Chiang Mai, we regularly stayed in lovely spots for under $20 a night. In Hanoi and Hoi An, $25–$35 gets you something charming, sometimes with breakfast included.
 
 Vietnam tends to run 20–30% cheaper than Thailand across most categories. Private rooms outside capital cities generally fall between $12–$25 a night.
+
+{{< stay city="Chiang Mai" >}}
+We regularly stayed in lovely spots in Chiang Mai for under $20 a night. It is the clearest example of what $30 a night for two actually buys you in this part of the world.
+{{< /stay >}}
 
 Budget: $30/night average for two → $300 for 10 nights
 
