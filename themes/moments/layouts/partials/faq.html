@@ -1,0 +1,33 @@
+{{/* Visible FAQ, paired with the FAQPage schema in head.html.
+
+     Both halves are required. Schema describing content a reader cannot see is
+     a search-guidelines violation, not a shortcut — so this renders the same
+     questions the markup claims, from the same front matter.
+
+     Front matter:
+       faq:
+         - q: "How much does eight months in Southeast Asia cost?"
+           a: "We averaged $70 a day for two people, including accommodation,
+               food, transport and activities. Eight months came to roughly
+               $34,000 all in."
+
+     Writing the answers is the whole job, and the rules are not stylistic:
+     - Answer in the FIRST sentence. A model quotes the opening, not the payoff.
+     - 40-60 words. Long enough to stand alone, short enough to be lifted whole.
+     - Put a NUMBER in it wherever you honestly can. Specific, attributable
+       figures are what get cited; "it depends" never is.
+     - Only things you actually know. An invented number that gets quoted by an
+       answer engine is far worse than no citation at all. */}}
+{{- with .Params.faq }}
+<section class="faq" aria-labelledby="faq-heading">
+  <h2 id="faq-heading" class="faq__heading">Questions we get asked</h2>
+  <div class="faq__list">
+    {{- range . }}
+    <details class="faq__item">
+      <summary class="faq__q">{{ .q }}</summary>
+      <div class="faq__a">{{ .a | markdownify }}</div>
+    </details>
+    {{- end }}
+  </div>
+</section>
+{{- end }}

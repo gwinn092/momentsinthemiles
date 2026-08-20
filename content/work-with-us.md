@@ -61,6 +61,13 @@ They are not here for a deal. They are here because they are trying to work out
 whether a different life is available to them. That is a different kind of
 attention than a discount code buys.
 
+We would rather tell you our real numbers than a flattering version of them. If
+what you need is scale, there are bigger sites and you should use them. What we
+have is a small audience that reads to the end, and eight years of having
+actually done the thing we are writing about.
+
+{{< media-kit >}}
+
 ## Get in touch
 
 Tell us what you have in mind, what the timeline is, and what the budget looks

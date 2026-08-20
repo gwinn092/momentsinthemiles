@@ -100,24 +100,64 @@
 </script>
 {{ end }}
 
-<!-- Structured data -->
+<!-- Structured data.
+
+     Written for answer engines as much as for search. The three things that
+     move citation rate are, in order: FAQPage markup, an author who is a real
+     described entity rather than a bare name, and explicit topic entities. All
+     three are below. See partials/faq.html for the visible half of the FAQ —
+     schema describing content a reader cannot see is a guidelines violation,
+     not a shortcut. -->
 {{ if .IsPage }}
+  {{/* Author as a described entity. A bare {"@type":"Person","name":"Jesse"}
+       tells a model nothing about why this person is worth citing on this
+       subject; knowsAbout and description are what carry the expertise claim. */}}
+  {{ $authorName := .Params.author | default .Site.Params.author }}
+  {{ $author := dict
+    "@type" "Person"
+    "name" $authorName
+    "url" (printf "%sabout/" .Site.Home.Permalink)
+    "description" (.Site.Params.authorBio | default "")
+    "knowsAbout" (slice "van life" "long-term travel" "Southeast Asia travel" "road trips in the United States" "budget travel" "remote work while travelling")
+  }}
   {{ $ld := dict
     "@context" "https://schema.org"
     "@type" "Article"
     "headline" .Title
     "description" $desc
     "image" $shareImg
-    "author" (dict "@type" "Person" "name" (.Params.author | default .Site.Params.author))
+    "author" $author
     "publisher" (dict
       "@type" "Organization"
       "name" .Site.Title
       "logo" (dict "@type" "ImageObject" "url" (printf "%sfavicon.svg" .Site.Home.Permalink)))
     "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+    "isAccessibleForFree" true
   }}
+  {{/* Topic entities, so a model can place the page in a subject rather than
+       inferring it from prose. Built from the page's own curated tags. */}}
+  {{ with .GetTerms "tags" }}
+    {{ $about := slice }}
+    {{ range . }}{{ $about = $about | append (dict "@type" "Thing" "name" .LinkTitle) }}{{ end }}
+    {{ $ld = merge $ld (dict "about" $about) }}
+  {{ end }}
+  {{ with .Params.answer }}{{ $ld = merge $ld (dict "abstract" .) }}{{ end }}
+  {{ if .WordCount }}{{ $ld = merge $ld (dict "wordCount" .WordCount) }}{{ end }}
   {{ if not .Date.IsZero }}{{ $ld = merge $ld (dict "datePublished" (.Date.Format "2006-01-02")) }}{{ end }}
   {{ if not .Lastmod.IsZero }}{{ $ld = merge $ld (dict "dateModified" (.Lastmod.Format "2006-01-02")) }}{{ end }}
 <script type="application/ld+json">{{ $ld | jsonify | safeJS }}</script>
+  {{/* FAQPage — the highest-weighted single AEO signal. Emitted only when the
+       page actually carries the questions, which partials/faq.html renders. */}}
+  {{ with .Params.faq }}
+    {{ $qs := slice }}
+    {{ range . }}
+      {{ $qs = $qs | append (dict
+        "@type" "Question"
+        "name" .q
+        "acceptedAnswer" (dict "@type" "Answer" "text" .a)) }}
+    {{ end }}
+<script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@type" "FAQPage" "mainEntity" $qs) | jsonify | safeJS }}</script>
+  {{ end }}
 {{ else }}
   {{ $ld := dict
     "@context" "https://schema.org"

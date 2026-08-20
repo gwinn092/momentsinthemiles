@@ -1,0 +1,30 @@
+{{/* Media-kit stats for /work-with-us/.
+
+     Renders nothing at all until data/mediakit.yaml has real values in it. See
+     that file for why. A brand asking "what is your reach" is the first
+     question in every sponsorship conversation, and the honest answer with a
+     small number beats no answer — but an invented number ends the
+     relationship permanently, so the failure mode here is silence. */}}
+{{- $kit := site.Data.mediakit -}}
+{{- $filled := slice -}}
+{{- range $kit.stats }}{{ if .value }}{{ $filled = $filled | append . }}{{ end }}{{ end }}
+{{/* Two, not one. "Eight years on the road" is true and is pre-filled, but a
+     By-the-numbers block containing a single figure advertises that there is
+     nothing else to show. At two it reads as a credential. In practice this
+     means the block stays hidden until the first real GA4 or Kit number is
+     added, and then lights up on its own. */}}
+{{- if ge (len $filled) 2 }}
+<section class="mediakit" aria-labelledby="mediakit-heading">
+  <h2 id="mediakit-heading">By the numbers</h2>
+  {{- with $kit.updated }}<p class="mediakit__updated">Figures current as of {{ . }}.</p>{{ end }}
+  <div class="mediakit__grid">
+    {{- range $filled }}
+    <div class="mediakit__stat">
+      <span class="mediakit__value">{{ .value }}</span>
+      <span class="mediakit__label">{{ .label }}</span>
+      {{- with .note }}<span class="mediakit__note">{{ . }}</span>{{ end }}
+    </div>
+    {{- end }}
+  </div>
+</section>
+{{- end }}

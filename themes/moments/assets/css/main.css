@@ -7080,3 +7080,137 @@ body.search-open {
 .page-hero__frame.frame--tall > img {
   aspect-ratio: 3 / 2;
 }
+
+/* ============================================
+   FAQ — the answer-engine block
+   ============================================
+   See partials/faq.html. Collapsed by default, which is safe for the answer
+   engines that are the point of this block: <details> content is in the DOM and
+   is crawled and indexed normally, and it is the accordion pattern Google's own
+   FAQ rich-result guidance assumes. Readers scan the questions and open the one
+   they came for, which is what an FAQ is for. */
+.faq {
+  margin: 3.5rem 0 0;
+  padding-top: 2.25rem;
+  border-top: 1px solid var(--rule);
+}
+
+.faq__heading {
+  font-size: clamp(1.35rem, 2.4vw, 1.7rem);
+  margin: 0 0 1.25rem;
+}
+
+.faq__list {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.faq__item {
+  background: var(--cream);
+  border: 1px solid rgba(28, 26, 23, 0.07);
+  border-radius: var(--r-md);
+  padding: 0.95rem 1.15rem;
+}
+
+.faq__q {
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-serif);
+  font-size: 1.12rem;
+  line-height: 1.4;
+  color: var(--ink);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.faq__q::-webkit-details-marker { display: none; }
+
+.faq__q::after {
+  content: "+";
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  line-height: 1;
+  color: var(--terracotta);
+  flex: none;
+  transition: transform 0.2s ease;
+}
+
+.faq__item[open] .faq__q::after {
+  transform: rotate(45deg);
+}
+
+.faq__a {
+  margin-top: 0.7rem;
+}
+
+.faq__a p {
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+}
+
+.faq__a p:last-child { margin-bottom: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .faq__q::after { transition: none; }
+}
+
+/* ============================================
+   MEDIA KIT — the numbers block on /work-with-us/
+   ============================================ */
+.mediakit {
+  margin: 2.75rem 0 0;
+  padding: 1.9rem 2rem 2rem;
+  background: var(--sand);
+  border-radius: var(--r-lg);
+}
+
+.mediakit h2 {
+  margin: 0 0 0.35rem;
+  font-size: clamp(1.3rem, 2.4vw, 1.6rem);
+}
+
+.mediakit__updated {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin: 0 0 1.4rem;
+}
+
+.mediakit__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem 1.75rem;
+}
+
+.mediakit__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.mediakit__value {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 4vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--terracotta);
+  font-variant-numeric: tabular-nums;
+}
+
+.mediakit__label {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
+.mediakit__note {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  color: var(--muted);
+}

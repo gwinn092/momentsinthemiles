@@ -65,6 +65,8 @@
         {{ partial "article-body.html" . }}
       </div>
 
+      {{ partial "faq.html" . }}
+
       {{- partial "ad-slot.html" (dict "name" "end" "page" .) }}
 
       {{ partial "reduce-friction-line.html" . }}

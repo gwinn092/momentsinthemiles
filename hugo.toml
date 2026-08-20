@@ -10,6 +10,10 @@ enableRobotsTXT = true
   tagline = "Stories shaped by distance. Perspective earned by miles."
   description = "A reflective travel and lifestyle blog — part lived journal, part practical guide. Eight years of van life, all 48 continental states, eight months across Southeast Asia."
   author = "Jesse & Karlee"
+  # Feeds the Person entity in JSON-LD. Answer engines weight a described author
+  # far more heavily than a bare name — this is the expertise claim, so keep it
+  # factual and keep it current.
+  authorBio = "Jesse and Karlee have lived full-time in a van for eight years — all 48 continental states, just over 100,000 miles of van life, and eight months travelling across Southeast Asia. Everything they publish is written first-hand from the road."
   googleAnalyticsID = "G-191K9XLXV2"
 
 # Affiliate partner IDs. Leave a value EMPTY and every link for that partner
@@ -54,7 +58,25 @@ enableRobotsTXT = true
   amazonTag = ""
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML", "RSS", "JSON", "LLMS"]
+
+# llms.txt — a plain-text map of the site for language models.
+#
+# ⚠️ Honest status: as of 2026 this is a community convention, not a standard.
+# No major AI company has committed to reading it in production and citation
+# studies show no measurable lift. It is here because it costs one template and
+# cannot hurt, NOT because it is expected to work. Do not let it displace the
+# things that are actually weighted — FAQ markup, a described author entity, and
+# specific verifiable numbers in the prose.
+#
+# It is GENERATED from the site's own content, so it cannot drift out of date
+# the way a hand-written one would.
+[outputFormats.LLMS]
+  mediaType = "text/plain"
+  baseName = "llms"
+  isPlainText = true
+  rel = "alternate"
+  permalinkable = false
 
 # static/images is also mounted into assets so templates can generate
 # responsive srcset variants; declaring any mount replaces the defaults,
