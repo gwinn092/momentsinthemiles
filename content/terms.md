@@ -15,6 +15,10 @@ By using Moments in the Miles, you agree to the following.
 
 **External links.** We link to external sites we believe are useful. We have no control over and take no responsibility for their content.
 
+**Affiliate links and paid relationships.** Some links on this site are affiliate links, meaning we may earn a commission if you book or buy through them, at no extra cost to you. Every page carrying one says so on the page. We may also publish sponsored content from time to time, which will be identified as such. A commercial relationship never changes what we write — if we did not think a place was worth your time, we would not link it.
+
+**Purchases.** Digital products, including the Leave Anyway Kit, are sold and delivered through Gumroad. Your purchase is subject to Gumroad's terms and their refund process. Products are licensed to you for personal use — you may use and adapt them for yourself, but not resell, redistribute, or share them publicly. The Leave Anyway Kit is delivered as a Notion template and requires a free Notion account to use.
+
 **Changes.** We may update these terms at any time. Continued use of the site constitutes acceptance of any changes.
 
-*Last updated: March 2026.*
+*Last updated: August 20, 2026.*

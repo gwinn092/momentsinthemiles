@@ -29,7 +29,7 @@ enableRobotsTXT = true
   # checked without a network. Local only — never ship this true.
   preview = false
   # Sections that never carry ads whatever the above says. reduce-friction holds
-  # the quiz and the $27 Kit sales page; an ad there competes with the product.
+  # the quiz and the $4.99 Kit sales page; an ad there competes with the product.
   excludeSections = ["reduce-friction"]
   # Body paragraphs required before any in-content slot is inserted at all.
   minParagraphs = 12
