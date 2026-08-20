@@ -1,4 +1,14 @@
 ---
+first_reads:
+  # The three pieces a brand-new reader should meet first, in order. Titles and
+  # descriptions are pulled from the posts themselves, so only the path and the
+  # one-line reason live here. ⚠️ This is an editorial call — change it freely.
+  - ref: "/essays/the-miles-will-shape-you/"
+    why: "If you read one thing, read this. It is the piece the whole site grew out of."
+  - ref: "/guides/eight-months-southeast-asia/"
+    why: "The long one. Eight months, eight countries, real numbers, nothing tidied up."
+  - ref: "/essays/the-river-that-gave-and-took/"
+    why: "The hardest thing we have written down. It is here because leaving out the hard parts would make the rest of it a lie."
 title: "Start Here"
 description: "New to Moments in the Miles? Start here. Eight years of van life, all 48 continental states, eight months across Southeast Asia. This is how we got here."
 hero_image: "/images/pages/start-here-van-window.jpg"

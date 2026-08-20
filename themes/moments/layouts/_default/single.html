@@ -100,14 +100,10 @@
 
         <!-- End-of-post newsletter CTA -->
         <div class="post-cta">
-          <span class="eyebrow">Before you go</span>
-          <h2>More where this came from</h2>
-          <p>Honest stories, travel notes, and the occasional nudge to go do the thing you've been putting off. A few times a month. No spam.</p>
-          <form class="newsletter-form seva-form" action="https://app.kit.com/forms/9172727/subscriptions" method="post" data-sv-form="9172727" data-uid="26bf91ae52" data-version="5">
-            <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
-            <input type="email" name="email_address" placeholder="Your email address" aria-label="Email address" required>
-            <button data-element="submit" type="submit" class="btn btn-primary">I'm in</button>
-          </form>
+          {{ partial "newsletter-form.html" (dict
+              "eyebrow" "Before you go"
+              "heading" "More where this came from"
+              "body" "Honest stories, travel notes, and the occasional nudge to go do the thing you've been putting off. A few times a month. No spam.") }}
         </div>
       </footer>
     </div>
@@ -122,10 +118,7 @@
         <div class="aside-newsletter">
           <span class="eyebrow">The Newsletter</span>
           <p class="aside-newsletter__text">Honest stories and travel notes. A few times a month. No spam.</p>
-          <form class="seva-form aside-form" action="https://app.kit.com/forms/9172727/subscriptions" method="post" data-sv-form="9172727" data-uid="26bf91ae52" data-version="5">
-            <input type="email" name="email_address" placeholder="Your email" aria-label="Email address" required>
-            <button type="submit" class="btn btn-primary">I'm in</button>
-          </form>
+          {{ partial "newsletter-form.html" (dict "variant" "aside") }}
         </div>
         {{ end }}
       </div>

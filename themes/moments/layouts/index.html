@@ -34,6 +34,33 @@
   </div>
 </section>
 
+<!-- THE MAP — the site's most distinctive asset, given a real entry point.
+     It was previously reachable only from deep-links buried in film-strip
+     captions and one text link at the bottom of the stat band; a visitor could
+     scroll the whole homepage without ever learning it existed.
+
+     The SVG is inlined and DELIBERATELY INERT here — no pins, no tour, no JS,
+     pointer-events off. It is a picture of eight years, and the whole thing is
+     one link to the real map. -->
+<section class="home-map">
+  <div class="container-wide home-map__inner">
+    <div class="home-map__text">
+      <span class="eyebrow">The Map</span>
+      <h2>Eight years, drawn out</h2>
+      <p>Every state we have slept in, every country we have landed in, and the stories attached to the ones that changed something. It is the only thing on this site you cannot get anywhere else.</p>
+      <ul class="home-map__stats">
+        <li><b>48</b><span>continental states</span></li>
+        <li><b>12</b><span>countries together</span></li>
+        <li><b>100k</b><span>miles of van life</span></li>
+      </ul>
+      <a href="{{ .Site.Home.RelPermalink }}map/" class="btn btn-primary">Open the map</a>
+    </div>
+    <a href="{{ .Site.Home.RelPermalink }}map/" class="home-map__figure" aria-label="Open the interactive map">
+      {{ partial "map-us.html" . }}
+    </a>
+  </div>
+</section>
+
 <!-- FILM STRIP -->
 <section class="strip">
   <div class="container-wide strip__head">
@@ -198,16 +225,10 @@
 <!-- NEWSLETTER -->
 <section class="newsletter">
   <div class="container">
-    <div class="newsletter__inner">
-      <span class="eyebrow">Stay in the Loop</span>
-      <h2>More where this came from</h2>
-      <p>Honest stories, travel notes, and the occasional nudge to go do the thing you've been putting off. A few times a month. No spam. Unsubscribe whenever.</p>
-      <form class="newsletter-form seva-form" action="https://app.kit.com/forms/9172727/subscriptions" method="post" data-sv-form="9172727" data-uid="26bf91ae52" data-version="5">
-        <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
-        <input type="email" name="email_address" placeholder="Your email address" aria-label="Email address" required>
-        <button data-element="submit" type="submit" class="btn btn-primary">I'm in</button>
-      </form>
-    </div>
+    {{ partial "newsletter-form.html" (dict
+        "eyebrow" "Stay in the Loop"
+        "heading" "More where this came from"
+        "body" "Honest stories, travel notes, and the occasional nudge to go do the thing you've been putting off. A few times a month. No spam. Unsubscribe whenever.") }}
   </div>
 </section>
 

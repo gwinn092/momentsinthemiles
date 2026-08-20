@@ -24,6 +24,36 @@
   </div>
 </div>
 
+{{/* Three specific pieces, not four sections. A reader who has never heard of
+     us needs a story, not a directory — the section cards below are for the
+     second visit. Curated in front matter (`first_reads`), so changing the
+     running order never means touching this template. */}}
+{{ with .Params.first_reads }}
+<div class="first-reads">
+  <div class="container-wide">
+    <span class="eyebrow">If you only read three things</span>
+    <ol class="first-reads__list">
+      {{ range $i, $r := . }}
+        {{ with site.GetPage $r.ref }}
+        <li class="first-reads__item">
+          <a href="{{ .RelPermalink }}" class="first-reads__link">
+            <span class="first-reads__num">{{ add $i 1 }}</span>
+            <span class="first-reads__body">
+              <span class="first-reads__title">{{ .Title }}</span>
+              <span class="first-reads__why">{{ $r.why }}</span>
+              <span class="first-reads__meta">
+                {{ replace .Section "-" " " | title }}{{ if .ReadingTime }} &middot; {{ .ReadingTime }} min read{{ end }}
+              </span>
+            </span>
+          </a>
+        </li>
+        {{ end }}
+      {{ end }}
+    </ol>
+  </div>
+</div>
+{{ end }}
+
 <div class="post-list">
   <div class="container-wide">
     <div class="start-here-grid">
@@ -59,6 +89,14 @@
       <p>The hardest part isn't the miles. It's letting yourself want something badly enough to go get it.</p>
       <p>Sounds like you're already there.</p>
       <p>We'll see you on the road.</p>
+    </div>
+
+    <div class="start-here-subscribe">
+      {{ partial "newsletter-form.html" (dict
+          "eyebrow" "Come with us"
+          "heading" "We write these down as we go"
+          "body" "New stories, honest notes from the road, and the occasional nudge to stop waiting. A few times a month, and never anything we would not want to receive ourselves."
+          "cta" "Join us") }}
     </div>
 
     <div class="kit-callout">
