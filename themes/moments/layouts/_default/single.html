@@ -2,19 +2,31 @@
 <div class="reading-progress"><span class="reading-progress__fill"></span></div>
 
 <article class="article">
-  {{ with .Params.image }}
-  <div class="article-hero-wrap">
+  {{/* Headline first, photo second. The article used to open with a 740px
+       full-bleed photo band, which put the title below the fold — a reader
+       had to scroll past the whole image to find out what they were reading.
+       The headline and the hero print share one padded container so their
+       left edges line up with the body column below. */}}
+  <div class="article-head">
+    <header class="article-headline">
+      {{ with .Params.category }}<span class="eyebrow">{{ . }}</span>{{ end }}
+      <h1 class="article-title">{{ .Title }}</h1>
+      {{ with .Description }}<p class="article-description">{{ . }}</p>{{ end }}
+    </header>
+
+    {{ with .Params.image }}
     {{ $heroStyle := "" }}{{ with $.Params.hero_position }}{{ $heroStyle = printf "object-position: %s" . }}{{ end }}
-    {{ partial "respimg.html" (dict "path" . "alt" $.Title "class" "article-hero-img" "sizes" "100vw" "widths" (slice 640 960 1400) "loading" "eager" "fetchpriority" "high" "style" $heroStyle) }}
+    <figure class="article-hero print">
+      {{ partial "respimg.html" (dict "path" . "alt" $.Title "class" "article-hero__img" "sizes" "(min-width: 1400px) 1320px, 94vw" "widths" (slice 640 960 1400) "loading" "eager" "fetchpriority" "high" "style" $heroStyle) }}
+    </figure>
+    {{ end }}
   </div>
-  {{ end }}
 
   <div class="article-layout">
 
     <!-- Sticky meta + share rail -->
     <aside class="article-rail">
       <div class="article-rail__inner">
-        {{ with .Params.category }}<span class="eyebrow">{{ . }}</span>{{ end }}
         <ul class="article-rail__meta">
           {{ if not .Date.IsZero }}<li>{{ .Date.Format "January 2, 2006" }}</li>{{ end }}
           {{ if .ReadingTime }}<li>{{ .ReadingTime }} min read</li>{{ end }}
@@ -40,11 +52,6 @@
 
     <!-- Main column -->
     <div class="article-main">
-      <header class="article-headline">
-        <h1 class="article-title">{{ .Title }}</h1>
-        {{ with .Description }}<p class="article-description">{{ . }}</p>{{ end }}
-      </header>
-
       {{/* Jump-to nav for narrow screens, where the right-hand TOC rail is hidden. */}}
       {{ if .Fragments.Headings }}
       <details class="toc-inline">

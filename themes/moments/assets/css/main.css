@@ -181,14 +181,20 @@ p:last-child {
 }
 
 /* --- Pull Quote --- */
+/* A quote is a card of its own now, not a line of prose with a rule beside it.
+   Sand ground so it separates on the white page and on the cream bands alike;
+   the terracotta rule stays, because it is the one bit of the old treatment
+   that was doing real work. */
 .pull-quote {
   font-family: var(--font-serif);
   font-style: italic;
   font-size: 1.4rem;
   line-height: 1.6;
+  background: var(--sand);
   border-left: 3px solid var(--terracotta);
-  padding-left: 1.5rem;
-  margin: 2.5rem 0;
+  border-radius: var(--r-xs) var(--r-md) var(--r-md) var(--r-xs);
+  padding: 1.6rem 1.9rem;
+  margin: 2.75rem 0;
   color: var(--ink);
 }
 
@@ -1032,12 +1038,20 @@ a.print:hover,
 
 /* Main column */
 .article-headline {
-  margin-bottom: 2.25rem;
+  max-width: var(--max-frame);
+  margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
+}
+.article-headline .eyebrow {
+  color: var(--terracotta);
+  display: block;
+  margin-bottom: 0.8rem;
 }
 .article-title {
   font-size: clamp(2rem, 4.5vw, 3.1rem);
   line-height: 1.12;
   margin-bottom: 1rem;
+  max-width: 26ch;
+  text-wrap: balance;
 }
 .article-description {
   font-family: var(--font-serif);
@@ -1045,6 +1059,7 @@ a.print:hover,
   font-size: 1.35rem;
   color: var(--muted);
   line-height: 1.5;
+  max-width: 46ch;
 }
 
 /* Body */
@@ -1084,22 +1099,64 @@ a.print:hover,
   border-radius: 3px;
   margin: 2.5rem 0;
 }
+/* In-body photos are prints too, with the caption sitting inside the mat —
+   the way a caption is printed on the card rather than floating under it. */
 .article-body figure {
-  margin: 2.5rem 0;
+  margin: 2.75rem 0;
+  background: var(--warm-white);
+  padding: var(--mat);
+  border-radius: var(--r-lg);
+  border: 1px solid rgba(28, 26, 23, 0.07);
+  box-shadow: var(--sh-2);
 }
 .article-body figure img {
   margin: 0;
+  border-radius: calc(var(--r-lg) - var(--mat));
 }
 .article-body figcaption {
   font-family: var(--font-sans);
   font-size: 0.8rem;
   color: var(--muted);
-  margin-top: 0.6rem;
+  margin: 0.75rem 0 0.15rem;
   text-align: center;
 }
 
 .article-body .pull-quote {
   font-size: 1.6rem;
+}
+
+/* --- Prose links get the highlighter swash ---
+   A warm wash behind the words instead of an underline. See the .swash
+   definition near the top for how the stroke is drawn.
+
+   ⚠️ Three deliberate exclusions, and none of them are cosmetic:
+   - [rel~="sponsored"] — every affiliate link. Those are meant to read as
+     quiet and factual; a cheerful marker stroke on a booking link is exactly
+     the "being sold to" feeling the monetization rules exist to avoid.
+   - .btn and .stay__link — components with their own treatment.
+   - Links inside a figure caption, which are already small and muted. */
+.article-body p > a:not([rel~="sponsored"]):not(.btn):not(.stay__link),
+.article-body li > a:not([rel~="sponsored"]):not(.btn):not(.stay__link) {
+  color: var(--ink);
+  text-decoration: none;
+  background-image: linear-gradient(rgba(163, 90, 52, 0.16), rgba(163, 90, 52, 0.16));
+  background-repeat: no-repeat;
+  background-position: 0 88%;
+  background-size: 100% 0.42em;
+  transition: background-size 0.2s ease;
+  padding: 0 0.08em;
+  border-radius: 2px;
+}
+
+.article-body p > a:not([rel~="sponsored"]):not(.btn):not(.stay__link):hover,
+.article-body li > a:not([rel~="sponsored"]):not(.btn):not(.stay__link):hover {
+  background-size: 100% 1em;
+  text-decoration: none;
+}
+
+.article-body figcaption a {
+  background-image: none;
+  color: var(--terracotta);
 }
 
 /* --- Right rail: table of contents --- */
@@ -2153,18 +2210,49 @@ body.nav-open {
    =================================================== */
 
 /* Article hero image */
-.article-hero-wrap {
-  width: 100%;
-  max-height: 520px;
-  overflow: hidden;
-  margin-bottom: 3rem;
+/* Article head — headline block and hero print, sharing one padded container
+   so their left edges align with the body column below it. The container is
+   the same 1600px/clamp padding as .article-layout; the two children cap at
+   --max-frame inside it, which is what keeps the hero the same width as
+   every other hero on the site without knocking the left edge out of line. */
+.article-head {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: clamp(2rem, 4vw, 3.25rem) clamp(1.5rem, 4vw, 4rem) 0;
 }
-.article-hero-img {
+
+.article-hero {
+  margin: 0;
+  max-width: var(--max-frame);
+}
+
+.article-hero.print {
+  box-shadow: var(--sh-3);
+}
+
+.article-hero__img {
   width: 100%;
-  max-height: 520px;
+  aspect-ratio: 2 / 1;
   object-fit: cover;
-  object-position: center;
   display: block;
+}
+
+@media (max-width: 900px) {
+  .article-hero__img {
+    aspect-ratio: 3 / 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .article-hero__img {
+    aspect-ratio: 4 / 3;
+  }
+  .article-hero.print {
+    border-radius: var(--r-md);
+  }
+  .article-hero.print > img {
+    border-radius: calc(var(--r-md) - 5px);
+  }
 }
 
 /* Homepage & list card images. The radius is the card's radius less its mat,
@@ -2462,17 +2550,27 @@ body.nav-open {
 #main-content {
   overflow-x: clip;
 }
+/* Formerly a true 100vw breakout. It is now a WIDE print: it still escapes the
+   reading column so a landscape photo can breathe, but it stops at the frame
+   width and keeps its corners, mat and shadow like every other photo.
+   The class name is kept because content already references it. */
 .full-bleed {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
+  width: min(var(--max-frame), calc(100vw - 3rem));
+  margin-left: 50%;
+  transform: translateX(-50%);
   margin-top: 3.5rem;
   margin-bottom: 3.5rem;
 }
 .full-bleed img {
   width: 100%;
-  max-height: 62vh;
+  aspect-ratio: 2 / 1;
   object-fit: cover;
   display: block;
+}
+@media (max-width: 600px) {
+  .full-bleed img {
+    aspect-ratio: 4 / 3;
+  }
 }
 .full-bleed figcaption {
   text-align: center;
