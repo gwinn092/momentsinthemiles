@@ -76,6 +76,11 @@
 <!-- Self-hosted fonts (declared in main.css) -->
 <link rel="preload" href="{{ .Site.Home.RelPermalink }}fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{{ .Site.Home.RelPermalink }}fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
+{{/* The italic face is used above the fold on nearly every page — the <em> in the
+     homepage headline, and the italicised words in section headings. Without this
+     preload it arrives late and swaps in, which was the only measured source of
+     layout shift on the site (CLS 0.02, traced Aug 20 2026). */}}
+<link rel="preload" href="{{ .Site.Home.RelPermalink }}fonts/cormorant-garamond-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
 
 <!-- Main CSS -->
 {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
