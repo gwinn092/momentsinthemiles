@@ -444,8 +444,16 @@ a.print:hover,
   gap: 2rem;
   height: 70px;
   max-width: var(--max-wide);
-  padding-left: clamp(1.5rem, 3vw, 3.5rem);
-  padding-right: clamp(1.5rem, 3vw, 3.5rem);
+  /* Matches .container-wide exactly, so the logo sits on the same left edge as
+     every heading, photo and card below it. It used to be 3vw/3.5rem against
+     the sections' 4vw/4rem, which left the logo about 14px inside everything
+     else — subtle, but it is the kind of near-miss that reads as sloppy without
+     the reader being able to say why.
+     ⚠️ Wider padding means less room for the nav row. Measuring that is what
+     turned up the overflow band at 1081-1119px; the hamburger breakpoint moved
+     from 1080 to 1120 to close it. See the note on that media query. */
+  padding-left: clamp(1.5rem, 4vw, 4rem);
+  padding-right: clamp(1.5rem, 4vw, 4rem);
 }
 
 .site-logo {
@@ -1694,8 +1702,19 @@ a.print:hover,
    ============================================ */
 
 /* Header / Nav — collapse to hamburger while 8 items still fit awkwardly.
-   Mobile nav is a full-screen overlay with big serif links. */
-@media (max-width: 1080px) {
+   Mobile nav is a full-screen overlay with big serif links.
+
+   ⚠️ 1120, not 1080. Raised when the header padding went from 3vw/3.5rem to
+   4vw/4rem to match .container-wide: wider padding leaves the nav row about
+   22px less space at this width, so the old 1080 had to move up with it.
+
+   Verified by emulating the viewport, which is the only measurement here worth
+   trusting — intrinsic-width arithmetic on a shrinking flex row disagreed with
+   itself three times before I stopped:
+     1121px -> full nav, logo 45-235, nav 282-1018, search ends 1076, no overflow
+     1120px -> hamburger, no overflow
+   If a ninth nav item is ever added, re-emulate both widths and raise this. */
+@media (max-width: 1120px) {
   .nav-toggle {
     display: flex;
     position: relative;
