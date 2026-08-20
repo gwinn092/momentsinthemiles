@@ -1,23 +1,22 @@
 {{ define "main" }}
 
-<!-- HERO -->
+<!-- HERO — headline on the page, photo as a framed print beneath it.
+     The photo is shown whole: no scrim, no crop, no fixed height. -->
 <section class="home-hero">
-  <div class="home-hero__media">
-    {{ partial "respimg.html" (dict "path" "images/pages/hero-mountaintop.jpg" "alt" "Mountaintop view from the road" "sizes" "100vw" "widths" (slice 640 960 1400) "loading" "eager" "fetchpriority" "high") }}
-  </div>
-  <div class="home-hero__scrim" aria-hidden="true"></div>
-  <div class="container-wide home-hero__content">
-    <span class="eyebrow home-hero__eyebrow">A travel journal from the road</span>
-    <h1 class="home-hero__headline">Stories shaped by <em>distance</em>.<br>Perspective earned by <em>miles</em>.</h1>
-    <p class="home-hero__sub">Eight years of van life. All 48 continental states. Eight months across Southeast Asia. Written down honestly, the uncomfortable parts included.</p>
-    <div class="hero__buttons home-hero__buttons">
-      <a href="{{ .Site.Home.RelPermalink }}start-here/" class="btn btn-primary">Start Here</a>
-      <a href="{{ .Site.Home.RelPermalink }}essays/" class="btn btn-hero">Explore the Road</a>
+  <div class="container-wide home-hero__inner">
+    <div class="home-hero__content">
+      <span class="eyebrow home-hero__eyebrow">A travel journal from the road</span>
+      <h1 class="home-hero__headline">Stories shaped by <em>distance</em>.<br>Perspective earned by <em>miles</em>.</h1>
+      <p class="home-hero__sub">Eight years of van life. All 48 continental states. Eight months across Southeast Asia. Written down honestly, the uncomfortable parts included.</p>
+      <div class="hero__buttons home-hero__buttons">
+        <a href="{{ .Site.Home.RelPermalink }}start-here/" class="btn btn-primary">Start Here</a>
+        <a href="{{ .Site.Home.RelPermalink }}essays/" class="btn btn-hero">Explore the Road</a>
+      </div>
     </div>
+    <figure class="home-hero__frame print">
+      {{ partial "respimg.html" (dict "path" "images/pages/hero-mountaintop.jpg" "alt" "Jesse and Karlee looking out over the peaks at Mount Rainier" "sizes" "(min-width: 1400px) 1320px, 94vw" "widths" (slice 640 960 1400) "loading" "eager" "fetchpriority" "high") }}
+    </figure>
   </div>
-  <a href="#mission" class="home-hero__cue" aria-label="Scroll to our story">
-    <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16"/><path d="M5 13l7 7 7-7"/></svg>
-  </a>
 </section>
 
 <!-- MISSION STATEMENT -->
