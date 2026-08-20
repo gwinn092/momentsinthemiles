@@ -7005,11 +7005,13 @@ body.search-open {
   aspect-ratio: 3 / 2;
 }
 
-/* Portrait and square sources: a narrow, centred print. Left-aligning a tall
-   frame in a wide column leaves a conspicuous hole to its right. */
+/* Portrait and square sources: a narrow print, LEFT-ALIGNED. Centring it was
+   the first attempt and it looked like a mistake — every heading, deck and
+   eyebrow on the site is left-aligned, so a centred photo under a left-aligned
+   title reads as something that slipped rather than something chosen. */
 .frame--tall {
   max-width: 560px;
-  margin-left: auto;
+  margin-left: 0;
   margin-right: auto;
 }
 
@@ -7031,4 +7033,20 @@ body.search-open {
   .frame--tall > img {
     aspect-ratio: 4 / 5;
   }
+}
+
+
+/* Section landing pages never use the portrait shape.
+   An article is one reader following one story, so a tall print suits it. A
+   landing page is a title block over a grid of posts, and dropping a narrow
+   560px portrait between them leaves the header looking unfinished. The photo
+   there is atmosphere rather than subject, so a 3:2 crop is the right trade —
+   and it still keeps 73% of a near-square source, against 55% in the old 2:1.
+   This has to outrank .frame--tall, which it does on specificity (0,2,0). */
+.page-hero__frame.frame--tall {
+  max-width: var(--max-frame);
+}
+
+.page-hero__frame.frame--tall > img {
+  aspect-ratio: 3 / 2;
 }
