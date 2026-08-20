@@ -141,6 +141,14 @@
     {{ range . }}{{ $about = $about | append (dict "@type" "Thing" "name" .LinkTitle) }}{{ end }}
     {{ $ld = merge $ld (dict "about" $about) }}
   {{ end }}
+  {{ with .Params.audio }}
+    {{ $audioURL := cond (hasPrefix . "http") . (printf "%s%s" $.Site.Home.Permalink (strings.TrimPrefix "/" .)) }}
+    {{ $ld = merge $ld (dict "audio" (dict
+      "@type" "AudioObject"
+      "contentUrl" $audioURL
+      "encodingFormat" "audio/mpeg"
+      "name" (printf "%s — read aloud" $.Title))) }}
+  {{ end }}
   {{ with .Params.answer }}{{ $ld = merge $ld (dict "abstract" .) }}{{ end }}
   {{ if .WordCount }}{{ $ld = merge $ld (dict "wordCount" .WordCount) }}{{ end }}
   {{ if not .Date.IsZero }}{{ $ld = merge $ld (dict "datePublished" (.Date.Format "2006-01-02")) }}{{ end }}

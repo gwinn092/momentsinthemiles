@@ -14,6 +14,8 @@
       {{ with .Description }}<p class="article-description">{{ . }}</p>{{ end }}
     </header>
 
+    {{ partial "audio-player.html" . }}
+
     {{ with .Params.image }}
     {{ $heroStyle := "" }}{{ with $.Params.hero_position }}{{ $heroStyle = printf "object-position: %s" . }}{{ end }}
     {{ $shape := partial "frame-shape.html" (dict "path" .) }}
