@@ -1100,20 +1100,30 @@ a.print:hover,
   margin: 2.5rem 0;
 }
 /* In-body photos are prints too, with the caption sitting inside the mat —
-   the way a caption is printed on the card rather than floating under it. */
-.article-body figure {
-  margin: 2.75rem 0;
+   the way a caption is printed on the card rather than floating under it.
+
+   ⚠️ This has to list every prose container, not just .article-body. Section
+   index pages render their markdown into .list-intro__inner, so a figure there
+   was getting no frame at all while the same shortcode was framed inside an
+   article. If a new template starts rendering .Content somewhere else, add its
+   container here or its photos will silently come out unframed. */
+.article-body figure,
+.list-intro__inner figure {
+  margin: 2.75rem auto;
   background: var(--warm-white);
   padding: var(--mat);
   border-radius: var(--r-lg);
   border: 1px solid rgba(28, 26, 23, 0.07);
   box-shadow: var(--sh-2);
 }
-.article-body figure img {
+.article-body figure img,
+.list-intro__inner figure img {
   margin: 0;
+  width: 100%;
   border-radius: calc(var(--r-lg) - var(--mat));
 }
-.article-body figcaption {
+.article-body figcaption,
+.list-intro__inner figcaption {
   font-family: var(--font-sans);
   font-size: 0.8rem;
   color: var(--muted);
@@ -2550,16 +2560,16 @@ body.nav-open {
 #main-content {
   overflow-x: clip;
 }
-/* Formerly a true 100vw breakout. It is now a WIDE print: it still escapes the
-   reading column so a landscape photo can breathe, but it stops at the frame
-   width and keeps its corners, mat and shadow like every other photo.
-   The class name is kept because content already references it. */
+/* Formerly a true 100vw breakout, then briefly a centred breakout — which
+   broke: `margin-left: 50%` resolves against the CONTAINING BLOCK, so inside
+   the 740px .list-intro__inner column a 1320px box was thrown off to the left
+   and clipped. A photo has to sit centred in whatever column it is in, full
+   stop, so this no longer breaks out at all. It is an ordinary centred print
+   that fills its column. The class name is kept because content references it. */
 .full-bleed {
-  width: min(var(--max-frame), calc(100vw - 3rem));
-  margin-left: 50%;
-  transform: translateX(-50%);
-  margin-top: 3.5rem;
-  margin-bottom: 3.5rem;
+  width: 100%;
+  max-width: var(--max-frame);
+  margin: 3.5rem auto;
 }
 .full-bleed img {
   width: 100%;
