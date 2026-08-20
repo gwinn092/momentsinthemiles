@@ -8,9 +8,8 @@ author: "Karlee & Jesse"
 draft: false
 image: "/images/guides/campfire-dusk-van.jpg"
 hero_position: "center 65%"
+review_note: "Numbers in this post have not been checked with Karlee. Front matter, not an HTML comment, so the reminder stays with the file without shipping to readers in page source."
 ---
-
-<!-- DRAFT: REVIEW NUMBERS WITH KARLEE BEFORE PUBLISHING -->
 
 People tend to assume we have some financial advantage that made the van possible. A windfall. A remote tech salary. Rich parents. Something that explains it.
 

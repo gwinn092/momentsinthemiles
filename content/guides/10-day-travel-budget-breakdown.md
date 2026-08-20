@@ -7,9 +7,8 @@ category: "Guides"
 author: "Karlee & Jesse"
 draft: false
 image: "/images/guides/vietnam-banh-mi.jpg"
+review_note: "Numbers in this post have not been checked with Karlee. Front matter, not an HTML comment, so the reminder stays with the file without shipping to readers in page source."
 ---
-
-<!-- DRAFT: REVIEW NUMBERS WITH KARLEE BEFORE PUBLISHING -->
 
 {{< affiliate-note >}}
 
