@@ -4446,8 +4446,15 @@ html.is-map-touring .back-to-top {
   background: var(--warm-white);
 }
 
+/* ⚠️ Do NOT cap this at --max-frame.
+   It is a .container-wide, and every other section on the site is too, so
+   capping it narrower pulled the whole hero inward: at 1920px the headline and
+   photo sat 140px right of the cards below them and 154px right of the site
+   logo. The CAP BELONGS ON THE PRINT, not on the column — that way the photo
+   stops at frame width while its left edge still lines up with everything
+   else on the page. */
 .home-hero__inner {
-  max-width: var(--max-frame);
+  max-width: var(--max-wide);
 }
 
 /* Sized so the headline, sub and buttons together clear roughly half a 900px
@@ -4492,6 +4499,7 @@ html.is-map-touring .back-to-top {
 /* The print. No height, no aspect-ratio — see the warning above. */
 .home-hero__frame {
   margin: 0;
+  max-width: var(--max-frame);
 }
 
 /* The hero print is the largest photo on the site, so it carries the deeper
@@ -6816,8 +6824,10 @@ body.search-open {
   background: var(--warm-white);
 }
 
+/* Same rule as .home-hero__inner — the cap goes on the print, not the column.
+   See the note there for what capping this breaks. */
 .page-hero__inner {
-  max-width: var(--max-frame);
+  max-width: var(--max-wide);
 }
 
 .page-hero__content {
@@ -6847,6 +6857,7 @@ body.search-open {
 
 .page-hero__frame {
   margin: 0;
+  max-width: var(--max-frame);
 }
 
 /* The page hero print is the largest photo on its page, so like the homepage
