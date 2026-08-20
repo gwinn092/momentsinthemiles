@@ -99,23 +99,11 @@
   --max-frame: 1320px;
   --max-wide: 1600px;
 
-  /* Hero scrims — the dark layer that keeps white text legible over a photo.
-     The shape is always peak (at the text edge) -> mid -> fully transparent.
-     Reaching zero, and reaching it early, is what stops the scrim from
-     reading as a dull photo; a lingering 5% wash over the whole frame is
-     what it used to do. Peak is what protects the text, so raise `reach`
-     before raising `peak` if something looks thin.
-
-     These now serve the SECTION heroes only. The homepage hero lost its scrim
-     in the print-frame rebuild — its photo is a framed print with the headline
-     on the page ground above it, so there is nothing to keep legible over the
-     image. Phase 2 converts the section heroes the same way, and these tokens
-     go with them. */
-  --scrim-dir: to top;
-  --scrim-peak: 0.72;
-  --scrim-mid: 0.28;
-  --scrim-mid-stop: 38%;
-  --scrim-reach: 66%;
+  /* NOTE: the hero-scrim tokens that used to live here are gone. Every hero on
+     the site is now a framed print with its heading on the page ground, so
+     there is no photo with text over it left to protect. If a scrim is ever
+     needed again, it needs a fresh reason — reaching for one is usually a sign
+     a heading has been put back on top of an image. */
 }
 
 /* --- Reset & Base --- */
@@ -405,20 +393,6 @@ a.print:hover,
   text-decoration: none;
 }
 
-.section-hero-image {
-  width: 100%;
-  max-height: 400px;
-  overflow: hidden;
-  border-radius: 3px;
-  margin-bottom: 2rem;
-}
-
-.section-hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
 
 /* --- Image Placeholders --- */
 .image-placeholder {
@@ -2373,48 +2347,6 @@ body.nav-open {
 /* ===================================================
    LANDING / NAV PAGES — full-bleed hero
    =================================================== */
-.section-hero {
-  position: relative;
-  width: 100%;
-  height: clamp(360px, 56vh, 600px);
-  overflow: hidden;
-  background: var(--sand);
-}
-.section-hero__img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.section-hero__overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: flex-end;
-  background: linear-gradient(
-    var(--scrim-dir),
-    rgba(28, 26, 23, var(--scrim-peak)) 0%,
-    rgba(28, 26, 23, var(--scrim-mid)) var(--scrim-mid-stop),
-    rgba(28, 26, 23, 0) var(--scrim-reach));
-}
-.section-hero__content {
-  width: 100%;
-  margin: 0 auto;
-  padding-top: 0;
-  padding-bottom: clamp(2rem, 5vw, 3.5rem);
-  color: var(--warm-white);
-}
-.section-hero__content .eyebrow {
-  color: rgba(253, 250, 245, 0.85);
-  margin-bottom: 0.75rem;
-}
-.section-hero__content h1 {
-  color: var(--warm-white);
-  font-size: clamp(2.6rem, 6vw, 4.75rem);
-  line-height: 1.05;
-  margin: 0;
-}
 /* ============================================================
    Jump-to navigation for narrow screens
    The article TOC rail hides below 1180px and the section rail hides
@@ -2525,27 +2457,6 @@ body.nav-open {
   margin: 1.75rem 0 0;
 }
 
-/* Opt-in via `hero_text_position: "top"` in a section's front matter, for
-   photos where a bottom-anchored title lands on top of the subject. */
-.section-hero__overlay--top {
-  align-items: flex-start;
-  /* Both classes land on one element, so flipping the direction token is
-     enough — the gradient above re-resolves against it. */
-  --scrim-dir: to bottom;
-}
-.section-hero__overlay--top .section-hero__content {
-  padding-top: clamp(2rem, 5vw, 3.5rem);
-  padding-bottom: 0;
-}
-.section-hero__desc {
-  color: rgba(253, 250, 245, 0.92);
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: clamp(1.1rem, 2vw, 1.5rem);
-  line-height: 1.45;
-  max-width: 440px;
-  margin-top: 1rem;
-}
 
 /* Full-bleed image band (breaks out of any centered column) */
 #main-content {
@@ -2599,10 +2510,6 @@ body.nav-open {
 /* ===================================================
    LIST PAGE — feature lead + card grid
    =================================================== */
-.list-header {
-  padding: 5rem 0 3rem;
-  border-bottom: 1px solid var(--rule);
-}
 .list-header__desc {
   color: var(--muted);
   max-width: 620px;
@@ -6760,4 +6667,96 @@ body.search-open {
   .roadtrip__stop-place { font-size: 1.35rem; }
   .roadtrip__stop--unvisited { padding-left: 1rem; }
   .roadtrip__facts { gap: 1.5rem; }
+}
+
+/* ============================================
+   PAGE HERO — the print-frame section header
+   ============================================
+   Replaces .section-hero, which was a full-width photo band with a dark scrim
+   and white text burned over it. See partials/page-hero.html.
+
+   ⚠️ Read this before changing the aspect ratio.
+   The old band was clamp(360px, 56vh, 600px) tall at full viewport width —
+   between 2.4:1 and 4:1 in practice. Every section hero source is 4:3 (1.33),
+   so that band was throwing away 45-67% of each photo's height, which is the
+   only reason every one of them needed a hand-tuned `hero_position` in front
+   matter. The frame is 2:1 on desktop and opens up to 4:3 on a phone, where
+   there is vertical room to spare — so the crop is now gentlest exactly where
+   the screen is narrowest, and the existing hero_position values became
+   suggestions rather than rescues. */
+.page-hero {
+  padding: clamp(2rem, 4vw, 3.25rem) 0 clamp(2rem, 4vw, 3rem);
+  background: var(--warm-white);
+}
+
+.page-hero__inner {
+  max-width: var(--max-frame);
+}
+
+.page-hero__content {
+  max-width: 44rem;
+  margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.page-hero__content .eyebrow {
+  color: var(--terracotta);
+  margin-bottom: 0.8rem;
+}
+
+.page-hero__content h1 {
+  color: var(--ink);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  line-height: 1.06;
+  margin: 0 0 0.9rem;
+}
+
+.page-hero__desc {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 56ch;
+  margin: 0;
+}
+
+.page-hero__frame {
+  margin: 0;
+}
+
+/* The page hero print is the largest photo on its page, so like the homepage
+   hero it carries the deeper shadow. */
+.page-hero__frame.print {
+  box-shadow: var(--sh-3);
+}
+
+.page-hero__img {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+/* The crop opens up as the screen narrows — a 2:1 letterbox on a phone is a
+   slot, not a photograph. At 4:3 a phone shows essentially the whole file. */
+@media (max-width: 900px) {
+  .page-hero__img {
+    aspect-ratio: 3 / 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-hero__img {
+    aspect-ratio: 4 / 3;
+  }
+  .page-hero__frame.print {
+    border-radius: var(--r-md);
+  }
+  .page-hero__frame.print > img {
+    border-radius: calc(var(--r-md) - 5px);
+  }
+}
+
+/* No photo: the title block stands alone and needs its own bottom edge. */
+.page-hero--bare {
+  padding-bottom: clamp(1.75rem, 3vw, 2.5rem);
+  border-bottom: 1px solid var(--rule);
 }

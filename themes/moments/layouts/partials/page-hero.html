@@ -1,0 +1,36 @@
+{{- /* Page hero — the print-frame version of the old .section-hero band.
+
+     The title sits on the page ground and the photo is a framed print beneath
+     it, matching the homepage. No scrim: nothing is written over the image, so
+     the photo keeps its full saturation and the heading stays dark on white.
+
+     Extracted from five near-identical copies in list, gallery, places,
+     itineraries and start-here. Change the page-hero shape HERE, once.
+
+     Args (dict):
+       page    (required) the page, for .Params.hero_image / .hero_position
+       eyebrow (optional) small label above the title
+       title   (optional) defaults to the page title
+       desc    (optional) lede paragraph under the title
+       alt     (optional) image alt text; defaults to the title
+
+     Pages with no hero_image render the title block alone, closed with a rule
+     so the list below still has an edge to sit under. */ -}}
+{{- $p := .page -}}
+{{- $title := .title | default $p.Title -}}
+{{- $img := $p.Params.hero_image -}}
+<section class="page-hero{{ if not $img }} page-hero--bare{{ end }}">
+  <div class="container-wide page-hero__inner">
+    <div class="page-hero__content">
+      {{- with .eyebrow }}<span class="eyebrow">{{ . }}</span>{{ end }}
+      <h1>{{ $title }}</h1>
+      {{- with .desc }}<p class="page-hero__desc">{{ . }}</p>{{ end }}
+    </div>
+    {{- with $img }}
+    {{- $style := "" }}{{ with $p.Params.hero_position }}{{ $style = printf "object-position: %s" . }}{{ end }}
+    <figure class="page-hero__frame print">
+      {{ partial "respimg.html" (dict "path" . "alt" ($.alt | default $title) "class" "page-hero__img" "sizes" "(min-width: 1400px) 1320px, 94vw" "widths" (slice 640 960 1400) "loading" "eager" "fetchpriority" "high" "style" $style) }}
+    </figure>
+    {{- end }}
+  </div>
+</section>

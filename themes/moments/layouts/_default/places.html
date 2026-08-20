@@ -1,19 +1,7 @@
 {{ define "main" }}
 {{ $home := .Site.Home.RelPermalink }}
 
-<section class="section-hero">
-  {{ with .Params.hero_image }}
-    {{ $heroStyle := "" }}{{ with $.Params.hero_position }}{{ $heroStyle = printf "object-position: %s" . }}{{ end }}
-    {{ partial "respimg.html" (dict "path" . "alt" $.Title "class" "section-hero__img" "sizes" "100vw" "widths" (slice 640 960 1400) "loading" "eager" "fetchpriority" "high" "style" $heroStyle) }}
-  {{ end }}
-  <div class="section-hero__overlay">
-    <div class="container-wide section-hero__content">
-      <span class="eyebrow">The Map, Written Out</span>
-      <h1>{{ .Title }}</h1>
-      {{ with .Description }}<p class="section-hero__desc">{{ . }}</p>{{ end }}
-    </div>
-  </div>
-</section>
+{{ partial "page-hero.html" (dict "page" . "eyebrow" "The Map, Written Out" "desc" .Description) }}
 
 <div class="list-intro">
   <div class="list-intro__inner">
