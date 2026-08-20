@@ -361,3 +361,6 @@ We've had a lot of time to think about what the trip actually gave us, beyond th
 **The people are the trip.** The landscapes in northern Vietnam are extraordinary. The temples in Luang Prabang are extraordinary. But what surfaces when someone asks us about the trip is almost always a person. Vieng, who let us cancel a boat ticket and drove us up to the village he grew up in. Daniel and Serena, who we met because four people happened to book the same tour, and who we now get on planes to go see. Thomas, who drove us around the Mekong Delta for hours and ended the day feeding us pineapple on the roof of his wife's boat. The woman at Sapir Kecia who knew our order by the third visit. The Canadian family we met on our last night on one island and had breakfast with on our last morning in the country. Pay attention to people.
 
 **Eight months is both a long time and not enough.** We came home with a list of places we want to go back to longer than the list we started with. That feels right.
+
+{{< planning cities="Chiang Mai, Hanoi, Nusa Lembongan" disclosure="false" >}}
+

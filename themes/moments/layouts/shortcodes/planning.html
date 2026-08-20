@@ -9,8 +9,15 @@
      would go looking for next" rather than an advert dropped mid-story. Ours
      carries the same fusion but offers only what we can honestly offer.
 
-     ⚠️ This block renders the disclosure ITSELF. A page using {{< planning >}}
-     must NOT also carry {{< affiliate-note >}} or the notice appears twice.
+     ⚠️ This block renders the disclosure ITSELF by default, so a page using
+     {{< planning >}} must NOT also carry {{< affiliate-note >}} — or pass
+     disclosure="false" here if it does.
+
+     Which to choose: on a SHORT guide, let this block carry the disclosure and
+     drop the separate note. On a LONG one, keep {{< affiliate-note >}} near the
+     top and pass disclosure="false", because a notice that only appears after
+     the reader has scrolled past six booking blocks is not "clear and
+     conspicuous" in any useful sense.
 
      Where it belongs: the end of a guide or itinerary that names real places a
      reader could act on. It is a CLOSING block — never mid-article, never above
@@ -26,7 +33,10 @@
        cities   required — comma-separated. Two or three. Four starts to read
                 as a directory, which is the roundup format that lives on CAVL.
        partner  optional — "agoda" (default) or "booking". Europe wants booking.
-       heading  optional — defaults to "Planning this trip?" */}}
+       heading  optional — defaults to "Planning this trip?"
+       disclosure optional — "false" to suppress the FTC note because the page
+                already carries {{< affiliate-note >}} higher up. Never set this
+                on a page that has no disclosure anywhere else. */}}
 
 {{- $cities := split (.Get "cities") "," -}}
 {{- $partner := .Get "partner" -}}
@@ -46,5 +56,5 @@
     {{- end }}
     {{- end }}
   </ul>
-  {{ partial "affiliate-disclosure.html" .Page }}
+  {{ if ne (.Get "disclosure") "false" }}{{ partial "affiliate-disclosure.html" .Page }}{{ end }}
 </aside>
