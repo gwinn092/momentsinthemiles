@@ -28,7 +28,8 @@
     </div>
     {{- with $img }}
     {{- $style := "" }}{{ with $p.Params.hero_position }}{{ $style = printf "object-position: %s" . }}{{ end }}
-    <figure class="page-hero__frame print">
+    {{- $shape := partial "frame-shape.html" (dict "path" .) }}
+    <figure class="page-hero__frame print frame--{{ $shape }}">
       {{ partial "respimg.html" (dict "path" . "alt" ($.alt | default $title) "class" "page-hero__img" "sizes" "(min-width: 1400px) 1320px, 94vw" "widths" (slice 640 960 1400) "loading" "eager" "fetchpriority" "high" "style" $style) }}
     </figure>
     {{- end }}

@@ -16,7 +16,8 @@
 
     {{ with .Params.image }}
     {{ $heroStyle := "" }}{{ with $.Params.hero_position }}{{ $heroStyle = printf "object-position: %s" . }}{{ end }}
-    <figure class="article-hero print">
+    {{ $shape := partial "frame-shape.html" (dict "path" .) }}
+    <figure class="article-hero print frame--{{ $shape }}">
       {{ partial "respimg.html" (dict "path" . "alt" $.Title "class" "article-hero__img" "sizes" "(min-width: 1400px) 1320px, 94vw" "widths" (slice 640 960 1400) "loading" "eager" "fetchpriority" "high" "style" $heroStyle) }}
     </figure>
     {{ end }}

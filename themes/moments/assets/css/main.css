@@ -6985,3 +6985,50 @@ body.search-open {
   .planning__link { transition: none; }
   .planning__link:hover { transform: none; }
 }
+
+/* ============================================
+   FRAME SHAPES — the frame follows the photograph
+   ============================================
+   Set by partials/frame-shape.html from the source image's own aspect ratio.
+   Read that partial's comment for the reasoning; the short version is that one
+   fixed 2:1 box was showing 29% of a portrait photo, and a print frame should
+   take its shape from the picture rather than impose one on it.
+
+   These override the default aspect-ratio declared on .page-hero__img and
+   .article-hero__img, so they must come after those rules — they do, being at
+   the end of the file. Do not move them above. */
+.frame--wide > img {
+  aspect-ratio: 2 / 1;
+}
+
+.frame--mid > img {
+  aspect-ratio: 3 / 2;
+}
+
+/* Portrait and square sources: a narrow, centred print. Left-aligning a tall
+   frame in a wide column leaves a conspicuous hole to its right. */
+.frame--tall {
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.frame--tall > img {
+  aspect-ratio: 4 / 5;
+}
+
+/* Under 900px the page-hero and article-hero base rules already relax to 3:2
+   and then 4:3, which suits a landscape source on a phone. A portrait source
+   should stay portrait at every width — it is the one shape that never wants
+   to be letterboxed. */
+@media (max-width: 900px) {
+  .frame--tall > img {
+    aspect-ratio: 4 / 5;
+  }
+}
+
+@media (max-width: 600px) {
+  .frame--tall > img {
+    aspect-ratio: 4 / 5;
+  }
+}

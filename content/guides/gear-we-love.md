@@ -1,9 +1,11 @@
 ---
 todo_karlee: >-
-  Five entries below are marked [needs a line] — products Karlee named but whose
-  stories are missing. One or two sentences each, in her voice. Do not invent
-  them: Aeropress, Ninja Crispi, Ninja Blender, ENO, Hydro Flask, Dometic,
-  kayak and Solawave entries are already hers.
+  Five entries still run one sentence short and would read better with Karlee's
+  own line, in her voice: Moka pot, Instant Pot, Kelty chairs (which model?),
+  Anker battery packs, Bose speaker/headphones. Do NOT invent these. The visible
+  "[needs a line]" markers were removed on Aug 20 2026 because they were live on
+  a published page; each entry reads as a complete thought without them, so this
+  is an improvement to make, not a hole to plug.
 title: "Gear That's Earned Its Spot in the Van"
 tags: ["Gear", "Van Life"]
 date: 2025-07-01
@@ -31,7 +33,7 @@ We've made coffee in parking lots, on riverbanks, at 11,000 feet, and in the bac
 
 **Moka pot**
 
-Stovetop espresso with no power draw and nothing electronic to fail. It's the slower option and some mornings that's the point. [needs a line]
+Stovetop espresso with no power draw and nothing electronic to fail. It's the slower option and some mornings that's the point.
 
 ---
 
@@ -43,7 +45,7 @@ For years the kitchen was an induction stove and whatever we could make work. Th
 
 **Instant Pot**
 
-One appliance covering what would otherwise take three, in a kitchen with counter space for about one and a half. That trade is the entire argument for it in a van. [needs a line]
+One appliance covering what would otherwise take three, in a kitchen with counter space for about one and a half. That trade is the entire argument for it in a van.
 
 **Ninja Blender**
 
@@ -59,7 +61,7 @@ This gets set up more than almost anything else we own. Rest stops, campsites, b
 
 **Kelty low camp chairs**
 
-The van has no good place for two people to sit, which is the one thing we'd change about our build. Outside, these solve it. They sit low, they pack flat, and they're the first thing out of the back doors when we stop somewhere worth staying a while. [needs a line: which Kelty model?]
+The van has no good place for two people to sit, which is the one thing we'd change about our build. Outside, these solve it. They sit low, they pack flat, and they're the first thing out of the back doors when we stop somewhere worth staying a while.
 
 ---
 
@@ -99,11 +101,11 @@ This was a "do we really need this?" purchase that became one of our favorite th
 
 **Anker battery packs**
 
-The things that keep everything else alive between the van and wherever you've walked to. We've had these long enough to have opinions, and the opinion is that the cheap ones are not cheaper. [needs a line]
+The things that keep everything else alive between the van and wherever you've walked to. We've had these long enough to have opinions, and the opinion is that the cheap ones are not cheaper.
 
 **Bose speaker and headphones**
 
-Two people working in 70 square feet need a way to not be in the same room. The headphones do that. The speaker does the opposite job, for the evenings when we want the whole space to feel like one. [needs a line]
+Two people working in 70 square feet need a way to not be in the same room. The headphones do that. The speaker does the opposite job, for the evenings when we want the whole space to feel like one.
 
 ---
 
