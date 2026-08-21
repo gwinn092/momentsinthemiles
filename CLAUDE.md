@@ -176,7 +176,13 @@ from a red deploy:
 - `python3 scripts/check_invariants.py public` — one tag spelled two ways,
   `shuffle` in a template, photos in `data/photo_dates.yaml` with no `alt` or
   listed twice under different names, root-relative paths in templates,
-  `[params.ads] preview = true`, and leftover `gwinn092.github.io` references.
+  `[params.ads] preview = true`, leftover `gwinn092.github.io` references, and
+  **any class a template emits that no CSS rule defines**. That last one was
+  added Aug 21 2026 after `.article-hero-wrap` left 19 live pages with an
+  unframed hero flush against the left edge while every other gate passed.
+  Classes that are unstyled on purpose (JS hooks, wrappers sized by a parent
+  grid, dead BEM modifiers) live in `INTENTIONALLY_UNSTYLED` in that script,
+  each with its reason — adding one is meant to be deliberate.
 - `python3 scripts/check_content.py` — prose that no longer matches the data
   under it: a stated count in an itinerary summary that disagrees with the stop
   list, a country inked on the world map with neither a story in
