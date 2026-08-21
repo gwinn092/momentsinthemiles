@@ -1485,6 +1485,14 @@ a.print:hover,
    ABOUT PAGE
    ============================================ */
 
+/* The About page's title band. These two declarations lived in a style=""
+   attribute on the div, which is why .about-header matched no rule and read as
+   an orphaned class. Same values, same rendering — just findable now. */
+.about-header {
+  padding: 5rem 0 3rem;
+  border-bottom: 1px solid var(--rule);
+}
+
 .about-section {
   padding: 5rem 0;
   border-bottom: 1px solid var(--rule);

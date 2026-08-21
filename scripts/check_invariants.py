@@ -15,6 +15,9 @@ that shipped, or nearly shipped, without anyone seeing them:
   - A hardcoded "/essays/" in a template: fine on the custom domain, 404 on the
     old project-pages subpath, and invisible until the base URL moves.
   - [params.ads] preview left on, which ships placeholder ad boxes to readers.
+  - A class a template emits that no CSS defines: .article-hero-wrap left 19
+    live pages with an unframed hero flush against the left edge, and every
+    other gate passed while it did.
 
 Usage: python3 scripts/check_invariants.py [public_dir] [base_url]
 Only stdlib. Exits non-zero with a report, so CI fails instead of deploying.
@@ -316,6 +319,131 @@ def check_editorial_comments():
             )
 
 
+# --- 7. Classes a template emits that no CSS defines ------------------------
+# The bug this exists for: itinerary.html and place.html spent the whole
+# print-frame rebuild emitting .article-hero-wrap / .article-hero-img, two
+# names that appear nowhere in main.css. With no rule sizing the image the
+# <img> fell back to the width="1400" attribute respimg.html writes, so 19
+# live pages showed an unframed hero flush against the left edge with white
+# space beside it. Nothing failed: not the link check, not the build, not the
+# reproducibility diff. Only looking at the page found it.
+#
+# Plenty of classes are unstyled on purpose — JS hooks, bare semantic
+# wrappers, BEM modifiers that were never given a rule. Those are listed
+# below WITH a reason. The point of the allowlist is that adding to it is a
+# deliberate act; a class that turns up unlisted and unstyled fails the build.
+INTENTIONALLY_UNSTYLED = {
+    # JS behaviour hooks — selected by script, never painted.
+    "article": "scroll/share JS selector in single.html",
+    "map-progress__play-label": "label swapped by the map tour JS",
+    "map-svg--us": "JS selector for the US map instance",
+    # Bare wrappers: the parent grid/flex or the children carry every rule.
+    # Each was measured in the browser before being listed here.
+    "itin": "bare <article>; .content-container children do the layout",
+    "place": "bare <article>; .content-container children do the layout",
+    "itin__head": "element also carries .content-container, which is styled",
+    "quiz": "bare wrapper; .quiz__start / __card / __result carry the rules",
+    "quiz__result": "bare wrapper; verified it lays out at 666x534 when shown",
+    "roadtrip": "bare <article>, template not live yet",
+    "article-main": "sized by the .article-layout grid above it",
+    "aside-newsletter": "sized by its styled parent",
+    "otd__body": "sized by the homepage grid",
+    "kit-who__col": "sized by the .kit-who grid",
+    "first-reads__item": "<li> sized by the .first-reads grid",
+    "tour-dot__num": "<span> sized by the flex dot around it",
+    "map-progress__of": "inline <span>, inherits from .map-progress__readout",
+    # BEM modifiers that were never given a rule. The base class IS styled, so
+    # the element renders correctly; the modifier is dead but harmless.
+    "map-scrolly__cue--loop": "modifier on a styled .map-scrolly__cue",
+    "map-step--outro": "modifier on a styled .map-step",
+    "map-step--today": "modifier on a styled .map-step",
+    "map-step__note--years": "modifier on a styled .map-step__note",
+    "map-marker--together": "modifier on a styled .map-marker",
+    "roadtrip__badge--list": "modifier on a styled badge, not live yet",
+    "roadtrip__empty": "empty state, template not live yet",
+    "roadtrip__stops": "sized by its children, template not live yet",
+    # Third-party.
+    "formkit-alert": "ConvertKit ships its own CSS for this",
+    "formkit-alert-error": "ConvertKit ships its own CSS for this",
+    # Body state hook.
+    "is-home": "body flag, available to CSS/JS; nothing paints it today",
+}
+
+CSS_FILE = "themes/moments/assets/css/main.css"
+
+
+def check_orphan_classes():
+    css_path = os.path.join(ROOT, CSS_FILE)
+    if not os.path.exists(css_path):
+        fail("orphan-class", f"{CSS_FILE} is missing — cannot check classes.")
+        return
+    css = read(CSS_FILE)
+    # Inline <style> blocks count as definitions too, so a template that styles
+    # itself is not reported. There are none today; this keeps it true if that
+    # changes.
+    for path in walk("themes", (".html",)):
+        for m in re.finditer(r"<style[^>]*>(.*?)</style>", read(os.path.relpath(path, ROOT)), re.S | re.I):
+            css += "\n" + m.group(1)
+    css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
+    defined = set(re.findall(r"\.(-?[A-Za-z_][\w-]*)", css))
+    if len(defined) < 100:
+        fail("orphan-class",
+             f"only {len(defined)} classes parsed out of {CSS_FILE} — the "
+             "parser broke; refusing to report every class as orphaned.")
+        return
+
+    seen = 0
+    reported = set()
+    for path in walk("themes", (".html",)):
+        rel = os.path.relpath(path, ROOT)
+        src = read(rel)
+        # HTML comments hold markup that is deliberately not live (the About
+        # page parks a socials block there until the handles exist). Skipping
+        # them is what stops the check reporting code nobody has shipped.
+        src = re.sub(r"<!--.*?-->", "", src, flags=re.S)
+        # Grab the partial-argument form FIRST. "class" "foo" lives inside the
+        # {{ partial ... }} call, so stripping template expressions below would
+        # erase it — which is exactly how .article-hero-img went unnoticed on
+        # the first pass at this check.
+        partial_args = [(src[:m.start()].count("\n") + 1, m.group(1)) for m in
+                        re.finditer(r'"class"\s+"([^"]*)"', src)]
+        # Go template expressions must go BEFORE the class attribute is matched,
+        # not after: class="x{{ if eq $s.status "list" }} y{{ end }}" contains
+        # quotes, so an attribute regex run first stops dead in the middle of
+        # the expression and reports garbage tokens like .if and .$stop.status.
+        # NUL cannot appear in a class name, so it marks where a value was
+        # computed — any token touching one is dynamic and cannot be checked.
+        src = re.sub(r"\{\{.*?\}\}", "\x00", src, flags=re.S)
+        # Two ways a class reaches the page: written as an attribute here, or
+        # handed to a partial as "class" "foo" (respimg.html, ad-slot.html) and
+        # written out there as class="{{ .class }}". The second form is dynamic
+        # at the point it becomes an attribute, so the call site collected above
+        # is the only place its real name is readable.
+        spots = [(src[:m.start()].count("\n") + 1, m.group(1)) for m in
+                 re.finditer(r"""class\s*=\s*["']([^"']*)["']""", src)]
+        spots += partial_args
+        for line, value in spots:
+            for tok in value.split():
+                if "\x00" in tok:
+                    continue
+                seen += 1
+                if tok in defined or tok in INTENTIONALLY_UNSTYLED:
+                    continue
+                key = (rel, tok)
+                if key in reported:
+                    continue
+                reported.add(key)
+                fail("orphan-class",
+                     f"{rel}:{line} emits .{tok}, which no CSS rule defines. "
+                     "Either style it, or add it to INTENTIONALLY_UNSTYLED in "
+                     "this script with the reason it needs no rule.")
+    # A scan that silently matched nothing would pass and mean nothing.
+    if seen < 200:
+        fail("orphan-class",
+             f"only {seen} static class tokens found across templates — the "
+             "scan broke, so a pass here would be meaningless.")
+
+
 def main():
     public = sys.argv[1] if len(sys.argv) > 1 else "public"
     public = public if os.path.isabs(public) else os.path.join(ROOT, public)
@@ -327,6 +455,7 @@ def main():
     check_template_paths()
     check_editorial_comments()
     check_ads()
+    check_orphan_classes()
     check_built(public, base_url)
 
     for n in notes:
