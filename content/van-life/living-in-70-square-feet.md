@@ -51,7 +51,7 @@ Van life makes you choose. But it also teaches you what's actually worth choosin
 
 We haven't paid an electric bill in eight years.
 
-Let that sit for a second. Our solar panels power everything: lights, fans, charging, the fridge, the whole operation. We've had a handful of cloudy stretches where we had to run the generator and wall charge, but those are the exception. The rule is free, clean, silent power from the roof of our home.
+Let that sit for a second. Our solar panels power everything: lights, fans, charging, the fridge, the whole operation. We've had a handful of cloudy stretches where we had to run the generator and wall charge, but those are the exception. The rule is free, clean, silent power from the roof of our home. Jesse wrote the technical version of that setup — [eight years on three hundred watts, and where it fell short](https://www.createavanlife.com/blog/i-ran-300w-solar-for-8-years/) — over on Create a Van Life.
 
 We can't calculate exactly what we've saved, but it's thousands of dollars. And honestly, it's changed how we think about energy in a way that nothing else could have. When you watch your battery percentage and know that the sun is what fills it back up, electricity stops being an abstract bill that comes at the end of the month. It becomes something real, something you think about and use a little more carefully without even trying.
 

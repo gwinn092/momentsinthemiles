@@ -90,6 +90,25 @@ not the ad tag.
 this shipped; if a change to these partials starts emitting stray whitespace into
 every article, that is a regression, not cosmetic.
 
+## Cross-site linking to CAVL (approved Aug 20 2026 — Jesse's call)
+MitM is story/philosophy; CAVL (`../affiliation.vansite`,
+https://www.createavanlife.com) is technical/affiliate. **Content still never
+merges** — but cross-*linking* is approved and deliberate, because it sends each
+site's traffic to the one that can act on that intent.
+
+- **Contextual only.** The link earns its place when the MitM page has already
+  raised the thing the CAVL page answers — the solar paragraph, the Yeti-to-
+  Bluetti switch, the ninety-degrees-at-midnight question. A bare "visit our
+  other site" is not a cross-link.
+- **Keep it few.** Reciprocal linking at volume between two sites one person
+  owns reads as a link scheme. Three or four contextual links per side is the
+  working ceiling; today MitM has three plus two standing handoff links
+  (`guides/gear-we-love.md`, `van-life/_index.md`).
+- Plain markdown links, no `nofollow` — these are editorial links to a site
+  Jesse owns, not sponsored ones.
+- ⛔ **CAVL-side edits belong in the CAVL repo and its own Claude thread.**
+- The roundup/comparison-table ban above is a separate rule and is unaffected.
+
 ## Internal links and image paths
 - Every internal link and image `src` in a template must use the
   `{{ .Site.Home.RelPermalink }}` prefix followed by a path with **no leading

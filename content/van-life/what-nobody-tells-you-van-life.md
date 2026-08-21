@@ -45,7 +45,7 @@ Every day involves decisions that most people outsource to routine. Where do we 
 
 In a traditional home, these questions don't exist. In a van, they're the background hum of every single day. Early on, the novelty makes it feel like adventure. After a while, it can feel like cognitive load you didn't sign up for.
 
-The antidote is systems. The longer we've done this, the more we've built routines that make recurring decisions automatic. But it takes time to build those systems, and in the meantime, give yourself grace for feeling worn out by it.
+The antidote is systems. The longer we've done this, the more we've built routines that make recurring decisions automatic — the ninety-degree question, for one, has [a real answer](https://www.createavanlife.com/blog/van-life-summer-heat-no-ac/) we worked out over years of summers with no AC. But it takes time to build those systems, and in the meantime, give yourself grace for feeling worn out by it.
 
 ## The loneliness can sneak up on you
 
