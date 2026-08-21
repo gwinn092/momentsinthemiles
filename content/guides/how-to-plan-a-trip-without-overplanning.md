@@ -1,4 +1,21 @@
 ---
+faq:
+  - q: "How far in advance should you book accommodation on a long trip?"
+    a: "Book the first night only. Arriving somewhere new without accommodation
+       sorted creates anxiety, not adventure — but one night booked ahead lets you
+       land without stress and decide everything after it in person. It is the one
+       rule that keeps a trip open to what actually shows up."
+  - q: "What is the difference between a travel framework and an itinerary?"
+    a: "An itinerary tells you where you will be and what you will do at every
+       point in the trip. A framework names the places you want to move through,
+       roughly how long you have, and the two or three things you genuinely do not
+       want to miss. Everything else stays open."
+  - q: "How many places should you visit on a two-week trip?"
+    a: "Three, not ten. Staying longer in fewer places is what turns you from a
+       tourist into a temporary local, and it is what leaves you available when
+       someone invites you somewhere unplanned. We missed a boat in northern Laos
+       that way, and it became one of the most genuine days of our eight months in
+       Asia."
 title: "How to Plan a Trip Without Overplanning It"
 tags: ["Planning", "Mindset"]
 date: 2025-04-21

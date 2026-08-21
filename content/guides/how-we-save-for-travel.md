@@ -1,4 +1,22 @@
 ---
+faq:
+  - q: "How do you save for long-term travel on a normal income?"
+    a: "Lower your fixed costs before your discretionary ones — that is where the
+       real money is. We tracked every dollar for thirty days first, then opened a
+       separate account named \"Van Fund\" and automated a transfer on payday. A
+       hundred dollars a month for a year is twelve hundred dollars you did not
+       have before. That is flights."
+  - q: "How much does it cost to live in a van each month?"
+    a: "Our van payment, insurance and gas — vehicle and home combined — ran under
+       $1,100 a month, split two ways. That covered where we slept, how we got
+       everywhere, and every mile we drove. Prices have gone up since then, but it
+       was still less than most people pay for a one-bedroom apartment."
+  - q: "Do you need a windfall or a tech salary to travel full time?"
+    a: "No. We had none of it — no windfall, no remote tech salary, no rich
+       parents. What made it work was restructuring our cost of living rather than
+       cutting lattes. The gap between our old overhead and our new overhead became
+       our savings rate, and it happened structurally rather than through
+       discipline."
 title: "How We Save for Travel Without Putting Our Life on Hold"
 tags: ["Budget", "Planning"]
 date: 2025-03-17

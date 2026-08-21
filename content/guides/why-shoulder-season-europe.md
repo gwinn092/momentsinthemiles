@@ -1,4 +1,22 @@
 ---
+faq:
+  - q: "When is shoulder season in Europe?"
+    a: "Shoulder season runs twice a year: late April through early June, and
+       again from September through October. These windows sit between the July
+       and August peak and the November through March off-season — warm enough to
+       enjoy, quiet enough to matter, and without the closed seasonal businesses
+       and short days of winter."
+  - q: "How much money does traveling Europe in shoulder season save?"
+    a: "Travelers typically save 20–40% across flights, hotels and attractions
+       compared to peak season. Airfare runs about 37% lower than peak summer on
+       average, and nearly 47% cheaper for Spain. Nightly rates in cities like
+       Paris and Reykjavik drop 30% or more, Rome up to 40%, and car rental
+       30–50%."
+  - q: "Is the weather good enough in shoulder season?"
+    a: "In most of Europe, yes. Southern Europe in September is warm and golden,
+       and Paris in May is one of the finest versions of Paris. The honest
+       exceptions: the UK and Ireland are wetter in October, and northern
+       Scandinavia in April still has cold, short days."
 title: "Why Shoulder Season Is the Smartest Way to See Europe"
 tags: ["Europe", "Planning", "Budget"]
 date: 2025-04-07
