@@ -36,5 +36,5 @@ This section is where we write about what that life is really like. Not the gear
 
 <div class="handoff-block">
   <p>Ready to get into the actual build? We break down the power systems, gear, and budget decisions over at Create A Van Life. Eight years of real-world experience, no fake urgency.</p>
-  <a href="https://createavanlife.com" target="_blank" rel="noopener" class="btn btn-secondary">Visit Create A Van Life →</a>
+  <a href="https://www.createavanlife.com/" target="_blank" rel="noopener" class="btn btn-secondary">Visit Create A Van Life →</a>
 </div>
