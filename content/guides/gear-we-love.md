@@ -127,7 +127,7 @@ We've used a lot of apps over the years. These are the ones still on our phones:
 
 {{< photo src="/images/guides/solar-roof.jpg" alt="Solar panels mounted on the van's roof" caption="300+ watts up top, quietly doing its job." >}}
 
-Our van runs on a BLUETTI Elite 200 V2 with 300+ watts of solar on the roof. It powers the fridge, the fans, our laptops, phones, and everything else. We lived on a Goal Zero Yeti 1400 for six years before switching, so we've [seen both sides](https://www.createavanlife.com/blog/goal-zero-yeti-1400-to-bluetti-elite-200-v2-upgrade/).
+Our van runs on a BLUETTI Elite 200 V2 with 300+ watts of solar on the roof. It powers the fridge, the fans, our laptops, phones, and everything else. We lived on a Goal Zero Yeti 1400 for seven years before switching, so we've [seen both sides](https://www.createavanlife.com/blog/goal-zero-yeti-1400-to-bluetti-elite-200-v2-upgrade/).
 
 If you want the honest, detailed breakdown of how van power actually works, what's worth it, and how to size a system for your life, that's what Jesse built [Create a Van Life](https://createavanlife.com) for.
 
