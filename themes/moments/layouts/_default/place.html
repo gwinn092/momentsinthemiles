@@ -2,16 +2,26 @@
 {{ $home := .Site.Home.RelPermalink }}
 
 <article class="place">
+  {{/* Same framed hero as every other article on the site. This used to be a
+       bare .article-hero-wrap / .article-hero-img pair that had NO CSS anywhere
+       — so the <img> fell back to its width="1400" attribute and sat flush left
+       in a wider viewport, unframed, with the caption centred on the VIEWPORT
+       rather than under the photo. Do not reintroduce private class names. */}}
   {{ with .Params.image }}
-  <div class="article-hero-wrap">
-    {{ partial "respimg.html" (dict
-      "path" .
-      "alt" (default $.Title $.Params.photo_alt)
-      "class" "article-hero-img"
-      "sizes" "100vw"
-      "widths" (slice 640 960 1400)
-      "loading" "eager"
-      "fetchpriority" "high") }}
+  {{ $heroStyle := "" }}{{ with $.Params.hero_position }}{{ $heroStyle = printf "object-position: %s" . }}{{ end }}
+  {{ $shape := partial "frame-shape.html" (dict "path" .) }}
+  <div class="article-head">
+    <figure class="article-hero print frame--{{ $shape }}">
+      {{ partial "respimg.html" (dict
+        "path" .
+        "alt" (default $.Title $.Params.photo_alt)
+        "class" "article-hero__img"
+        "sizes" "(min-width: 1400px) 1320px, 94vw"
+        "widths" (slice 640 960 1400)
+        "loading" "eager"
+        "fetchpriority" "high"
+        "style" $heroStyle) }}
+    </figure>
     {{ with $.Params.photo_caption }}<p class="place__hero-caption">{{ . }}</p>{{ end }}
   </div>
   {{ end }}

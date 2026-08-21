@@ -6221,6 +6221,22 @@ body.search-open {
   padding: 0 1.25rem;
 }
 
+/* The caption belongs to the print above it, so it centres under the PHOTO,
+   not on the page. Before the hero was framed these two disagreed by 74px at
+   1648px wide — the caption was centred on the viewport while the photo was
+   left-aligned, which read as a caption for something else. */
+.article-head > .place__hero-caption {
+  max-width: var(--max-frame);
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* A portrait hero is a 560px print, so its caption is 560px too. Five of the
+   eighteen place pages are portrait, which is why this is not a rare case. */
+.article-hero.frame--tall + .place__hero-caption {
+  max-width: 560px;
+}
+
 /* One-line Reduce Friction pointer at the foot of every article
    (partials/reduce-friction-line.html). */
 .rf-line {
