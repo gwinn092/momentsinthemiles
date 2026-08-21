@@ -6838,10 +6838,13 @@ body.search-open {
    between 2.4:1 and 4:1 in practice. Every section hero source is 4:3 (1.33),
    so that band was throwing away 45-67% of each photo's height, which is the
    only reason every one of them needed a hand-tuned `hero_position` in front
-   matter. The frame is 2:1 on desktop and opens up to 4:3 on a phone, where
-   there is vertical room to spare — so the crop is now gentlest exactly where
-   the screen is narrowest, and the existing hero_position values became
-   suggestions rather than rescues. */
+   matter. The frame opens up as the screen narrows, so the crop is gentlest
+   exactly where the screen is narrowest, and the existing hero_position values
+   became suggestions rather than rescues.
+
+   ⚠️ The ratios below are NOT what a landing page actually renders. Every
+   .page-hero__frame is overridden to 5:2 at the end of this file, in the
+   FRAME SHAPES section — change it there, and read the reasoning there first. */
 .page-hero {
   padding: clamp(2rem, 4vw, 3.25rem) 0 clamp(2rem, 4vw, 3rem);
   background: var(--warm-white);
@@ -7070,19 +7073,56 @@ body.search-open {
 }
 
 
-/* Section landing pages never use the portrait shape.
-   An article is one reader following one story, so a tall print suits it. A
-   landing page is a title block over a grid of posts, and dropping a narrow
-   560px portrait between them leaves the header looking unfinished. The photo
-   there is atmosphere rather than subject, so a 3:2 crop is the right trade —
-   and it still keeps 73% of a near-square source, against 55% in the old 2:1.
-   This has to outrank .frame--tall, which it does on specificity (0,2,0). */
+/* Section landing pages take ONE shape, whatever the source is: 5:2.
+   This is the deliberate exception to "the frame follows the photograph", and
+   the reason is what a landing page is for. An article is one reader following
+   one story, and its hero is the subject — so it keeps the source's shape and a
+   portrait print is right. A landing page is a title block over a grid of
+   posts, and its photo is atmosphere. Measured at 1440px before this changed:
+   /guides/ put 1295px between the top of the page and the first post card, and
+   /van-life/ put 1078px there, so the two landing pages also opened 217px apart
+   from each other. At 5:2 every one of them opens at ~950px and they all match.
+
+   The cost is honest and was weighed: a 4:3 source shows 53% of its height here
+   rather than the 89% a 3:2 frame kept. That is the trade for a reader seeing
+   posts on the first screen, and it applies ONLY to the eight section landing
+   pages. Article heroes are untouched — do not "simplify" this by moving the
+   ratio up into .frame--wide / .frame--mid, which would crop every article too.
+
+   Specificity (0,2,1) is what lets these outrank .frame--wide > img (0,1,1).
+
+   The mobile steps are repeated here on purpose. The relaxations on
+   .page-hero__img (0,1,0) never applied to a framed hero — .frame--mid > img
+   already outranked them, so a phone was getting 3:2 rather than the 4:3 that
+   rule intends. Verified in the browser at 500px, not read off the file. */
+.page-hero__frame.frame--wide > img,
+.page-hero__frame.frame--mid > img,
+.page-hero__frame.frame--tall > img {
+  aspect-ratio: 5 / 2;
+}
+
+/* A portrait source keeps the full frame width on a landing page rather than
+   the narrow 560px print an article gives it. */
 .page-hero__frame.frame--tall {
   max-width: var(--max-frame);
 }
 
-.page-hero__frame.frame--tall > img {
-  aspect-ratio: 3 / 2;
+/* The crop opens up as the screen narrows — a 5:2 letterbox on a phone is a
+   slot, not a photograph, and there is vertical room to spare down there. */
+@media (max-width: 900px) {
+  .page-hero__frame.frame--wide > img,
+  .page-hero__frame.frame--mid > img,
+  .page-hero__frame.frame--tall > img {
+    aspect-ratio: 3 / 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-hero__frame.frame--wide > img,
+  .page-hero__frame.frame--mid > img,
+  .page-hero__frame.frame--tall > img {
+    aspect-ratio: 4 / 3;
+  }
 }
 
 /* ============================================
